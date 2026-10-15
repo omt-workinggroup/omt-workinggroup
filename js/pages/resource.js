@@ -4,6 +4,7 @@ import { relatedResources } from '../core/search.js';
 import { ACCESS, CATEGORIES, KINDS, LEVELS, OFFICE_APPS, categoryLabel } from '../core/taxonomy.js';
 import { accessBadge, cardHTML, coverHTML, externalLink, stateHTML } from '../core/render.js';
 import { isFavorite } from '../core/favorites.js';
+import { recordView } from '../core/recent.js';
 import { icons } from '../core/icons.js';
 import { escapeHtml as e, safeUrl, formatDate, setMeta } from '../core/util.js';
 
@@ -133,7 +134,7 @@ if (!id) {
   try {
     const all = await loadCatalog();
     const r = all.find((x) => x.id === id);
-    if (r) render(r, all);
+    if (r) { render(r, all); recordView(r.id); }
     else notFound('This resource may have been removed or the link is incorrect.');
   } catch (err) {
     root.innerHTML = `<div style="padding:48px 0">${stateHTML({ title: 'This resource couldn\'t load', text: err.message, error: true })}</div>`;

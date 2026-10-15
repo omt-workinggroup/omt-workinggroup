@@ -108,7 +108,50 @@ function render() {
   els.olResults.innerHTML = '';
   els.askAi.href = state.q ? `assistant.html?q=${encodeURIComponent(state.q)}` : 'assistant.html';
   renderActive();
+  syncQuickTabs();
 }
+
+// ---------- Mobile quick tabs and filter sheet ----------
+const QUICK = {
+  all: { access: [], kind: [] },
+  free: { access: ['omt', 'open', 'official'], kind: [] },
+  omt: { access: ['omt'], kind: [] },
+  book: { access: [], kind: ['book'] },
+  template: { access: [], kind: ['template'] },
+  guide: { access: [], kind: ['guide'] },
+  course: { access: [], kind: ['course'] },
+};
+const quickTabs = document.getElementById('quick-tabs');
+function syncQuickTabs() {
+  const same = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
+  const active = Object.entries(QUICK).find(([, q]) => same(q.access, state.access) && same(q.kind, state.kind))?.[0];
+  quickTabs.querySelectorAll('[data-quick]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.quick === active)));
+}
+quickTabs.addEventListener('click', (event) => {
+  const b = event.target.closest('[data-quick]');
+  if (!b) return;
+  const q = QUICK[b.dataset.quick];
+  state.access = [...q.access];
+  state.kind = [...q.kind];
+  update();
+});
+
+const mobile = window.matchMedia('(max-width: 767px)');
+const backdrop = document.getElementById('sheet-backdrop');
+const openBtn = document.getElementById('open-filters');
+openBtn.innerHTML = icons.sliders;
+function setSheet(open) {
+  els.filters.open = open;
+  backdrop.hidden = !open;
+  document.body.classList.toggle('sheet-open', open);
+  if (open) els.filters.querySelector('input, select')?.focus();
+  else openBtn.focus();
+}
+openBtn.addEventListener('click', () => setSheet(true));
+backdrop.addEventListener('click', () => setSheet(false));
+document.getElementById('close-filters').addEventListener('click', () => setSheet(false));
+els.filters.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobile.matches) setSheet(false); });
+mobile.addEventListener('change', (m) => { if (!m.matches) { backdrop.hidden = true; document.body.classList.remove('sheet-open'); els.filters.open = true; } else { els.filters.open = false; } });
 
 function update({ push = false, facets = true } = {}) {
   state.page = 1;
@@ -160,6 +203,7 @@ setView(storage.get('omt:view', 'grid') === 'list' ? 'list' : 'grid');
 
 // Collapse filters by default on small screens.
 if (window.matchMedia('(max-width: 959px)').matches) els.filters.open = false;
+// (on phones the filters open as a bottom sheet from the filter button)
 
 // ---------- Events ----------
 els.form.addEventListener('submit', (event) => {

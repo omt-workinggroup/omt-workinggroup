@@ -41,7 +41,14 @@ export function coverHTML(r) {
   } else {
     inner = `<div class="cover__win"><div class="cover__bar"><i></i><i></i><i></i></div><b>${e(r.title)}</b><div class="cover__line"></div><div class="cover__line cover__line--s"></div></div>`;
   }
-  return `<div class="cover cover--${type}" style="${style}" aria-hidden="true">${inner}<span class="cover__label">${label}</span></div>`;
+  return `<div class="cover cover--${type}" style="${style}" aria-hidden="true">${inner}<span class="cover__label">${label}</span>${posterHTML(r)}</div>`;
+}
+
+/** Full-bleed, book-style poster. Shown instead of the mock-up on small screens. */
+export function posterHTML(r) {
+  const cat = CATEGORIES[r.category];
+  const mark = cat?.office ? `<span class="poster__mark">${e(cat.short)}</span>` : '';
+  return `<div class="cover__poster poster--${e(r.kind)}">${mark}<span class="poster__kind">${e(KINDS[r.kind] ?? 'Resource')}</span><span class="poster__title">${e(r.title)}</span><span class="poster__author">${e(r.author)}</span></div>`;
 }
 
 export function accessBadge(type) {

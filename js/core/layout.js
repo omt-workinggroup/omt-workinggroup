@@ -83,12 +83,23 @@ function footerHTML() {
   </div>`;
 }
 
+function tabbarHTML(current) {
+  const tab = (href, page, icon, label) => `<a class="tabbar__item" href="${href}"${page === current ? ' aria-current="page"' : ''}>${icons[icon]}<span>${label}</span></a>`;
+  return `${tab('index.html', 'home', 'home', 'Home')}
+    ${tab('library.html', 'library', 'compass', 'Explore')}
+    <a class="tabbar__fab" href="assistant.html"${current === 'assistant' ? ' aria-current="page"' : ''}><span class="tabbar__fab-btn">${icons.sparkle}</span><span>Ask AI</span></a>
+    ${tab('office.html', 'office', 'briefcase', 'Office')}
+    <a class="tabbar__item" href="favorites.html"${current === 'favorites' ? ' aria-current="page"' : ''}>${icons.heart}<span>Saved</span><b class="tabbar__count" id="tab-fav-count" hidden></b></a>`;
+}
+
 function updateFavCount() {
   const el = document.getElementById('fav-count');
   if (!el) return;
   const n = getFavorites().length;
   el.textContent = n > 99 ? '99+' : String(n);
   el.hidden = n === 0;
+  const tabCount = document.getElementById('tab-fav-count');
+  if (tabCount) { tabCount.textContent = el.textContent; tabCount.hidden = n === 0; }
   document.getElementById('fav-link')?.setAttribute('aria-label', n ? `Favorites (${n} saved)` : 'Favorites');
 }
 
@@ -152,6 +163,13 @@ export function initLayout() {
   drawer.hidden = true;
   drawer.innerHTML = drawerHTML(page);
   document.body.append(drawer);
+
+  const tabbar = document.createElement('nav');
+  tabbar.className = 'tabbar';
+  tabbar.setAttribute('aria-label', 'Quick navigation');
+  tabbar.innerHTML = tabbarHTML(page);
+  document.body.append(tabbar);
+  document.body.classList.add('has-tabbar');
 
   setupDrawer();
   setupHeaderSearch();

@@ -49,7 +49,7 @@ for (const width of WIDTHS) {
     await page.goto(`${BASE}/${p}`, { waitUntil: 'networkidle' });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     check(overflow <= 0, `${p} @${width}px: horizontal overflow of ${overflow}px`);
-    check((await page.locator('h1').count()) === 1, `${p} @${width}px: expected exactly one h1`);
+    check((await page.locator('h1:visible').count()) === 1, `${p} @${width}px: expected exactly one visible h1`);
     const headerRight = await page.evaluate(() => document.querySelector('.header-actions')?.getBoundingClientRect().right ?? 0);
     check(headerRight <= width, `${p} @${width}px: header buttons cut off (${headerRight}px)`);
   }

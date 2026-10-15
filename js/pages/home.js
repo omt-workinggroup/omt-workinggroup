@@ -2,7 +2,8 @@ import { initLayout } from '../core/layout.js';
 import { loadCatalog } from '../core/catalog.js';
 import { CATEGORIES } from '../core/taxonomy.js';
 import { icons } from '../core/icons.js';
-import { renderCards, skeletons, stateHTML } from '../core/render.js';
+import { renderCards, skeletons, stateHTML, cardHTML, posterHTML, accessBadge, resourceUrl } from '../core/render.js';
+import { getRecent, timeAgo } from '../core/recent.js';
 import { escapeHtml as e } from '../core/util.js';
 
 initLayout();
@@ -57,8 +58,83 @@ try {
   }
   renderCards(featured, all.filter((r) => r.featured).slice(0, 8));
   renderCards(recent, [...all].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '')).slice(0, 4));
+  renderMobile(all);
 } catch (err) {
+  document.getElementById('m-rail').innerHTML = stateHTML({ title: 'Resources unavailable', text: err.message, error: true });
   featured.innerHTML = stateHTML({ title: 'Resources unavailable', text: err.message, error: true, action: '<button type="button" class="btn btn--secondary" id="retry">Try again</button>' });
   recent.innerHTML = '';
   document.getElementById('retry')?.addEventListener('click', () => location.reload());
+}
+
+// ---------- Mobile app-style home ----------
+function renderMobile(all) {
+  const hour = new Date().getHours();
+  document.getElementById('m-greeting').textContent = `${hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'} 👋`;
+  document.querySelector('.m-search__btn').innerHTML = icons.sparkle;
+  document.querySelector('.m-ai__icon').innerHTML = icons.sparkle;
+
+  // Featured banner carousel
+  const banner = document.getElementById('m-banner');
+  const dots = document.getElementById('m-dots');
+  const picks = ['think-python-3e', 'omt-excel-lookup', 'openstax-entrepreneurship', 'omt-ppt-project-proposal', 'omt-study-methods']
+    .map((id) => all.find((r) => r.id === id)).filter(Boolean);
+  banner.innerHTML = picks.map((r, i) => `
+    <a class="m-banner__slide" href="${resourceUrl(r)}" aria-roledescription="slide" aria-label="${e(r.title)}, ${i + 1} of ${picks.length}">
+      <span class="m-banner__text">
+        <span class="m-pill">${icons.sparkle.replace('<svg', '<svg width="13" height="13"')} Featured</span>
+        <strong>${e(r.title)}</strong>
+        <span class="m-banner__by">${e(r.author)}${/^\d{4}$/.test(r.year) ? ` (${e(r.year)})` : ''}</span>
+        <span class="m-banner__more">Read more ${icons.chevron.replace('<svg', '<svg width="14" height="14"')}</span>
+      </span>
+      <span class="m-banner__cover cover" style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
+    </a>`).join('');
+  dots.innerHTML = picks.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('');
+  banner.addEventListener('scroll', () => {
+    const i = Math.round(banner.scrollLeft / banner.clientWidth);
+    [...dots.children].forEach((d, j) => d.classList.toggle('on', i === j));
+  }, { passive: true });
+
+  // Topic tabs + rail
+  const TABS = [
+    ['All', () => all.filter((r) => r.featured).concat(all.filter((r) => !r.featured)), 'library.html'],
+    ['Books', () => all.filter((r) => r.kind === 'book'), 'library.html?kind=book'],
+    ['Excel', () => all.filter((r) => r.category === 'excel'), 'library.html?category=excel'],
+    ['Word', () => all.filter((r) => r.category === 'word'), 'library.html?category=word'],
+    ['PowerPoint', () => all.filter((r) => ['powerpoint', 'presentations'].includes(r.category)), 'presentations.html'],
+    ['Study', () => all.filter((r) => r.category === 'study-skills' || r.tags?.includes('study')), 'library.html?category=study-skills'],
+    ['Business', () => all.filter((r) => r.category === 'business'), 'library.html?category=business'],
+    ['Tech', () => all.filter((r) => r.category === 'computer-science'), 'library.html?category=computer-science'],
+    ['Classics', () => all.filter((r) => r.category === 'general'), 'library.html?category=general'],
+  ];
+  const tabs = document.getElementById('m-tabs');
+  const rail = document.getElementById('m-rail');
+  tabs.innerHTML = TABS.map(([label], i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-tab="${i}">${label}</button>`).join('');
+  const showTab = (i) => {
+    const [label, pick, href] = TABS[i];
+    const list = pick().slice(0, 10);
+    rail.innerHTML = list.map(cardHTML).join('') + `<a class="m-more" href="${href}">See all ${e(label === 'All' ? 'resources' : label)} ${icons.chevron}</a>`;
+    rail.scrollLeft = 0;
+    tabs.querySelectorAll('[role="tab"]').forEach((t) => t.setAttribute('aria-selected', String(Number(t.dataset.tab) === i)));
+  };
+  tabs.addEventListener('click', (ev) => { const t = ev.target.closest('[data-tab]'); if (t) showTab(Number(t.dataset.tab)); });
+  showTab(0);
+
+  // Continue exploring: real recently viewed items, or a starter list.
+  const recent = getRecent().map((x) => ({ r: all.find((a) => a.id === x.id), t: x.t })).filter((x) => x.r).slice(0, 3);
+  const rows = recent.length ? recent : ['omt-excel-essential-formulas', 'omt-word-student-cv', 'omt-study-methods'].map((id) => ({ r: all.find((a) => a.id === id) })).filter((x) => x.r);
+  if (!recent.length) document.getElementById('m-continue-h').textContent = 'Start here';
+  document.getElementById('m-continue').innerHTML = rows.map(({ r, t }) => `
+    <a class="m-row" href="${resourceUrl(r)}">
+      <span class="m-row__cover cover" style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
+      <span class="m-row__body">
+        <span class="m-row__tag">${t ? `${icons.clock.replace('<svg', '<svg width="12" height="12"')} Viewed ${timeAgo(t)}` : 'Start here'}</span>
+        <strong>${e(r.title)}</strong>
+        <span class="m-row__by">${e(r.author)}</span>
+        ${accessBadge(r.accessType)}
+      </span>
+      <span class="m-row__go">${icons.chevron}</span>
+    </a>`).join('');
+
+  // Free templates rail
+  document.getElementById('m-templates').innerHTML = all.filter((r) => r.accessType === 'omt' && r.downloadUrl).map(cardHTML).join('');
 }

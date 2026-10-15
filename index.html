@@ -31,7 +31,7 @@
   <header class="site-header" id="site-header"></header>
   <main id="main">
 
-    <section class="hero hero--dark">
+    <section class="hero hero--dark d-only">
       <div class="container hero__inner">
         <span class="hero__pill">Free digital library for students · Powered by AI</span>
         <h1>Knowledge at Your <span>Fingertips.</span></h1>
@@ -63,21 +63,21 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="cats-h">
+    <section class="section d-only" aria-labelledby="cats-h">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">Browse</span><h2 id="cats-h">Featured categories</h2><p>Pick a subject to see everything we have on it.</p></div></div>
         <div class="grid grid--cats" id="home-categories"></div>
       </div>
     </section>
 
-    <section class="section section--alt" aria-labelledby="feat-h">
+    <section class="section section--alt d-only" aria-labelledby="feat-h">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">Hand-picked</span><h2 id="feat-h">Featured resources</h2><p>Every resource is labelled with how you can access it: on OMT, free and open, from an official source, or buy or borrow.</p></div><a class="btn btn--secondary" href="library.html">See all</a></div>
         <div class="grid grid--cards grid--rail" id="home-featured" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="office-h">
+    <section class="section d-only" aria-labelledby="office-h">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">Master the tools you'll use every day</h2><p>Step-by-step guides, free templates and links to the best official tutorials.</p></div><a class="btn btn--primary" href="office.html">Explore Microsoft Office Resources</a></div>
         <div class="office-grid">
@@ -90,7 +90,47 @@
       </div>
     </section>
 
-    <section class="section section--tight" aria-labelledby="ai-h">
+    <section class="m-home m-only" aria-label="Home">
+      <div class="container">
+        <div class="m-greet">
+          <div><p class="m-greet__hi" id="m-greeting">Welcome 👋</p><h1 class="m-greet__title">What will you learn today?</h1></div>
+        </div>
+        <form class="m-search" action="library.html" method="get" role="search">
+          <label class="sr-only" for="m-q">Search books and resources</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="m-q" name="q" type="search" placeholder="Search books, Excel, CV…" autocomplete="off" maxlength="200" enterkeyhint="search">
+          <a class="m-search__btn" href="assistant.html" aria-label="Ask OMT AI instead"></a>
+        </form>
+
+        <div class="m-banner" id="m-banner" aria-label="Featured resources" aria-roledescription="carousel"></div>
+        <div class="m-dots" id="m-dots" aria-hidden="true"></div>
+
+        <div class="m-tabs" role="tablist" aria-label="Browse by topic" id="m-tabs"></div>
+        <div class="m-rail" id="m-rail" role="tabpanel" aria-live="polite"></div>
+
+        <div class="m-head"><h2 id="m-continue-h">Continue exploring</h2><a href="library.html?sort=newest">View all</a></div>
+        <div class="m-list" id="m-continue"></div>
+
+        <div class="m-head"><h2>Microsoft Office</h2><a href="office.html">View all</a></div>
+        <div class="m-apps">
+          <a href="office.html#word" style="--app:#2b579a"><b>W</b><span>Word</span></a>
+          <a href="office.html#excel" style="--app:#217346"><b>X</b><span>Excel</span></a>
+          <a href="office.html#powerpoint" style="--app:#c43e1c"><b>P</b><span>PowerPoint</span></a>
+          <a href="office.html#access" style="--app:#a4373a"><b>A</b><span>Access</span></a>
+          <a href="office.html#outlook" style="--app:#0f6cbd"><b>O</b><span>Outlook</span></a>
+        </div>
+
+        <div class="m-head"><h2>Free templates</h2><a href="library.html?kind=template&amp;access=omt">View all</a></div>
+        <div class="m-rail" id="m-templates"></div>
+
+        <a class="m-ai" href="assistant.html">
+          <span class="m-ai__icon"></span>
+          <span><strong>Can't find a book?</strong><span>Ask OMT AI to find it, explain it, or suggest free alternatives.</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section section--tight d-only" aria-labelledby="ai-h">
       <div class="container">
         <div class="ai-promo">
           <div>
@@ -117,7 +157,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="recent-h">
+    <section class="section d-only" aria-labelledby="recent-h">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">New</span><h2 id="recent-h">Recently added</h2></div><a class="btn btn--secondary" href="library.html?sort=newest">See newest</a></div>
         <div class="grid grid--cards grid--rail" id="home-recent" aria-live="polite"></div>

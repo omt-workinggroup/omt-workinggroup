@@ -37,10 +37,21 @@
         <p>Search books, guides, templates, tutorials and courses by title, author, topic or what you want to learn.</p>
         <form class="search search--lg search--stack" id="lib-search" role="search">
           <label class="sr-only" for="lib-q">Search the library</label>
-          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="lib-q" name="q" type="search" placeholder="Try “excel formulas”, “python for beginners” or “Achebe”" autocomplete="off" maxlength="200"></div>
+          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="lib-q" name="q" type="search" placeholder="Try “excel formulas” or “Achebe”" enterkeyhint="search" autocomplete="off" maxlength="200"></div>
           <button class="btn btn--primary" type="submit">Search</button>
+          <button class="search__filter m-only" type="button" id="open-filters" aria-label="Show filters" aria-controls="filters"></button>
         </form>
+        <div class="m-tabs m-only" role="tablist" aria-label="Quick filters" id="quick-tabs">
+          <button type="button" role="tab" data-quick="all">All results</button>
+          <button type="button" role="tab" data-quick="free">Free</button>
+          <button type="button" role="tab" data-quick="omt">On OMT</button>
+          <button type="button" role="tab" data-quick="book">Books</button>
+          <button type="button" role="tab" data-quick="template">Templates</button>
+          <button type="button" role="tab" data-quick="guide">Guides</button>
+          <button type="button" role="tab" data-quick="course">Courses</button>
+        </div>
       </div>
+      <div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
       <div class="library">
         <details class="filters" id="filters" open>
           <summary>Filters</summary>
@@ -50,7 +61,7 @@
             <fieldset class="filter-group"><legend>Access</legend><div id="f-access"></div></fieldset>
             <fieldset class="filter-group"><legend>Format</legend><div id="f-format"></div></fieldset>
             <div class="field"><label for="f-author">Author or provider</label><select class="select" id="f-author"><option value="">All authors</option></select></div>
-            <button type="button" class="btn btn--secondary" id="clear-filters">Clear filters</button>
+            <div class="filters__actions"><button type="button" class="btn btn--secondary" id="clear-filters">Clear filters</button><button type="button" class="btn btn--primary m-only" id="close-filters">Show results</button></div>
           </div>
         </details>
         <section aria-labelledby="results-h">
