@@ -50,6 +50,8 @@ for (const width of WIDTHS) {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     check(overflow <= 0, `${p} @${width}px: horizontal overflow of ${overflow}px`);
     check((await page.locator('h1').count()) === 1, `${p} @${width}px: expected exactly one h1`);
+    const headerRight = await page.evaluate(() => document.querySelector('.header-actions')?.getBoundingClientRect().right ?? 0);
+    check(headerRight <= width, `${p} @${width}px: header buttons cut off (${headerRight}px)`);
   }
   check(page.errors.length === 0, `@${width}px console errors: ${page.errors.join(' | ')}`);
   await page.context().close();

@@ -13,8 +13,9 @@ const NAV = [
   { href: 'about.html', label: 'About', page: 'about' },
 ];
 
-const LOGO = `<img class="brand__mark" src="assets/logo-mark.svg" alt="" width="36" height="36">
-  <span class="brand__word"><strong>OMT</strong><span>WORKING GROUP</span></span>`;
+const MARK = '<img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39">';
+const LOGO = `${MARK}<span class="brand__word"><span>Operations Maintenance</span><span>and Training Working Group</span></span>`;
+const LOGO_FULL = `${MARK}<span class="brand__word"><span>Operations</span><span>Maintenance</span><span>and Training</span><span>Working Group</span></span>`;
 
 function navList(current) {
   return `<ul>${NAV.map((n) => `<li><a href="${n.href}"${n.page === current ? ' aria-current="page"' : ''}>${n.label}</a></li>`).join('')}</ul>`;
@@ -57,8 +58,8 @@ function footerHTML() {
   return `<div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="index.html" aria-label="OMT WORKING GROUP home">${LOGO}</a>
-        <p>A free digital library and learning platform for students: books, Microsoft Office skills, presentation resources, and an AI study assistant.</p>
+        <a class="brand brand--full" href="index.html" aria-label="OMT WORKING GROUP home">${LOGO_FULL}</a>
+        <p>OMT (Operations Maintenance and Training) Working Group: a free digital library and learning platform for students, with books, Microsoft Office skills, presentation resources and an AI study assistant.</p>
       </div>
       <div><h2>Explore</h2><ul>
         <li><a href="library.html">Explore Library</a></li>
@@ -119,7 +120,7 @@ function setupDrawer() {
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
-  window.matchMedia('(min-width: 1100px)').addEventListener('change', (m) => { if (m.matches && !drawer.hidden) close(); });
+  window.matchMedia('(min-width: 1200px)').addEventListener('change', (m) => { if (m.matches && !drawer.hidden) close(); });
 }
 
 function setupHeaderSearch() {
