@@ -554,6 +554,8 @@ main { flex: 1; }
 @media (min-width: 768px) { .m-only { display: none !important; } }
 .tabbar, .sheet-backdrop { display: none; }
 .cover__poster { display: none; }
+.cover__photo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: calc(100% - 28px); aspect-ratio: 2 / 3; object-fit: cover; border-radius: 3px 8px 8px 3px; box-shadow: 0 8px 18px rgba(0,0,0,.3); background: #fff; }
+.cover.has-photo .cover__book { visibility: hidden; }
 
 @media (max-width: 767px) {
   :root { --tabbar-h: 68px; --radius: 16px; }
@@ -603,7 +605,10 @@ main { flex: 1; }
   .poster__kind { font-size: .58rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
   .poster__title { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(.85rem, 9cqw, 1.15rem); line-height: 1.12; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; text-wrap: balance; }
   .poster__author { font-size: .62rem; opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .cover > :not(.cover__poster) { display: none; }
+  .cover > :not(.cover__poster):not(.cover__photo) { display: none; }
+  .cover__photo { inset: 0 !important; left: 0 !important; top: 0 !important; transform: none !important; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; border-radius: 0 !important; box-shadow: none !important; }
+  .cover.has-photo .cover__poster { display: none; }
+  .poster__app { width: 30px; height: 30px; margin-bottom: 6px; padding: 3px; border-radius: 9px; background: rgba(255,255,255,.95); box-shadow: 0 4px 10px rgba(0,0,0,.2); }
   .cover { padding: 0; }
 
   /* ---------- Cards become book tiles (white card, cover, chip, heart) ---------- */
@@ -767,4 +772,13 @@ main { flex: 1; }
 
 @media (max-width: 767px) and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .card__meta .badge, :root:not([data-theme="light"]) .fav-btn { background: rgba(19, 28, 42, .92); }
+}
+
+/* Office file-type icons */
+.office-tile__icon { width: 52px; height: 52px; }
+.cat-card__app { flex: none; width: 42px; height: 42px; }
+@media (max-width: 767px) {
+  .m-apps b { background: var(--surface); border: 1px solid var(--border); box-shadow: 0 6px 16px rgba(13, 27, 62, .08); }
+  .m-apps b img { width: 72%; height: 72%; }
+  .app-section__head .office-tile__icon { width: 44px; height: 44px; }
 }

@@ -41,14 +41,16 @@ export function coverHTML(r) {
   } else {
     inner = `<div class="cover__win"><div class="cover__bar"><i></i><i></i><i></i></div><b>${e(r.title)}</b><div class="cover__line"></div><div class="cover__line cover__line--s"></div></div>`;
   }
-  return `<div class="cover cover--${type}" style="${style}" aria-hidden="true">${inner}<span class="cover__label">${label}</span>${posterHTML(r)}</div>`;
+  const book = r.kind === 'book' ? ` data-book="${e(r.id)}"` : '';
+  return `<div class="cover cover--${type}"${book} style="${style}" aria-hidden="true">${inner}<span class="cover__label">${label}</span>${posterHTML(r)}</div>`;
 }
 
 /** Full-bleed, book-style poster. Shown instead of the mock-up on small screens. */
 export function posterHTML(r) {
   const cat = CATEGORIES[r.category];
   const mark = cat?.office ? `<span class="poster__mark">${e(cat.short)}</span>` : '';
-  return `<div class="cover__poster poster--${e(r.kind)}">${mark}<span class="poster__kind">${e(KINDS[r.kind] ?? 'Resource')}</span><span class="poster__title">${e(r.title)}</span><span class="poster__author">${e(r.author)}</span></div>`;
+  const app = cat?.office ? `<img class="poster__app" src="assets/icons/apps/${r.category}.svg" alt="" width="30" height="30">` : '';
+  return `<div class="cover__poster poster--${e(r.kind)}">${mark}${app}<span class="poster__kind">${e(KINDS[r.kind] ?? 'Resource')}</span><span class="poster__title">${e(r.title)}</span><span class="poster__author">${e(r.author)}</span></div>`;
 }
 
 export function accessBadge(type) {

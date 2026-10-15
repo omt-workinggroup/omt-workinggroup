@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { watchCovers } from '../core/covers.js';
 import { loadCatalog } from '../core/catalog.js';
 import { searchCatalog } from '../core/search.js';
 import { ACCESS, CATEGORIES, KINDS } from '../core/taxonomy.js';
@@ -268,6 +269,7 @@ els.sort.value = state.sort;
 els.results.innerHTML = skeletons(6);
 try {
   catalog = await loadCatalog();
+  watchCovers(document.getElementById('main'), catalog);
   renderFacets();
   render();
 } catch (err) {

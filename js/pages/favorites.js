@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { watchCovers } from '../core/covers.js';
 import { loadCatalog } from '../core/catalog.js';
 import { clearFavorites, getFavorites, onFavoritesChange } from '../core/favorites.js';
 import { renderCards, skeletons, stateHTML } from '../core/render.js';
@@ -35,6 +36,7 @@ clearBtn.addEventListener('click', () => {
 
 try {
   catalog = await loadCatalog();
+  watchCovers(document.getElementById('main'), catalog);
   render();
   onFavoritesChange(render);
 } catch (err) {

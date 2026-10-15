@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { watchCovers } from '../core/covers.js';
 import { loadCatalog } from '../core/catalog.js';
 import { relatedResources } from '../core/search.js';
 import { ACCESS, CATEGORIES, KINDS, LEVELS, OFFICE_APPS, categoryLabel } from '../core/taxonomy.js';
@@ -133,6 +134,7 @@ if (!id) {
 } else {
   try {
     const all = await loadCatalog();
+    watchCovers(document.getElementById('main'), all);
     const r = all.find((x) => x.id === id);
     if (r) { render(r, all); recordView(r.id); }
     else notFound('This resource may have been removed or the link is incorrect.');

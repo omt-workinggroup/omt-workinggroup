@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { watchCovers } from '../core/covers.js';
 import { loadCatalog } from '../core/catalog.js';
 import { cardHTML, skeletons, stateHTML } from '../core/render.js';
 
@@ -28,7 +29,9 @@ filter.addEventListener('click', (event) => {
 
 try {
   const ORDER = { template: 0, guide: 1, tutorial: 2 };
-  items = (await loadCatalog()).filter(isPresentation).sort((a, b) => (ORDER[a.kind] ?? 3) - (ORDER[b.kind] ?? 3));
+  const all = await loadCatalog();
+  watchCovers(document.getElementById('main'), all);
+  items = all.filter(isPresentation).sort((a, b) => (ORDER[a.kind] ?? 3) - (ORDER[b.kind] ?? 3));
   render('');
 } catch (err) {
   results.innerHTML = stateHTML({ title: 'Resources couldn\'t load', text: err.message, error: true });

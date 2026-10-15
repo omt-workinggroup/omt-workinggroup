@@ -4,6 +4,7 @@ import { CATEGORIES } from '../core/taxonomy.js';
 import { icons } from '../core/icons.js';
 import { renderCards, skeletons, stateHTML, cardHTML, posterHTML, accessBadge, resourceUrl } from '../core/render.js';
 import { getRecent, timeAgo } from '../core/recent.js';
+import { watchCovers } from '../core/covers.js';
 import { escapeHtml as e } from '../core/util.js';
 
 initLayout();
@@ -30,11 +31,11 @@ form.addEventListener('submit', (event) => {
 const HOME_CATEGORIES = [
   { label: 'Books and eBooks', href: 'library.html?kind=book', short: 'BK', color: '#0f2a4a', icon: 'book', description: 'Free textbooks, classics and recommended reads.' },
   ...['word', 'excel', 'powerpoint', 'access', 'outlook', 'presentations', 'study-skills', 'computer-science', 'business', 'productivity', 'general']
-    .map((slug) => ({ ...CATEGORIES[slug], href: `library.html?category=${slug}` })),
+    .map((slug) => ({ ...CATEGORIES[slug], slug, href: `library.html?category=${slug}` })),
 ];
 document.getElementById('home-categories').innerHTML = HOME_CATEGORIES.map((c) => `
   <a class="cat-card" href="${c.href}">
-    <span class="cat-card__icon" style="background:${c.color}" aria-hidden="true">${c.icon ? icons[c.icon] : e(c.short)}</span>
+    ${c.office ? `<img class="cat-card__app" src="assets/icons/apps/${c.slug}.svg" alt="" width="42" height="42">` : `<span class="cat-card__icon" style="background:${c.color}" aria-hidden="true">${c.icon ? icons[c.icon] : e(c.short)}</span>`}
     <span><h3>${e(c.label)}</h3><p>${e(c.description)}</p></span>
   </a>`).join('');
 
@@ -59,6 +60,7 @@ try {
   renderCards(featured, all.filter((r) => r.featured).slice(0, 8));
   renderCards(recent, [...all].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '')).slice(0, 4));
   renderMobile(all);
+  watchCovers(document.getElementById('main'), all);
 } catch (err) {
   document.getElementById('m-rail').innerHTML = stateHTML({ title: 'Resources unavailable', text: err.message, error: true });
   featured.innerHTML = stateHTML({ title: 'Resources unavailable', text: err.message, error: true, action: '<button type="button" class="btn btn--secondary" id="retry">Try again</button>' });
@@ -86,7 +88,7 @@ function renderMobile(all) {
         <span class="m-banner__by">${e(r.author)}${/^\d{4}$/.test(r.year) ? ` (${e(r.year)})` : ''}</span>
         <span class="m-banner__more">Read more ${icons.chevron.replace('<svg', '<svg width="14" height="14"')}</span>
       </span>
-      <span class="m-banner__cover cover" style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
+      <span class="m-banner__cover cover"${r.kind === 'book' ? ` data-book="${e(r.id)}"` : ''} style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
     </a>`).join('');
   dots.innerHTML = picks.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('');
   banner.addEventListener('scroll', () => {
@@ -125,7 +127,7 @@ function renderMobile(all) {
   if (!recent.length) document.getElementById('m-continue-h').textContent = 'Start here';
   document.getElementById('m-continue').innerHTML = rows.map(({ r, t }) => `
     <a class="m-row" href="${resourceUrl(r)}">
-      <span class="m-row__cover cover" style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
+      <span class="m-row__cover cover"${r.kind === 'book' ? ` data-book="${e(r.id)}"` : ''} style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
       <span class="m-row__body">
         <span class="m-row__tag">${t ? `${icons.clock.replace('<svg', '<svg width="12" height="12"')} Viewed ${timeAgo(t)}` : 'Start here'}</span>
         <strong>${e(r.title)}</strong>
