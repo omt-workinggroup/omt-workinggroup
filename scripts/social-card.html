@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;overflow:hidden;font-family:"Segoe UI",Inter,Roboto,Arial,sans-serif;background:#0b1736;color:#e7f3ef;position:relative}
+.bg{position:absolute;inset:0;background:radial-gradient(520px 360px at 8% 0%,rgba(11,191,163,.38),transparent 70%),radial-gradient(520px 360px at 100% 30%,rgba(52,180,194,.30),transparent 70%),radial-gradient(700px 300px at 40% 120%,rgba(8,162,116,.35),transparent 70%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 90% 80% at 30% 20%,#000 30%,transparent 80%)}
+.wrap{position:relative;display:flex;gap:44px;padding:56px 64px;height:100%}
+.left{flex:1.15;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{width:92px}
+.brand .rule{width:3px;height:64px;background:#3a5288}
+.brand .name{font-weight:800;font-size:17px;line-height:1.15;letter-spacing:.03em;color:#c9d4e4;text-transform:uppercase}
+h1{font-size:60px;line-height:1.02;font-weight:850;letter-spacing:-.025em;color:#fff;margin-top:34px}
+h1 span{background:linear-gradient(92deg,#3fe0b0,#34b4c2);-webkit-background-clip:text;color:transparent}
+ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+li{display:flex;align-items:center;gap:12px;font-size:23px;color:#dbe6f2}
+li b{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:rgba(63,224,176,.16);color:#3fe0b0;font-size:17px}
+.url{margin-top:auto;font-size:20px;color:#6ee7c3;font-weight:700;letter-spacing:.02em}
+.right{flex:1;display:flex;align-items:center}
+.win{width:100%;background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden;color:#19212d;transform:rotate(-2deg)}
+.bar{height:34px;background:#eef2f8;display:flex;align-items:center;gap:7px;padding-left:16px}
+.bar i{width:10px;height:10px;border-radius:50%;background:#c3cad5}
+.body{padding:18px}
+.search{display:flex;gap:8px}
+.search div{flex:1;border:1px solid #c9d1de;border-radius:10px;padding:10px 12px;font-size:14px;color:#556072}
+.search span{background:#067a55;color:#fff;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.c{border:1px solid #e1e6ee;border-radius:10px;overflow:hidden}
+.c .cv{height:62px}
+.c .t{padding:8px 10px;font-size:12.5px;font-weight:700;line-height:1.25}
+.c .b{display:inline-block;margin:0 10px 9px;font-size:10.5px;font-weight:700;border-radius:99px;padding:1px 8px}
+.chat{margin-top:12px;display:grid;gap:7px}
+.m{font-size:12.5px;padding:8px 11px;border-radius:12px;max-width:85%}
+.u{justify-self:end;background:#067a55;color:#fff}
+.a{background:#eef2f8}
+</style></head><body>
+<div class="bg"></div><div class="grid"></div>
+<div class="wrap">
+  <div class="left">
+    <div class="brand"><img src="../assets/logo-mark.svg" alt=""><div class="rule"></div><div class="name">Operations Maintenance<br>and Training<br>Working Group</div></div>
+    <h1>Knowledge at your <span>fingertips.</span></h1>
+    <ul>
+      <li><b>✓</b>Free books &amp; open textbooks</li>
+      <li><b>✓</b>Word, Excel &amp; PowerPoint guides</li>
+      <li><b>✓</b>Free CV, budget &amp; slide templates</li>
+      <li><b>✓</b>OMT AI study assistant</li>
+    </ul>
+    <div class="url">Free digital library for students</div>
+  </div>
+  <div class="right"><div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="body">
+    <div class="search"><div>Search books, Excel, PowerPoint…</div><span>Search</span></div>
+    <div class="cards">
+      <div class="c"><div class="cv" style="background:#217346"></div><div class="t">VLOOKUP and XLOOKUP for Beginners</div><span class="b" style="background:#e2f4ec;color:#067a55">On OMT</span></div>
+      <div class="c"><div class="cv" style="background:#3b4cca"></div><div class="t">Introduction to Python Programming</div><span class="b" style="background:#e3f4ec;color:#0b7a4b">Free &amp; open</span></div>
+    </div>
+    <div class="chat"><div class="m u">Explain VLOOKUP like I'm a beginner</div><div class="m a"><b>VLOOKUP</b> finds a value in the first column of a table and returns data from the same row…</div></div>
+  </div></div></div>
+</div>
+</body></html>

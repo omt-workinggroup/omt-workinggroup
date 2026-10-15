@@ -12,9 +12,17 @@
   <meta property="og:description" content="A free digital library for students: find books, learn Word, Excel and PowerPoint, download templates, and ask an AI assistant for help finding resources.">
   <meta property="og:url" content="https://omt-working-group.netlify.app/">
   <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OMT Working Group: free books, Word, Excel and PowerPoint guides, free templates and an AI study assistant">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0f2a4a">
+  <meta name="twitter:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="apple-mobile-web-app-title" content="OMT Library">
+  <meta name="theme-color" content="#0b1736">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/pages/home.js"></script>
 </head>
@@ -23,9 +31,9 @@
   <header class="site-header" id="site-header"></header>
   <main id="main">
 
-    <section class="hero">
+    <section class="hero hero--dark">
       <div class="container hero__inner">
-        <span class="eyebrow">Free digital library for students</span>
+        <span class="hero__pill">Free digital library for students · Powered by AI</span>
         <h1>Knowledge at Your <span>Fingertips.</span></h1>
         <p class="hero__lead">Discover books, master Microsoft Office, explore presentation resources, and use AI to find the knowledge you need.</p>
         <form class="search search--lg search--stack hero__search" id="home-search" action="library.html" method="get" role="search">
@@ -45,7 +53,13 @@
             <li><a class="chip" href="library.html?category=study-skills">Study Resources</a></li>
           </ul>
         </div>
-        <div class="hero__cta"><a class="btn btn--secondary" href="library.html">Explore the Library</a></div>
+        <div class="hero__cta"><a class="btn btn--light" href="library.html">Explore the Library</a><a class="btn btn--outline-light" href="assistant.html">Ask OMT AI</a></div>
+        <dl class="hero__stats" id="hero-stats" aria-label="What's in the library">
+          <div><dt>Resources</dt><dd data-stat="total">–</dd></div>
+          <div><dt>Free to read or use</dt><dd data-stat="free">–</dd></div>
+          <div><dt>Original guides</dt><dd data-stat="guides">–</dd></div>
+          <div><dt>Free templates</dt><dd data-stat="templates">–</dd></div>
+        </dl>
       </div>
     </section>
 

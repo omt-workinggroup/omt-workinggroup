@@ -44,6 +44,17 @@ featured.innerHTML = skeletons(4);
 recent.innerHTML = skeletons(4);
 try {
   const all = await loadCatalog();
+  // Real counts from the catalogue, never hard-coded marketing numbers.
+  const stats = {
+    total: all.length,
+    free: all.filter((r) => r.accessType !== 'paid' && r.accessType !== 'info').length,
+    guides: all.filter((r) => r.accessType === 'omt' && r.kind === 'guide').length,
+    templates: all.filter((r) => r.accessType === 'omt' && r.downloadUrl).length,
+  };
+  for (const [key, value] of Object.entries(stats)) {
+    const el = document.querySelector(`[data-stat="${key}"]`);
+    if (el) el.textContent = String(value);
+  }
   renderCards(featured, all.filter((r) => r.featured).slice(0, 8));
   renderCards(recent, [...all].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '')).slice(0, 4));
 } catch (err) {

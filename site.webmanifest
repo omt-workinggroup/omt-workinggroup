@@ -1,0 +1,22 @@
+{
+  "name": "OMT Working Group: Digital Library and AI Study Help",
+  "short_name": "OMT Library",
+  "description": "Free books, Microsoft Office guides and templates, and an AI study assistant for students.",
+  "id": "/",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1736",
+  "theme_color": "#0b1736",
+  "categories": ["education", "books", "productivity"],
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Explore the Library", "url": "/library.html" },
+    { "name": "Ask OMT AI", "url": "/assistant.html" },
+    { "name": "Microsoft Office", "url": "/office.html" }
+  ]
+}
