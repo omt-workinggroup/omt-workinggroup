@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About OMT WORKING GROUP — Mission, Contact and Copyright</title>
   <meta name="description" content="Who we are, how resource access works, how to contact us, and how to report a copyright concern.">
-  <link rel="canonical" href="https://omt-working-group.netlify.app/about.html">
+  <link rel="canonical" href="https://omt-working-group.vercel.app/about.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
   <meta property="og:title" content="About OMT WORKING GROUP — Mission, Contact and Copyright">
   <meta property="og:description" content="Who we are, how resource access works, how to contact us, and how to report a copyright concern.">
-  <meta property="og:url" content="https://omt-working-group.netlify.app/about.html">
-  <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta property="og:url" content="https://omt-working-group.vercel.app/about.html">
+  <meta property="og:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="OMT Working Group: free books, Word, Excel and PowerPoint guides, free templates and an AI study assistant">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="twitter:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta name="apple-mobile-web-app-title" content="OMT Library">
   <meta name="theme-color" content="#0b1736">
   <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -54,8 +54,7 @@
 
       <h2 id="contact">Contact us</h2>
       <p>Questions, suggestions for resources, or found a broken link? Send us a message.</p>
-      <form class="form-card" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" action="about.html?sent=contact#contact">
-        <input type="hidden" name="form-name" value="contact">
+      <form class="form-card" data-kind="contact" novalidate>
         <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" name="name" autocomplete="name" required maxlength="100"></div>
         <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
@@ -67,14 +66,13 @@
 
       <h2 id="copyright">Report a copyright concern</h2>
       <p>If you believe a resource on OMT WORKING GROUP infringes your rights, or that we link to an unauthorised copy, tell us. We review every report and remove material when appropriate, usually within 5 working days.</p>
-      <form class="form-card" name="copyright" method="POST" data-netlify="true" netlify-honeypot="company" action="about.html?sent=copyright#copyright">
-        <input type="hidden" name="form-name" value="copyright">
+      <form class="form-card" data-kind="copyright" novalidate>
         <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="field"><label for="r-name">Your name and organisation</label><input class="input" id="r-name" name="name" required maxlength="200"></div>
         <div class="field"><label for="r-email">Email</label><input class="input" id="r-email" name="email" type="email" required maxlength="200"></div>
         <div class="field"><label for="r-url">Page or resource on OMT</label><input class="input" id="r-url" name="resource" required maxlength="500" placeholder="e.g. resource.html?id=…"></div>
-        <div class="field"><label for="r-work">The work you own and why this is a concern</label><textarea class="textarea" id="r-work" name="details" required maxlength="4000"></textarea></div>
-        <label class="check"><input type="checkbox" name="good_faith" required> I confirm that the information in this report is accurate and that I am the rights holder or authorised to act for them.</label>
+        <div class="field"><label for="r-work">The work you own and why this is a concern</label><textarea class="textarea" id="r-work" name="message" required maxlength="4000"></textarea></div>
+        <label class="check"><input type="checkbox" name="goodFaith" required> I confirm that the information in this report is accurate and that I am the rights holder or authorised to act for them.</label>
         <div><button class="btn btn--primary" type="submit">Submit report</button></div>
         <p class="small muted form-status" data-form="copyright" role="status"></p>
       </form>

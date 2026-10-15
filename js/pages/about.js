@@ -2,20 +2,34 @@ import { initLayout } from '../core/layout.js';
 
 initLayout();
 
-// Submissions are handled by Netlify Forms on the deployed site (see README).
-const sent = new URLSearchParams(location.search).get('sent');
-if (sent) {
-  const status = document.querySelector(`.form-status[data-form="${CSS.escape(sent)}"]`);
-  if (status) status.textContent = 'Thank you, your message was sent. We will reply by email.';
-}
+// Pre-select a topic when linked from elsewhere, e.g. about.html?topic=broken#contact
+const topic = new URLSearchParams(location.search).get('topic');
+if (topic === 'broken') document.getElementById('c-topic').value = 'Broken link';
 
-// A local copy has no form handler, so say so instead of posting into the void.
-const isLocal = location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(location.hostname);
-document.querySelectorAll('form[data-netlify]').forEach((form) => {
-  form.addEventListener('submit', (event) => {
-    if (!isLocal) return;
+// Forms post JSON to /api/contact, which stores them in Supabase.
+document.querySelectorAll('form[data-kind]').forEach((form) => {
+  const status = form.querySelector('.form-status');
+  const button = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    form.querySelector('.form-status').textContent =
-      'This is a local copy, so nothing was sent. Forms work once the site is deployed on Netlify.';
+    if (!form.reportValidity()) return;
+    const data = Object.fromEntries(new FormData(form));
+    const payload = { ...data, kind: form.dataset.kind, goodFaith: data.goodFaith === 'on' };
+    button.disabled = true;
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const result = await res.json().catch(() => null);
+      if (res.ok && result?.ok) {
+        form.reset();
+        status.textContent = 'Thank you, your message was sent. We will reply by email.';
+      } else {
+        status.textContent = result?.error?.message ?? 'Your message couldn\'t be sent. Please try again in a moment.';
+      }
+    } catch {
+      status.textContent = navigator.onLine ? 'Your message couldn\'t be sent. Please try again in a moment.' : 'You appear to be offline. Please try again when you\'re connected.';
+    } finally {
+      button.disabled = false;
+    }
   });
 });

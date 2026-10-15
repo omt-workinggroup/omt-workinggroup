@@ -3,4 +3,4 @@ Allow: /
 Disallow: /favorites.html
 
 # Replace the domain below with your real domain before deploying.
-Sitemap: https://omt-working-group.netlify.app/sitemap.xml
+Sitemap: https://omt-working-group.vercel.app/sitemap.xml

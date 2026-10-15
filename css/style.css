@@ -606,29 +606,36 @@ main { flex: 1; }
   .cover > :not(.cover__poster) { display: none; }
   .cover { padding: 0; }
 
-  /* ---------- Cards become book tiles ---------- */
-  .grid--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
-  .card { border: 0; background: transparent; overflow: visible; box-shadow: none; }
-  .card:hover { transform: none; box-shadow: none; }
-  .card__cover { aspect-ratio: 3 / 4; border: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 20px rgba(13, 27, 62, .16); position: relative; }
-  .card__body { padding: 9px 2px 0; gap: 3px; }
-  .card__meta { position: absolute; top: 9px; left: 9px; z-index: 1; }
+  /* ---------- Cards become book tiles (white card, cover, chip, heart) ---------- */
+  .grid--cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .card { padding: 8px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 6px 18px rgba(13, 27, 62, .06); }
+  .card:hover { transform: none; box-shadow: 0 6px 18px rgba(13, 27, 62, .06); }
+  .card__cover { aspect-ratio: 3 / 4; border: 0; border-radius: 12px; overflow: hidden; position: relative; }
+  .card__body { padding: 9px 4px 3px; gap: 2px; }
+  .card__meta { position: absolute; top: 15px; left: 15px; z-index: 1; }
   .card__meta > span:not(.badge) { display: none; }
-  .card__meta .badge { background: rgba(255,255,255,.94); box-shadow: 0 2px 6px rgba(0,0,0,.12); font-size: .64rem; padding: 1px 8px; }
-  .card__title { font-size: .86rem; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .card__author { font-size: .74rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card__meta .badge { background: rgba(255,255,255,.95); box-shadow: 0 2px 6px rgba(0,0,0,.14); font-size: .6rem; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; padding: 2px 8px; }
+  .card__title { font-size: .84rem; font-weight: 750; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card__author { font-size: .72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .card__desc, .card__foot { display: none; }
-  .fav-btn { width: 32px; height: 32px; top: 8px; right: 8px; border: 0; background: rgba(255,255,255,.94); }
-  .fav-btn svg { width: 17px; height: 17px; }
+  .fav-btn { width: 30px; height: 30px; top: 14px; right: 14px; border: 0; background: rgba(255,255,255,.95); }
+  .fav-btn svg { width: 16px; height: 16px; }
   .grid--list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid--list .card { flex-direction: column; }
   .grid--list .card__cover { width: auto; aspect-ratio: 3 / 4; border-right: 0; }
   .view-toggle { display: none; }
 
+  /* Library screen: search first, tabs, grid (no big title) */
+  body[data-page="library"] .page-head { padding-top: 12px; }
+  body[data-page="library"] .page-head h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; }
+  body[data-page="library"] .toolbar .select { display: none; }
+  body[data-page="library"] .toolbar { margin: 4px 0 10px; }
+
   /* Horizontal rails */
   .grid--rail, .m-rail { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 41%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: -16px; padding: 4px 16px 14px; scroll-padding-inline: 16px; scrollbar-width: none; }
   .grid--rail::-webkit-scrollbar, .m-rail::-webkit-scrollbar, .m-tabs::-webkit-scrollbar, .m-banner::-webkit-scrollbar { display: none; }
   .grid--rail > *, .m-rail > * { scroll-snap-align: start; }
+  .m-rail .m-more, .grid--rail .m-more { align-self: start; }
   .m-more { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; aspect-ratio: 3 / 4; border-radius: 14px; border: 1.5px dashed var(--border-strong); color: var(--primary); font-weight: 700; font-size: .85rem; text-decoration: none; text-align: center; padding: 10px; }
   .m-more svg { width: 22px; height: 22px; }
 

@@ -2,7 +2,7 @@
 export const SITE = {
   name: 'OMT WORKING GROUP',
   tagline: 'Knowledge at your fingertips',
-  // Endpoint for the AI assistant. netlify.toml maps /api/ai to the serverless function.
+  // Endpoint for the AI assistant (the Vercel Function in api/ai.js).
   aiEndpoint: '/api/ai',
   catalogUrl: 'data/resources.json',
   pageSize: 12,

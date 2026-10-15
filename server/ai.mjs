@@ -1,4 +1,4 @@
-// OMT AI — serverless endpoint (Netlify Functions v2), served at /api/ai.
+// OMT AI — request handler. Served at /api/ai by api/ai.js (a Vercel Function).
 //
 //   GET  /api/ai  -> { configured: boolean }  (lets the page choose live or demo mode)
 //   POST /api/ai  -> { ok: true, mode: "live", reply, resources }
@@ -8,10 +8,11 @@
 // It never reaches the browser. See README.md, "Configure the AI assistant".
 
 import Anthropic from '@anthropic-ai/sdk';
-import catalogData from '../../data/resources.json' with { type: 'json' };
-import { searchCatalog } from '../../js/core/search.js';
-import { ACCESS, CATEGORIES } from '../../js/core/taxonomy.js';
-import { normalizeOpenLibraryDoc } from '../../js/core/openlibrary.js';
+import catalogData from '../data/resources.json' with { type: 'json' };
+import { searchCatalog } from '../js/core/search.js';
+import { ACCESS, CATEGORIES } from '../js/core/taxonomy.js';
+import { normalizeOpenLibraryDoc } from '../js/core/openlibrary.js';
+import { createRateLimiter, fail, json } from './http.mjs';
 
 const MODEL = process.env.OMT_AI_MODEL || 'claude-opus-5-5';
 const EFFORT = ['low', 'medium', 'high'].includes(process.env.OMT_AI_EFFORT) ? process.env.OMT_AI_EFFORT : 'low';
@@ -62,22 +63,7 @@ const OUTPUT_SCHEMA = {
 };
 
 // ---------- helpers ----------
-const json = (status, body, extraHeaders = {}) => new Response(JSON.stringify(body), {
-  status,
-  headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...extraHeaders },
-});
-const fail = (status, code, message, headers) => json(status, { ok: false, error: { code, message } }, headers);
-
-const hits = new Map();
-function rateLimited(key) {
-  const now = Date.now();
-  const recent = (hits.get(key) ?? []).filter((t) => now - t < RATE_LIMIT.windowMs);
-  if (recent.length >= RATE_LIMIT.max) { hits.set(key, recent); return true; }
-  recent.push(now);
-  hits.set(key, recent);
-  if (hits.size > 5000) hits.clear(); // keep memory bounded on long-lived instances
-  return false;
-}
+const rateLimited = createRateLimiter(RATE_LIMIT);
 
 export function validateBody(body) {
   if (!body || typeof body !== 'object') return 'Request body must be a JSON object.';
@@ -184,7 +170,7 @@ export function createHandler({ client, fetchImpl = fetch } = {}) {
     if (req.method !== 'POST') return fail(405, 'method_not_allowed', 'Use POST.', { Allow: 'GET, POST' });
     if (!apiKeyConfigured) return fail(503, 'not_configured', 'The AI assistant is not configured on this server.');
 
-    const ip = context.ip || req.headers.get('x-nf-client-connection-ip') || 'unknown';
+    const ip = context.ip || 'unknown';
     if (rateLimited(ip)) return fail(429, 'rate_limited', 'You are sending messages too quickly. Please wait a few minutes and try again.', { 'Retry-After': '120' });
 
     const raw = await req.text();
@@ -233,6 +219,3 @@ export function createHandler({ client, fetchImpl = fetch } = {}) {
   };
 }
 
-export default createHandler();
-
-export const config = { path: '/api/ai' };

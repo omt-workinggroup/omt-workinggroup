@@ -115,6 +115,8 @@ function render() {
 const QUICK = {
   all: { access: [], kind: [] },
   free: { access: ['omt', 'open', 'official'], kind: [] },
+  new: { access: [], kind: [], sort: 'newest' },
+  az: { access: [], kind: [], sort: 'title' },
   omt: { access: ['omt'], kind: [] },
   book: { access: [], kind: ['book'] },
   template: { access: [], kind: ['template'] },
@@ -124,7 +126,7 @@ const QUICK = {
 const quickTabs = document.getElementById('quick-tabs');
 function syncQuickTabs() {
   const same = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
-  const active = Object.entries(QUICK).find(([, q]) => same(q.access, state.access) && same(q.kind, state.kind))?.[0];
+  const active = Object.entries(QUICK).find(([, q]) => same(q.access, state.access) && same(q.kind, state.kind) && (q.sort ?? 'relevance') === state.sort)?.[0];
   quickTabs.querySelectorAll('[data-quick]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.quick === active)));
 }
 quickTabs.addEventListener('click', (event) => {
@@ -133,7 +135,10 @@ quickTabs.addEventListener('click', (event) => {
   const q = QUICK[b.dataset.quick];
   state.access = [...q.access];
   state.kind = [...q.kind];
+  state.sort = q.sort ?? 'relevance';
+  els.sort.value = state.sort;
   update();
+  b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
 });
 
 const mobile = window.matchMedia('(max-width: 767px)');

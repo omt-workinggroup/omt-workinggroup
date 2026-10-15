@@ -1,5 +1,5 @@
 // Shared catalogue search. Pure functions with no DOM access, so the browser
-// and the serverless AI function (netlify/functions/ai.mjs) use the same code.
+// and the serverless AI function (server/ai.mjs) use the same code.
 import { CATEGORIES } from './taxonomy.js';
 
 const STOPWORDS = new Set(`a an and are as at be but by can could do does for from get give go good great

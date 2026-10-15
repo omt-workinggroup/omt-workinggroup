@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createHandler, validateBody } from '../netlify/functions/ai.mjs';
+import { createHandler, validateBody } from '../server/ai.mjs';
 
 delete process.env.ANTHROPIC_API_KEY;
 const offlineFetch = async () => { throw new Error('offline'); };
