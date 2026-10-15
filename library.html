@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore the Library — OMT WORKING GROUP</title>
+  <meta name="description" content="Search and filter free books, Microsoft Office guides, templates, tutorials and courses by category, format, access type and author.">
+  <link rel="canonical" href="https://omt-working-group.netlify.app/library.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMT WORKING GROUP">
+  <meta property="og:title" content="Explore the Library — OMT WORKING GROUP">
+  <meta property="og:description" content="Search and filter free books, Microsoft Office guides, templates, tutorials and courses by category, format, access type and author.">
+  <meta property="og:url" content="https://omt-working-group.netlify.app/library.html">
+  <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f2a4a">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/library.js"></script>
+</head>
+<body data-page="library">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+
+    <div class="container">
+      <div class="page-head">
+        <h1>Explore the Library</h1>
+        <p>Search books, guides, templates, tutorials and courses by title, author, topic or what you want to learn.</p>
+        <form class="search search--lg search--stack" id="lib-search" role="search">
+          <label class="sr-only" for="lib-q">Search the library</label>
+          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="lib-q" name="q" type="search" placeholder="Try “excel formulas”, “python for beginners” or “Achebe”" autocomplete="off" maxlength="200"></div>
+          <button class="btn btn--primary" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="library">
+        <details class="filters" id="filters" open>
+          <summary>Filters</summary>
+          <div class="filters__body">
+            <fieldset class="filter-group"><legend>Category</legend><div id="f-category"></div></fieldset>
+            <fieldset class="filter-group"><legend>Type</legend><div id="f-kind"></div></fieldset>
+            <fieldset class="filter-group"><legend>Access</legend><div id="f-access"></div></fieldset>
+            <fieldset class="filter-group"><legend>Format</legend><div id="f-format"></div></fieldset>
+            <div class="field"><label for="f-author">Author or provider</label><select class="select" id="f-author"><option value="">All authors</option></select></div>
+            <button type="button" class="btn btn--secondary" id="clear-filters">Clear filters</button>
+          </div>
+        </details>
+        <section aria-labelledby="results-h">
+          <h2 class="sr-only" id="results-h">Results</h2>
+          <div class="toolbar">
+            <p class="muted" id="result-count" role="status" aria-live="polite">Loading…</p>
+            <div class="toolbar__left">
+              <label class="sr-only" for="sort">Sort by</label>
+              <select class="select" id="sort">
+                <option value="relevance">Sort: Relevance</option>
+                <option value="title">Sort: Title A–Z</option>
+                <option value="newest">Sort: Newest</option>
+              </select>
+              <div class="view-toggle" role="group" aria-label="Layout">
+                <button type="button" data-view="grid" aria-pressed="true" aria-label="Grid view"></button>
+                <button type="button" data-view="list" aria-pressed="false" aria-label="List view"></button>
+              </div>
+            </div>
+          </div>
+          <div class="active-filters" id="active-filters"></div>
+          <div class="grid grid--cards" id="results"></div>
+          <div class="load-more" id="load-more" hidden><button type="button" class="btn btn--secondary">Load more</button></div>
+          <section class="section--tight" id="beyond" hidden aria-labelledby="beyond-h">
+            <div class="notice" style="margin-top:28px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><div>
+              <h3 id="beyond-h" style="margin-bottom:4px">Search beyond our library</h3>
+              <p>Not what you need? Search Open Library's catalogue of millions of books, or describe what you're looking for to OMT AI.</p>
+              <p style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn btn--secondary btn--sm" id="ol-search">Search Open Library</button><a class="btn btn--ai btn--sm" id="ask-ai-link" href="assistant.html">Ask OMT AI</a></p>
+            </div></div>
+            <div id="ol-results" class="stack" style="margin-top:16px" aria-live="polite"></div>
+          </section>
+        </section>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+</body>
+</html>

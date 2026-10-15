@@ -1,0 +1,1390 @@
+{
+  "version": 1,
+  "updated": "2026-10-15",
+  "notes": "Starter catalogue. 'omt' resources are original OMT WORKING GROUP content. External records link to the official source; run `npm run check-links` before each deploy to confirm the links still work.",
+  "resources": [
+    {
+      "id": "omt-excel-lookup",
+      "title": "VLOOKUP and XLOOKUP for Beginners",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Learn to pull matching data from one table into another — step by step, with a worked example of a class marks sheet.",
+      "tags": [
+        "excel",
+        "formulas",
+        "vlookup",
+        "xlookup",
+        "lookup",
+        "spreadsheet",
+        "functions"
+      ],
+      "guide": "data/guides/omt-excel-lookup.html",
+      "featured": true,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "omt-excel-essential-formulas",
+      "title": "10 Excel Formulas Every Student Should Know",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "SUM, AVERAGE, COUNTIF, IF, ROUND and five more — what each one does, when to use it, and a copy-ready example.",
+      "tags": [
+        "excel",
+        "formulas",
+        "functions",
+        "sum",
+        "average",
+        "if",
+        "countif",
+        "spreadsheet",
+        "beginner"
+      ],
+      "guide": "data/guides/omt-excel-essential-formulas.html",
+      "featured": true,
+      "added": "2026-10-14"
+    },
+    {
+      "id": "omt-excel-student-budget",
+      "title": "Student Monthly Budget Spreadsheet",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "XLSX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "A ready-to-use Excel budget: enter your income and spending and the totals, balance and category breakdown update automatically.",
+      "tags": [
+        "excel",
+        "budget",
+        "template",
+        "money",
+        "finance",
+        "spreadsheet",
+        "student"
+      ],
+      "guide": "data/guides/omt-excel-student-budget.html",
+      "downloadUrl": "assets/downloads/omt-student-budget.xlsx",
+      "featured": true,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-excel-study-planner",
+      "title": "Study Planner and Grade Tracker",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "XLSX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Track assignments, deadlines and scores for each course. Weighted averages are calculated for you.",
+      "tags": [
+        "excel",
+        "planner",
+        "grades",
+        "gpa",
+        "study",
+        "template",
+        "student",
+        "tracker"
+      ],
+      "guide": "data/guides/omt-excel-study-planner.html",
+      "downloadUrl": "assets/downloads/omt-study-planner.xlsx",
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-word-student-cv",
+      "title": "Student CV Template and Writing Guide",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "word",
+      "level": "beginner",
+      "formats": [
+        "DOCX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "A clean one-page CV built with Word styles, plus a short guide to writing each section when you have little work experience.",
+      "tags": [
+        "word",
+        "cv",
+        "resume",
+        "résumé",
+        "template",
+        "job",
+        "internship",
+        "career"
+      ],
+      "guide": "data/guides/omt-word-student-cv.html",
+      "downloadUrl": "assets/downloads/omt-student-cv.docx",
+      "featured": true,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-word-academic-essay",
+      "title": "Format an Academic Essay in Word",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "word",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Headings, automatic table of contents, page numbers, line spacing and references — the formatting most assignments ask for.",
+      "tags": [
+        "word",
+        "essay",
+        "assignment",
+        "formatting",
+        "table of contents",
+        "styles",
+        "references",
+        "academic",
+        "report"
+      ],
+      "guide": "data/guides/omt-word-academic-essay.html",
+      "added": "2026-10-13"
+    },
+    {
+      "id": "omt-word-letter",
+      "title": "Formal Letter Template",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "word",
+      "level": "beginner",
+      "formats": [
+        "DOCX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "A formal letter layout for applications, requests and official correspondence, with guidance notes in each section.",
+      "tags": [
+        "word",
+        "letter",
+        "business letter",
+        "formal",
+        "application",
+        "template"
+      ],
+      "guide": "data/guides/omt-word-letter.html",
+      "downloadUrl": "assets/downloads/omt-formal-letter.docx",
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-ppt-academic",
+      "title": "Academic Presentation Template",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "presentations",
+      "level": "beginner",
+      "formats": [
+        "PPTX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "A 10-slide PowerPoint structure for seminars and class presentations: title, problem, method, findings, conclusion and references.",
+      "tags": [
+        "powerpoint",
+        "presentation",
+        "academic",
+        "seminar",
+        "template",
+        "slides",
+        "school",
+        "university"
+      ],
+      "guide": "data/guides/omt-ppt-academic.html",
+      "downloadUrl": "assets/downloads/omt-academic-presentation.pptx",
+      "featured": true,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-ppt-project-proposal",
+      "title": "Project Proposal Presentation Template",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "template",
+      "category": "presentations",
+      "level": "intermediate",
+      "formats": [
+        "PPTX"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Pitch a project to a lecturer, sponsor or panel: objectives, scope, timeline, budget and risks in a clear 9-slide flow.",
+      "tags": [
+        "powerpoint",
+        "project proposal",
+        "proposal",
+        "pitch",
+        "pitch deck",
+        "business",
+        "template",
+        "slides",
+        "presentation"
+      ],
+      "guide": "data/guides/omt-ppt-project-proposal.html",
+      "downloadUrl": "assets/downloads/omt-project-proposal.pptx",
+      "featured": true,
+      "added": "2026-10-15"
+    },
+    {
+      "id": "omt-ppt-design-principles",
+      "title": "Slide Design Principles for Clear Presentations",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "powerpoint",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "One idea per slide, readable text, honest charts and confident delivery — practical rules for better PowerPoint slides.",
+      "tags": [
+        "powerpoint",
+        "slide design",
+        "design",
+        "presentation",
+        "storytelling",
+        "public speaking",
+        "slides"
+      ],
+      "guide": "data/guides/omt-ppt-design-principles.html",
+      "added": "2026-10-12"
+    },
+    {
+      "id": "omt-access-basics",
+      "title": "Access Databases: Tables, Keys and Relationships",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "access",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Understand how a database differs from a spreadsheet, then design a simple student-records database with linked tables and a query.",
+      "tags": [
+        "access",
+        "database",
+        "tables",
+        "primary key",
+        "relationships",
+        "query",
+        "forms",
+        "reports"
+      ],
+      "guide": "data/guides/omt-access-basics.html",
+      "added": "2026-10-12"
+    },
+    {
+      "id": "omt-outlook-students",
+      "title": "Outlook for Students: Email Etiquette and Calendar",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "outlook",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Write professional emails to lecturers and employers, organise your inbox with folders and rules, and plan your week in Outlook Calendar.",
+      "tags": [
+        "outlook",
+        "email",
+        "etiquette",
+        "calendar",
+        "productivity",
+        "communication",
+        "inbox"
+      ],
+      "guide": "data/guides/omt-outlook-students.html",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "omt-study-methods",
+      "title": "Study Smarter: Evidence-Based Learning Techniques",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Retrieval practice, spaced repetition, interleaving and focused study sessions — what research supports and how to use it before exams.",
+      "tags": [
+        "study",
+        "exams",
+        "revision",
+        "memory",
+        "spaced repetition",
+        "active recall",
+        "pomodoro",
+        "learning"
+      ],
+      "guide": "data/guides/omt-study-methods.html",
+      "featured": true,
+      "added": "2026-10-11"
+    },
+    {
+      "id": "think-python-3e",
+      "title": "Think Python, 3rd Edition",
+      "author": "Allen B. Downey",
+      "publisher": "O'Reilly Media",
+      "year": "2024",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free online edition from the author (see the source for licence terms)",
+      "description": "A gentle introduction to programming in Python that teaches you to think like a computer scientist, with exercises in each chapter.",
+      "tags": [
+        "python",
+        "programming",
+        "coding",
+        "beginner",
+        "computer science",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://allendowney.github.io/ThinkPython/",
+      "readUrl": "https://allendowney.github.io/ThinkPython/",
+      "featured": true,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "automate-boring-stuff",
+      "title": "Automate the Boring Stuff with Python",
+      "author": "Al Sweigart",
+      "publisher": "No Starch Press",
+      "year": "First published 2015",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free to read online under a Creative Commons licence (print edition sold by the publisher)",
+      "description": "Practical Python for complete beginners: write small programs that rename files, edit spreadsheets, fill in forms and send emails.",
+      "tags": [
+        "python",
+        "programming",
+        "automation",
+        "excel",
+        "beginner",
+        "coding",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://automatetheboringstuff.com/",
+      "readUrl": "https://automatetheboringstuff.com/",
+      "added": "2026-10-10"
+    },
+    {
+      "id": "eloquent-javascript",
+      "title": "Eloquent JavaScript, 4th Edition",
+      "author": "Marijn Haverbeke",
+      "publisher": "No Starch Press",
+      "year": "2024",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "PDF",
+        "EPUB"
+      ],
+      "accessType": "open",
+      "license": "Free online edition from the author (see the source for licence terms)",
+      "description": "A modern introduction to programming through JavaScript, covering the language, the browser and Node.js, with interactive exercises.",
+      "tags": [
+        "javascript",
+        "programming",
+        "web development",
+        "coding",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://eloquentjavascript.net/",
+      "readUrl": "https://eloquentjavascript.net/",
+      "added": "2026-10-09"
+    },
+    {
+      "id": "openstax-intro-python",
+      "title": "Introduction to Python Programming",
+      "author": "Udayan Das, Aubrey Lawson, Chris Mayfield, Narges Norouzi",
+      "publisher": "OpenStax",
+      "year": "2024",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free, peer-reviewed textbook for a first course in Python programming, with examples and practice questions in every section.",
+      "tags": [
+        "python",
+        "programming",
+        "textbook",
+        "beginner",
+        "computer science",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/introduction-python-programming",
+      "readUrl": "https://openstax.org/details/books/introduction-python-programming",
+      "added": "2026-10-09"
+    },
+    {
+      "id": "openstax-intro-cs",
+      "title": "Introduction to Computer Science",
+      "author": "Jean-Claude Franchitti",
+      "publisher": "OpenStax",
+      "year": "2024",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free textbook surveying the field: algorithms, programming languages, computer systems, networks, databases and the role of computing in society.",
+      "tags": [
+        "computer science",
+        "algorithms",
+        "networks",
+        "databases",
+        "textbook",
+        "technology",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/introduction-computer-science",
+      "readUrl": "https://openstax.org/details/books/introduction-computer-science",
+      "added": "2026-10-08"
+    },
+    {
+      "id": "openstax-workplace-software",
+      "title": "Workplace Software and Skills",
+      "author": "OpenStax",
+      "publisher": "OpenStax",
+      "year": "2023",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free textbook on the office software used at work: documents, spreadsheets, presentations and collaboration tools, including Microsoft 365.",
+      "tags": [
+        "microsoft office",
+        "word",
+        "excel",
+        "powerpoint",
+        "productivity",
+        "workplace",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/workplace-software-skills",
+      "readUrl": "https://openstax.org/details/books/workplace-software-skills",
+      "featured": true,
+      "added": "2026-10-08"
+    },
+    {
+      "id": "openstax-intro-business",
+      "title": "Introduction to Business",
+      "author": "Lawrence J. Gitman, Carl McDaniel, Amit Shah, et al.",
+      "publisher": "OpenStax",
+      "year": "2018",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free introductory business textbook covering economics, ethics, management, marketing, finance and entrepreneurship.",
+      "tags": [
+        "business",
+        "management",
+        "marketing",
+        "finance",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/introduction-business",
+      "readUrl": "https://openstax.org/details/books/introduction-business",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "openstax-principles-management",
+      "title": "Principles of Management",
+      "author": "David S. Bright, Anastasia H. Cortes, et al.",
+      "publisher": "OpenStax",
+      "year": "2019",
+      "kind": "book",
+      "category": "business",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free textbook on how organisations are planned, led and controlled — leadership, motivation, strategy, teams and decision-making.",
+      "tags": [
+        "management",
+        "business",
+        "leadership",
+        "strategy",
+        "business management",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/principles-management",
+      "readUrl": "https://openstax.org/details/books/principles-management",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "openstax-entrepreneurship",
+      "title": "Entrepreneurship",
+      "author": "Michael Laverty, Chris Littel, et al.",
+      "publisher": "OpenStax",
+      "year": "2020",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free textbook on starting a venture: finding opportunities, testing ideas, business models, funding, and launching.",
+      "tags": [
+        "entrepreneurship",
+        "startup",
+        "business",
+        "business plan",
+        "innovation",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/entrepreneurship",
+      "readUrl": "https://openstax.org/details/books/entrepreneurship",
+      "featured": true,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "openstax-principles-economics",
+      "title": "Principles of Economics, 3rd Edition",
+      "author": "Steven A. Greenlaw, David Shapiro, Daniel MacDonald",
+      "publisher": "OpenStax",
+      "year": "2022",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free introductory textbook covering both microeconomics and macroeconomics, with real-world examples.",
+      "tags": [
+        "economics",
+        "microeconomics",
+        "macroeconomics",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/principles-economics-3e",
+      "readUrl": "https://openstax.org/details/books/principles-economics-3e",
+      "added": "2026-10-06"
+    },
+    {
+      "id": "openstax-college-success",
+      "title": "College Success",
+      "author": "Amy Baldwin",
+      "publisher": "OpenStax",
+      "year": "2020",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A free textbook for new students on time management, studying, note-taking, test-taking, wellbeing and planning a career.",
+      "tags": [
+        "study",
+        "study skills",
+        "time management",
+        "note taking",
+        "exams",
+        "university",
+        "textbook",
+        "openstax"
+      ],
+      "sourceName": "OpenStax",
+      "sourceUrl": "https://openstax.org/details/books/college-success",
+      "readUrl": "https://openstax.org/details/books/college-success",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "cs50x",
+      "title": "CS50x: Introduction to Computer Science",
+      "author": "David J. Malan",
+      "publisher": "Harvard University",
+      "year": "Updated yearly",
+      "kind": "course",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online course",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free to audit online (see the course site for licence terms)",
+      "description": "Harvard's free introduction to computer science and programming: C, Python, SQL, and web development, with problem sets.",
+      "tags": [
+        "computer science",
+        "programming",
+        "python",
+        "c",
+        "sql",
+        "course",
+        "video",
+        "harvard"
+      ],
+      "sourceName": "Harvard University",
+      "sourceUrl": "https://cs50.harvard.edu/x/",
+      "readUrl": "https://cs50.harvard.edu/x/",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "mit-6-0001",
+      "title": "Introduction to Computer Science and Programming in Python (6.0001)",
+      "author": "Ana Bell, Eric Grimson, John Guttag",
+      "publisher": "MIT OpenCourseWare",
+      "year": "2016",
+      "kind": "course",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online course",
+        "Video",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "CC BY-NC-SA 4.0",
+      "description": "MIT's introductory programming course: lecture videos, slides and problem sets teaching computation and problem-solving in Python.",
+      "tags": [
+        "python",
+        "programming",
+        "computer science",
+        "course",
+        "mit",
+        "video",
+        "lecture"
+      ],
+      "sourceName": "MIT OpenCourseWare",
+      "sourceUrl": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+      "readUrl": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "ms-word-help",
+      "title": "Microsoft Word Help and Learning",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "word",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Official Microsoft documentation",
+      "description": "Microsoft's official Word help centre: how-to articles and short videos on formatting, layout, tables, collaboration and more.",
+      "tags": [
+        "word",
+        "microsoft",
+        "official",
+        "tutorial",
+        "formatting",
+        "documents"
+      ],
+      "sourceName": "Microsoft Support",
+      "sourceUrl": "https://support.microsoft.com/en-us/word",
+      "readUrl": "https://support.microsoft.com/en-us/word",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "ms-excel-help",
+      "title": "Microsoft Excel Help and Learning",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Official Microsoft documentation",
+      "description": "Microsoft's official Excel help centre, including the full function reference, charts, PivotTables and data analysis guides.",
+      "tags": [
+        "excel",
+        "microsoft",
+        "official",
+        "tutorial",
+        "functions",
+        "formulas",
+        "charts",
+        "pivottable"
+      ],
+      "sourceName": "Microsoft Support",
+      "sourceUrl": "https://support.microsoft.com/en-us/excel",
+      "readUrl": "https://support.microsoft.com/en-us/excel",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "ms-powerpoint-help",
+      "title": "Microsoft PowerPoint Help and Learning",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "powerpoint",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Official Microsoft documentation",
+      "description": "Microsoft's official PowerPoint help centre: slide design, animations and transitions, presenting, and collaborating on decks.",
+      "tags": [
+        "powerpoint",
+        "microsoft",
+        "official",
+        "tutorial",
+        "animation",
+        "slides",
+        "presentation"
+      ],
+      "sourceName": "Microsoft Support",
+      "sourceUrl": "https://support.microsoft.com/en-us/powerpoint",
+      "readUrl": "https://support.microsoft.com/en-us/powerpoint",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "ms-access-help",
+      "title": "Microsoft Access Help and Learning",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "access",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Microsoft documentation",
+      "description": "Microsoft's official Access help centre: tables, queries, forms, reports and database design basics.",
+      "tags": [
+        "access",
+        "microsoft",
+        "official",
+        "database",
+        "queries",
+        "forms",
+        "reports",
+        "tutorial"
+      ],
+      "sourceName": "Microsoft Support",
+      "sourceUrl": "https://support.microsoft.com/en-us/access",
+      "readUrl": "https://support.microsoft.com/en-us/access",
+      "added": "2026-10-02"
+    },
+    {
+      "id": "ms-outlook-help",
+      "title": "Microsoft Outlook Help and Learning",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "outlook",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Microsoft documentation",
+      "description": "Microsoft's official Outlook help centre: email, calendar, contacts, rules and productivity features.",
+      "tags": [
+        "outlook",
+        "microsoft",
+        "official",
+        "email",
+        "calendar",
+        "tutorial"
+      ],
+      "sourceName": "Microsoft Support",
+      "sourceUrl": "https://support.microsoft.com/en-us/outlook",
+      "readUrl": "https://support.microsoft.com/en-us/outlook",
+      "added": "2026-10-02"
+    },
+    {
+      "id": "ms-create-templates",
+      "title": "Microsoft Create: Templates for Word, Excel and PowerPoint",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "template",
+      "category": "presentations",
+      "level": "beginner",
+      "formats": [
+        "DOCX",
+        "XLSX",
+        "PPTX"
+      ],
+      "accessType": "official",
+      "license": "Microsoft template terms (some templates require a Microsoft 365 subscription)",
+      "description": "Microsoft's official template gallery: presentations, résumés, calendars, budgets and more. Many are free; some are premium.",
+      "tags": [
+        "templates",
+        "powerpoint",
+        "word",
+        "excel",
+        "presentation templates",
+        "resume",
+        "official",
+        "microsoft"
+      ],
+      "sourceName": "Microsoft Create",
+      "sourceUrl": "https://create.microsoft.com/en-us/templates",
+      "readUrl": "https://create.microsoft.com/en-us/templates",
+      "added": "2026-10-01"
+    },
+    {
+      "id": "gcf-excel",
+      "title": "Excel Tutorials (GCFGlobal)",
+      "author": "GCFGlobal",
+      "publisher": "Goodwill Community Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "excel",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free to use online (see GCFGlobal terms)",
+      "description": "Free, beginner-friendly Excel lessons with screenshots, videos and practice files — from cell basics to formulas and charts.",
+      "tags": [
+        "excel",
+        "tutorial",
+        "beginner",
+        "free",
+        "formulas",
+        "charts",
+        "practice"
+      ],
+      "sourceName": "GCFGlobal",
+      "sourceUrl": "https://edu.gcfglobal.org/en/excel/",
+      "readUrl": "https://edu.gcfglobal.org/en/excel/",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "gcf-word",
+      "title": "Word Tutorials (GCFGlobal)",
+      "author": "GCFGlobal",
+      "publisher": "Goodwill Community Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "word",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free to use online (see GCFGlobal terms)",
+      "description": "Free step-by-step Word lessons: formatting text, page layout, tables, pictures, styles and reviewing documents.",
+      "tags": [
+        "word",
+        "tutorial",
+        "beginner",
+        "free",
+        "formatting",
+        "tables",
+        "page layout"
+      ],
+      "sourceName": "GCFGlobal",
+      "sourceUrl": "https://edu.gcfglobal.org/en/word/",
+      "readUrl": "https://edu.gcfglobal.org/en/word/",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "gcf-powerpoint",
+      "title": "PowerPoint Tutorials (GCFGlobal)",
+      "author": "GCFGlobal",
+      "publisher": "Goodwill Community Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "powerpoint",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free to use online (see GCFGlobal terms)",
+      "description": "Free PowerPoint lessons covering slides, themes, pictures, transitions, animations and presenting your slide show.",
+      "tags": [
+        "powerpoint",
+        "tutorial",
+        "beginner",
+        "free",
+        "animation",
+        "transitions",
+        "slides"
+      ],
+      "sourceName": "GCFGlobal",
+      "sourceUrl": "https://edu.gcfglobal.org/en/powerpoint/",
+      "readUrl": "https://edu.gcfglobal.org/en/powerpoint/",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "gcf-access",
+      "title": "Access Tutorials (GCFGlobal)",
+      "author": "GCFGlobal",
+      "publisher": "Goodwill Community Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "access",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Free to use online (see GCFGlobal terms)",
+      "description": "Free Access lessons with a practice database: tables, forms, queries, reports and designing your own database.",
+      "tags": [
+        "access",
+        "database",
+        "tutorial",
+        "beginner",
+        "free",
+        "queries",
+        "practice database"
+      ],
+      "sourceName": "GCFGlobal",
+      "sourceUrl": "https://edu.gcfglobal.org/en/access/",
+      "readUrl": "https://edu.gcfglobal.org/en/access/",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "gcf-outlook",
+      "title": "Outlook Tutorials (GCFGlobal)",
+      "author": "GCFGlobal",
+      "publisher": "Goodwill Community Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "outlook",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Free to use online (see GCFGlobal terms)",
+      "description": "Free Outlook lessons on sending and organising email, managing your calendar, and working with contacts and tasks.",
+      "tags": [
+        "outlook",
+        "email",
+        "calendar",
+        "tutorial",
+        "beginner",
+        "free"
+      ],
+      "sourceName": "GCFGlobal",
+      "sourceUrl": "https://edu.gcfglobal.org/en/outlook/",
+      "readUrl": "https://edu.gcfglobal.org/en/outlook/",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "gutenberg-wealth-of-nations",
+      "title": "An Inquiry into the Nature and Causes of the Wealth of Nations",
+      "author": "Adam Smith",
+      "publisher": "Project Gutenberg (first published 1776)",
+      "year": "1776",
+      "kind": "book",
+      "category": "business",
+      "level": "advanced",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The founding work of modern economics: the division of labour, markets, prices, trade and the role of government.",
+      "tags": [
+        "economics",
+        "classic",
+        "public domain",
+        "business",
+        "markets",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/3300",
+      "readUrl": "https://www.gutenberg.org/ebooks/3300",
+      "added": "2026-09-27"
+    },
+    {
+      "id": "gutenberg-art-of-war",
+      "title": "The Art of War",
+      "author": "Sun Tzu (translated by Lionel Giles)",
+      "publisher": "Project Gutenberg (Giles translation, 1910)",
+      "year": "1910",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The ancient Chinese treatise on strategy, widely read today for lessons on planning, leadership and competition.",
+      "tags": [
+        "strategy",
+        "classic",
+        "public domain",
+        "leadership",
+        "philosophy",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/132",
+      "readUrl": "https://www.gutenberg.org/ebooks/132",
+      "added": "2026-09-26"
+    },
+    {
+      "id": "gutenberg-meditations",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "publisher": "Project Gutenberg",
+      "year": "c. 180 CE",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The private reflections of a Roman emperor on Stoic philosophy: self-discipline, duty, and keeping calm under pressure.",
+      "tags": [
+        "philosophy",
+        "stoicism",
+        "classic",
+        "public domain",
+        "personal development",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2680",
+      "readUrl": "https://www.gutenberg.org/ebooks/2680",
+      "added": "2026-09-26"
+    },
+    {
+      "id": "gutenberg-pride-prejudice",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publisher": "Project Gutenberg (first published 1813)",
+      "year": "1813",
+      "kind": "book",
+      "category": "general",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Austen's classic novel of manners, following Elizabeth Bennet and Mr Darcy — often studied for its themes of class, marriage and first impressions.",
+      "tags": [
+        "fiction",
+        "novel",
+        "literature",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
+      "readUrl": "https://www.gutenberg.org/ebooks/1342",
+      "added": "2026-09-25"
+    },
+    {
+      "id": "gutenberg-franklin-autobiography",
+      "title": "The Autobiography of Benjamin Franklin",
+      "author": "Benjamin Franklin",
+      "publisher": "Project Gutenberg",
+      "year": "1791",
+      "kind": "book",
+      "category": "general",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Franklin's own account of his life as a printer, writer, inventor and statesman, including his famous plan for self-improvement.",
+      "tags": [
+        "autobiography",
+        "history",
+        "classic",
+        "public domain",
+        "personal development",
+        "non-fiction",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/20203",
+      "readUrl": "https://www.gutenberg.org/ebooks/20203",
+      "added": "2026-09-25"
+    },
+    {
+      "id": "things-fall-apart",
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "publisher": "Heinemann (first published 1958)",
+      "year": "1958",
+      "kind": "book",
+      "category": "general",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Achebe's landmark novel about Okonkwo, an Igbo leader, and the impact of colonialism on his community. Widely studied in schools.",
+      "tags": [
+        "fiction",
+        "novel",
+        "african literature",
+        "literature",
+        "nigeria",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Things+Fall+Apart+Chinua+Achebe",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "atomic-habits",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "publisher": "Avery",
+      "year": "2018",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook",
+        "Audiobook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A practical book on building good habits and breaking bad ones through small, consistent changes.",
+      "tags": [
+        "habits",
+        "productivity",
+        "personal development",
+        "self-improvement",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Atomic+Habits+James+Clear",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "deep-work",
+      "title": "Deep Work",
+      "author": "Cal Newport",
+      "publisher": "Grand Central Publishing",
+      "year": "2016",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook",
+        "Audiobook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Newport argues that the ability to focus without distraction is increasingly valuable, and offers rules for training it.",
+      "tags": [
+        "focus",
+        "productivity",
+        "study",
+        "concentration",
+        "personal development",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Deep+Work+Cal+Newport",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "lean-startup",
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "publisher": "Crown Business",
+      "year": "2011",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook",
+        "Audiobook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A method for building new businesses by testing ideas quickly with a minimum viable product and learning from customers.",
+      "tags": [
+        "startup",
+        "entrepreneurship",
+        "business",
+        "innovation",
+        "mvp",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Lean+Startup+Eric+Ries",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "clean-code",
+      "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "author": "Robert C. Martin",
+      "publisher": "Prentice Hall",
+      "year": "2008",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Principles and practices for writing code that is readable and easy to maintain: naming, functions, comments, and refactoring.",
+      "tags": [
+        "programming",
+        "software engineering",
+        "coding",
+        "best practices",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Clean+Code+Robert+C.+Martin",
+      "added": "2026-09-22"
+    }
+  ]
+}

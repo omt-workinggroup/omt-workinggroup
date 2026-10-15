@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMT AI Assistant — Find Books and Learn Faster</title>
+  <meta name="description" content="Ask OMT AI to find books and learning resources, get an overview of a resource, or explain Excel, Word and study concepts step by step.">
+  <link rel="canonical" href="https://omt-working-group.netlify.app/assistant.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMT WORKING GROUP">
+  <meta property="og:title" content="OMT AI Assistant — Find Books and Learn Faster">
+  <meta property="og:description" content="Ask OMT AI to find books and learning resources, get an overview of a resource, or explain Excel, Word and study concepts step by step.">
+  <meta property="og:url" content="https://omt-working-group.netlify.app/assistant.html">
+  <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f2a4a">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/assistant.js"></script>
+</head>
+<body data-page="assistant">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+
+    <div class="container">
+      <div class="page-head" style="padding-bottom:0">
+        <h1>OMT AI Assistant</h1>
+        <p>Find books and resources, get an overview of a resource, or have a difficult concept explained step by step.</p>
+      </div>
+      <div class="assistant">
+        <section class="chat" aria-label="Chat with OMT AI">
+          <div class="chat__head">
+            <div class="chat__title"><img src="assets/logo-mark.svg" alt="" width="30" height="30"><span>OMT AI</span><span class="badge badge--info" id="ai-mode">Checking…</span></div>
+            <button type="button" class="btn btn--ghost btn--sm" id="clear-chat">Clear conversation</button>
+          </div>
+          <div id="context-slot"></div>
+          <div class="chat__log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+          <div class="chat__suggest"><p class="sr-only">Suggested prompts</p><ul class="chips" id="suggestions"></ul></div>
+          <form class="chat__form" id="chat-form">
+            <label class="sr-only" for="chat-input">Message OMT AI</label>
+            <textarea class="textarea" id="chat-input" rows="1" maxlength="2000" placeholder="Ask about a book, topic or Office skill…" required></textarea>
+            <button class="btn btn--primary" type="submit" id="send-btn"><span class="sr-only">Send</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 20 4l-6 16-3-7z"/><path d="m11 13 9-9"/></svg></button>
+          </form>
+          <p class="chat__hint">Press Enter to send, Shift + Enter for a new line. AI can make mistakes, so check important facts with the source.</p>
+        </section>
+        <aside class="stack">
+          <div class="side-card"><h2>What OMT AI can do</h2><ul>
+            <li><strong>Find a book</strong>: tell it your subject and level.</li>
+            <li><strong>Explain a resource</strong>: open a resource and choose “Ask AI about this”.</li>
+            <li><strong>Summarize</strong>: get an overview based on the information we have.</li>
+            <li><strong>Explain concepts</strong>: Excel formulas, Word features, study skills and more.</li></ul></div>
+          <div class="side-card"><h2>Good to know</h2><ul>
+            <li>It recommends resources from our library and Open Library's records.</li>
+            <li>It won't provide copies of copyrighted books. It points you to legal options instead.</li>
+            <li>Your conversation stays in this browser tab and is cleared when you close it.</li></ul></div>
+        </aside>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+</body>
+</html>

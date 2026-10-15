@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMT WORKING GROUP — Free Books, Microsoft Office Guides and AI Study Help</title>
+  <meta name="description" content="A free digital library for students: find books, learn Word, Excel and PowerPoint, download templates, and ask an AI assistant for help finding resources.">
+  <link rel="canonical" href="https://omt-working-group.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMT WORKING GROUP">
+  <meta property="og:title" content="OMT WORKING GROUP — Free Books, Microsoft Office Guides and AI Study Help">
+  <meta property="og:description" content="A free digital library for students: find books, learn Word, Excel and PowerPoint, download templates, and ask an AI assistant for help finding resources.">
+  <meta property="og:url" content="https://omt-working-group.netlify.app/">
+  <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f2a4a">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/home.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+
+    <section class="hero">
+      <div class="container hero__inner">
+        <span class="eyebrow">Free digital library for students</span>
+        <h1>Knowledge at Your <span>Fingertips.</span></h1>
+        <p class="hero__lead">Discover books, master Microsoft Office, explore presentation resources, and use AI to find the knowledge you need.</p>
+        <form class="search search--lg search--stack hero__search" id="home-search" action="library.html" method="get" role="search">
+          <label class="sr-only" for="home-q">Search books, topics and resources</label>
+          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="home-q" name="q" type="search" placeholder="Search books, topics, presentations, Word, Excel…" autocomplete="off" maxlength="200"></div>
+          <button class="btn btn--primary" type="submit">Search</button>
+        </form>
+        <label class="hero__ai-toggle"><input type="checkbox" id="home-ai"> Ask OMT AI instead (describe what you need in your own words)</label>
+        <div class="hero__suggest">
+          <p class="sr-only">Suggested searches</p>
+          <ul class="chips">
+            <li><a class="chip" href="library.html?category=word">Microsoft Word Tutorials</a></li>
+            <li><a class="chip" href="library.html?q=excel+formulas">Excel Formulas</a></li>
+            <li><a class="chip" href="presentations.html">PowerPoint Templates</a></li>
+            <li><a class="chip" href="library.html?category=business">Business Books</a></li>
+            <li><a class="chip" href="library.html?category=computer-science">Computer Science</a></li>
+            <li><a class="chip" href="library.html?category=study-skills">Study Resources</a></li>
+          </ul>
+        </div>
+        <div class="hero__cta"><a class="btn btn--secondary" href="library.html">Explore the Library</a></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cats-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Browse</span><h2 id="cats-h">Featured categories</h2><p>Pick a subject to see everything we have on it.</p></div></div>
+        <div class="grid grid--cats" id="home-categories"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="feat-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Hand-picked</span><h2 id="feat-h">Featured resources</h2><p>Every resource is labelled with how you can access it: on OMT, free and open, from an official source, or buy or borrow.</p></div><a class="btn btn--secondary" href="library.html">See all</a></div>
+        <div class="grid grid--cards grid--rail" id="home-featured" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="office-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">Master the tools you'll use every day</h2><p>Step-by-step guides, free templates and links to the best official tutorials.</p></div><a class="btn btn--primary" href="office.html">Explore Microsoft Office Resources</a></div>
+        <div class="office-grid">
+          <a class="office-tile" href="office.html#word" style="--app:#2b579a"><span class="office-tile__badge" aria-hidden="true">W</span><h3>Word</h3><p>CV templates, formal letters and academic essay formatting.</p></a>
+          <a class="office-tile" href="office.html#excel" style="--app:#217346"><span class="office-tile__badge" aria-hidden="true">X</span><h3>Excel</h3><p>Formulas, VLOOKUP and XLOOKUP, budgets and grade trackers.</p></a>
+          <a class="office-tile" href="office.html#powerpoint" style="--app:#c43e1c"><span class="office-tile__badge" aria-hidden="true">P</span><h3>PowerPoint</h3><p>Slide design principles and ready-made presentation templates.</p></a>
+          <a class="office-tile" href="office.html#access" style="--app:#a4373a"><span class="office-tile__badge" aria-hidden="true">A</span><h3>Access</h3><p>Tables, keys, relationships and queries explained simply.</p></a>
+          <a class="office-tile" href="office.html#outlook" style="--app:#0f6cbd"><span class="office-tile__badge" aria-hidden="true">O</span><h3>Outlook</h3><p>Professional email etiquette and calendar planning.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="ai-h">
+      <div class="container">
+        <div class="ai-promo">
+          <div>
+            <span class="eyebrow">OMT AI</span>
+            <h2 id="ai-h">Can't Find What You're Looking For?</h2>
+            <p>Ask our AI assistant to help discover books, explain concepts, summarize available sources, and recommend useful learning resources.</p>
+            <ul>
+              <li>"Recommend a beginner-friendly book on programming."</li>
+              <li>"Explain the main ideas in this book."</li>
+              <li>"Help me find resources for learning Excel."</li>
+              <li>"Find resources about business management."</li>
+            </ul>
+            <p class="small">OMT AI searches our catalogue and Open Library's records. It can't get you a free copy of a copyrighted book. It will tell you where to find it legally and suggest free alternatives.</p>
+            <a class="btn btn--primary" href="assistant.html">Ask OMT AI</a>
+          </div>
+          <div class="mock-chat" aria-label="Example conversation">
+            <div class="mock-chat__msg mock-chat__msg--user">I need a book that teaches Python from the beginning.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">Here are three free options in the library: <strong>Think Python</strong> (gentle and concept-first), <strong>Automate the Boring Stuff with Python</strong> (practical projects), and OpenStax's <strong>Introduction to Python Programming</strong> (a full textbook). All three are free to read online.</div>
+            <div class="mock-chat__msg mock-chat__msg--user">Explain VLOOKUP like I'm a beginner.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">VLOOKUP looks up a value in the first column of a table and returns something from the same row…</div>
+            <p class="mock-chat__caption">Example conversation for illustration</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="recent-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">New</span><h2 id="recent-h">Recently added</h2></div><a class="btn btn--secondary" href="library.html?sort=newest">See newest</a></div>
+        <div class="grid grid--cards grid--rail" id="home-recent" aria-live="polite"></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<p>Every formula starts with <code>=</code>. In the examples, B2:B10 is a column of numbers such as test scores.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Formula</th><th>What it does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>SUM</code></td><td>Adds numbers</td><td><code>=SUM(B2:B10)</code></td></tr>
+<tr><td><code>AVERAGE</code></td><td>Mean of numbers</td><td><code>=AVERAGE(B2:B10)</code></td></tr>
+<tr><td><code>MIN</code> / <code>MAX</code></td><td>Smallest / largest value</td><td><code>=MAX(B2:B10)</code></td></tr>
+<tr><td><code>COUNT</code></td><td>Counts cells containing numbers</td><td><code>=COUNT(B2:B10)</code></td></tr>
+<tr><td><code>COUNTA</code></td><td>Counts non-empty cells (text too)</td><td><code>=COUNTA(A2:A10)</code></td></tr>
+<tr><td><code>COUNTIF</code></td><td>Counts cells meeting a condition</td><td><code>=COUNTIF(B2:B10,"&gt;=50")</code></td></tr>
+<tr><td><code>SUMIF</code></td><td>Adds values meeting a condition</td><td><code>=SUMIF(C2:C10,"Food",D2:D10)</code></td></tr>
+<tr><td><code>IF</code></td><td>Returns one value if true, another if false</td><td><code>=IF(B2&gt;=50,"Pass","Fail")</code></td></tr>
+<tr><td><code>ROUND</code></td><td>Rounds to a number of decimals</td><td><code>=ROUND(AVERAGE(B2:B10),1)</code></td></tr>
+<tr><td><code>TEXTJOIN</code></td><td>Joins text with a separator</td><td><code>=TEXTJOIN(" ",TRUE,A2,B2)</code></td></tr>
+</tbody></table></div>
+
+<h2>Combining formulas</h2>
+<p>Formulas can sit inside each other. To give a grade from a score in B2:</p>
+<pre><code>=IF(B2&gt;=70,"A",IF(B2&gt;=60,"B",IF(B2&gt;=50,"C","F")))</code></pre>
+<p>In Excel 2019 or Microsoft 365 the clearer <code>IFS</code> does the same thing:</p>
+<pre><code>=IFS(B2&gt;=70,"A", B2&gt;=60,"B", B2&gt;=50,"C", TRUE,"F")</code></pre>
+
+<h2>Relative and absolute references</h2>
+<p><code>B2</code> changes when you copy the formula; <code>$B$2</code> stays fixed. Use absolute references for a single cell that every row needs, such as a pass mark stored in one cell: <code>=IF(B2&gt;=$F$1,"Pass","Fail")</code>.</p>
+
+<h2>Practice exercise</h2>
+<p>Enter ten names and scores. Calculate the class average rounded to one decimal place, the highest and lowest score, how many students passed (score of 50 or above), and a Pass/Fail label for every student.</p>

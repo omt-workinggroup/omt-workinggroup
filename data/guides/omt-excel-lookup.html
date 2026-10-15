@@ -1,0 +1,47 @@
+<h2>What a lookup does</h2>
+<p>A lookup finds a value in one table and returns related information from the same row. Example: you have a list of student IDs in one sheet and want each student's name from another sheet. Instead of copying names by hand, a lookup formula fetches them for you.</p>
+
+<h2>The example data</h2>
+<p>Sheet <strong>Students</strong> (A1:C5):</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>A: ID</th><th>B: Name</th><th>C: Course</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>S101</td><td>Ada Okafor</td><td>Economics</td></tr>
+<tr><td>3</td><td>S102</td><td>Tunde Bello</td><td>Computer Science</td></tr>
+<tr><td>4</td><td>S103</td><td>Grace Mensah</td><td>Law</td></tr>
+<tr><td>5</td><td>S104</td><td>Musa Ibrahim</td><td>Accounting</td></tr>
+</tbody></table></div>
+<p>On another sheet, cell A2 contains <code>S103</code> and you want the name in B2.</p>
+
+<h2>VLOOKUP</h2>
+<pre><code>=VLOOKUP(A2, Students!A2:C5, 2, FALSE)</code></pre>
+<ol>
+<li><strong>A2</strong> — the value to look for (the ID).</li>
+<li><strong>Students!A2:C5</strong> — the table. The value you search for must be in the <em>first</em> column of this range.</li>
+<li><strong>2</strong> — which column of the table to return (1 = ID, 2 = Name, 3 = Course).</li>
+<li><strong>FALSE</strong> — exact match. Almost always use FALSE; TRUE means "approximate match" and requires a sorted first column.</li>
+</ol>
+<p>Result: <code>Grace Mensah</code>.</p>
+
+<h2>XLOOKUP (Microsoft 365 and Excel 2021 or later)</h2>
+<pre><code>=XLOOKUP(A2, Students!A2:A5, Students!B2:B5, "Not found")</code></pre>
+<ul>
+<li>Search column and return column are chosen separately, so the return column can be to the left.</li>
+<li>Exact match is the default.</li>
+<li>The fourth argument is what to show when nothing matches — no <code>#N/A</code> errors.</li>
+</ul>
+
+<h2>Lock your ranges before copying</h2>
+<p>When you fill a formula down, Excel shifts the ranges. Add <code>$</code> signs to keep the table fixed:</p>
+<pre><code>=VLOOKUP(A2, Students!$A$2:$C$5, 2, FALSE)</code></pre>
+<p>Tip: select the range in the formula bar and press <kbd>F4</kbd> to add the dollar signs.</p>
+
+<h2>Common errors</h2>
+<ul>
+<li><strong>#N/A</strong> — the value isn't in the first column. Check for extra spaces (use <code>TRIM</code>) or numbers stored as text.</li>
+<li><strong>#REF!</strong> — the column number is larger than the number of columns in the table.</li>
+<li><strong>Wrong result</strong> — you probably left out <code>FALSE</code>, so Excel did an approximate match.</li>
+</ul>
+
+<h2>Practice exercise</h2>
+<p>Recreate the table above. On a second sheet, type the four IDs in column A, then use VLOOKUP to fill column B with names and column C with courses. Then type <code>S999</code> and wrap your formula with <code>IFERROR(…, "Not found")</code> to handle the missing ID.</p>

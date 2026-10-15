@@ -1,0 +1,37 @@
+<h2>Database or spreadsheet?</h2>
+<p>A spreadsheet is great for calculations on one table. A database is better when you have <em>related</em> lists, such as students, courses and enrolments, and want to avoid typing the same information many times.</p>
+
+<h2>Tables, records and fields</h2>
+<ul>
+<li>A <strong>table</strong> stores one kind of thing (Students).</li>
+<li>A <strong>record</strong> is one row (one student).</li>
+<li>A <strong>field</strong> is one column (FirstName), with a data type such as Short Text, Number or Date/Time.</li>
+</ul>
+
+<h2>Primary keys</h2>
+<p>Every table needs a field that identifies each record uniquely: the <strong>primary key</strong>. A StudentID works well; names don't, because two people can share a name. Access can create an AutoNumber ID for you.</p>
+
+<h2>Design a small student database</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Table</th><th>Fields</th></tr></thead>
+<tbody>
+<tr><td>Students</td><td><u>StudentID</u>, FirstName, LastName, Email</td></tr>
+<tr><td>Courses</td><td><u>CourseID</u>, CourseName, Credits</td></tr>
+<tr><td>Enrolments</td><td><u>EnrolmentID</u>, StudentID, CourseID, Grade</td></tr>
+</tbody></table></div>
+<p>Enrolments links the other two: one student can take many courses and one course has many students (a <em>many-to-many</em> relationship, built from two one-to-many relationships).</p>
+
+<h2>Create the relationships</h2>
+<ol>
+<li><strong>Database Tools › Relationships.</strong></li>
+<li>Add all three tables.</li>
+<li>Drag <code>StudentID</code> from Students onto <code>StudentID</code> in Enrolments; tick <em>Enforce Referential Integrity</em>.</li>
+<li>Do the same for <code>CourseID</code>.</li>
+</ol>
+
+<h2>Ask questions with a query</h2>
+<p><strong>Create › Query Design</strong>, add the tables, then drag in FirstName, CourseName and Grade. Under Grade, type <code>&gt;=70</code> in <em>Criteria</em> to list students who scored 70 or higher. Click <strong>Run</strong>.</p>
+
+<h2>Forms and reports</h2>
+<p>A <strong>form</strong> makes data entry easier (<em>Create › Form</em>); a <strong>report</strong> formats results for printing (<em>Create › Report</em>).</p>
+<p class="note">Access is included with Microsoft 365 on Windows PCs only. On a Mac, you can practise the same database ideas with LibreOffice Base.</p>

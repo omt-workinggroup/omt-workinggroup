@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About OMT WORKING GROUP — Mission, Contact and Copyright</title>
+  <meta name="description" content="Who we are, how resource access works, how to contact us, and how to report a copyright concern.">
+  <link rel="canonical" href="https://omt-working-group.netlify.app/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMT WORKING GROUP">
+  <meta property="og:title" content="About OMT WORKING GROUP — Mission, Contact and Copyright">
+  <meta property="og:description" content="Who we are, how resource access works, how to contact us, and how to report a copyright concern.">
+  <meta property="og:url" content="https://omt-working-group.netlify.app/about.html">
+  <meta property="og:image" content="https://omt-working-group.netlify.app/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f2a4a">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/about.js"></script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+
+    <div class="container content">
+      <div class="page-head">
+        <h1>About OMT WORKING GROUP</h1>
+        <p>We help students find the knowledge they need: free books, practical Microsoft Office skills, presentation resources, and an AI assistant that points you to legitimate sources.</p>
+      </div>
+      <h2>What we believe</h2>
+      <div class="value-grid">
+        <div class="value"><h3>Free first</h3><p>We feature public-domain and openly licensed books, and create our own free guides and templates.</p></div>
+        <div class="value"><h3>Honest access labels</h3><p>Every resource says clearly whether it's on OMT, free and open, from an official source, or something to buy or borrow.</p></div>
+        <div class="value"><h3>Respect for creators</h3><p>We don't host or link to unauthorised copies. When a book is in copyright, we point you to legal options.</p></div>
+        <div class="value"><h3>Light and fast</h3><p>Pages are built to load quickly on mobile data, with no heavy images or fonts.</p></div>
+      </div>
+
+      <h2>How access works</h2>
+      <ul>
+        <li><span class="badge badge--omt">On OMT</span> Our original guides and templates. Read them here and download for free (CC BY 4.0).</li>
+        <li><span class="badge badge--open">Free &amp; open</span> Public-domain or openly licensed works, read on the official source (for example OpenStax or Project Gutenberg).</li>
+        <li><span class="badge badge--official">Official source</span> Free resources on the provider's own website, such as Microsoft Support.</li>
+        <li><span class="badge badge--paid">Buy or borrow</span> Copyrighted books. We describe them and help you find a library copy or an edition to buy.</li>
+      </ul>
+
+      <h2 id="contact">Contact us</h2>
+      <p>Questions, suggestions for resources, or found a broken link? Send us a message.</p>
+      <form class="form-card" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" action="about.html?sent=contact#contact">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" name="name" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+        <div class="field"><label for="c-topic">Topic</label><select class="select" id="c-topic" name="topic"><option>General question</option><option>Suggest a resource</option><option>Broken link</option><option>Feedback on OMT AI</option></select></div>
+        <div class="field"><label for="c-msg">Message</label><textarea class="textarea" id="c-msg" name="message" required maxlength="3000"></textarea></div>
+        <div><button class="btn btn--primary" type="submit">Send message</button></div>
+        <p class="small muted form-status" data-form="contact" role="status"></p>
+      </form>
+
+      <h2 id="copyright">Report a copyright concern</h2>
+      <p>If you believe a resource on OMT WORKING GROUP infringes your rights, or that we link to an unauthorised copy, tell us. We review every report and remove material when appropriate, usually within 5 working days.</p>
+      <form class="form-card" name="copyright" method="POST" data-netlify="true" netlify-honeypot="company" action="about.html?sent=copyright#copyright">
+        <input type="hidden" name="form-name" value="copyright">
+        <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field"><label for="r-name">Your name and organisation</label><input class="input" id="r-name" name="name" required maxlength="200"></div>
+        <div class="field"><label for="r-email">Email</label><input class="input" id="r-email" name="email" type="email" required maxlength="200"></div>
+        <div class="field"><label for="r-url">Page or resource on OMT</label><input class="input" id="r-url" name="resource" required maxlength="500" placeholder="e.g. resource.html?id=…"></div>
+        <div class="field"><label for="r-work">The work you own and why this is a concern</label><textarea class="textarea" id="r-work" name="details" required maxlength="4000"></textarea></div>
+        <label class="check"><input type="checkbox" name="good_faith" required> I confirm that the information in this report is accurate and that I am the rights holder or authorised to act for them.</label>
+        <div><button class="btn btn--primary" type="submit">Submit report</button></div>
+        <p class="small muted form-status" data-form="copyright" role="status"></p>
+      </form>
+    </div>
+
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+</body>
+</html>
