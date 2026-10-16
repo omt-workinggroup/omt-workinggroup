@@ -4,6 +4,7 @@ import { escapeHtml as e, safeUrl } from './util.js';
 import { icons } from './icons.js';
 import { isFavorite, toggleFavorite } from './favorites.js';
 import { toast } from './util.js';
+import { appIconHTML } from './appicons.js';
 
 export const resourceUrl = (r) => `resource.html?id=${encodeURIComponent(r.id)}`;
 
@@ -49,7 +50,7 @@ export function coverHTML(r) {
 export function posterHTML(r) {
   const cat = CATEGORIES[r.category];
   const mark = cat?.office ? `<span class="poster__mark">${e(cat.short)}</span>` : '';
-  const app = cat?.office ? `<img class="poster__app" src="assets/icons/apps/${r.category}.svg" alt="" width="30" height="30">` : '';
+  const app = cat?.office ? appIconHTML(r.category, 30, 'poster__app') : '';
   return `<div class="cover__poster poster--${e(r.kind)}">${mark}${app}<span class="poster__kind">${e(KINDS[r.kind] ?? 'Resource')}</span><span class="poster__title">${e(r.title)}</span><span class="poster__author">${e(r.author)}</span></div>`;
 }
 

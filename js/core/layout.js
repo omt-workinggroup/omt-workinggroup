@@ -150,7 +150,20 @@ function setupHeaderSearch() {
   });
 }
 
+// Images with data-fallback (Microsoft's CDN icons) switch to the local copy if they fail to load.
+document.addEventListener('error', (event) => {
+  const img = event.target;
+  if (img instanceof HTMLImageElement && img.dataset.fallback && !img.dataset.fellBack) {
+    img.dataset.fellBack = '1';
+    img.src = img.dataset.fallback;
+  }
+}, true);
+
 export function initLayout() {
+  // Static images may have failed before this script ran.
+  document.querySelectorAll('img[data-fallback]').forEach((img) => {
+    if (img.complete && img.naturalWidth === 0 && !img.dataset.fellBack) { img.dataset.fellBack = '1'; img.src = img.dataset.fallback; }
+  });
   const page = document.body.dataset.page ?? '';
   const header = document.getElementById('site-header');
   const footer = document.getElementById('site-footer');

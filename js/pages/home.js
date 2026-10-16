@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { appIconHTML } from '../core/appicons.js';
 import { loadCatalog } from '../core/catalog.js';
 import { CATEGORIES } from '../core/taxonomy.js';
 import { icons } from '../core/icons.js';
@@ -35,7 +36,7 @@ const HOME_CATEGORIES = [
 ];
 document.getElementById('home-categories').innerHTML = HOME_CATEGORIES.map((c) => `
   <a class="cat-card" href="${c.href}">
-    ${c.office ? `<img class="cat-card__app" src="assets/icons/apps/${c.slug}.svg" alt="" width="42" height="42">` : `<span class="cat-card__icon" style="background:${c.color}" aria-hidden="true">${c.icon ? icons[c.icon] : e(c.short)}</span>`}
+    ${c.office ? appIconHTML(c.slug, 42, 'cat-card__app') : `<span class="cat-card__icon" style="background:${c.color}" aria-hidden="true">${c.icon ? icons[c.icon] : e(c.short)}</span>`}
     <span><h3>${e(c.label)}</h3><p>${e(c.description)}</p></span>
   </a>`).join('');
 

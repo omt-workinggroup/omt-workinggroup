@@ -149,6 +149,8 @@ To regenerate the templates: `pip install openpyxl python-docx python-pptx && py
 
 ## Notes
 
+- Microsoft 365 app icons load from Microsoft's Fluent UI CDN (`res.cdn.office.net`), with local copies in `assets/icons/apps/` used if the CDN is unreachable. Change the CDN version in `js/core/appicons.js` and `index.html` when Microsoft publishes a new icon drop.
+
 - Favorites use `localStorage`. They are per-device and per-browser, and are not synced.
 - The chat conversation is kept in `sessionStorage` and disappears when the tab closes.
 - Microsoft, Word, Excel, PowerPoint, Access and Outlook are trademarks of Microsoft Corporation. OMT WORKING GROUP is independent and not affiliated with Microsoft.

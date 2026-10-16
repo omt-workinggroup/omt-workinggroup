@@ -1,4 +1,5 @@
 import { initLayout } from '../core/layout.js';
+import { appIconHTML } from '../core/appicons.js';
 import { watchCovers } from '../core/covers.js';
 import { loadCatalog } from '../core/catalog.js';
 import { CATEGORIES } from '../core/taxonomy.js';
@@ -30,7 +31,7 @@ try {
     const c = CATEGORIES[slug];
     const items = all.filter((r) => belongsTo(r, slug)).sort((a, b) => ORDER[a.accessType] - ORDER[b.accessType]);
     return `<section class="app-section" id="${slug}" aria-labelledby="${slug}-h">
-      <div class="app-section__head"><img class="office-tile__icon" src="assets/icons/apps/${slug}.svg" alt="" width="52" height="52">
+      <div class="app-section__head">${appIconHTML(slug, 52, 'office-tile__icon')}
         <div><h2 id="${slug}-h" style="margin:0">${e(c.label)}</h2><p class="muted" style="margin:0">${e(c.description)}</p></div></div>
       <p class="app-section__topics">Covers: ${topics.map(e).join(' · ')}</p>
       ${items.length ? `<div class="grid grid--cards">${items.map(cardHTML).join('')}</div>` : stateHTML({ title: 'Resources coming soon', text: 'Ask OMT AI for help with this app in the meantime.' })}
