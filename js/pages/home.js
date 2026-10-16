@@ -1,7 +1,7 @@
 import { initLayout } from '../core/layout.js';
 import { appIconHTML } from '../core/appicons.js';
 import { loadCatalog } from '../core/catalog.js';
-import { CATEGORIES } from '../core/taxonomy.js';
+import { CATEGORIES, TECH } from '../core/taxonomy.js';
 import { icons } from '../core/icons.js';
 import { renderCards, skeletons, stateHTML, cardHTML, posterHTML, accessBadge, resourceUrl } from '../core/render.js';
 import { getRecent, timeAgo } from '../core/recent.js';
@@ -30,9 +30,11 @@ form.addEventListener('submit', (event) => {
 
 // --- Category cards ---
 const HOME_CATEGORIES = [
-  { label: 'Books and eBooks', href: 'library.html?kind=book', short: 'BK', color: '#0f2a4a', icon: 'book', description: 'Free textbooks, classics and recommended reads.' },
-  ...['word', 'excel', 'powerpoint', 'access', 'outlook', 'presentations', 'study-skills', 'computer-science', 'business', 'productivity', 'general']
-    .map((slug) => ({ ...CATEGORIES[slug], slug, href: `library.html?category=${slug}` })),
+  ...TECH.map((slug) => ({ ...CATEGORIES[slug], slug, href: `library.html?category=${slug}` })),
+  { label: 'Free Tech Books', href: 'library.html?kind=book', short: 'BK', color: '#0f2a4a', icon: 'book', description: 'Open textbooks and free online editions.' },
+  { label: 'Standards & Specs', href: 'library.html?kind=standard', short: 'STD', color: '#4338ca', icon: 'flag', description: '3GPP, ITU-T, NIST and OWASP references.' },
+  { label: 'Microsoft Office', href: 'office.html', short: 'MS', color: '#2b579a', slug: 'word', office: true, description: 'Word, Excel, PowerPoint, Access and Outlook.' },
+  ...['business', 'study-skills'].map((slug) => ({ ...CATEGORIES[slug], slug, href: `library.html?category=${slug}` })),
 ];
 document.getElementById('home-categories').innerHTML = HOME_CATEGORIES.map((c) => `
   <a class="cat-card" href="${c.href}">
@@ -79,7 +81,7 @@ function renderMobile(all) {
   // Featured banner carousel
   const banner = document.getElementById('m-banner');
   const dots = document.getElementById('m-dots');
-  const picks = ['think-python-3e', 'omt-excel-lookup', 'openstax-entrepreneurship', 'omt-ppt-project-proposal', 'omt-study-methods']
+  const picks = ['cn-systems-approach', 'private-5g', 'omt-subnetting', 'google-sre', 'pro-git', 'tlcl']
     .map((id) => all.find((r) => r.id === id)).filter(Boolean);
   banner.innerHTML = picks.map((r, i) => `
     <a class="m-banner__slide" href="${resourceUrl(r)}" aria-roledescription="slide" aria-label="${e(r.title)}, ${i + 1} of ${picks.length}">
@@ -98,16 +100,18 @@ function renderMobile(all) {
   }, { passive: true });
 
   // Topic tabs + rail
+  const byCat = (...cats) => () => all.filter((r) => cats.includes(r.category));
   const TABS = [
-    ['All', () => all.filter((r) => r.featured).concat(all.filter((r) => !r.featured)), 'library.html'],
+    ['All', () => all.filter((r) => r.featured).concat(all.filter((r) => !r.featured && CATEGORIES[r.category]?.tech)), 'library.html'],
+    ['Dev', byCat('computer-science'), 'library.html?category=computer-science'],
+    ['Networking', byCat('networking'), 'library.html?category=networking'],
+    ['Telecom & 5G', byCat('telecom'), 'library.html?category=telecom'],
+    ['Cloud', byCat('cloud'), 'library.html?category=cloud'],
+    ['Security', byCat('security'), 'library.html?category=security'],
+    ['Data & AI', byCat('data-ai'), 'library.html?category=data-ai'],
+    ['Linux', byCat('linux'), 'library.html?category=linux'],
+    ['Office', () => all.filter((r) => CATEGORIES[r.category]?.office || r.category === 'presentations'), 'office.html'],
     ['Books', () => all.filter((r) => r.kind === 'book'), 'library.html?kind=book'],
-    ['Excel', () => all.filter((r) => r.category === 'excel'), 'library.html?category=excel'],
-    ['Word', () => all.filter((r) => r.category === 'word'), 'library.html?category=word'],
-    ['PowerPoint', () => all.filter((r) => ['powerpoint', 'presentations'].includes(r.category)), 'presentations.html'],
-    ['Study', () => all.filter((r) => r.category === 'study-skills' || r.tags?.includes('study')), 'library.html?category=study-skills'],
-    ['Business', () => all.filter((r) => r.category === 'business'), 'library.html?category=business'],
-    ['Tech', () => all.filter((r) => r.category === 'computer-science'), 'library.html?category=computer-science'],
-    ['Classics', () => all.filter((r) => r.category === 'general'), 'library.html?category=general'],
   ];
   const tabs = document.getElementById('m-tabs');
   const rail = document.getElementById('m-rail');
@@ -124,7 +128,7 @@ function renderMobile(all) {
 
   // Continue exploring: real recently viewed items, or a starter list.
   const recent = getRecent().map((x) => ({ r: all.find((a) => a.id === x.id), t: x.t })).filter((x) => x.r).slice(0, 3);
-  const rows = recent.length ? recent : ['omt-excel-essential-formulas', 'omt-word-student-cv', 'omt-study-methods'].map((id) => ({ r: all.find((a) => a.id === id) })).filter((x) => x.r);
+  const rows = recent.length ? recent : ['omt-subnetting', 'omt-linux-commands', 'omt-mobile-generations'].map((id) => ({ r: all.find((a) => a.id === id) })).filter((x) => x.r);
   if (!recent.length) document.getElementById('m-continue-h').textContent = 'Start here';
   document.getElementById('m-continue').innerHTML = rows.map(({ r, t }) => `
     <a class="m-row" href="${resourceUrl(r)}">
@@ -137,6 +141,12 @@ function renderMobile(all) {
       </span>
       <span class="m-row__go">${icons.chevron}</span>
     </a>`).join('');
+
+  // Learning tracks (icon tiles)
+  document.getElementById('m-tracks').innerHTML = TECH.map((slug) => {
+    const c = CATEGORIES[slug];
+    return `<a href="library.html?category=${slug}" style="--app:${c.color}"><b>${icons[c.icon]}</b><span>${e(c.label.split(' & ')[0])}</span></a>`;
+  }).join('') + `<a href="library.html?kind=standard" style="--app:#4338ca"><b>${icons.flag}</b><span>Standards</span></a>`;
 
   // Free templates rail
   document.getElementById('m-templates').innerHTML = all.filter((r) => r.accessType === 'omt' && r.downloadUrl).map(cardHTML).join('');

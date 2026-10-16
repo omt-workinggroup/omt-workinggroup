@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMT WORKING GROUP — Free Books, Microsoft Office Guides and AI Study Help</title>
-  <meta name="description" content="A free digital library for students: find books, learn Word, Excel and PowerPoint, download templates, and ask an AI assistant for help finding resources.">
+  <title>OMT WORKING GROUP: Free Tech Library for Developers, Network and Telecom Engineers</title>
+  <meta name="description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
   <link rel="canonical" href="https://omt-working-group.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
-  <meta property="og:title" content="OMT WORKING GROUP — Free Books, Microsoft Office Guides and AI Study Help">
-  <meta property="og:description" content="A free digital library for students: find books, learn Word, Excel and PowerPoint, download templates, and ask an AI assistant for help finding resources.">
+  <meta property="og:title" content="OMT WORKING GROUP: Free Tech Library for Developers, Network and Telecom Engineers">
+  <meta property="og:description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
   <meta property="og:url" content="https://omt-working-group.vercel.app/">
   <meta property="og:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="OMT Working Group: free books, Word, Excel and PowerPoint guides, free templates and an AI study assistant">
+  <meta property="og:image:alt" content="OMT Working Group: a free tech library for developers, network and telecom engineers, with an AI assistant">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta name="apple-mobile-web-app-title" content="OMT Library">
@@ -33,24 +33,26 @@
 
     <section class="hero hero--dark d-only">
       <div class="container hero__inner">
-        <span class="hero__pill">Free digital library for students · Powered by AI</span>
+        <span class="hero__pill">Free tech library for IT lovers · Powered by AI</span>
         <h1>Knowledge at Your <span>Fingertips.</span></h1>
-        <p class="hero__lead">Discover books, master Microsoft Office, explore presentation resources, and use AI to find the knowledge you need.</p>
+        <p class="hero__lead">Free books, courses and guides for developers, network and telecom engineers, sysadmins and everyone who loves tech. Plus Microsoft Office skills, and an AI assistant to find what you need.</p>
         <form class="search search--lg search--stack hero__search" id="home-search" action="library.html" method="get" role="search">
           <label class="sr-only" for="home-q">Search books, topics and resources</label>
-          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="home-q" name="q" type="search" placeholder="Search books, topics, presentations, Word, Excel…" autocomplete="off" maxlength="200"></div>
+          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="home-q" name="q" type="search" placeholder="Search Python, 5G, subnetting, Linux, Kubernetes…" autocomplete="off" maxlength="200"></div>
           <button class="btn btn--primary" type="submit">Search</button>
         </form>
         <label class="hero__ai-toggle"><input type="checkbox" id="home-ai"> Ask OMT AI instead (describe what you need in your own words)</label>
         <div class="hero__suggest">
           <p class="sr-only">Suggested searches</p>
           <ul class="chips">
-            <li><a class="chip" href="library.html?category=word">Microsoft Word Tutorials</a></li>
-            <li><a class="chip" href="library.html?q=excel+formulas">Excel Formulas</a></li>
-            <li><a class="chip" href="presentations.html">PowerPoint Templates</a></li>
-            <li><a class="chip" href="library.html?category=business">Business Books</a></li>
-            <li><a class="chip" href="library.html?category=computer-science">Computer Science</a></li>
-            <li><a class="chip" href="library.html?category=study-skills">Study Resources</a></li>
+            <li><a class="chip" href="library.html?category=computer-science">Programming</a></li>
+            <li><a class="chip" href="library.html?category=networking">Networking</a></li>
+            <li><a class="chip" href="library.html?q=5g">5G &amp; Telecom</a></li>
+            <li><a class="chip" href="library.html?category=linux">Linux</a></li>
+            <li><a class="chip" href="library.html?category=cloud">Cloud &amp; DevOps</a></li>
+            <li><a class="chip" href="library.html?category=security">Cybersecurity</a></li>
+            <li><a class="chip" href="library.html?category=data-ai">Data &amp; AI</a></li>
+            <li><a class="chip" href="office.html">Microsoft Office</a></li>
           </ul>
         </div>
         <div class="hero__cta"><a class="btn btn--light" href="library.html">Explore the Library</a><a class="btn btn--outline-light" href="assistant.html">Ask OMT AI</a></div>
@@ -65,7 +67,7 @@
 
     <section class="section d-only" aria-labelledby="cats-h">
       <div class="container">
-        <div class="section-head"><div><span class="eyebrow">Browse</span><h2 id="cats-h">Featured categories</h2><p>Pick a subject to see everything we have on it.</p></div></div>
+        <div class="section-head"><div><span class="eyebrow">Learning tracks</span><h2 id="cats-h">Pick your track</h2><p>From your first line of code to running 5G networks in production.</p></div></div>
         <div class="grid grid--cats" id="home-categories"></div>
       </div>
     </section>
@@ -79,7 +81,7 @@
 
     <section class="section d-only" aria-labelledby="office-h">
       <div class="container">
-        <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">Master the tools you'll use every day</h2><p>Step-by-step guides, free templates and links to the best official tutorials.</p></div><a class="btn btn--primary" href="office.html">Explore Microsoft Office Resources</a></div>
+        <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">Office skills for every engineer</h2><p>Reports, budgets, network inventories and project decks: guides and free templates for the tools every job uses.</p></div><a class="btn btn--primary" href="office.html">Explore Microsoft Office Resources</a></div>
         <div class="office-grid">
           <a class="office-tile" href="office.html#word" style="--app:#2b579a"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/word_48x1.svg" data-fallback="assets/icons/apps/word.svg" alt="" width="52" height="52"><h3>Word</h3><p>CV templates, formal letters and academic essay formatting.</p></a>
           <a class="office-tile" href="office.html#excel" style="--app:#217346"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/excel_48x1.svg" data-fallback="assets/icons/apps/excel.svg" alt="" width="52" height="52"><h3>Excel</h3><p>Formulas, VLOOKUP and XLOOKUP, budgets and grade trackers.</p></a>
@@ -93,12 +95,12 @@
     <section class="m-home m-only" aria-label="Home">
       <div class="container">
         <div class="m-greet">
-          <div><p class="m-greet__hi" id="m-greeting">Welcome 👋</p><h1 class="m-greet__title">What will you learn today?</h1></div>
+          <div><p class="m-greet__hi" id="m-greeting">Welcome 👋</p><h1 class="m-greet__title">What will you build today?</h1></div>
         </div>
         <form class="m-search" action="library.html" method="get" role="search">
           <label class="sr-only" for="m-q">Search books and resources</label>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="m-q" name="q" type="search" placeholder="Search books, Excel, CV…" autocomplete="off" maxlength="200" enterkeyhint="search">
+          <input id="m-q" name="q" type="search" placeholder="Search Python, 5G, Linux…" autocomplete="off" maxlength="200" enterkeyhint="search">
           <a class="m-search__btn" href="assistant.html" aria-label="Ask OMT AI instead"></a>
         </form>
 
@@ -110,6 +112,9 @@
 
         <div class="m-head"><h2 id="m-continue-h">Continue exploring</h2><a href="library.html?sort=newest">View all</a></div>
         <div class="m-list" id="m-continue"></div>
+
+        <div class="m-head"><h2>Learning tracks</h2><a href="library.html">View all</a></div>
+        <div class="m-tracks" id="m-tracks"></div>
 
         <div class="m-head"><h2>Microsoft Office</h2><a href="office.html">View all</a></div>
         <div class="m-apps">
@@ -125,7 +130,7 @@
 
         <a class="m-ai" href="assistant.html">
           <span class="m-ai__icon"></span>
-          <span><strong>Can't find a book?</strong><span>Ask OMT AI to find it, explain it, or suggest free alternatives.</span></span>
+          <span><strong>Stuck on a concept?</strong><span>Ask OMT AI about subnetting, 5G, Linux, Git, code, or any book in the library.</span></span>
         </a>
       </div>
     </section>
@@ -138,19 +143,19 @@
             <h2 id="ai-h">Can't Find What You're Looking For?</h2>
             <p>Ask our AI assistant to help discover books, explain concepts, summarize available sources, and recommend useful learning resources.</p>
             <ul>
-              <li>"Recommend a beginner-friendly book on programming."</li>
-              <li>"Explain the main ideas in this book."</li>
-              <li>"Help me find resources for learning Excel."</li>
-              <li>"Find resources about business management."</li>
+              <li>"Explain subnetting like I'm a beginner."</li>
+              <li>"What's the difference between 4G and 5G core?"</li>
+              <li>"Recommend a free book to learn Linux."</li>
+              <li>"How do Docker and Kubernetes fit together?"</li>
             </ul>
             <p class="small">OMT AI searches our catalogue and Open Library's records. It can't get you a free copy of a copyrighted book. It will tell you where to find it legally and suggest free alternatives.</p>
             <a class="btn btn--primary" href="assistant.html">Ask OMT AI</a>
           </div>
           <div class="mock-chat" aria-label="Example conversation">
-            <div class="mock-chat__msg mock-chat__msg--user">I need a book that teaches Python from the beginning.</div>
-            <div class="mock-chat__msg mock-chat__msg--ai">Here are three free options in the library: <strong>Think Python</strong> (gentle and concept-first), <strong>Automate the Boring Stuff with Python</strong> (practical projects), and OpenStax's <strong>Introduction to Python Programming</strong> (a full textbook). All three are free to read online.</div>
-            <div class="mock-chat__msg mock-chat__msg--user">Explain VLOOKUP like I'm a beginner.</div>
-            <div class="mock-chat__msg mock-chat__msg--ai">VLOOKUP looks up a value in the first column of a table and returns something from the same row…</div>
+            <div class="mock-chat__msg mock-chat__msg--user">I want to learn networking from scratch.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">Start with <strong>Introduction to Networking</strong> (short and friendly), then <strong>Computer Networks: A Systems Approach</strong> (the full textbook). Both are free online. Our <strong>IPv4 Subnetting Made Simple</strong> guide is a good next step.</div>
+            <div class="mock-chat__msg mock-chat__msg--user">Explain subnetting like I'm a beginner.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">A /26 prefix leaves 6 host bits, so each subnet has 2⁶ = 64 addresses, and 62 of them are usable…</div>
             <p class="mock-chat__caption">Example conversation for illustration</p>
           </div>
         </div>

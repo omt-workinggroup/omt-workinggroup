@@ -1,7 +1,13 @@
 // Categories, access types and other labels shared by every page.
 
 export const CATEGORIES = {
-  'computer-science': { label: 'Computer & Technology', short: 'CS', color: '#3b4cca', icon: 'code', description: 'Programming, computer science and digital skills.' },
+  'computer-science': { label: 'Programming & Software', short: 'DEV', color: '#3b4cca', icon: 'code', tech: true, description: 'Coding, computer science, Git and software engineering.' },
+  networking: { label: 'Networking', short: 'NET', color: '#0b6e99', icon: 'network', tech: true, description: 'TCP/IP, routing, switching, subnetting and protocols.' },
+  telecom: { label: 'Telecom & Wireless', short: 'TEL', color: '#7c3aed', icon: 'antenna', tech: true, description: '4G, 5G, RF, fibre and telecom standards.' },
+  cloud: { label: 'Cloud & DevOps', short: 'OPS', color: '#0e7490', icon: 'cloud', tech: true, description: 'Containers, Kubernetes, CI/CD and site reliability.' },
+  security: { label: 'Cybersecurity', short: 'SEC', color: '#b42318', icon: 'shield', tech: true, description: 'Secure coding, threats, frameworks and defence.' },
+  'data-ai': { label: 'Data & AI', short: 'AI', color: '#9d174d', icon: 'chip', tech: true, description: 'Data science, SQL, machine learning and deep learning.' },
+  linux: { label: 'Linux & Systems', short: 'SYS', color: '#374151', icon: 'terminal', tech: true, description: 'The command line, operating systems and administration.' },
   business: { label: 'Business & Entrepreneurship', short: 'BIZ', color: '#8a5a00', icon: 'briefcase', description: 'Management, economics, startups and finance.' },
   'study-skills': { label: 'Study Materials', short: 'STU', color: '#0e7c7b', icon: 'cap', description: 'Study methods, exam preparation and university life.' },
   productivity: { label: 'Productivity', short: 'PRO', color: '#a3367a', icon: 'bolt', description: 'Focus, habits and workplace software skills.' },
@@ -13,6 +19,9 @@ export const CATEGORIES = {
   outlook: { label: 'Microsoft Outlook', short: 'O', color: '#0f6cbd', office: true, description: 'Email, calendar and communication.' },
   presentations: { label: 'Presentation Templates', short: 'PT', color: '#c2410c', icon: 'slides', description: 'Ready-made decks for school and work.' },
 };
+
+/** Tech categories, in the order they are shown. */
+export const TECH = Object.keys(CATEGORIES).filter((k) => CATEGORIES[k].tech);
 
 export const OFFICE_APPS = ['word', 'excel', 'powerpoint', 'access', 'outlook'];
 
@@ -51,6 +60,7 @@ export const KINDS = {
   template: 'Template',
   tutorial: 'Tutorial',
   course: 'Course',
+  standard: 'Standard',
 };
 
 export const LEVELS = { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' };

@@ -28,5 +28,11 @@ export const icons = {
   sliders: svg('<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>'),
   chevron: svg('<path d="m9 6 6 6-6 6"/>'),
   clock: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  network: svg('<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/>'),
+  antenna: svg('<path d="M12 10v11M8.5 21h7"/><circle cx="12" cy="8" r="2"/><path d="M8 4.5a5.5 5.5 0 0 0 0 7M16 4.5a5.5 5.5 0 0 1 0 7M5.2 2a9.5 9.5 0 0 0 0 12M18.8 2a9.5 9.5 0 0 1 0 12"/>'),
+  cloud: svg('<path d="M7 18a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.5 1.5A4 4 0 0 1 17.5 18z"/>'),
+  shield: svg('<path d="M12 3 4.5 6v5.5c0 4.6 3.2 8 7.5 9.5 4.3-1.5 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/>'),
+  chip: svg('<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>'),
+  terminal: svg('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12.5 15H17"/>'),
   flag: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>'),
 };

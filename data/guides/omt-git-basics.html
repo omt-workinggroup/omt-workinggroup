@@ -1,0 +1,39 @@
+<h2>1. Set up once</h2>
+<pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+
+<h2>2. Start or copy a project</h2>
+<pre><code>git init                      # turn the current folder into a repository
+git clone https://github.com/user/repo.git   # or copy an existing one</code></pre>
+
+<h2>3. The everyday loop</h2>
+<pre><code>git status                    # what changed?
+git add file.py               # stage a file (git add . stages everything)
+git commit -m "Add login form validation"
+git log --oneline             # history, one line per commit</code></pre>
+<p>Write commit messages that say <em>what</em> the change does, in the present tense: "Fix crash when list is empty".</p>
+
+<h2>4. Branches</h2>
+<pre><code>git switch -c feature/search  # create a branch and switch to it
+# ...work and commit...
+git switch main
+git merge feature/search      # bring the work into main</code></pre>
+<p>Branches let you try things without breaking the main code. On GitHub you usually push a branch and open a <strong>pull request</strong> instead of merging locally.</p>
+
+<h2>5. Share with GitHub</h2>
+<pre><code>git remote add origin https://github.com/you/repo.git
+git push -u origin main       # first push; afterwards just git push
+git pull                      # get other people's changes</code></pre>
+
+<h2>6. Undo safely</h2>
+<ul>
+<li><code>git restore file.py</code>: throw away uncommitted changes to a file.</li>
+<li><code>git restore --staged file.py</code>: unstage a file but keep the changes.</li>
+<li><code>git revert &lt;commit&gt;</code>: create a new commit that undoes an old one. This is safe on shared branches.</li>
+</ul>
+
+<h2>7. Ignore files</h2>
+<p>List files Git should never track (build output, secrets, dependencies) in a <code>.gitignore</code> file, for example <code>node_modules/</code> and <code>.env</code>.</p>
+
+<h2>Practice</h2>
+<p>Create a repository, commit a README, create a branch, change the README there, merge it back into <code>main</code> and look at <code>git log --oneline --graph</code>.</p>

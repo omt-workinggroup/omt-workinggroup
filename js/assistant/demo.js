@@ -7,6 +7,116 @@ import { searchOpenLibrary } from '../core/openlibrary.js';
 // ---------- Prepared concept explanations ----------
 const CONCEPTS = [
   {
+    keys: /subnet|cidr|\/\d\d\b|netmask|subnet mask|ip address(ing)?/,
+    query: 'subnetting',
+    text: `**Subnetting** splits an IP network into smaller networks. The **prefix** (e.g. \`/26\`) says how many of the 32 bits are the network part. The rest are for hosts.
+
+1. Host bits = 32 − prefix. For \`/26\` that's 6.
+2. Addresses per subnet = 2^host bits = 2⁶ = **64**.
+3. Usable hosts = 64 − 2 = **62** (the first address is the network, the last is the broadcast).
+4. Block size = 256 − mask octet (\`255.255.255.192\` → 64), so /26 subnets start at .0, .64, .128 and .192.
+
+**Example:** \`192.168.10.70/26\` is in network \`192.168.10.64\`, broadcast \`192.168.10.127\`, usable \`.65\`–\`.126\`.
+
+**Practice:** how many usable hosts does a \`/28\` have? *(Answer: 14.)*`,
+  },
+  {
+    keys: /\bosi\b|tcp\/ip model|network layers?|layer [1-7]\b/,
+    query: 'osi model',
+    text: `The **OSI model** has seven layers, from the bottom up:
+
+1. **Physical**: bits on copper, fibre or radio
+2. **Data link**: Ethernet, Wi-Fi, MAC addresses, switches
+3. **Network**: IP addressing and routing
+4. **Transport**: TCP and UDP, ports
+5. **Session** · 6. **Presentation** · 7. **Application**: HTTP, DNS, SSH
+
+The Internet's **TCP/IP model** merges these into four layers: Link, Internet, Transport and Application.
+
+**Tip:** troubleshoot from the bottom up. Check the link, then the IP address and route (\`ping\`, \`traceroute\`), then the port, then the application.
+
+**Practice:** at which layer do switches work, and at which do routers? *(Answer: 2 and 3.)*`,
+  },
+  {
+    keys: /tcp (vs|versus|and|or) udp|udp (vs|versus|and|or) tcp|difference between tcp|three.?way handshake/,
+    query: 'networking',
+    text: `**TCP** and **UDP** are the two main transport protocols.
+
+- **TCP** is connection-oriented: a three-way handshake (SYN, SYN-ACK, ACK), ordered and reliable delivery, retransmission and congestion control. Used for the web (HTTPS), SSH and email.
+- **UDP** is connectionless: no handshake and no retransmission, so lower overhead and latency. Used for DNS queries, VoIP, video streaming, gaming and QUIC (HTTP/3).
+
+**Rule of thumb:** use TCP when every byte must arrive in order, and UDP when speed matters more than the occasional lost packet.
+
+**Practice:** run \`ss -tulpn\` on a Linux machine and sort the listening ports into TCP and UDP.`,
+  },
+  {
+    keys: /\bdns\b|domain name system|resolve a domain/,
+    query: 'networking',
+    text: `**DNS** turns names like \`example.com\` into IP addresses.
+
+1. Your device asks a **recursive resolver** (often your ISP's, or one like 1.1.1.1).
+2. If it isn't cached, the resolver asks a **root server**, then the **TLD** server (\`.com\`), then the domain's **authoritative** server.
+3. The answer is cached for its **TTL**.
+
+Common records: **A** (IPv4), **AAAA** (IPv6), **CNAME** (alias), **MX** (mail), **TXT** (verification), **NS** (name servers).
+
+**Practice:** run \`dig example.com A\` and \`dig example.com MX\` and compare the answers.`,
+  },
+  {
+    keys: /\b(4g|5g|lte|nr)\b|5g core|epc|gnb|enodeb|network slicing/,
+    query: '5g',
+    text: `**4G vs 5G** in short:
+
+- **Radio:** 4G uses LTE (eNB base stations). 5G uses **NR** (gNB base stations), with sub-6 GHz bands (FR1) and millimetre-wave (FR2).
+- **Core:** the 4G **EPC** has the MME, SGW, PGW and HSS. The **5G Core** is a service-based architecture of network functions: **AMF** (access and mobility), **SMF** (sessions), **UPF** (user traffic) and **UDM** (subscriber data).
+- **Deployment:** **NSA** 5G anchors on LTE and the 4G core. **SA** 5G uses the 5G Core end to end.
+- **New capabilities:** low latency (URLLC), massive IoT (mMTC) and **network slicing**.
+
+**Practice:** map each 4G core element to the 5G function that took over its job (for example MME → AMF, plus parts of the SMF).`,
+  },
+  {
+    keys: /\bgit\b|commit|branch(ing)?|merge conflict|pull request/,
+    query: 'git',
+    text: `The everyday **Git** loop:
+
+\`\`\`
+git status
+git add .
+git commit -m "Describe the change"
+git push
+\`\`\`
+
+- **Branch** for each piece of work: \`git switch -c feature/x\`, then open a pull request.
+- **Merge conflict?** Open the files Git lists, keep the right lines between the \`<<<<<<<\` and \`>>>>>>>\` markers, then \`git add\` and \`git commit\`.
+- **Undo safely** on shared branches with \`git revert <commit>\`.
+
+**Practice:** create a branch, change a file, merge it back into \`main\`, and view \`git log --oneline --graph\`.`,
+  },
+  {
+    keys: /chmod|permissions?|chown|rwx|755|644/,
+    query: 'linux',
+    text: `**Linux permissions** are set for the **owner**, the **group** and **others**: read (4), write (2) and execute (1).
+
+- \`chmod 755 script.sh\`: owner rwx (7), group r-x (5), others r-x (5)
+- \`chmod 640 config.yml\`: owner rw- (6), group r-- (4), others none (0)
+- \`chown app:app file\`: change the owner and group
+
+Read them with \`ls -l\`: \`-rwxr-xr-x\` means a file with permissions 755.
+
+**Practice:** create a file, make it readable only by you (\`chmod 600\`), and check the result with \`ls -l\`.`,
+  },
+  {
+    keys: /docker|container|kubernetes|k8s|\bpod\b/,
+    query: 'kubernetes',
+    text: `**Docker and Kubernetes** work together:
+
+- A **container image** packages an app with everything it needs. **Docker** builds and runs containers: \`docker build -t app .\` then \`docker run -p 8080:80 app\`.
+- **Kubernetes** runs containers across many machines. You describe the desired state (a **Deployment** with 3 replicas, say) and Kubernetes keeps it that way, restarting and rescheduling **Pods** when they fail.
+- A **Service** gives Pods a stable address. An **Ingress** exposes them over HTTP.
+
+**Practice:** follow the official Kubernetes tutorial to deploy an app, scale it to 3 replicas, then delete one Pod and watch it come back.`,
+  },
+  {
     keys: /\bv-?lookup\b|\bx-?lookup\b|\blook ?up\b/,
     query: 'vlookup',
     text: `**VLOOKUP** finds a value in the first column of a table and returns something from the same row. Think of it as looking up a name in a phone list and reading across to the number.
@@ -299,7 +409,7 @@ function whyMatch(r, parsed) {
   return bits.filter(Boolean).join(' · ');
 }
 
-const GREETING = /^(hi|hello|hey|good (morning|afternoon|evening)|help|what can you do)\b/i;
+const GREETING = /^(hi|hello|hey|hiya|good (morning|afternoon|evening)|help|what can you do)[\s!.?]*(there|omt|omt ai)?[\s!.?]*$/i;
 const ASK_EXPLAIN = /\b(explain|about|overview|summar|main ideas?|what (is|does) (this|it)|tell me|who is it for|themes?)\b/i;
 const ASK_ALTERNATIVE = /\b(alternative|similar|free (version|copy|option)|instead|other (books|resources))\b/i;
 
@@ -363,9 +473,9 @@ async function findResources(message, all) {
 /** Produce a demo reply for the latest user message. */
 export async function demoReply({ message, resource, all }) {
   const text = message.trim();
-  if (GREETING.test(text) && text.length < 40) {
+  if (GREETING.test(text)) {
     return {
-      reply: `I can help you:\n\n1. **Find a book or resource**: e.g. "a beginner book on Python"\n2. **Explain a resource**: open any resource and choose "Ask AI about this resource"\n3. **Explain a concept**: e.g. "Explain VLOOKUP like I'm a beginner"\n\nWhat are you studying?`,
+      reply: `I can help you:\n\n1. **Find a book or resource**: e.g. "a free book to learn Linux"\n2. **Explain a resource**: open any resource and choose "Ask AI about this resource"\n3. **Explain a concept**: e.g. "Explain subnetting", "4G vs 5G core", "Docker vs Kubernetes"\n\nWhat are you working on?`,
       resources: [],
     };
   }

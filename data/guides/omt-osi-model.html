@@ -1,0 +1,36 @@
+<p>Network models split communication into layers. Each layer has one job and talks only to the layers directly above and below it. Knowing the layers helps you design networks and, above all, troubleshoot them.</p>
+
+<h2>The seven OSI layers</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>Layer</th><th>What it does</th><th>Examples</th><th>Data unit</th></tr></thead>
+<tbody>
+<tr><td>7</td><td>Application</td><td>Services the user's software talks to</td><td>HTTP, DNS, SMTP, SSH</td><td>Data</td></tr>
+<tr><td>6</td><td>Presentation</td><td>Formats, encodes and encrypts data</td><td>TLS encryption, character encoding</td><td>Data</td></tr>
+<tr><td>5</td><td>Session</td><td>Opens, manages and closes conversations</td><td>Session setup and teardown</td><td>Data</td></tr>
+<tr><td>4</td><td>Transport</td><td>End-to-end delivery, ports, reliability</td><td>TCP, UDP</td><td>Segment / datagram</td></tr>
+<tr><td>3</td><td>Network</td><td>Logical addressing and routing between networks</td><td>IPv4, IPv6, ICMP, routers</td><td>Packet</td></tr>
+<tr><td>2</td><td>Data link</td><td>Delivery on the local link, MAC addresses</td><td>Ethernet, Wi-Fi (802.11), switches, VLANs</td><td>Frame</td></tr>
+<tr><td>1</td><td>Physical</td><td>Bits as signals on a medium</td><td>Copper, fibre, radio, connectors</td><td>Bits</td></tr>
+</tbody></table></div>
+<p>Memory aid, from layer 1 up: <strong>P</strong>lease <strong>D</strong>o <strong>N</strong>ot <strong>T</strong>hrow <strong>S</strong>ausage <strong>P</strong>izza <strong>A</strong>way.</p>
+
+<h2>The TCP/IP model</h2>
+<p>The Internet itself is built on the simpler TCP/IP model:</p>
+<ul>
+<li><strong>Application</strong>: OSI layers 5–7 (HTTP, DNS, SSH)</li>
+<li><strong>Transport</strong>: OSI layer 4 (TCP, UDP)</li>
+<li><strong>Internet</strong>: OSI layer 3 (IP)</li>
+<li><strong>Link</strong>: OSI layers 1–2 (Ethernet, Wi-Fi)</li>
+</ul>
+
+<h2>Encapsulation</h2>
+<p>As data goes down the stack, each layer adds its own header. An HTTP request becomes a TCP segment (with source and destination ports), then an IP packet (with IP addresses), then an Ethernet frame (with MAC addresses), then bits on the wire. The receiver strips the headers off in reverse order.</p>
+
+<h2>Troubleshooting bottom-up</h2>
+<ol>
+<li><strong>Physical</strong>: is the link up? Check cables, optics, signal and lights.</li>
+<li><strong>Data link</strong>: are MAC addresses learned? Is the VLAN correct?</li>
+<li><strong>Network</strong>: correct IP address and gateway? Does <code>ping</code> work? Check the route with <code>traceroute</code>.</li>
+<li><strong>Transport</strong>: is the port open? Is a firewall blocking it?</li>
+<li><strong>Application</strong>: does DNS resolve? Is the service running, and what do its logs say?</li>
+</ol>

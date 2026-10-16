@@ -40,3 +40,16 @@ test('demo describes a copyrighted book without claiming to have read it', async
   assert.match(r.reply, /not read the full text/);
   assert.match(r.reply, /copyright/);
 });
+
+test('demo explains tech concepts', async () => {
+  for (const [q, word] of [['Explain subnetting like I am a beginner', 'Subnetting'], ['What is the difference between 4G and 5G core?', '5G Core'], ['How do Docker and Kubernetes fit together?', 'Kubernetes'], ['TCP vs UDP', 'UDP']]) {
+    const r = await demoReply({ message: q, all });
+    assert.match(r.reply, new RegExp(word), q);
+  }
+});
+
+test('"Help me ..." requests search instead of greeting', async () => {
+  const r = await demoReply({ message: 'Help me learn networking from scratch', all });
+  assert.ok(r.resources.length > 0);
+  assert.match((await demoReply({ message: 'Hi there!', all })).reply, /I can help you/);
+});

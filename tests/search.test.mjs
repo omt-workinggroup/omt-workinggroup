@@ -41,3 +41,13 @@ test('related resources exclude the resource itself', () => {
   const rel = relatedResources(resources, r);
   assert.ok(rel.length > 0 && !rel.some((x) => x.id === r.id));
 });
+
+test('tech searches find tech resources', () => {
+  assert.ok(ids('subnetting').includes('omt-subnetting'));
+  assert.ok(ids('k8s').includes('k8s-tutorials'));
+  assert.ok(ids('5g core').slice(0, 3).includes('private-5g') || ids('5g core').slice(0, 3).includes('omt-mobile-generations'));
+  assert.ok(ids('learn linux command line').includes('tlcl'));
+  assert.ok(ids('fiber optic').includes('foa-reference'));
+  assert.ok(ids('cyber').includes('owasp-top10') || ids('cybersecurity').includes('owasp-top10'));
+  assert.ok(ids('I want to learn networking from scratch').some((id) => ['net-intro', 'cn-systems-approach', 'omt-osi-model'].includes(id)));
+});

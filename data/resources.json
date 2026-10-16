@@ -1,8 +1,1147 @@
 {
   "version": 1,
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "notes": "Starter catalogue. 'omt' resources are original OMT WORKING GROUP content. External records link to the official source; run `npm run check-links` before each deploy to confirm the links still work.",
   "resources": [
+    {
+      "id": "omt-subnetting",
+      "title": "IPv4 Subnetting Made Simple",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "networking",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Work out network addresses, broadcast addresses and usable hosts for any CIDR prefix, with a step-by-step /26 example and a cheat sheet.",
+      "tags": [
+        "subnetting",
+        "ipv4",
+        "cidr",
+        "ip address",
+        "networking",
+        "ccna",
+        "subnet mask"
+      ],
+      "guide": "data/guides/omt-subnetting.html",
+      "added": "2026-10-16",
+      "featured": true
+    },
+    {
+      "id": "omt-osi-model",
+      "title": "The OSI and TCP/IP Models Explained",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "networking",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "The seven OSI layers and four TCP/IP layers, what lives at each one, how encapsulation works, and how to use the layers to troubleshoot.",
+      "tags": [
+        "osi model",
+        "tcp/ip",
+        "networking",
+        "layers",
+        "protocols",
+        "troubleshooting",
+        "ccna"
+      ],
+      "guide": "data/guides/omt-osi-model.html",
+      "added": "2026-10-16"
+    },
+    {
+      "id": "omt-mobile-generations",
+      "title": "From 2G to 5G: Mobile Networks at a Glance",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "telecom",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "What changed in each mobile generation, from GSM to LTE and 5G NR, plus the core network elements telecom engineers meet every day.",
+      "tags": [
+        "5g",
+        "4g",
+        "lte",
+        "gsm",
+        "umts",
+        "telecom",
+        "mobile networks",
+        "3gpp",
+        "ran",
+        "core network"
+      ],
+      "guide": "data/guides/omt-mobile-generations.html",
+      "added": "2026-10-16",
+      "featured": true
+    },
+    {
+      "id": "omt-linux-commands",
+      "title": "25 Linux Commands Every Engineer Should Know",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Navigate, inspect logs, manage processes and services, check disks and network ports: the everyday commands for servers and network gear.",
+      "tags": [
+        "linux",
+        "command line",
+        "bash",
+        "terminal",
+        "sysadmin",
+        "shell",
+        "servers"
+      ],
+      "guide": "data/guides/omt-linux-commands.html",
+      "added": "2026-10-16",
+      "featured": true
+    },
+    {
+      "id": "omt-git-basics",
+      "title": "Git Basics in 15 Minutes",
+      "author": "OMT WORKING GROUP",
+      "publisher": "OMT WORKING GROUP",
+      "year": "2026",
+      "kind": "guide",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "omt",
+      "license": "CC BY 4.0 — OMT WORKING GROUP original",
+      "description": "Set up Git, commit, branch, merge and push to GitHub, and safely undo mistakes. The workflow every developer uses daily.",
+      "tags": [
+        "git",
+        "github",
+        "version control",
+        "developer",
+        "programming",
+        "branching"
+      ],
+      "guide": "data/guides/omt-git-basics.html",
+      "added": "2026-10-16"
+    },
+    {
+      "id": "cn-systems-approach",
+      "title": "Computer Networks: A Systems Approach",
+      "author": "Larry Peterson, Bruce Davie",
+      "publisher": "Systems Approach (open edition)",
+      "year": "Open edition",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "CC BY 4.0",
+      "description": "A classic networking textbook, free online: how the Internet is built, from links and switching to TCP/IP, routing, congestion control and applications.",
+      "tags": [
+        "networking",
+        "tcp/ip",
+        "routing",
+        "protocols",
+        "internet",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Systems Approach",
+      "sourceUrl": "https://book.systemsapproach.org/",
+      "added": "2026-10-16",
+      "readUrl": "https://book.systemsapproach.org/",
+      "featured": true
+    },
+    {
+      "id": "sdn-systems-approach",
+      "title": "Software-Defined Networks: A Systems Approach",
+      "author": "Larry Peterson, Carmelo Cascone, Brian O'Connor, Thomas Vachuska, Bruce Davie",
+      "publisher": "Systems Approach (open edition)",
+      "year": "Open edition",
+      "kind": "book",
+      "category": "networking",
+      "level": "advanced",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free online edition from the authors (see the source for licence terms)",
+      "description": "How SDN separates the control plane from the data plane, with P4, ONOS and real network operating system design.",
+      "tags": [
+        "sdn",
+        "software defined networking",
+        "p4",
+        "networking",
+        "telecom",
+        "book"
+      ],
+      "sourceName": "Systems Approach",
+      "sourceUrl": "https://sdn.systemsapproach.org/",
+      "added": "2026-10-16",
+      "readUrl": "https://sdn.systemsapproach.org/"
+    },
+    {
+      "id": "net-intro",
+      "title": "Introduction to Networking: How the Internet Works",
+      "author": "Charles R. Severance",
+      "publisher": "Charles Severance",
+      "year": "2015",
+      "kind": "book",
+      "category": "networking",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Free online (Creative Commons licence)",
+      "description": "A short, friendly book explaining the layers of the Internet, from WiFi and routers to TCP, DNS and secure connections.",
+      "tags": [
+        "networking",
+        "internet",
+        "tcp/ip",
+        "dns",
+        "beginner",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://www.net-intro.com/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.net-intro.com/"
+    },
+    {
+      "id": "beej-network",
+      "title": "Beej's Guide to Network Programming",
+      "author": "Brian \"Beej Jorgensen\" Hall",
+      "publisher": "Brian Hall",
+      "year": "Updated regularly",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Free online from the author",
+      "description": "The famous free guide to socket programming in C: TCP and UDP clients and servers, select(), and how data really moves.",
+      "tags": [
+        "sockets",
+        "network programming",
+        "c",
+        "tcp",
+        "udp",
+        "developer",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://beej.us/guide/bgnet/",
+      "added": "2026-10-16",
+      "readUrl": "https://beej.us/guide/bgnet/"
+    },
+    {
+      "id": "wireshark-guide",
+      "title": "Wireshark User's Guide",
+      "author": "Wireshark Foundation",
+      "publisher": "Wireshark Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Wireshark documentation",
+      "description": "Capture and analyse network traffic: filters, following TCP streams and reading packets, protocol by protocol.",
+      "tags": [
+        "wireshark",
+        "packet capture",
+        "troubleshooting",
+        "networking",
+        "protocols",
+        "tutorial"
+      ],
+      "sourceName": "Wireshark",
+      "sourceUrl": "https://www.wireshark.org/docs/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.wireshark.org/docs/"
+    },
+    {
+      "id": "cisco-netacad",
+      "title": "Cisco Networking Academy: Free Courses",
+      "author": "Cisco",
+      "publisher": "Cisco",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "networking",
+      "level": "beginner",
+      "formats": [
+        "Online course"
+      ],
+      "accessType": "official",
+      "license": "Free self-paced courses (free account required)",
+      "description": "Cisco's free self-paced courses such as Networking Basics and Introduction to Cybersecurity, with labs and Packet Tracer.",
+      "tags": [
+        "cisco",
+        "ccna",
+        "networking",
+        "packet tracer",
+        "cybersecurity",
+        "course"
+      ],
+      "sourceName": "Cisco Networking Academy",
+      "sourceUrl": "https://www.netacad.com/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.netacad.com/"
+    },
+    {
+      "id": "kurose-ross",
+      "title": "Computer Networking: A Top-Down Approach",
+      "author": "James F. Kurose, Keith W. Ross",
+      "publisher": "Pearson",
+      "year": "8th edition (2020)",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The widely used university textbook that teaches networking from applications down to the link layer.",
+      "tags": [
+        "networking",
+        "textbook",
+        "tcp/ip",
+        "university",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Computer+Networking+A+Top-Down+Approach+Kurose",
+      "added": "2026-10-16"
+    },
+    {
+      "id": "private-5g",
+      "title": "Private 5G: A Systems Approach",
+      "author": "Larry Peterson, Oguz Sunay, Bruce Davie",
+      "publisher": "Systems Approach (open edition)",
+      "year": "Open edition",
+      "kind": "book",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free online edition from the authors (see the source for licence terms)",
+      "description": "How 5G mobile networks work end to end, from the radio access network to the core, and how telecom is moving to cloud-native software.",
+      "tags": [
+        "5g",
+        "telecom",
+        "ran",
+        "5g core",
+        "mobile networks",
+        "open ran",
+        "book"
+      ],
+      "sourceName": "Systems Approach",
+      "sourceUrl": "https://5g.systemsapproach.org/",
+      "added": "2026-10-16",
+      "readUrl": "https://5g.systemsapproach.org/",
+      "featured": true
+    },
+    {
+      "id": "3gpp-specs",
+      "title": "3GPP Specifications (LTE, 5G NR and 5G Core)",
+      "author": "3GPP",
+      "publisher": "3rd Generation Partnership Project",
+      "year": "Updated each release",
+      "kind": "standard",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "Online standard",
+        "PDF"
+      ],
+      "accessType": "official",
+      "license": "Free from 3GPP",
+      "description": "The official mobile standards behind GSM, UMTS, LTE and 5G: radio, core network, protocols and release-by-release changes.",
+      "tags": [
+        "3gpp",
+        "5g",
+        "lte",
+        "standards",
+        "telecom",
+        "specifications",
+        "nr"
+      ],
+      "sourceName": "3GPP",
+      "sourceUrl": "https://www.3gpp.org/specifications-technologies",
+      "added": "2026-10-16",
+      "readUrl": "https://www.3gpp.org/specifications-technologies"
+    },
+    {
+      "id": "itu-t-recs",
+      "title": "ITU-T Recommendations",
+      "author": "International Telecommunication Union",
+      "publisher": "ITU",
+      "year": "Updated regularly",
+      "kind": "standard",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "Online standard",
+        "PDF"
+      ],
+      "accessType": "official",
+      "license": "Free from ITU",
+      "description": "International telecom standards, free to download: transmission systems, optical fibre (G-series), numbering and more.",
+      "tags": [
+        "itu",
+        "itu-t",
+        "standards",
+        "telecom",
+        "fibre",
+        "g.652",
+        "transmission"
+      ],
+      "sourceName": "ITU",
+      "sourceUrl": "https://www.itu.int/rec/T-REC/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.itu.int/rec/T-REC/"
+    },
+    {
+      "id": "foa-reference",
+      "title": "FOA Online Fiber Optic Reference Guide",
+      "author": "The Fiber Optic Association",
+      "publisher": "The Fiber Optic Association",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "telecom",
+      "level": "intermediate",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Free online from the FOA",
+      "description": "Fibre optic basics for technicians: cable types, splicing, connectors, testing with OTDRs and installation practice.",
+      "tags": [
+        "fibre",
+        "fiber optics",
+        "otdr",
+        "splicing",
+        "telecom",
+        "ftth",
+        "tutorial"
+      ],
+      "sourceName": "The Fiber Optic Association",
+      "sourceUrl": "https://www.thefoa.org/tech/ref/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.thefoa.org/tech/ref/"
+    },
+    {
+      "id": "allaboutcircuits",
+      "title": "Lessons in Electric Circuits",
+      "author": "Tony R. Kuphaldt",
+      "publisher": "All About Circuits",
+      "year": "Online edition",
+      "kind": "book",
+      "category": "telecom",
+      "level": "beginner",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free online (Design Science License)",
+      "description": "A complete free electronics textbook: DC and AC circuits, semiconductors, digital logic and reference material.",
+      "tags": [
+        "electronics",
+        "circuits",
+        "electrical",
+        "rf",
+        "engineering",
+        "book"
+      ],
+      "sourceName": "All About Circuits",
+      "sourceUrl": "https://www.allaboutcircuits.com/textbook/",
+      "added": "2026-10-16",
+      "readUrl": "https://www.allaboutcircuits.com/textbook/"
+    },
+    {
+      "id": "google-sre",
+      "title": "Site Reliability Engineering",
+      "author": "Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy",
+      "publisher": "O'Reilly Media",
+      "year": "2016",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free to read online from Google",
+      "description": "How Google runs production systems: monitoring, on-call, incident response and reliability. Essential reading for operations and maintenance teams.",
+      "tags": [
+        "sre",
+        "operations",
+        "devops",
+        "reliability",
+        "monitoring",
+        "incident",
+        "book"
+      ],
+      "sourceName": "Google",
+      "sourceUrl": "https://sre.google/books/",
+      "added": "2026-10-16",
+      "readUrl": "https://sre.google/books/",
+      "featured": true
+    },
+    {
+      "id": "k8s-tutorials",
+      "title": "Kubernetes Tutorials",
+      "author": "The Kubernetes Authors",
+      "publisher": "Cloud Native Computing Foundation",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Kubernetes documentation (CC BY 4.0)",
+      "description": "Official hands-on tutorials: deploy an app, scale it, update it and expose it as a service on a Kubernetes cluster.",
+      "tags": [
+        "kubernetes",
+        "k8s",
+        "containers",
+        "cloud native",
+        "devops",
+        "tutorial"
+      ],
+      "sourceName": "Kubernetes",
+      "sourceUrl": "https://kubernetes.io/docs/tutorials/",
+      "added": "2026-10-16",
+      "readUrl": "https://kubernetes.io/docs/tutorials/"
+    },
+    {
+      "id": "docker-get-started",
+      "title": "Docker: Get Started",
+      "author": "Docker",
+      "publisher": "Docker",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "cloud",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Docker documentation",
+      "description": "Learn containers from scratch: build an image, run containers, use volumes and networks, and compose multi-container apps.",
+      "tags": [
+        "docker",
+        "containers",
+        "devops",
+        "images",
+        "compose",
+        "tutorial"
+      ],
+      "sourceName": "Docker Docs",
+      "sourceUrl": "https://docs.docker.com/get-started/",
+      "added": "2026-10-16",
+      "readUrl": "https://docs.docker.com/get-started/"
+    },
+    {
+      "id": "ms-learn-training",
+      "title": "Microsoft Learn: Free Cloud and IT Training",
+      "author": "Microsoft",
+      "publisher": "Microsoft",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "cloud",
+      "level": "beginner",
+      "formats": [
+        "Online course"
+      ],
+      "accessType": "official",
+      "license": "Free on Microsoft Learn",
+      "description": "Free learning paths for Azure, networking, security and developer tools, including preparation for Microsoft certifications.",
+      "tags": [
+        "azure",
+        "cloud",
+        "certification",
+        "az-900",
+        "microsoft",
+        "course"
+      ],
+      "sourceName": "Microsoft Learn",
+      "sourceUrl": "https://learn.microsoft.com/en-us/training/",
+      "added": "2026-10-16",
+      "readUrl": "https://learn.microsoft.com/en-us/training/"
+    },
+    {
+      "id": "phoenix-project",
+      "title": "The Phoenix Project",
+      "author": "Gene Kim, Kevin Behr, George Spafford",
+      "publisher": "IT Revolution Press",
+      "year": "2013",
+      "kind": "book",
+      "category": "cloud",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook",
+        "Audiobook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A novel about an IT operations team rescuing a failing project, and an accessible introduction to DevOps thinking.",
+      "tags": [
+        "devops",
+        "it operations",
+        "novel",
+        "management",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Phoenix+Project+Gene+Kim",
+      "added": "2026-10-16"
+    },
+    {
+      "id": "owasp-top10",
+      "title": "OWASP Top 10",
+      "author": "OWASP Foundation",
+      "publisher": "OWASP Foundation",
+      "year": "Updated periodically",
+      "kind": "standard",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Online standard"
+      ],
+      "accessType": "open",
+      "license": "CC BY-SA 4.0",
+      "description": "The standard awareness document for web application security: the ten most critical risks and how to prevent them.",
+      "tags": [
+        "owasp",
+        "web security",
+        "appsec",
+        "cybersecurity",
+        "vulnerabilities",
+        "secure coding"
+      ],
+      "sourceName": "OWASP",
+      "sourceUrl": "https://owasp.org/www-project-top-ten/",
+      "added": "2026-10-16",
+      "readUrl": "https://owasp.org/www-project-top-ten/",
+      "featured": true
+    },
+    {
+      "id": "owasp-cheatsheets",
+      "title": "OWASP Cheat Sheet Series",
+      "author": "OWASP Foundation",
+      "publisher": "OWASP Foundation",
+      "year": "Updated regularly",
+      "kind": "guide",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Web guide"
+      ],
+      "accessType": "open",
+      "license": "CC BY-SA 4.0",
+      "description": "Short, practical guides on authentication, input validation, password storage, TLS and many more security topics.",
+      "tags": [
+        "owasp",
+        "security",
+        "cheat sheet",
+        "authentication",
+        "secure coding",
+        "cybersecurity"
+      ],
+      "sourceName": "OWASP",
+      "sourceUrl": "https://cheatsheetseries.owasp.org/",
+      "added": "2026-10-16",
+      "readUrl": "https://cheatsheetseries.owasp.org/"
+    },
+    {
+      "id": "nist-csf",
+      "title": "NIST Cybersecurity Framework (CSF) 2.0",
+      "author": "National Institute of Standards and Technology",
+      "publisher": "NIST",
+      "year": "2024",
+      "kind": "standard",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Online standard",
+        "PDF"
+      ],
+      "accessType": "official",
+      "license": "Free from NIST (US government work)",
+      "description": "A widely used framework for managing cybersecurity risk: Govern, Identify, Protect, Detect, Respond and Recover.",
+      "tags": [
+        "nist",
+        "cybersecurity",
+        "framework",
+        "risk",
+        "governance",
+        "standards"
+      ],
+      "sourceName": "NIST",
+      "sourceUrl": "https://www.nist.gov/cyberframework",
+      "added": "2026-10-16",
+      "readUrl": "https://www.nist.gov/cyberframework"
+    },
+    {
+      "id": "d2l",
+      "title": "Dive into Deep Learning",
+      "author": "Aston Zhang, Zachary C. Lipton, Mu Li, Alexander J. Smola",
+      "publisher": "Cambridge University Press",
+      "year": "2023",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "advanced",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Free online from the authors (open licence)",
+      "description": "An interactive deep learning book with runnable code: neural networks, CNNs, transformers and optimisation.",
+      "tags": [
+        "deep learning",
+        "machine learning",
+        "ai",
+        "neural networks",
+        "python",
+        "pytorch",
+        "book"
+      ],
+      "sourceName": "D2L",
+      "sourceUrl": "https://d2l.ai/",
+      "added": "2026-10-16",
+      "readUrl": "https://d2l.ai/",
+      "featured": true
+    },
+    {
+      "id": "pdsh",
+      "title": "Python Data Science Handbook",
+      "author": "Jake VanderPlas",
+      "publisher": "O'Reilly Media",
+      "year": "2016",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Free online from the author",
+      "description": "NumPy, pandas, Matplotlib and scikit-learn: the essential tools for working with data in Python.",
+      "tags": [
+        "data science",
+        "python",
+        "pandas",
+        "numpy",
+        "machine learning",
+        "book"
+      ],
+      "sourceName": "Author's website",
+      "sourceUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+      "added": "2026-10-16",
+      "readUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/"
+    },
+    {
+      "id": "google-mlcc",
+      "title": "Machine Learning Crash Course",
+      "author": "Google",
+      "publisher": "Google for Developers",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Online course",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free from Google",
+      "description": "Google's fast-paced introduction to machine learning, with videos, interactive visualisations and exercises.",
+      "tags": [
+        "machine learning",
+        "ai",
+        "course",
+        "google",
+        "beginner"
+      ],
+      "sourceName": "Google for Developers",
+      "sourceUrl": "https://developers.google.com/machine-learning/crash-course",
+      "added": "2026-10-16",
+      "readUrl": "https://developers.google.com/machine-learning/crash-course"
+    },
+    {
+      "id": "sqlbolt",
+      "title": "SQLBolt: Interactive SQL Lessons",
+      "author": "SQLBolt",
+      "publisher": "SQLBolt",
+      "year": "Online",
+      "kind": "tutorial",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Free online",
+      "description": "Learn SQL in your browser with short interactive lessons: SELECT, filtering, joins, aggregates and more.",
+      "tags": [
+        "sql",
+        "databases",
+        "queries",
+        "data",
+        "tutorial",
+        "beginner"
+      ],
+      "sourceName": "SQLBolt",
+      "sourceUrl": "https://sqlbolt.com/",
+      "added": "2026-10-16",
+      "readUrl": "https://sqlbolt.com/"
+    },
+    {
+      "id": "ddia",
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "publisher": "O'Reilly Media",
+      "year": "2017",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How reliable, scalable data systems work: storage engines, replication, partitioning, transactions and stream processing.",
+      "tags": [
+        "databases",
+        "distributed systems",
+        "backend",
+        "architecture",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Designing+Data-Intensive+Applications+Kleppmann",
+      "added": "2026-10-16"
+    },
+    {
+      "id": "tlcl",
+      "title": "The Linux Command Line",
+      "author": "William Shotts",
+      "publisher": "No Starch Press",
+      "year": "2019",
+      "kind": "book",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Free PDF from the author (Creative Commons licence)",
+      "description": "A complete introduction to the Linux shell: files, permissions, processes, text tools and writing your own shell scripts.",
+      "tags": [
+        "linux",
+        "bash",
+        "command line",
+        "shell scripting",
+        "sysadmin",
+        "book"
+      ],
+      "sourceName": "LinuxCommand.org",
+      "sourceUrl": "https://linuxcommand.org/tlcl.php",
+      "added": "2026-10-16",
+      "readUrl": "https://linuxcommand.org/tlcl.php",
+      "featured": true
+    },
+    {
+      "id": "ostep",
+      "title": "Operating Systems: Three Easy Pieces",
+      "author": "Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau",
+      "publisher": "Arpaci-Dusseau Books",
+      "year": "2018",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Free chapters online from the authors",
+      "description": "A highly praised operating systems textbook built around three ideas: virtualisation, concurrency and persistence.",
+      "tags": [
+        "operating systems",
+        "os",
+        "linux",
+        "concurrency",
+        "computer science",
+        "book"
+      ],
+      "sourceName": "Authors' website",
+      "sourceUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "added": "2026-10-16",
+      "readUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+    },
+    {
+      "id": "missing-semester",
+      "title": "The Missing Semester of Your CS Education",
+      "author": "Anish Athalye, Jon Gjengset, Jose Javier Gonzalez Ortiz",
+      "publisher": "MIT",
+      "year": "2020",
+      "kind": "course",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Online course",
+        "Video"
+      ],
+      "accessType": "open",
+      "license": "CC BY-NC-SA 4.0",
+      "description": "MIT's short course on the tools engineers use daily: the shell, Vim, Git, scripting, debugging and security basics.",
+      "tags": [
+        "shell",
+        "vim",
+        "git",
+        "tools",
+        "linux",
+        "course",
+        "mit"
+      ],
+      "sourceName": "MIT CSAIL",
+      "sourceUrl": "https://missing.csail.mit.edu/",
+      "added": "2026-10-16",
+      "readUrl": "https://missing.csail.mit.edu/"
+    },
+    {
+      "id": "pro-git",
+      "title": "Pro Git, 2nd Edition",
+      "author": "Scott Chacon, Ben Straub",
+      "publisher": "Apress",
+      "year": "2014",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF",
+        "EPUB"
+      ],
+      "accessType": "open",
+      "license": "CC BY-NC-SA 3.0",
+      "description": "The official Git book: from first commit to branching, workflows, GitHub and Git internals.",
+      "tags": [
+        "git",
+        "version control",
+        "github",
+        "developer",
+        "book"
+      ],
+      "sourceName": "git-scm.com",
+      "sourceUrl": "https://git-scm.com/book/en/v2",
+      "added": "2026-10-16",
+      "readUrl": "https://git-scm.com/book/en/v2",
+      "featured": true
+    },
+    {
+      "id": "mdn-learn",
+      "title": "MDN: Learn Web Development",
+      "author": "Mozilla",
+      "publisher": "Mozilla",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online course"
+      ],
+      "accessType": "open",
+      "license": "Open licence (CC BY-SA)",
+      "description": "Mozilla's free course in HTML, CSS and JavaScript, from your first web page to frameworks and accessibility.",
+      "tags": [
+        "html",
+        "css",
+        "javascript",
+        "web development",
+        "frontend",
+        "course"
+      ],
+      "sourceName": "MDN Web Docs",
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn",
+      "added": "2026-10-16",
+      "readUrl": "https://developer.mozilla.org/en-US/docs/Learn"
+    },
+    {
+      "id": "freecodecamp",
+      "title": "freeCodeCamp Curriculum",
+      "author": "freeCodeCamp.org",
+      "publisher": "freeCodeCamp.org",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Online course"
+      ],
+      "accessType": "official",
+      "license": "Free, non-profit",
+      "description": "Thousands of hours of free coding lessons and projects: web design, JavaScript, Python, data analysis and more, with certifications.",
+      "tags": [
+        "coding",
+        "javascript",
+        "python",
+        "web development",
+        "certification",
+        "course"
+      ],
+      "sourceName": "freeCodeCamp",
+      "sourceUrl": "https://www.freecodecamp.org/learn",
+      "added": "2026-10-16",
+      "readUrl": "https://www.freecodecamp.org/learn"
+    },
+    {
+      "id": "rust-book",
+      "title": "The Rust Programming Language",
+      "author": "Steve Klabnik, Carol Nichols",
+      "publisher": "Rust Project",
+      "year": "Updated regularly",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "MIT / Apache 2.0",
+      "description": "\"The Book\": the official introduction to Rust, covering ownership, borrowing, error handling and concurrency.",
+      "tags": [
+        "rust",
+        "programming",
+        "systems programming",
+        "book"
+      ],
+      "sourceName": "Rust",
+      "sourceUrl": "https://doc.rust-lang.org/book/",
+      "added": "2026-10-16",
+      "readUrl": "https://doc.rust-lang.org/book/"
+    },
+    {
+      "id": "go-tour",
+      "title": "A Tour of Go",
+      "author": "The Go Authors",
+      "publisher": "Google",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Official Go documentation",
+      "description": "An interactive introduction to Go in your browser: basics, methods, interfaces and concurrency with goroutines.",
+      "tags": [
+        "go",
+        "golang",
+        "programming",
+        "concurrency",
+        "tutorial"
+      ],
+      "sourceName": "The Go Programming Language",
+      "sourceUrl": "https://go.dev/tour/",
+      "added": "2026-10-16",
+      "readUrl": "https://go.dev/tour/"
+    },
+    {
+      "id": "open-data-structures",
+      "title": "Open Data Structures",
+      "author": "Pat Morin",
+      "publisher": "AU Press",
+      "year": "2013",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "Creative Commons licence",
+      "description": "A free textbook on data structures: lists, hash tables, trees, heaps and graphs, with code and analysis.",
+      "tags": [
+        "data structures",
+        "algorithms",
+        "computer science",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Open Data Structures",
+      "sourceUrl": "https://opendatastructures.org/",
+      "added": "2026-10-16",
+      "readUrl": "https://opendatastructures.org/"
+    },
+    {
+      "id": "pragmatic-programmer",
+      "title": "The Pragmatic Programmer, 20th Anniversary Edition",
+      "author": "David Thomas, Andrew Hunt",
+      "publisher": "Addison-Wesley",
+      "year": "2019",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Timeless advice on becoming a better developer: craftsmanship, automation, testing and working in teams.",
+      "tags": [
+        "programming",
+        "software engineering",
+        "career",
+        "best practices",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Pragmatic+Programmer+Thomas+Hunt",
+      "added": "2026-10-16"
+    },
     {
       "id": "omt-excel-lookup",
       "title": "VLOOKUP and XLOOKUP for Beginners",
@@ -58,7 +1197,6 @@
         "beginner"
       ],
       "guide": "data/guides/omt-excel-essential-formulas.html",
-      "featured": true,
       "added": "2026-10-14"
     },
     {
@@ -87,7 +1225,6 @@
       ],
       "guide": "data/guides/omt-excel-student-budget.html",
       "downloadUrl": "assets/downloads/omt-student-budget.xlsx",
-      "featured": true,
       "added": "2026-10-15"
     },
     {
@@ -146,7 +1283,6 @@
       ],
       "guide": "data/guides/omt-word-student-cv.html",
       "downloadUrl": "assets/downloads/omt-student-cv.docx",
-      "featured": true,
       "added": "2026-10-15"
     },
     {
@@ -232,7 +1368,6 @@
       ],
       "guide": "data/guides/omt-ppt-academic.html",
       "downloadUrl": "assets/downloads/omt-academic-presentation.pptx",
-      "featured": true,
       "added": "2026-10-15"
     },
     {
@@ -263,7 +1398,6 @@
       ],
       "guide": "data/guides/omt-ppt-project-proposal.html",
       "downloadUrl": "assets/downloads/omt-project-proposal.pptx",
-      "featured": true,
       "added": "2026-10-15"
     },
     {
@@ -374,7 +1508,6 @@
         "learning"
       ],
       "guide": "data/guides/omt-study-methods.html",
-      "featured": true,
       "added": "2026-10-11"
     },
     {
@@ -552,7 +1685,6 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/workplace-software-skills",
       "readUrl": "https://openstax.org/details/books/workplace-software-skills",
-      "featured": true,
       "added": "2026-10-08"
     },
     {
@@ -642,7 +1774,6 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/entrepreneurship",
       "readUrl": "https://openstax.org/details/books/entrepreneurship",
-      "featured": true,
       "added": "2026-10-06"
     },
     {

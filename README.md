@@ -1,6 +1,6 @@
 # OMT WORKING GROUP
 
-A free digital library and AI-assisted learning platform for students. Find books, learn Microsoft Word, Excel, PowerPoint, Access and Outlook, download free templates, and ask **OMT AI** to find resources or explain difficult concepts.
+A free tech library for IT lovers: developers, network and telecom engineers, sysadmins, cloud, security and data people, and students. Find free books, courses, standards and guides on programming, networking, 4G/5G, Linux, cloud and DevOps, cybersecurity and data/AI, learn Microsoft Office, and ask **OMT AI** to find resources or explain difficult concepts.
 
 Built with plain **HTML, CSS and JavaScript** (ES modules, no framework, no build step), plus one serverless function for the AI.
 

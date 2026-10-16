@@ -1,0 +1,53 @@
+<p>These commands work on almost any Linux server, many network appliances and macOS. Type <code>man command</code> to read the manual for any of them.</p>
+
+<h2>Moving around and files</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>pwd</code></td><td>Show the current directory</td></tr>
+<tr><td><code>ls -la</code></td><td>List files, including hidden ones, with permissions and sizes</td></tr>
+<tr><td><code>cd /var/log</code></td><td>Change directory (<code>cd ..</code> goes up, <code>cd ~</code> goes home)</td></tr>
+<tr><td><code>mkdir -p a/b/c</code></td><td>Create directories, including parents</td></tr>
+<tr><td><code>cp -r src dst</code> / <code>mv old new</code></td><td>Copy (recursively) / move or rename</td></tr>
+<tr><td><code>rm file</code></td><td>Delete. There is no recycle bin, so double-check before using <code>rm -r</code></td></tr>
+<tr><td><code>find / -name "*.conf"</code></td><td>Search for files by name</td></tr>
+</tbody></table></div>
+
+<h2>Reading files and logs</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>less file</code></td><td>Scroll through a file (press <kbd>q</kbd> to quit, <kbd>/</kbd> to search)</td></tr>
+<tr><td><code>tail -f /var/log/syslog</code></td><td>Follow a log file live</td></tr>
+<tr><td><code>grep -ri "error" /var/log</code></td><td>Search text recursively, ignoring case</td></tr>
+<tr><td><code>journalctl -u nginx --since "1 hour ago"</code></td><td>Read a service's logs on systemd systems</td></tr>
+</tbody></table></div>
+
+<h2>Processes and services</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>top</code> or <code>htop</code></td><td>Live view of CPU, memory and processes</td></tr>
+<tr><td><code>ps aux | grep nginx</code></td><td>Find a running process</td></tr>
+<tr><td><code>kill PID</code></td><td>Ask a process to stop (<code>kill -9</code> forces it)</td></tr>
+<tr><td><code>systemctl status|restart nginx</code></td><td>Check or restart a service</td></tr>
+</tbody></table></div>
+
+<h2>Disks, users and permissions</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>df -h</code> / <code>du -sh *</code></td><td>Free disk space / size of each item here</td></tr>
+<tr><td><code>chmod 640 file</code></td><td>Set permissions: owner read+write (6), group read (4), others none (0)</td></tr>
+<tr><td><code>chown user:group file</code></td><td>Change the owner</td></tr>
+<tr><td><code>sudo command</code></td><td>Run one command as the administrator</td></tr>
+</tbody></table></div>
+
+<h2>Networking</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>ip a</code> / <code>ip r</code></td><td>Show interfaces and addresses / the routing table</td></tr>
+<tr><td><code>ping -c 4 8.8.8.8</code></td><td>Test reachability</td></tr>
+<tr><td><code>traceroute</code> or <code>mtr host</code></td><td>Show the path packets take</td></tr>
+<tr><td><code>ss -tulpn</code></td><td>List listening ports and the programs using them</td></tr>
+<tr><td><code>dig example.com</code></td><td>Query DNS</td></tr>
+<tr><td><code>curl -I https://example.com</code></td><td>Fetch HTTP headers from a server</td></tr>
+<tr><td><code>ssh user@host</code> / <code>scp file user@host:/tmp</code></td><td>Log in to / copy files to a remote machine</td></tr>
+</tbody></table></div>
+
+<h2>Archives</h2>
+<p><code>tar -czf backup.tar.gz folder/</code> creates a compressed archive and <code>tar -xzf backup.tar.gz</code> extracts it.</p>
+
+<h2>Practice</h2>
+<p>On any Linux machine: find the five largest items in <code>/var/log</code> with <code>du -sh /var/log/* | sort -h | tail -5</code>, then list the ports your machine is listening on.</p>

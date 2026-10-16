@@ -30,6 +30,18 @@ const SYNONYMS = {
   proposal: ['project proposal'], pitch: ['pitch deck'],
   manage: ['management'], managing: ['management'], leader: ['leadership'],
   habit: ['habits'], focus: ['focus'], concentration: ['focus'],
+  k8s: ['kubernetes'], kube: ['kubernetes'], container: ['containers', 'docker'], containers: ['docker'],
+  telco: ['telecom'], telecoms: ['telecom'], telecommunication: ['telecom'], telecommunications: ['telecom'],
+  lte: ['4g'], nr: ['5g'], wireless: ['telecom', '5g'], mobile: ['mobile networks'], rf: ['electronics'],
+  fiber: ['fibre'], optic: ['fibre'], optical: ['fibre'], ftth: ['fibre'],
+  network: ['networking'], networks: ['networking'], net: ['networking'], subnet: ['subnetting'], cidr: ['subnetting'], ip: ['ip address', 'tcp/ip'],
+  router: ['routing'], routers: ['routing'], switch: ['networking'], ccna: ['cisco'],
+  cyber: ['cybersecurity'], infosec: ['cybersecurity'], hacking: ['cybersecurity'], pentest: ['cybersecurity'], appsec: ['web security'],
+  ml: ['machine learning'], ai: ['machine learning'], llm: ['deep learning'], dl: ['deep learning'], datascience: ['data science'],
+  db: ['databases'], database: ['databases', 'access'], devops: ['devops'], sre: ['reliability'], ops: ['operations'],
+  unix: ['linux'], ubuntu: ['linux'], bash: ['shell'], cli: ['command line'], terminal: ['command line'], sysadmin: ['linux'],
+  golang: ['go'], js: ['javascript'], frontend: ['web development'], backend: ['databases'], web: ['web development'],
+  vcs: ['version control'], github: ['git'], os: ['operating systems'],
 };
 
 const LEVEL_HINTS = {

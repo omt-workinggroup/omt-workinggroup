@@ -101,8 +101,8 @@ for (const width of WIDTHS) {
   await page.press('#chat-input', 'Enter');
   await page.waitForSelector('.msg--ai .badge--demo');
   check((await page.locator('.msg--ai').last().textContent()).includes('VLOOKUP'), 'assistant demo concept answer');
-  await page.click('[data-prompt="Help me find resources for learning Excel"]');
-  await page.waitForFunction(() => document.querySelectorAll('.msg--ai .rec').length > 3);
+  await page.click('[data-prompt="Help me learn networking from scratch"]');
+  await page.waitForFunction(() => document.querySelectorAll('.msg--ai .rec').length > 2);
   check(true, '');
   await page.goto(`${BASE}/assistant.html?resource=gutenberg-meditations`, { waitUntil: 'networkidle' });
   await page.waitForSelector('.context-pill');

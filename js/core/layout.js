@@ -59,7 +59,7 @@ function footerHTML() {
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand brand--full" href="index.html" aria-label="OMT WORKING GROUP home">${LOGO_FULL}</a>
-        <p>OMT (Operations Maintenance and Training) Working Group: a free digital library and learning platform for students, with books, Microsoft Office skills, presentation resources and an AI study assistant.</p>
+        <p>OMT (Operations Maintenance and Training) Working Group: a free tech library for developers, network and telecom engineers, sysadmins and every IT lover. Books, courses, standards, Office skills and an AI assistant.</p>
       </div>
       <div><h2>Explore</h2><ul>
         <li><a href="library.html">Explore Library</a></li>

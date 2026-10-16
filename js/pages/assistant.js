@@ -70,7 +70,7 @@ function scrollDown() { els.log.scrollTop = els.log.scrollHeight; }
 function renderSuggestions() {
   const prompts = resource
     ? ['Explain what this resource is about', 'Give me an overview', 'Who is this for?', 'Suggest free alternatives']
-    : ['Recommend a beginner-friendly book on programming', 'Help me find resources for learning Excel', 'Explain Excel VLOOKUP like I\'m a beginner', 'Find resources about business management', 'I need a PowerPoint template for a project proposal', 'How should I study for exams?'];
+    : ['Explain subnetting like I\'m a beginner', 'What is the difference between 4G and 5G core?', 'Recommend a free book to learn Linux', 'How do Docker and Kubernetes fit together?', 'TCP vs UDP', 'Help me learn networking from scratch', 'Explain Excel VLOOKUP'];
   els.suggestions.innerHTML = prompts.map((p) => `<li><button type="button" class="chip" data-prompt="${e(p)}">${e(p)}</button></li>`).join('');
 }
 
