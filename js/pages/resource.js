@@ -68,7 +68,7 @@ function render(r, all) {
 
   root.innerHTML = `
     <nav class="breadcrumb" aria-label="Breadcrumb"><ol>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">Home</a></li>
       <li><a href="${isOffice ? 'office.html' : 'library.html'}">${isOffice ? 'Microsoft Office' : 'Library'}</a></li>
       <li><a href="library.html?category=${encodeURIComponent(r.category)}">${e(categoryLabel(r.category))}</a></li>
       <li aria-current="page">${e(r.title)}</li>

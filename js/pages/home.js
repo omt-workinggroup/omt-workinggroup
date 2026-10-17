@@ -16,8 +16,8 @@ const input = document.getElementById('home-q');
 const aiToggle = document.getElementById('home-ai');
 aiToggle.addEventListener('change', () => {
   input.placeholder = aiToggle.checked
-    ? 'Describe what you need, e.g. “a beginner book on Python”'
-    : 'Search books, topics, presentations, Word, Excel…';
+    ? 'e.g. “a gentle first book on Python”'
+    : 'subnetting, 5G core, Kubernetes, SQL…';
 });
 form.addEventListener('submit', (event) => {
   const q = input.value.trim();
@@ -73,7 +73,7 @@ try {
 // ---------- Mobile app-style home ----------
 function renderMobile(all) {
   const hour = new Date().getHours();
-  document.getElementById('m-greeting').textContent = `${hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'} 👋`;
+  document.getElementById('m-greeting').textContent = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   document.querySelector('.m-search__btn').innerHTML = icons.sparkle;
   document.querySelector('.m-ai__icon').innerHTML = icons.sparkle;
 
@@ -85,10 +85,10 @@ function renderMobile(all) {
   banner.innerHTML = picks.map((r, i) => `
     <a class="m-banner__slide" href="${resourceUrl(r)}" aria-roledescription="slide" aria-label="${e(r.title)}, ${i + 1} of ${picks.length}">
       <span class="m-banner__text">
-        <span class="m-pill">${icons.sparkle.replace('<svg', '<svg width="13" height="13"')} Featured</span>
+        <span class="m-pill">Staff pick</span>
         <strong>${e(r.title)}</strong>
         <span class="m-banner__by">${e(r.author)}${/^\d{4}$/.test(r.year) ? ` (${e(r.year)})` : ''}</span>
-        <span class="m-banner__more">Read more ${icons.chevron.replace('<svg', '<svg width="14" height="14"')}</span>
+        <span class="m-banner__more">Open the book ${icons.chevron.replace('<svg', '<svg width="14" height="14"')}</span>
       </span>
       <span class="m-banner__cover cover"${r.kind === 'book' ? ` data-book="${e(r.id)}"` : ''} style="--cover-bg:${CATEGORIES[r.category]?.color}">${posterHTML(r)}</span>
     </a>`).join('');

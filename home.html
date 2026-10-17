@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library home · OMT Working Group</title>
+  <meta name="description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
+  <link rel="canonical" href="https://omt-working-group.vercel.app/home.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMT WORKING GROUP">
+  <meta property="og:title" content="OMT WORKING GROUP: Free Tech Library for Developers, Network and Telecom Engineers">
+  <meta property="og:description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
+  <meta property="og:url" content="https://omt-working-group.vercel.app/home.html">
+  <meta property="og:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OMT Working Group, the free tech library: Learn it. Build it. Run it. Books for developers, network and telecom engineers, with an AI assistant">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
+  <meta name="apple-mobile-web-app-title" content="OMT Library">
+  <meta name="theme-color" content="#0b1736">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="data/resources.json" as="fetch" crossorigin>
+  <link rel="modulepreload" href="js/core/appicons.js">
+  <link rel="modulepreload" href="js/core/catalog.js">
+  <link rel="modulepreload" href="js/core/config.js">
+  <link rel="modulepreload" href="js/core/covers.js">
+  <link rel="modulepreload" href="js/core/external.js">
+  <link rel="modulepreload" href="js/core/favorites.js">
+  <link rel="modulepreload" href="js/core/icons.js">
+  <link rel="modulepreload" href="js/core/layout.js">
+  <link rel="modulepreload" href="js/core/recent.js">
+  <link rel="modulepreload" href="js/core/render.js">
+  <link rel="modulepreload" href="js/core/search.js">
+  <link rel="modulepreload" href="js/core/taxonomy.js">
+  <link rel="modulepreload" href="js/core/util.js">
+  <script type="module" src="js/pages/home.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+
+    <section class="desk d-only">
+      <div class="container desk__inner">
+        <div class="desk__text">
+          <p class="kicker">The library</p>
+          <h1>What are you working on?</h1>
+          <p class="desk__lead">Search <span data-stat="total">69</span> titles we've checked by hand, or reach into Google Books, Open Library and Project Gutenberg from the same box.</p>
+          <form class="search search--lg search--stack desk__search" id="home-search" action="library.html" method="get" role="search">
+            <label class="sr-only" for="home-q">Search books, topics and resources</label>
+            <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="home-q" name="q" type="search" placeholder="subnetting, 5G core, Kubernetes, SQL…" autocomplete="off" maxlength="200"></div>
+            <button class="btn btn--primary" type="submit">Search</button>
+          </form>
+          <label class="hero__ai-toggle"><input type="checkbox" id="home-ai"> Send it to OMT AI instead, and describe what you need in plain words</label>
+          <p class="desk__try">Try <a href="library.html?category=networking">networking</a>, <a href="library.html?q=5g">5G</a>, <a href="library.html?category=linux">Linux</a>, <a href="library.html?category=cloud">cloud</a>, <a href="library.html?category=security">security</a> or <a href="office.html">Office</a>.</p>
+          <dl class="desk__stats" id="hero-stats" aria-label="What's in the library">
+            <div><dt>titles on the shelf</dt><dd data-stat="total">69</dd></div>
+            <div><dt>free to read</dt><dd data-stat="free">–</dd></div>
+            <div><dt>publishers and sources</dt><dd data-stat="sources">–</dd></div>
+          </dl>
+        </div>
+        <div class="desk__books" aria-hidden="true">
+          <img src="assets/covers/cn-systems-approach.jpg" alt="" width="360" height="465">
+          <img src="assets/covers/ostep.jpg" alt="" width="360" height="564">
+          <img src="assets/covers/google-sre.jpg" alt="" width="360" height="473">
+        </div>
+      </div>
+    </section>
+
+    <section class="section d-only" aria-labelledby="cats-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Tracks</span><h2 id="cats-h">Browse by track</h2><p>From your first line of code to keeping a 5G core up at 3 a.m.</p></div></div>
+        <div class="grid grid--cats" id="home-categories"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt d-only" aria-labelledby="feat-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">On the front table</span><h2 id="feat-h">Worth your evenings</h2><p>Each one is labelled with how you can get it: free and open, free from the publisher, a preview, or buy and borrow.</p></div><a class="btn btn--secondary" href="library.html">See all</a></div>
+        <div class="grid grid--cards grid--rail" id="home-featured" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section d-only" aria-labelledby="office-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">The other half of the job</h2><p>Reports, spreadsheets and slides still run most teams. These are the official tutorials and template galleries we point people to.</p></div><a class="btn btn--secondary" href="office.html">Office resources</a></div>
+        <div class="office-grid">
+          <a class="office-tile" href="office.html#word" style="--app:#2b579a"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/word_48x1.svg" data-fallback="assets/icons/apps/word.svg" alt="" width="52" height="52"><h3>Word</h3><p>Microsoft's official help plus free step-by-step lessons.</p></a>
+          <a class="office-tile" href="office.html#excel" style="--app:#217346"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/excel_48x1.svg" data-fallback="assets/icons/apps/excel.svg" alt="" width="52" height="52"><h3>Excel</h3><p>Formulas, charts and PivotTables from official and free courses.</p></a>
+          <a class="office-tile" href="office.html#powerpoint" style="--app:#c43e1c"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/powerpoint_48x1.svg" data-fallback="assets/icons/apps/powerpoint.svg" alt="" width="52" height="52"><h3>PowerPoint</h3><p>Official tutorials and Microsoft's free template gallery.</p></a>
+          <a class="office-tile" href="office.html#access" style="--app:#a4373a"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/access_48x1.svg" data-fallback="assets/icons/apps/access.svg" alt="" width="52" height="52"><h3>Access</h3><p>Database lessons with practice files.</p></a>
+          <a class="office-tile" href="office.html#outlook" style="--app:#0f6cbd"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/outlook_48x1.svg" data-fallback="assets/icons/apps/outlook.svg" alt="" width="52" height="52"><h3>Outlook</h3><p>Email, calendar and productivity tutorials.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-home m-only" aria-label="Home">
+      <div class="container">
+        <div class="m-greet">
+          <div><p class="m-greet__hi" id="m-greeting">Welcome back</p><h1 class="m-greet__title">What are you working on?</h1></div>
+        </div>
+        <form class="m-search" action="library.html" method="get" role="search">
+          <label class="sr-only" for="m-q">Search books and resources</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="m-q" name="q" type="search" placeholder="Search Python, 5G, Linux…" autocomplete="off" maxlength="200" enterkeyhint="search">
+          <a class="m-search__btn" href="assistant.html" aria-label="Ask OMT AI instead"></a>
+        </form>
+
+        <div class="m-banner" id="m-banner" aria-label="Featured resources" aria-roledescription="carousel"></div>
+        <div class="m-dots" id="m-dots" aria-hidden="true"></div>
+
+        <div class="m-tabs" role="tablist" aria-label="Browse by topic" id="m-tabs"></div>
+        <div class="m-rail" id="m-rail" role="tabpanel" aria-live="polite"></div>
+
+        <div class="m-head"><h2 id="m-continue-h">Continue exploring</h2><a href="library.html?sort=newest">View all</a></div>
+        <div class="m-list" id="m-continue"></div>
+
+        <div class="m-head"><h2>Learning tracks</h2><a href="library.html">View all</a></div>
+        <div class="m-tracks" id="m-tracks"></div>
+
+        <div class="m-head"><h2>Microsoft Office</h2><a href="office.html">View all</a></div>
+        <div class="m-apps">
+          <a href="office.html#word" style="--app:#2b579a"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/word_48x1.svg" data-fallback="assets/icons/apps/word.svg" alt="" width="38" height="38"></b><span>Word</span></a>
+          <a href="office.html#excel" style="--app:#217346"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/excel_48x1.svg" data-fallback="assets/icons/apps/excel.svg" alt="" width="38" height="38"></b><span>Excel</span></a>
+          <a href="office.html#powerpoint" style="--app:#c43e1c"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/powerpoint_48x1.svg" data-fallback="assets/icons/apps/powerpoint.svg" alt="" width="38" height="38"></b><span>PowerPoint</span></a>
+          <a href="office.html#access" style="--app:#a4373a"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/access_48x1.svg" data-fallback="assets/icons/apps/access.svg" alt="" width="38" height="38"></b><span>Access</span></a>
+          <a href="office.html#outlook" style="--app:#0f6cbd"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/outlook_48x1.svg" data-fallback="assets/icons/apps/outlook.svg" alt="" width="38" height="38"></b><span>Outlook</span></a>
+        </div>
+
+        <div class="m-head"><h2>Free to read now</h2><a href="library.html?kind=book&amp;access=open">View all</a></div>
+        <div class="m-rail" id="m-templates"></div>
+
+        <a class="m-ai" href="assistant.html">
+          <span class="m-ai__icon"></span>
+          <span><strong>Stuck on something?</strong><span>Ask OMT AI. It answers from the library and tells you where it got the answer.</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section section--tight d-only" aria-labelledby="ai-h">
+      <div class="container">
+        <div class="ai-promo">
+          <div>
+            <span class="eyebrow">OMT AI</span>
+            <h2 id="ai-h">Not sure where to start?</h2>
+            <p>Tell OMT AI what you're trying to do. It explains the idea in plain words, then points you to the two or three books that cover it properly.</p>
+            <ul>
+              <li>"Explain subnetting like I'm a beginner."</li>
+              <li>"What's the difference between 4G and 5G core?"</li>
+              <li>"Recommend a free book to learn Linux."</li>
+              <li>"How do Docker and Kubernetes fit together?"</li>
+            </ul>
+            <p class="small">It searches this library plus Google Books, Open Library and Project Gutenberg. It won't hand you a pirated PDF; it'll tell you where to read, borrow or buy the real thing.</p>
+            <a class="btn btn--primary" href="assistant.html">Ask OMT AI</a>
+          </div>
+          <div class="mock-chat" aria-label="Example conversation">
+            <div class="mock-chat__msg mock-chat__msg--user">I want to learn networking from scratch.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">Start with <strong>Introduction to Networking</strong> (short and friendly), then <strong>Computer Networks: A Systems Approach</strong> (the full textbook). Both are free online. Cisco's free <strong>Networking Academy</strong> course is a good next step.</div>
+            <div class="mock-chat__msg mock-chat__msg--user">Explain subnetting like I'm a beginner.</div>
+            <div class="mock-chat__msg mock-chat__msg--ai">A /26 prefix leaves 6 host bits, so each subnet has 2⁶ = 64 addresses, and 62 of them are usable…</div>
+            <p class="mock-chat__caption">Example conversation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section d-only" aria-labelledby="recent-h">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">New</span><h2 id="recent-h">Recently added</h2></div><a class="btn btn--secondary" href="library.html?sort=newest">See newest</a></div>
+        <div class="grid grid--cards grid--rail" id="home-recent" aria-live="polite"></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+</body>
+</html>

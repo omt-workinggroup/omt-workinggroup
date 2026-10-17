@@ -8,6 +8,12 @@ Built with plain **HTML, CSS and JavaScript** (ES modules, no framework, no buil
 
 OMT WORKING GROUP is a **discovery platform, not a publisher**. We don't write or host books: we bring together free and official tech resources and search millions of books on Google Books, Open Library and Project Gutenberg, then send readers to the official source to read, borrow or buy.
 
+## Pages
+
+- `index.html` is the front page: a static landing page with the shelf, contents, staff picks and a **Get started** button.
+- `home.html` is the library home people land on after **Get started**: search, tracks, featured books, Office and OMT AI.
+- Type is Source Serif 4 (headings) and IBM Plex Sans and Mono (text and labels), self-hosted in `assets/fonts/` under the SIL Open Font License.
+
 ## Access labels
 
 | Access label | What it means | Can you read/download here? |

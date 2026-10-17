@@ -40,7 +40,7 @@ async function newPage(width = 1280) {
   return page;
 }
 
-const PAGES = ['index.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
+const PAGES = ['index.html', 'home.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
 const WIDTHS = [320, 375, 430, 768, 1024, 1440];
 
 for (const width of WIDTHS) {
@@ -168,7 +168,7 @@ for (const width of WIDTHS) {
 // --- Mobile navigation ---
 {
   const page = await newPage(375);
-  await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/home.html`, { waitUntil: 'networkidle' });
   check(await page.locator('.nav').isHidden(), 'desktop nav hidden on mobile');
   await page.click('#menu-toggle');
   check(await page.locator('#drawer').isVisible(), 'mobile drawer opens');

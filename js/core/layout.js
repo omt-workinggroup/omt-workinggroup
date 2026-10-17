@@ -5,7 +5,7 @@ import { getFavorites, onFavoritesChange } from './favorites.js';
 import { bindFavoriteButtons } from './render.js';
 
 const NAV = [
-  { href: 'index.html', label: 'Home', page: 'home' },
+  { href: 'home.html', label: 'Home', page: 'home' },
   { href: 'library.html', label: 'Explore Library', page: 'library' },
   { href: 'office.html', label: 'Microsoft Office', page: 'office' },
   { href: 'presentations.html', label: 'Presentations', page: 'presentations' },
@@ -23,7 +23,7 @@ function navList(current) {
 
 function headerHTML(current) {
   return `<div class="container site-header__inner">
-    <a class="brand" href="index.html" aria-label="OMT WORKING GROUP home">${LOGO}</a>
+    <a class="brand" href="home.html" aria-label="OMT WORKING GROUP home">${LOGO}</a>
     <nav class="nav" aria-label="Main">${navList(current)}</nav>
     <div class="header-actions">
       <button type="button" class="icon-btn" id="search-toggle" aria-expanded="false" aria-controls="header-search" aria-label="Search the library">${icons.search}</button>
@@ -46,7 +46,7 @@ function headerHTML(current) {
 function drawerHTML(current) {
   return `<div class="drawer__backdrop" data-close></div>
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
-    <div class="drawer__top"><a class="brand" href="index.html">${LOGO}</a>
+    <div class="drawer__top"><a class="brand" href="home.html">${LOGO}</a>
       <button type="button" class="icon-btn" data-close aria-label="Close menu">${icons.close}</button></div>
     <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li></ul></nav>
     <a class="btn btn--ai btn--block" href="assistant.html">${icons.sparkle}Ask OMT AI</a>
@@ -58,8 +58,8 @@ function footerHTML() {
   return `<div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand brand--full" href="index.html" aria-label="OMT WORKING GROUP home">${LOGO_FULL}</a>
-        <p>OMT (Operations Maintenance and Training) Working Group: a free tech library for developers, network and telecom engineers, sysadmins and every IT lover. Books, courses, standards, Office skills and an AI assistant.</p>
+        <a class="brand brand--full" href="./" aria-label="OMT WORKING GROUP front page">${LOGO_FULL}</a>
+        <p>OMT, the Operations Maintenance and Training Working Group, keeps a free shelf of books, specs and courses for people who build and run software, networks and telecom systems.</p>
       </div>
       <div><h2>Explore</h2><ul>
         <li><a href="library.html">Explore Library</a></li>
@@ -85,7 +85,7 @@ function footerHTML() {
 
 function tabbarHTML(current) {
   const tab = (href, page, icon, label) => `<a class="tabbar__item" href="${href}"${page === current ? ' aria-current="page"' : ''}>${icons[icon]}<span>${label}</span></a>`;
-  return `${tab('index.html', 'home', 'home', 'Home')}
+  return `${tab('home.html', 'home', 'home', 'Home')}
     ${tab('library.html', 'library', 'compass', 'Explore')}
     <a class="tabbar__fab" href="assistant.html"${current === 'assistant' ? ' aria-current="page"' : ''}><span class="tabbar__fab-btn">${icons.sparkle}</span><span>Ask AI</span></a>
     ${tab('office.html', 'office', 'briefcase', 'Office')}

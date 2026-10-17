@@ -3,188 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMT WORKING GROUP: Free Tech Library for Developers, Network and Telecom Engineers</title>
-  <meta name="description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
+  <title>OMT Working Group: the engineer's bookshelf</title>
+  <meta name="description" content="Free books, specs and courses for people who build and run software, networks and telecom systems. Programming, networking, 5G, Linux, cloud, security and data, each linked to its official source.">
   <link rel="canonical" href="https://omt-working-group.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
-  <meta property="og:title" content="OMT WORKING GROUP: Free Tech Library for Developers, Network and Telecom Engineers">
-  <meta property="og:description" content="Free books, courses and guides on programming, networking, 5G and telecom, Linux, cloud, cybersecurity and data, plus Microsoft Office skills and an AI study assistant.">
+  <meta property="og:title" content="OMT Working Group: the engineer's bookshelf">
+  <meta property="og:description" content="Free books, specs and courses for people who build and run software, networks and telecom systems.">
   <meta property="og:url" content="https://omt-working-group.vercel.app/">
   <meta property="og:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="OMT Working Group, the free tech library: Learn it. Build it. Run it. Books for developers, network and telecom engineers, with an AI assistant">
+  <meta property="og:image:alt" content="OMT Working Group, the free tech library: books for developers, network and telecom engineers">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://omt-working-group.vercel.app/assets/og-image.png">
   <meta name="apple-mobile-web-app-title" content="OMT Library">
-  <meta name="theme-color" content="#0b1736">
+  <meta name="theme-color" content="#16181d">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preload" href="data/resources.json" as="fetch" crossorigin>
-  <link rel="modulepreload" href="js/core/appicons.js">
-  <link rel="modulepreload" href="js/core/catalog.js">
-  <link rel="modulepreload" href="js/core/config.js">
-  <link rel="modulepreload" href="js/core/covers.js">
-  <link rel="modulepreload" href="js/core/external.js">
-  <link rel="modulepreload" href="js/core/favorites.js">
-  <link rel="modulepreload" href="js/core/icons.js">
-  <link rel="modulepreload" href="js/core/layout.js">
-  <link rel="modulepreload" href="js/core/recent.js">
-  <link rel="modulepreload" href="js/core/render.js">
-  <link rel="modulepreload" href="js/core/search.js">
+  <link rel="prefetch" href="home.html">
   <link rel="modulepreload" href="js/core/taxonomy.js">
-  <link rel="modulepreload" href="js/core/util.js">
-  <script type="module" src="js/pages/home.js"></script>
+  <script type="module" src="js/pages/landing.js"></script>
 </head>
-<body data-page="home">
+<body data-page="landing" class="lp">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" id="site-header"></header>
+
+  <header class="lp-top">
+    <div class="container lp-top__inner">
+      <a class="brand" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations Maintenance</span><span>and Training Working Group</span></span></a>
+      <nav class="lp-top__nav" aria-label="Main">
+        <a href="library.html">Library</a>
+        <a href="office.html">Office</a>
+        <a href="assistant.html">OMT AI</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a class="btn btn--primary btn--sm lp-top__cta" href="home.html">Get started</a>
+    </div>
+  </header>
+
   <main id="main">
-
-    <section class="hero hero--dark d-only">
-      <div class="container hero__inner">
-        <span class="hero__pill">Free tech library for IT lovers · Powered by AI</span>
-        <h1>Knowledge at Your <span>Fingertips.</span></h1>
-        <p class="hero__lead">Tired of hunting for books? OMT brings millions of tech books, courses and standards from Google Books, Open Library, Project Gutenberg and official publishers into one place. An AI assistant finds exactly what you need.</p>
-        <form class="search search--lg search--stack hero__search" id="home-search" action="library.html" method="get" role="search">
-          <label class="sr-only" for="home-q">Search books, topics and resources</label>
-          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="home-q" name="q" type="search" placeholder="Search Python, 5G, subnetting, Linux, Kubernetes…" autocomplete="off" maxlength="200"></div>
-          <button class="btn btn--primary" type="submit">Search</button>
-        </form>
-        <label class="hero__ai-toggle"><input type="checkbox" id="home-ai"> Ask OMT AI instead (describe what you need in your own words)</label>
-        <div class="hero__suggest">
-          <p class="sr-only">Suggested searches</p>
-          <ul class="chips">
-            <li><a class="chip" href="library.html?category=computer-science">Programming</a></li>
-            <li><a class="chip" href="library.html?category=networking">Networking</a></li>
-            <li><a class="chip" href="library.html?q=5g">5G &amp; Telecom</a></li>
-            <li><a class="chip" href="library.html?category=linux">Linux</a></li>
-            <li><a class="chip" href="library.html?category=cloud">Cloud &amp; DevOps</a></li>
-            <li><a class="chip" href="library.html?category=security">Cybersecurity</a></li>
-            <li><a class="chip" href="library.html?category=data-ai">Data &amp; AI</a></li>
-            <li><a class="chip" href="office.html">Microsoft Office</a></li>
-          </ul>
-        </div>
-        <div class="hero__cta"><a class="btn btn--light" href="library.html">Explore the Library</a><a class="btn btn--outline-light" href="assistant.html">Ask OMT AI</a></div>
-        <dl class="hero__stats" id="hero-stats" aria-label="What's in the library">
-          <div><dt>Hand-picked resources</dt><dd data-stat="total">–</dd></div>
-          <div><dt>Free to read or use</dt><dd data-stat="free">–</dd></div>
-          <div><dt>Trusted sources</dt><dd data-stat="sources">–</dd></div>
-          <div><dt>Searchable books</dt><dd>Millions</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section d-only" aria-labelledby="cats-h">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">Learning tracks</span><h2 id="cats-h">Pick your track</h2><p>From your first line of code to running 5G networks in production.</p></div></div>
-        <div class="grid grid--cats" id="home-categories"></div>
-      </div>
-    </section>
-
-    <section class="section section--alt d-only" aria-labelledby="feat-h">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">Hand-picked</span><h2 id="feat-h">Featured resources</h2><p>Every resource is labelled with how you can access it: free and open, from an official source, preview, or buy or borrow.</p></div><a class="btn btn--secondary" href="library.html">See all</a></div>
-        <div class="grid grid--cards grid--rail" id="home-featured" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section d-only" aria-labelledby="office-h">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">Microsoft Office</span><h2 id="office-h">Office skills for every engineer</h2><p>The best official tutorials and free template galleries for the tools every job uses.</p></div><a class="btn btn--primary" href="office.html">Explore Microsoft Office Resources</a></div>
-        <div class="office-grid">
-          <a class="office-tile" href="office.html#word" style="--app:#2b579a"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/word_48x1.svg" data-fallback="assets/icons/apps/word.svg" alt="" width="52" height="52"><h3>Word</h3><p>Microsoft's official help plus free step-by-step lessons.</p></a>
-          <a class="office-tile" href="office.html#excel" style="--app:#217346"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/excel_48x1.svg" data-fallback="assets/icons/apps/excel.svg" alt="" width="52" height="52"><h3>Excel</h3><p>Formulas, charts and PivotTables from official and free courses.</p></a>
-          <a class="office-tile" href="office.html#powerpoint" style="--app:#c43e1c"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/powerpoint_48x1.svg" data-fallback="assets/icons/apps/powerpoint.svg" alt="" width="52" height="52"><h3>PowerPoint</h3><p>Official tutorials and Microsoft's free template gallery.</p></a>
-          <a class="office-tile" href="office.html#access" style="--app:#a4373a"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/access_48x1.svg" data-fallback="assets/icons/apps/access.svg" alt="" width="52" height="52"><h3>Access</h3><p>Database lessons with practice files.</p></a>
-          <a class="office-tile" href="office.html#outlook" style="--app:#0f6cbd"><img class="office-tile__icon" src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/outlook_48x1.svg" data-fallback="assets/icons/apps/outlook.svg" alt="" width="52" height="52"><h3>Outlook</h3><p>Email, calendar and productivity tutorials.</p></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="m-home m-only" aria-label="Home">
-      <div class="container">
-        <div class="m-greet">
-          <div><p class="m-greet__hi" id="m-greeting">Welcome 👋</p><h1 class="m-greet__title">What will you build today?</h1></div>
-        </div>
-        <form class="m-search" action="library.html" method="get" role="search">
-          <label class="sr-only" for="m-q">Search books and resources</label>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="m-q" name="q" type="search" placeholder="Search Python, 5G, Linux…" autocomplete="off" maxlength="200" enterkeyhint="search">
-          <a class="m-search__btn" href="assistant.html" aria-label="Ask OMT AI instead"></a>
-        </form>
-
-        <div class="m-banner" id="m-banner" aria-label="Featured resources" aria-roledescription="carousel"></div>
-        <div class="m-dots" id="m-dots" aria-hidden="true"></div>
-
-        <div class="m-tabs" role="tablist" aria-label="Browse by topic" id="m-tabs"></div>
-        <div class="m-rail" id="m-rail" role="tabpanel" aria-live="polite"></div>
-
-        <div class="m-head"><h2 id="m-continue-h">Continue exploring</h2><a href="library.html?sort=newest">View all</a></div>
-        <div class="m-list" id="m-continue"></div>
-
-        <div class="m-head"><h2>Learning tracks</h2><a href="library.html">View all</a></div>
-        <div class="m-tracks" id="m-tracks"></div>
-
-        <div class="m-head"><h2>Microsoft Office</h2><a href="office.html">View all</a></div>
-        <div class="m-apps">
-          <a href="office.html#word" style="--app:#2b579a"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/word_48x1.svg" data-fallback="assets/icons/apps/word.svg" alt="" width="38" height="38"></b><span>Word</span></a>
-          <a href="office.html#excel" style="--app:#217346"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/excel_48x1.svg" data-fallback="assets/icons/apps/excel.svg" alt="" width="38" height="38"></b><span>Excel</span></a>
-          <a href="office.html#powerpoint" style="--app:#c43e1c"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/powerpoint_48x1.svg" data-fallback="assets/icons/apps/powerpoint.svg" alt="" width="38" height="38"></b><span>PowerPoint</span></a>
-          <a href="office.html#access" style="--app:#a4373a"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/access_48x1.svg" data-fallback="assets/icons/apps/access.svg" alt="" width="38" height="38"></b><span>Access</span></a>
-          <a href="office.html#outlook" style="--app:#0f6cbd"><b><img src="https://res.cdn.office.net/files/fabric-cdn-prod_20260917.001/assets/brand-icons/product/svg/outlook_48x1.svg" data-fallback="assets/icons/apps/outlook.svg" alt="" width="38" height="38"></b><span>Outlook</span></a>
-        </div>
-
-        <div class="m-head"><h2>Free to read now</h2><a href="library.html?kind=book&amp;access=open">View all</a></div>
-        <div class="m-rail" id="m-templates"></div>
-
-        <a class="m-ai" href="assistant.html">
-          <span class="m-ai__icon"></span>
-          <span><strong>Stuck on a concept?</strong><span>Ask OMT AI about subnetting, 5G, Linux, Git, code, or any book in the library.</span></span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section section--tight d-only" aria-labelledby="ai-h">
-      <div class="container">
-        <div class="ai-promo">
-          <div>
-            <span class="eyebrow">OMT AI</span>
-            <h2 id="ai-h">Can't Find What You're Looking For?</h2>
-            <p>Ask our AI assistant to help discover books, explain concepts, summarize available sources, and recommend useful learning resources.</p>
-            <ul>
-              <li>"Explain subnetting like I'm a beginner."</li>
-              <li>"What's the difference between 4G and 5G core?"</li>
-              <li>"Recommend a free book to learn Linux."</li>
-              <li>"How do Docker and Kubernetes fit together?"</li>
-            </ul>
-            <p class="small">OMT AI searches our catalogue and Open Library's records. It can't get you a free copy of a copyrighted book. It will tell you where to find it legally and suggest free alternatives.</p>
-            <a class="btn btn--primary" href="assistant.html">Ask OMT AI</a>
+    <section class="lp-hero">
+      <div class="container lp-hero__inner">
+        <div class="lp-hero__text">
+          <p class="kicker">Operations · Maintenance · Training</p>
+          <h1>The engineer's bookshelf.</h1>
+          <p class="lp-lead">Free books, specs and courses for people who build and run software, networks and telecom systems. We track down the good ones and send you to the official edition. The authors keep the credit.</p>
+          <div class="lp-actions">
+            <a class="btn btn--primary btn--lg" href="home.html">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="lp-textlink" href="library.html">or browse all <span data-count="total">69</span> titles</a>
           </div>
-          <div class="mock-chat" aria-label="Example conversation">
-            <div class="mock-chat__msg mock-chat__msg--user">I want to learn networking from scratch.</div>
-            <div class="mock-chat__msg mock-chat__msg--ai">Start with <strong>Introduction to Networking</strong> (short and friendly), then <strong>Computer Networks: A Systems Approach</strong> (the full textbook). Both are free online. Cisco's free <strong>Networking Academy</strong> course is a good next step.</div>
-            <div class="mock-chat__msg mock-chat__msg--user">Explain subnetting like I'm a beginner.</div>
-            <div class="mock-chat__msg mock-chat__msg--ai">A /26 prefix leaves 6 host bits, so each subnet has 2⁶ = 64 addresses, and 62 of them are usable…</div>
-            <p class="mock-chat__caption">Example conversation for illustration</p>
+          <dl class="lp-facts">
+            <div><dt>titles checked by hand</dt><dd data-count="total">69</dd></div>
+            <div><dt>free to read today</dt><dd data-count="free">60</dd></div>
+            <div><dt>open catalogues searched</dt><dd>3</dd></div>
+          </dl>
+        </div>
+
+        <div class="shelf" aria-label="A few books from the library">
+          <div class="shelf__row">
+            <a href="resource.html?id=pro-git" class="shelf__book" style="--h:96%"><img src="assets/covers/pro-git.jpg" alt="Pro Git" width="360" height="476"></a>
+            <a href="resource.html?id=tlcl" class="shelf__book" style="--h:92%"><img src="assets/covers/tlcl.jpg" alt="The Linux Command Line" width="360" height="474"></a>
+            <a href="resource.html?id=ostep" class="shelf__book shelf__book--lean" style="--h:100%"><img src="assets/covers/ostep.jpg" alt="Operating Systems: Three Easy Pieces" width="360" height="564"></a>
+            <a href="resource.html?id=ddia" class="shelf__book" style="--h:94%"><img src="assets/covers/ddia.jpg" alt="Designing Data-Intensive Applications" width="360" height="473"></a>
+          </div>
+          <div class="shelf__row">
+            <a href="resource.html?id=private-5g" class="shelf__book" style="--h:90%"><img src="assets/covers/private-5g.jpg" alt="Private 5G: A Systems Approach" width="360" height="444"></a>
+            <a href="resource.html?id=cn-systems-approach" class="shelf__book" style="--h:97%"><img src="assets/covers/cn-systems-approach.jpg" alt="Computer Networks: A Systems Approach" width="360" height="465"></a>
+            <a href="resource.html?id=google-sre" class="shelf__book" style="--h:95%"><img src="assets/covers/google-sre.jpg" alt="Site Reliability Engineering" width="360" height="473"></a>
+            <a href="resource.html?id=eloquent-javascript" class="shelf__book shelf__book--lean-r" style="--h:93%"><img src="assets/covers/eloquent-javascript.jpg" alt="Eloquent JavaScript" width="360" height="477"></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section d-only" aria-labelledby="recent-h">
-      <div class="container">
-        <div class="section-head"><div><span class="eyebrow">New</span><h2 id="recent-h">Recently added</h2></div><a class="btn btn--secondary" href="library.html?sort=newest">See newest</a></div>
-        <div class="grid grid--cards grid--rail" id="home-recent" aria-live="polite"></div>
+    <section class="lp-sources" aria-label="Where the books come from">
+      <div class="container lp-sources__inner">
+        <span class="lp-sources__label">We link to</span>
+        <ul>
+          <li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>OWASP</li><li>NIST</li>
+        </ul>
       </div>
     </section>
 
+    <section class="lp-section" aria-labelledby="toc-h">
+      <div class="container lp-split">
+        <div class="lp-split__aside">
+          <p class="kicker">Contents</p>
+          <h2 id="toc-h">Sorted by the work you do, not by publisher.</h2>
+          <p class="muted">Seven tracks for the people who keep systems running, plus Office skills, because the report still has to go out on Friday.</p>
+        </div>
+        <ol class="toc">
+          <li><a href="library.html?category=computer-science"><span class="toc__no">01</span><span class="toc__name">Programming &amp; Software</span><span class="toc__dots"></span><span class="toc__n"><span data-count="computer-science">15</span> titles</span></a></li>
+          <li><a href="library.html?category=networking"><span class="toc__no">02</span><span class="toc__name">Networking</span><span class="toc__dots"></span><span class="toc__n"><span data-count="networking">7</span> titles</span></a></li>
+          <li><a href="library.html?category=telecom"><span class="toc__no">03</span><span class="toc__name">Telecom, 4G &amp; 5G</span><span class="toc__dots"></span><span class="toc__n"><span data-count="telecom">5</span> titles</span></a></li>
+          <li><a href="library.html?category=cloud"><span class="toc__no">04</span><span class="toc__name">Cloud &amp; DevOps</span><span class="toc__dots"></span><span class="toc__n"><span data-count="cloud">5</span> titles</span></a></li>
+          <li><a href="library.html?category=security"><span class="toc__no">05</span><span class="toc__name">Security</span><span class="toc__dots"></span><span class="toc__n"><span data-count="security">3</span> titles</span></a></li>
+          <li><a href="library.html?category=data-ai"><span class="toc__no">06</span><span class="toc__name">Data &amp; AI</span><span class="toc__dots"></span><span class="toc__n"><span data-count="data-ai">5</span> titles</span></a></li>
+          <li><a href="library.html?category=linux"><span class="toc__no">07</span><span class="toc__name">Linux &amp; Systems</span><span class="toc__dots"></span><span class="toc__n"><span data-count="linux">3</span> titles</span></a></li>
+          <li><a href="office.html"><span class="toc__no">A</span><span class="toc__name">Appendix: Microsoft Office</span><span class="toc__dots"></span><span class="toc__n"><span data-count="office">11</span> guides</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--paper" aria-labelledby="picks-h">
+      <div class="container">
+        <div class="lp-head">
+          <div><p class="kicker">Staff picks</p><h2 id="picks-h">Four books we keep recommending</h2></div>
+          <a class="lp-textlink" href="library.html?kind=book">All books</a>
+        </div>
+        <div class="picks">
+          <a class="pick" href="resource.html?id=cn-systems-approach">
+            <img src="assets/covers/cn-systems-approach.jpg" alt="" width="360" height="465" loading="lazy">
+            <div><h3>Computer Networks: A Systems Approach</h3><p class="pick__by">Peterson &amp; Davie</p><p>The one we hand to people starting on a transport or IP team. Read the first three chapters properly, then dip in as needed.</p><span class="pick__tag">Free online</span></div>
+          </a>
+          <a class="pick" href="resource.html?id=ostep">
+            <img src="assets/covers/ostep.jpg" alt="" width="360" height="564" loading="lazy">
+            <div><h3>Operating Systems: Three Easy Pieces</h3><p class="pick__by">Remzi &amp; Andrea Arpaci-Dusseau</p><p>Short chapters, a sense of humour, and the explanation of virtual memory that finally makes it click.</p><span class="pick__tag">Free online</span></div>
+          </a>
+          <a class="pick" href="resource.html?id=google-sre">
+            <img src="assets/covers/google-sre.jpg" alt="" width="360" height="473" loading="lazy">
+            <div><h3>Site Reliability Engineering</h3><p class="pick__by">Beyer, Jones, Petoff &amp; Murphy</p><p>How Google runs production. If you only read one chapter before your first on-call week, make it the one on monitoring.</p><span class="pick__tag">Free online</span></div>
+          </a>
+          <a class="pick" href="resource.html?id=private-5g">
+            <img src="assets/covers/private-5g.jpg" alt="" width="360" height="444" loading="lazy">
+            <div><h3>Private 5G: A Systems Approach</h3><p class="pick__by">Peterson, Sunay &amp; Davie</p><p>The clearest tour of the 5G core and RAN we've found that isn't a 3GPP specification.</p><span class="pick__tag">Free online</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section" aria-labelledby="ai-h">
+      <div class="container lp-split lp-split--ai">
+        <div class="lp-split__aside">
+          <p class="kicker">OMT AI</p>
+          <h2 id="ai-h">Ask before you read.</h2>
+          <p>Describe what you're stuck on. OMT AI explains it in plain words, then names the two or three books that cover it properly, with a link to each.</p>
+          <p class="muted small">It only recommends books it actually found in the library or in Google Books, Open Library and Project Gutenberg. No made-up titles, and no pirated PDFs.</p>
+          <a class="btn btn--secondary" href="assistant.html">Try OMT AI</a>
+        </div>
+        <figure class="term" aria-label="Example question and answer">
+          <div class="term__bar"><i></i><i></i><i></i><span>omt ai</span></div>
+          <pre class="term__body"><span class="term__p">you</span> what's the difference between the 4G EPC and the 5G core?
+
+<span class="term__p term__p--ai">omt</span> In 4G one box, the MME, handles both who you are and your
+    data sessions. The 5G core splits that job into small services:
+    <b>AMF</b> for access and mobility, <b>SMF</b> for sessions, and
+    <b>UPF</b> for moving your packets. They talk over HTTP APIs,
+    which is why people call it "service-based".
+
+    Read next:
+    › Private 5G: A Systems Approach, ch. 5   <em>free</em>
+    › 3GPP TS 23.501 (system architecture)  <em>official</em></pre>
+          <figcaption>Example answer, shortened.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="lp-section lp-section--paper" aria-labelledby="why-h">
+      <div class="container lp-note">
+        <p class="kicker">Why this exists</p>
+        <h2 id="why-h">Most of us learned from borrowed PDFs and dead links.</h2>
+        <div class="lp-note__body">
+          <p>OMT is the shelf we wished we'd had: the good books, sorted by the work you actually do, each one linked back to the people who wrote it.</p>
+          <p>We don't publish anything and we don't host copies. If a book is free, we send you to the free edition. If it isn't, we say so and tell you where to borrow or buy it.</p>
+          <p class="lp-note__sign">The OMT Working Group</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-cta">
+      <div class="container lp-cta__inner">
+        <h2>Pull one off the shelf.</h2>
+        <a class="btn btn--light btn--lg" href="home.html">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer" id="site-footer"></footer>
-  <noscript><p class="container">Search, favorites and the AI assistant need JavaScript. You can still read the <a href="about.html">About</a> page.</p></noscript>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--full" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations</span><span>Maintenance</span><span>and Training</span><span>Working Group</span></span></a>
+          <p>OMT, the Operations Maintenance and Training Working Group, keeps a free shelf of books, specs and courses for people who build and run software, networks and telecom systems.</p>
+        </div>
+        <div><h2>Explore</h2><ul>
+          <li><a href="home.html">Library home</a></li>
+          <li><a href="library.html">All titles</a></li>
+          <li><a href="office.html">Microsoft Office</a></li>
+          <li><a href="assistant.html">OMT AI</a></li></ul></div>
+        <div><h2>About</h2><ul>
+          <li><a href="about.html">About OMT</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="about.html#copyright">Report a copyright issue</a></li></ul></div>
+        <div><h2>Legal</h2><ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="terms.html#attribution">Attribution</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> OMT WORKING GROUP. Every book belongs to its author and publisher; we link to their official editions.</p>
+        <p>Microsoft, Word, Excel, PowerPoint, Access and Outlook are trademarks of Microsoft Corporation. OMT is independent and not affiliated with Microsoft.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
