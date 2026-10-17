@@ -93,7 +93,9 @@ export async function searchExternal(q, opts = {}) {
   const query = String(q ?? '').trim().slice(0, 200);
   if (!query) return { results: [], sources: {} };
   const runs = { googlebooks: searchGoogleBooks, openlibrary: searchOpenLibrary, gutenberg: searchGutenberg };
-  const settled = await Promise.allSettled(Object.values(runs).map((fn) => fn(query, opts)));
+  // With a deadline, a slow source counts as unavailable instead of holding up the others.
+  const withDeadline = (p) => (opts.deadlineMs ? Promise.race([p, new Promise((_, reject) => setTimeout(() => reject(new Error('deadline')), opts.deadlineMs))]) : p);
+  const settled = await Promise.allSettled(Object.values(runs).map((fn) => withDeadline(fn(query, opts))));
   const lists = settled.map((s) => (s.status === 'fulfilled' ? s.value : []));
   const sources = Object.fromEntries(Object.keys(runs).map((k, i) => [k, settled[i].status === 'fulfilled' ? 'ok' : 'unavailable']));
   // Interleave sources so the first results show variety, then de-duplicate.

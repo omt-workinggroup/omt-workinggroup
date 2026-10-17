@@ -1,8 +1,13 @@
 // OMT AI — request handler. Served at /api/ai by api/ai.js (a Vercel Function).
 //
 //   GET  /api/ai  -> { configured: boolean }  (lets the page choose live or demo mode)
-//   POST /api/ai  -> { ok: true, mode: "live", reply, resources }
-//                    { ok: false, error: { code, message } }
+//   POST /api/ai  { messages, resourceId?, stream? }
+//        stream: true  -> application/x-ndjson, one JSON event per line:
+//                         { type: "delta", text }            (answer text as it is written)
+//                         { type: "done", reply, resources, followups, links }
+//                         { type: "error", error: { code, message } }
+//        otherwise     -> { ok: true, mode: "live", reply, resources, followups, links }
+//        errors before the answer starts are always plain JSON: { ok: false, error: { code, message } }
 //
 // The API key is read from the ANTHROPIC_API_KEY environment variable on the server.
 // It never reaches the browser. See README.md, "Configure the AI assistant".
@@ -22,51 +27,51 @@ const MAX_BODY_BYTES = 32_000;
 const MAX_MESSAGES = 20;
 const MAX_MESSAGE_CHARS = 2000;
 const RATE_LIMIT = { windowMs: 10 * 60 * 1000, max: Number(process.env.OMT_AI_RATE_LIMIT) || 20 };
+// The answer starts streaming only after the book search, so slow sources are dropped after this long.
+const SEARCH_DEADLINE_MS = 2500;
+const META_MARK = '<<meta';
 
 const catalog = catalogData.resources;
 
-const SYSTEM_PROMPT = `You are OMT AI, the assistant of OMT WORKING GROUP (Operations Maintenance and Training Working Group), a free
-tech library for IT lovers: developers, network and telecom engineers, sysadmins, cloud, security and data people,
-and students. You help them (1) find books and learning resources, (2) understand what a resource is about,
-(3) get an overview of a resource, and (4) understand difficult concepts: programming, networking and subnetting,
-4G/5G and telecom, Linux, cloud and DevOps, cybersecurity, data and AI, and Microsoft Office skills.
+const SYSTEM_PROMPT = `You are OMT AI, the assistant inside the OMT WORKING GROUP website (Operations Maintenance and Training
+Working Group). OMT is a free discovery platform for IT lovers: developers, network and telecom engineers, sysadmins,
+cloud, security and data people, and students. OMT does not write or publish books. It brings together free and official
+tech resources and searches millions of books on Google Books, Open Library and Project Gutenberg, then sends readers to
+the official source to read, borrow or buy.
 
-Each user turn comes with a <search_results> block that the website builds from its catalogue and from Open Library.
-Base every recommendation on those results:
-- <search_results> holds the OMT catalogue and external_books found on Google Books, Open Library and Project
-  Gutenberg. External books you recommend are added to the OMT library automatically, so recommend them freely
-  when they fit, especially when the OMT catalogue has nothing suitable.
-- Recommend only resources that appear in <search_results>, and refer to them by title. Never invent a title, author,
-  publisher, year, link or availability. If nothing fits, say so and suggest better search words or a kind of
-  resource to look for (for example an OpenStax textbook or a library loan).
-- State how each recommended resource can be accessed using its access label: "Free & open" (public domain or open licence), "Official source" (free on the provider's website),
-  "Preview" (free sample on Google Books) or "Buy or borrow" (in copyright).
-- OMT WORKING GROUP is not the author or publisher of any resource. Always credit the real author and source.
-- Never provide, reproduce or point to unauthorised copies of copyrighted books, and do not reproduce long passages
-  of copyrighted text. For a copyrighted book, give a short, high-level overview based on widely known
-  bibliographic information, say that you have not read the full text, and suggest legal ways to read it plus free
-  alternatives from the results.
-- When explaining or summarising a resource, use the metadata provided. If you add general knowledge, say so, and
-  never claim to know specific chapter contents you were not given.
-- When explaining a concept, use simple language, numbered steps, a small worked example (with a formula or code
-  if relevant) and finish with one short practice exercise.
+Talk like a sharp, friendly senior engineer who loves books: natural, direct and warm. Answer the question first, then
+add what helps. You can:
+- recommend books and learning resources, compare them, and suggest a reading order or learning path;
+- explain what a book or resource covers, who it suits and what to read before or after it;
+- answer questions about books in general: authors, editions, which book fits a goal, free vs paid options;
+- teach difficult concepts (programming, networking and subnetting, 4G/5G and telecom, Linux, cloud and DevOps,
+  cybersecurity, data and AI, Microsoft Office) with simple language, a small worked example and, when useful, code;
+- ask the user a short clarifying question when their goal or level is unclear (for example "Are you new to Linux, or
+  preparing for an exam?"). Ask at most one question, and still give a useful first answer.
 
-Style: friendly, clear and concise; most students read on a phone. Use short paragraphs, **bold** for key terms,
-"- " bullet lists, "1. " numbered lists and \`code\` or fenced code blocks. Do not use headings, tables or HTML.
+Every user turn comes with a <search_results> block that the website builds from the OMT catalogue and from Google Books,
+Open Library and Project Gutenberg. Ground everything about specific books in it:
+- Recommend only resources that appear in <search_results>. Never invent a title, author, publisher, year, link or
+  availability. External books you recommend are added to the OMT library automatically.
+- Link a resource by its "link" field, as a Markdown link: [Title](link). Use no other URLs, except these search links
+  when the results don't have what the user needs: https://openlibrary.org/search?q=WORDS and
+  https://www.google.com/search?tbm=bks&q=WORDS (words joined with +).
+- Point to the website's own pages when they help: library.html?q=WORDS (search the library), office.html (Microsoft
+  Office center), presentations.html (presentation skills), favorites.html (saved books), about.html.
+- Say how each recommended resource can be read, using its access label.
+- OMT is never the author. Credit the real author and source.
+- Never provide or point to unauthorised copies of copyrighted books, and do not reproduce long passages of copyrighted
+  text. For a copyrighted book give a short overview from well-known information, say you haven't read the full text,
+  and suggest legal ways to read it.
+- Never claim to know chapter contents you were not given.
 
-Answer with a JSON object that matches the schema: "reply" is your message to the student, and
-"recommended" lists the ids (from <search_results>) of the resources you recommend, best first, at most 4.
-Leave "recommended" empty when you are not recommending resources.`;
+Style: most readers are on a phone. Keep answers tight: short paragraphs, **bold** key terms, "- " bullets, "1. " steps,
+\`code\` and fenced code blocks. No headings, tables or HTML. Don't open with filler like "Great question".
 
-const OUTPUT_SCHEMA = {
-  type: 'object',
-  properties: {
-    reply: { type: 'string' },
-    recommended: { type: 'array', items: { type: 'string' } },
-  },
-  required: ['reply', 'recommended'],
-  additionalProperties: false,
-};
+After your answer, on the very last line, write a metadata line in exactly this form:
+<<meta {"recommended":["id",...],"followups":["...","..."]}>>
+"recommended": ids from <search_results> you recommended, best first, at most 4 (empty list if none).
+"followups": 2 or 3 short next questions the user might tap, written as the user would ask them.`;
 
 // ---------- helpers ----------
 const rateLimited = createRateLimiter(RATE_LIMIT);
@@ -108,12 +113,28 @@ const catalogRecord = (r) => ({
   type: r.kind,
   category: CATEGORIES[r.category]?.label ?? r.category,
   level: r.level,
-  formats: r.formats,
   access: ACCESS[r.accessType]?.label ?? 'Info only',
-  license: r.license,
+  source: r.sourceName,
   description: r.description,
-  tags: r.tags,
+  link: `resource.html?id=${r.id}`,
 });
+
+// Small talk needs no book search, which keeps those answers instant.
+const SMALL_TALK = /^\s*(hi+|hello|hey|yo|thanks?|thank you|ok(ay)?|cool|nice|good (morning|afternoon|evening)|bye)\b[\s!.?]*$/i;
+
+const searchCache = new Map();
+async function cachedExternalSearch(q, fetchImpl) {
+  const key = q.toLowerCase().trim();
+  const hit = searchCache.get(key);
+  if (hit && Date.now() - hit.at < 10 * 60 * 1000) return hit.results;
+  const { results, sources } = await searchExternal(q, { fetchImpl, max: 8, deadlineMs: SEARCH_DEADLINE_MS });
+  // Cache only complete answers, so a slow source gets another chance next time.
+  if (Object.values(sources).every((s) => s === 'ok')) {
+    if (searchCache.size > 200) searchCache.clear();
+    searchCache.set(key, { at: Date.now(), results });
+  }
+  return results;
+}
 
 /** Build the retrieval context for this turn: catalogue matches plus Google Books, Open Library and Gutenberg records. */
 export async function buildContext({ messages, resourceId, fetchImpl = fetch }) {
@@ -127,11 +148,15 @@ export async function buildContext({ messages, resourceId, fetchImpl = fetch }) 
   const unique = [...new Map(matches.map((r) => [r.id, r])).values()].slice(0, 8);
 
   let external = [];
-  if (!selected || selected.accessType === 'paid') {
-    try { external = (await searchExternal(selected ? selected.title : question, { fetchImpl, max: 8 })).results; } catch { external = []; }
+  if (!SMALL_TALK.test(question) && (!selected || selected.accessType === 'paid')) {
+    try { external = await cachedExternalSearch(selected ? selected.title : question, fetchImpl); } catch { external = []; }
   }
   const ACCESS_TEXT = { open: 'Free to read in full', official: 'Free to borrow with an Open Library account', preview: 'Free preview on Google Books', paid: 'In copyright: buy or borrow' };
-  const extRecords = external.map((d, i) => ({ id: `ext-${i + 1}`, title: d.title, author: d.authors, year: d.year, source: d.source, access: ACCESS_TEXT[d.access], description: d.description?.slice(0, 300) || undefined }));
+  const SOURCE_TEXT = { googlebooks: 'Google Books', openlibrary: 'Open Library', gutenberg: 'Project Gutenberg' };
+  const extRecords = external.map((d, i) => ({
+    id: `ext-${i + 1}`, title: d.title, author: d.authors, year: d.year, source: SOURCE_TEXT[d.source] ?? d.source,
+    access: ACCESS_TEXT[d.access], description: d.description?.slice(0, 300) || undefined, link: d.url,
+  }));
 
   const block = {
     selected_resource: selected ? catalogRecord(selected) : null,
@@ -141,6 +166,8 @@ export async function buildContext({ messages, resourceId, fetchImpl = fetch }) 
   return {
     text: `<search_results>\n${JSON.stringify(block)}\n</search_results>`,
     lookup: { catalogue: new Map(unique.map((r) => [r.id, r])), external: new Map(extRecords.map((r, i) => [r.id, external[i]])) },
+    // Links the answer may contain; the page turns any other URL into plain text.
+    links: [...unique.map((r) => `resource.html?id=${r.id}`), ...extRecords.map((r) => r.link).filter(Boolean)],
   };
 }
 
@@ -163,6 +190,38 @@ async function toResourceCards(ids, lookup, { fetchImpl, env }) {
   }));
 }
 
+/** Split the model's text into the visible answer and the trailing <<meta {...}>> line. */
+export function splitMeta(text) {
+  const at = text.lastIndexOf(META_MARK);
+  if (at === -1) return { reply: text.trim(), meta: {} };
+  const raw = text.slice(at + META_MARK.length).replace(/>>\s*$/, '').trim();
+  let meta = {};
+  try { meta = JSON.parse(raw); } catch { /* answer still shown without cards */ }
+  return { reply: text.slice(0, at).trim(), meta: meta && typeof meta === 'object' ? meta : {} };
+}
+
+/** How much of the streamed text is safe to show: everything before the metadata line (or a partial "<<"). */
+function visibleLength(text) {
+  const at = text.indexOf(META_MARK);
+  if (at !== -1) return at;
+  for (let n = Math.min(META_MARK.length - 1, text.length); n > 0; n--) {
+    if (META_MARK.startsWith(text.slice(-n))) return text.length - n;
+  }
+  return text.length;
+}
+
+const REFUSAL_REPLY = "I can't help with that request. I can help you find books and learning resources, or explain a tech topic you're learning.";
+
+function providerError(err) {
+  // Log the status/type only; never log message content or keys.
+  console.error('AI provider error', err?.status ?? '', err?.name ?? '');
+  if (err instanceof Anthropic.RateLimitError) return { status: 429, code: 'rate_limited', message: 'OMT AI is busy right now. Please try again in a minute.' };
+  if (err instanceof Anthropic.AuthenticationError || err instanceof Anthropic.PermissionDeniedError) return { status: 503, code: 'not_configured', message: 'The AI assistant is not configured correctly.' };
+  if (err instanceof Anthropic.APIConnectionTimeoutError) return { status: 504, code: 'timeout', message: 'OMT AI took too long to answer. Please try again.' };
+  if (err instanceof Anthropic.APIError && err.status === 529) return { status: 503, code: 'overloaded', message: 'OMT AI is busy right now. Please try again shortly.' };
+  return { status: 502, code: 'provider_error', message: 'OMT AI is having trouble right now. Please try again shortly.' };
+}
+
 // ---------- handler ----------
 export function createHandler({ client, fetchImpl = fetch, env = process.env } = {}) {
   return async (req, context = {}) => {
@@ -182,41 +241,68 @@ export function createHandler({ client, fetchImpl = fetch, env = process.env } =
     if (problem) return fail(400, 'invalid_request', problem);
 
     const messages = toApiMessages(body.messages);
-    const { text: contextText, lookup } = await buildContext({ messages, resourceId: body.resourceId, fetchImpl });
+    const { text: contextText, lookup, links } = await buildContext({ messages, resourceId: body.resourceId, fetchImpl });
     // Attach the search results to the newest user message only.
     messages[messages.length - 1] = { role: 'user', content: `${contextText}\n\n${messages[messages.length - 1].content}` };
 
-    const anthropic = client ?? new Anthropic({ timeout: 24_000, maxRetries: 1 });
-    try {
-      const response = await anthropic.beta.messages.create({
-        model: MODEL,
-        max_tokens: 2000,
-        system: SYSTEM_PROMPT,
-        messages,
-        output_config: { effort: EFFORT, format: { type: 'json_schema', schema: OUTPUT_SCHEMA } },
-        betas: ['server-side-fallback-2026-07-01'],
-        fallbacks: 'default',
-      });
+    const anthropic = client ?? new Anthropic({ timeout: 45_000, maxRetries: 1 });
+    const stream = anthropic.beta.messages.stream({
+      model: MODEL,
+      max_tokens: 4000,
+      system: SYSTEM_PROMPT,
+      messages,
+      output_config: { effort: EFFORT },
+      betas: ['server-side-fallback-2026-07-01'],
+      fallbacks: 'default',
+    });
 
-      if (response.stop_reason === 'refusal') {
-        return json(200, { ok: true, mode: 'live', reply: "I can't help with that request. I can help you find books and learning resources, or explain a topic you're studying.", resources: [] });
+    /** Run the model, calling onText with each new piece of visible answer text. */
+    const run = async (onText) => {
+      let text = '';
+      let shown = 0;
+      for await (const event of stream) {
+        if (event.type !== 'content_block_delta' || event.delta?.type !== 'text_delta') continue;
+        text += event.delta.text;
+        const end = visibleLength(text);
+        if (end > shown) { onText(text.slice(shown, end)); shown = end; }
       }
-      const textBlock = response.content.find((b) => b.type === 'text');
-      let parsed = null;
-      try { parsed = JSON.parse(textBlock?.text ?? ''); } catch { /* handled below */ }
-      if (!parsed || typeof parsed.reply !== 'string') {
-        return fail(502, 'bad_response', 'The AI returned an unexpected answer. Please try again.');
+      const final = await stream.finalMessage();
+      if (final.stop_reason === 'refusal') return { reply: REFUSAL_REPLY, resources: [], followups: [], links: [], refused: true };
+      const { reply, meta } = splitMeta(text);
+      const followups = (Array.isArray(meta.followups) ? meta.followups : [])
+        .filter((f) => typeof f === 'string' && f.trim()).slice(0, 3).map((f) => f.trim().slice(0, 120));
+      const resources = await toResourceCards(Array.isArray(meta.recommended) ? meta.recommended : [], lookup, { fetchImpl, env });
+      return { reply: reply.slice(0, 12000), resources, followups, links };
+    };
+
+    if (!body.stream) {
+      try {
+        const result = await run(() => {});
+        return json(200, { ok: true, mode: 'live', ...result });
+      } catch (err) {
+        const e = providerError(err);
+        return fail(e.status, e.code, e.message);
       }
-      return json(200, { ok: true, mode: 'live', reply: parsed.reply.slice(0, 8000), resources: await toResourceCards(parsed.recommended, lookup, { fetchImpl, env }) });
-    } catch (err) {
-      // Log the status/type only; never log message content or keys.
-      console.error('AI provider error', err?.status ?? '', err?.name ?? '');
-      if (err instanceof Anthropic.RateLimitError) return fail(429, 'rate_limited', 'OMT AI is busy right now. Please try again in a minute.', { 'Retry-After': '60' });
-      if (err instanceof Anthropic.AuthenticationError || err instanceof Anthropic.PermissionDeniedError) return fail(503, 'not_configured', 'The AI assistant is not configured correctly.');
-      if (err instanceof Anthropic.APIConnectionTimeoutError) return fail(504, 'timeout', 'OMT AI took too long to answer. Please try again.');
-      if (err instanceof Anthropic.APIError && err.status === 529) return fail(503, 'overloaded', 'OMT AI is busy right now. Please try again shortly.');
-      return fail(502, 'provider_error', 'OMT AI is having trouble right now. Please try again shortly.');
     }
+
+    const encoder = new TextEncoder();
+    const body$ = new ReadableStream({
+      async start(controller) {
+        const send = (obj) => controller.enqueue(encoder.encode(`${JSON.stringify(obj)}\n`));
+        try {
+          const result = await run((piece) => send({ type: 'delta', text: piece }));
+          send({ type: 'done', ...result });
+        } catch (err) {
+          const e = providerError(err);
+          send({ type: 'error', error: { code: e.code, message: e.message } });
+        }
+        controller.close();
+      },
+      cancel() { stream.abort?.(); },
+    });
+    return new Response(body$, {
+      status: 200,
+      headers: { 'Content-Type': 'application/x-ndjson; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' },
+    });
   };
 }
-

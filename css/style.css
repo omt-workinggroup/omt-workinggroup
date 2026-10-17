@@ -1,3 +1,8 @@
+/* Smooth cross-fade between pages in browsers that support view transitions. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .18s; }
+@media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
+
 /* =========================================================
    OMT WORKING GROUP — design system and components
    ========================================================= */
@@ -461,6 +466,16 @@ a.tag:hover { color: var(--primary); }
 .typing span:nth-child(2) { animation-delay: .15s; }
 .typing span:nth-child(3) { animation-delay: .3s; }
 @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+.typing em { font-style: normal; font-size: .8rem; color: var(--text-muted); margin-left: 6px; align-self: center; }
+.caret { display: inline-block; width: .5em; height: 1.05em; margin-left: 2px; vertical-align: -.15em; background: var(--primary); border-radius: 2px; animation: caret 1s steps(2) infinite; }
+.is-streaming .msg__body > p:last-of-type:nth-last-child(2) { display: inline; }
+@keyframes caret { 50% { opacity: 0; } }
+.msg__followups { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chip--ask { font-size: .82rem; min-height: 34px; text-align: left; background: var(--surface); }
+.chat__form .btn.is-stop { background: var(--text); border-color: var(--text); color: var(--surface); }
+.msg--ai { animation: msg-in .18s ease-out; }
+@keyframes msg-in { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .caret, .msg--ai { animation: none; } }
 .chat__suggest { padding: 0 16px 10px; }
 .chat__suggest .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
 .chat__suggest .chip { flex: none; white-space: nowrap; }

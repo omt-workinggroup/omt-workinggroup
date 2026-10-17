@@ -24,6 +24,21 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="data/resources.json" as="fetch" crossorigin>
+  <link rel="modulepreload" href="js/assistant/demo.js">
+  <link rel="modulepreload" href="js/assistant/markdown.js">
+  <link rel="modulepreload" href="js/core/appicons.js">
+  <link rel="modulepreload" href="js/core/catalog.js">
+  <link rel="modulepreload" href="js/core/config.js">
+  <link rel="modulepreload" href="js/core/external.js">
+  <link rel="modulepreload" href="js/core/favorites.js">
+  <link rel="modulepreload" href="js/core/icons.js">
+  <link rel="modulepreload" href="js/core/layout.js">
+  <link rel="modulepreload" href="js/core/openlibrary.js">
+  <link rel="modulepreload" href="js/core/render.js">
+  <link rel="modulepreload" href="js/core/search.js">
+  <link rel="modulepreload" href="js/core/taxonomy.js">
+  <link rel="modulepreload" href="js/core/util.js">
   <script type="module" src="js/pages/assistant.js"></script>
 </head>
 <body data-page="assistant">
@@ -57,9 +72,10 @@
             <li><strong>Find a book</strong>: tell it your subject and level.</li>
             <li><strong>Explain a resource</strong>: open a resource and choose “Ask AI about this”.</li>
             <li><strong>Summarize</strong>: get an overview based on the information we have.</li>
+            <li><strong>Plan your learning</strong>: ask for a reading order or a path from beginner to pro.</li>
             <li><strong>Explain concepts</strong>: subnetting, 5G, Linux, Git, Docker, security, Excel and more.</li></ul></div>
           <div class="side-card"><h2>Good to know</h2><ul>
-            <li>It recommends resources from our library and Open Library's records.</li>
+            <li>It searches our library, Google Books, Open Library and Project Gutenberg, and links you to the official source.</li>
             <li>It won't provide copies of copyrighted books. It points you to legal options instead.</li>
             <li>Your conversation stays in this browser tab and is cleared when you close it.</li></ul></div>
         </aside>

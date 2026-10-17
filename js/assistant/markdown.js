@@ -2,25 +2,30 @@
 // fenced code blocks, "- " and "1. " lists, and [links](https://…). Everything is escaped first.
 import { escapeHtml } from '../core/util.js';
 
-function inline(text) {
+const SITE_LINK = /^(?:resource|library|assistant|office|presentations|favorites|about)\.html(?:[?#][^\s)]*)?$/;
+
+// opts.allowLink(url) can reject a link; its label is then shown as plain text.
+function inline(text, opts) {
   let s = escapeHtml(text);
   s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>');
-  s = s.replace(/\[([^\]]+)\]\(((?:https?:\/\/|resource\.html\?id=|library\.html|assistant\.html)[^\s)]*)\)/g, (_, label, url) => {
-    const external = /^https?:/.test(url);
+  s = s.replace(/\[([^\]]+)\]\(([^\s)]+)\)/g, (match, label, url) => {
+    const external = /^https:\/\//.test(url);
+    if (!external && !SITE_LINK.test(url)) return match;
+    if (opts?.allowLink && !opts.allowLink(url.replace(/&amp;/g, '&'))) return label;
     return `<a href="${url}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`;
   });
   return s;
 }
 
-export function renderMarkdown(src) {
+export function renderMarkdown(src, opts) {
   const lines = String(src ?? '').replace(/\r\n/g, '\n').split('\n');
   const out = [];
   let list = null;
   let para = [];
-  const flushPara = () => { if (para.length) { out.push(`<p>${para.map(inline).join('<br>')}</p>`); para = []; } };
-  const flushList = () => { if (list) { out.push(`<${list.type}>${list.items.map((i) => `<li>${inline(i)}</li>`).join('')}</${list.type}>`); list = null; } };
+  const flushPara = () => { if (para.length) { out.push(`<p>${para.map((p) => inline(p, opts)).join('<br>')}</p>`); para = []; } };
+  const flushList = () => { if (list) { out.push(`<${list.type}>${list.items.map((i) => `<li>${inline(i, opts)}</li>`).join('')}</${list.type}>`); list = null; } };
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];

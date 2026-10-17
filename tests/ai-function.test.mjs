@@ -5,7 +5,25 @@ import { createHandler, validateBody } from '../server/ai.mjs';
 delete process.env.ANTHROPIC_API_KEY;
 const offlineFetch = async () => { throw new Error('offline'); };
 const post = (body, raw) => new Request('http://localhost/api/ai', { method: 'POST', body: raw ?? JSON.stringify(body), headers: { 'Content-Type': 'application/json' } });
-const fakeClient = (respond) => ({ beta: { messages: { create: async (params) => respond(params) } } });
+// A stand-in for client.beta.messages.stream: respond(params) returns { text, stop_reason }.
+const fakeClient = (respond) => ({
+  beta: {
+    messages: {
+      stream(params) {
+        let result;
+        const get = () => (result ??= respond(params));
+        return {
+          async *[Symbol.asyncIterator]() {
+            const { text = '' } = get();
+            for (const piece of text.match(/[\s\S]{1,7}/g) ?? []) yield { type: 'content_block_delta', delta: { type: 'text_delta', text: piece } };
+          },
+          async finalMessage() { return { stop_reason: get().stop_reason ?? 'end_turn' }; },
+        };
+      },
+    },
+  },
+});
+const meta = (recommended, followups = []) => `<<meta ${JSON.stringify({ recommended, followups })}>>`;
 
 test('GET reports whether the AI is configured', async () => {
   const res = await createHandler({ fetchImpl: offlineFetch })(new Request('http://localhost/api/ai'));
@@ -40,7 +58,7 @@ test('live reply: sends catalogue context, maps recommended ids to real resource
     fetchImpl: offlineFetch,
     client: fakeClient((params) => {
       sent = params;
-      return { stop_reason: 'end_turn', content: [{ type: 'text', text: JSON.stringify({ reply: 'Try **Think Python**.', recommended: ['think-python-3e', 'made-up-id'] }) }] };
+      return { text: `Try **Think Python**.\n${meta(['think-python-3e', 'made-up-id'], ['Is it free?'])}` };
     }),
   });
   const res = await handler(post({ messages: [{ role: 'user', content: 'beginner python book' }] }), { ip: 'live-test' });
@@ -51,17 +69,19 @@ test('live reply: sends catalogue context, maps recommended ids to real resource
   assert.match(sent.messages.at(-1).content, /<search_results>/);
   assert.match(sent.messages.at(-1).content, /think-python-3e/);
   assert.equal(sent.fallbacks, 'default');
+  assert.equal(data.reply, 'Try **Think Python**.');
+  assert.deepEqual(data.followups, ['Is it free?']);
 });
 
 test('refusals return a safe message', async () => {
-  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ stop_reason: 'refusal', content: [] })) });
+  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ stop_reason: 'refusal', text: 'partial' })) });
   const data = await (await handler(post({ messages: [{ role: 'user', content: 'x' }] }), { ip: 'refusal-test' })).json();
   assert.equal(data.ok, true);
   assert.deepEqual(data.resources, []);
 });
 
 test('rate limiting kicks in', async () => {
-  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ stop_reason: 'end_turn', content: [{ type: 'text', text: '{"reply":"ok","recommended":[]}' }] })) });
+  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ text: 'ok' })) });
   let last;
   for (let i = 0; i < 21; i++) last = await handler(post({ messages: [{ role: 'user', content: 'hi' }] }), { ip: 'rl-test' });
   assert.equal(last.status, 429);
@@ -78,10 +98,32 @@ test('external books the AI recommends are added to the library and linked there
   const handler = createHandler({
     fetchImpl,
     env: { SUPABASE_URL: 'https://example.supabase.co', SUPABASE_PUBLISHABLE_KEY: 'k' },
-    client: fakeClient(() => ({ stop_reason: 'end_turn', content: [{ type: 'text', text: JSON.stringify({ reply: 'Try Moby Dick.', recommended: ['ext-1'] }) }] })),
+    client: fakeClient(() => ({ text: `Try Moby Dick.\n${meta(['ext-1'])}` })),
   });
   const data = await (await handler(post({ messages: [{ role: 'user', content: 'a classic whale novel' }] }), { ip: 'ext-test' })).json();
   assert.equal(data.resources[0].addedToLibrary, true);
   assert.equal(data.resources[0].url, 'resource.html?id=ext-pg-2701');
   assert.equal(supa[0][0].added_by, 'ai');
+});
+
+test('streaming: sends the answer as deltas, hides the metadata line, then a done event', async () => {
+  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ text: `**Linux** is great.\n${meta(['tlcl'], ['Where do I start?', 'Is it free?'])}` })) });
+  const res = await handler(post({ stream: true, messages: [{ role: 'user', content: 'linux book' }] }), { ip: 'stream-test' });
+  assert.match(res.headers.get('content-type'), /ndjson/);
+  const events = (await res.text()).trim().split('\n').map((l) => JSON.parse(l));
+  const shown = events.filter((e) => e.type === 'delta').map((e) => e.text).join('');
+  assert.equal(shown.trim(), '**Linux** is great.');
+  assert.doesNotMatch(shown, /<</);
+  const done = events.at(-1);
+  assert.equal(done.type, 'done');
+  assert.deepEqual(done.resources.map((r) => r.id), ['tlcl']);
+  assert.equal(done.followups.length, 2);
+  assert.ok(done.links.includes('resource.html?id=tlcl'));
+});
+
+test('streaming: provider errors arrive as an error event', async () => {
+  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => { throw new Error('boom'); }) });
+  const res = await handler(post({ stream: true, messages: [{ role: 'user', content: 'x' }] }), { ip: 'stream-err' });
+  const events = (await res.text()).trim().split('\n').map((l) => JSON.parse(l));
+  assert.equal(events.at(-1).type, 'error');
 });

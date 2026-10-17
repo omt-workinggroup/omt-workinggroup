@@ -111,6 +111,36 @@ for (const width of WIDTHS) {
   await page.context().close();
 }
 
+// --- Assistant in live mode (streamed answer from a mocked /api/ai) ---
+{
+  const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  await context.route(/\/api\/ai$/, (route) => {
+    if (route.request().method() === 'GET') return route.fulfill({ contentType: 'application/json', body: '{"configured":true}' });
+    const events = [
+      { type: 'delta', text: 'Start with **The Linux Command Line**. ' },
+      { type: 'delta', text: 'Read it [here](resource.html?id=tlcl), or see [a fake site](https://evil.example/x).' },
+      { type: 'done', reply: 'Start with **The Linux Command Line**. Read it [here](resource.html?id=tlcl), or see [a fake site](https://evil.example/x).', resources: [{ source: 'omt', id: 'tlcl', title: 'The Linux Command Line', author: 'William Shotts', accessType: 'open', url: 'resource.html?id=tlcl' }], followups: ['What should I read next?'], links: ['resource.html?id=tlcl'] },
+    ];
+    return route.fulfill({ contentType: 'application/x-ndjson', body: events.map((ev) => JSON.stringify(ev)).join('\n') + '\n' });
+  });
+  const page = await context.newPage();
+  const errors = [];
+  page.on('pageerror', (err) => errors.push(err.message));
+  await page.goto(`${BASE}/assistant.html`, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.getElementById('ai-mode').textContent === 'Live AI');
+  await page.fill('#chat-input', 'linux book');
+  await page.press('#chat-input', 'Enter');
+  await page.waitForSelector('.msg__followups .chip');
+  const last = page.locator('.msg--ai').last();
+  check((await last.textContent()).includes('The Linux Command Line'), 'live answer streamed into the chat');
+  check(await last.locator('a[href="resource.html?id=tlcl"]').count() >= 1, 'live answer links to the library');
+  check(await last.locator('a[href^="https://evil.example"]').count() === 0, 'links outside the search results are not clickable');
+  check(await last.locator('.rec').count() === 1, 'live answer shows recommendation cards');
+  check(await page.locator('.is-streaming, #typing').count() === 0, 'streaming state cleared');
+  check(errors.length === 0, `live assistant errors: ${errors.join(' | ')}`);
+  await context.close();
+}
+
 // --- Real covers from Open Library (mocked) ---
 {
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });

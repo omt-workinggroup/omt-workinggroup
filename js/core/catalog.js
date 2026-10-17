@@ -3,16 +3,32 @@ import { toResource } from './external.js';
 
 let cache = null;
 
+const ADDITIONS_KEY = 'omt:additions';
+
 /** Books added from Google Books, Open Library and Gutenberg (by OMT AI or approved suggestions). */
-async function loadAdditions() {
+async function fetchAdditions() {
   try {
     const res = await fetch('/api/additions', { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return [];
+    if (!res.ok) return null;
     const data = await res.json();
-    return (data.additions ?? []).filter((a) => a?.ext_id && a.title && a.url).map(toResource);
+    const rows = data.additions ?? [];
+    try { sessionStorage.setItem(ADDITIONS_KEY, JSON.stringify({ at: Date.now(), rows })); } catch { /* storage blocked */ }
+    return rows;
   } catch {
-    return []; // static hosting or offline: the core catalogue still works
+    return null; // static hosting or offline: the core catalogue still works
   }
+}
+
+/** Use this tab's copy when it is fresh; never hold the page up for long waiting on the network. */
+async function loadAdditions() {
+  let cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem(ADDITIONS_KEY) ?? 'null'); } catch { /* storage blocked */ }
+  let rows = cached && Date.now() - cached.at < 5 * 60 * 1000 ? cached.rows : null;
+  if (!rows) {
+    const fresh = fetchAdditions();
+    rows = await Promise.race([fresh, new Promise((resolve) => setTimeout(() => resolve(null), 1500))]) ?? cached?.rows ?? [];
+  }
+  return rows.filter((a) => a?.ext_id && a.title && a.url).map(toResource);
 }
 
 /** Load the resource catalogue once per page. Throws a friendly Error on failure. */

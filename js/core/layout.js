@@ -159,6 +159,24 @@ document.addEventListener('error', (event) => {
   }
 }, true);
 
+/** Fetch a page as soon as the visitor points at or touches its link, so the click opens it instantly. */
+function setupPrefetch() {
+  const done = new Set([location.pathname]);
+  const prefetch = (event) => {
+    const a = event.target.closest?.('a[href]');
+    if (!a || a.target === '_blank' || a.origin !== location.origin || done.has(a.pathname)) return;
+    if (!/(\.html|\/)$/.test(a.pathname)) return;
+    done.add(a.pathname);
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = a.pathname;
+    document.head.append(link);
+  };
+  document.addEventListener('pointerover', prefetch, { passive: true });
+  document.addEventListener('touchstart', prefetch, { passive: true });
+  document.addEventListener('focusin', prefetch);
+}
+
 export function initLayout() {
   // Static images may have failed before this script ran.
   document.querySelectorAll('img[data-fallback]').forEach((img) => {
@@ -186,6 +204,7 @@ export function initLayout() {
 
   setupDrawer();
   setupHeaderSearch();
+  setupPrefetch();
   updateFavCount();
   onFavoritesChange(updateFavCount);
   bindFavoriteButtons();
