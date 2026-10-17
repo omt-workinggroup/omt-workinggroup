@@ -30,184 +30,64 @@
 </head>
 <body data-page="landing" class="lp">
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="lp-top">
-    <div class="container lp-top__inner">
+  <div class="stage">
+    <header class="stage__top">
       <a class="brand" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations Maintenance</span><span>and Training Working Group</span></span></a>
-      <nav class="lp-top__nav" aria-label="Main">
+      <nav class="stage__nav" aria-label="Main">
         <a href="library.html">Library</a>
         <a href="office.html">Office</a>
         <a href="assistant.html">OMT AI</a>
         <a href="about.html">About</a>
       </nav>
-      <a class="btn btn--primary btn--sm lp-top__cta" href="home.html">Get started</a>
-    </div>
-  </header>
+      <a class="stage__enter" href="home.html">Enter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    </header>
 
-  <main id="main">
-    <section class="lp-hero">
-      <div class="container lp-hero__inner">
-        <div class="lp-hero__text">
-          <p class="kicker">Operations · Maintenance · Training</p>
-          <h1>The engineer's bookshelf.</h1>
-          <p class="lp-lead">Free books, specs and courses for people who build and run software, networks and telecom systems. We track down the good ones and send you to the official edition. The authors keep the credit.</p>
-          <div class="lp-actions">
-            <a class="btn btn--primary btn--lg" href="home.html">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-            <a class="lp-textlink" href="library.html">or browse all <span data-count="total">69</span> titles</a>
+    <main id="main" class="stage__main">
+      <div class="stage__copy">
+        <p class="stage__kicker"><span>Vol. 1</span> Operations<i>·</i>Maintenance<i>·</i>Training</p>
+        <h1>The engineer's <em>bookshelf.</em></h1>
+        <p class="stage__lead">Free books, specs and courses for the people who build and run software, networks and telecom. We find the good ones and send you to the official edition.</p>
+        <div class="stage__actions">
+          <a class="stage__cta" href="home.html"><span>Get started</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          <a class="stage__browse" href="library.html">Browse <span data-count="total">69</span> titles</a>
+        </div>
+        <dl class="stage__facts">
+          <div><dd data-count="total">69</dd><dt>titles, checked by hand</dt></div>
+          <div><dd data-count="free">60</dd><dt>free to read today</dt></div>
+          <div><dd>7</dd><dt>tracks, from code to 5G</dt></div>
+        </dl>
+      </div>
+
+      <div class="stage__shelf" aria-label="A few books from the library">
+        <div class="stage__light" aria-hidden="true"></div>
+        <div class="stage__row">
+          <div class="stage__books">
+              <a class="stage__book" href="resource.html?id=pro-git" style="--i:0"><img src="assets/covers/pro-git.jpg" alt="Pro Git" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=tlcl" style="--i:1"><img src="assets/covers/tlcl.jpg" alt="The Linux Command Line" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=ostep" style="--i:2"><img src="assets/covers/ostep.jpg" alt="Operating Systems: Three Easy Pieces" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=cn-systems-approach" style="--i:3"><img src="assets/covers/cn-systems-approach.jpg" alt="Computer Networks: A Systems Approach" width="360" height="480"></a>
           </div>
-          <dl class="lp-facts">
-            <div><dt>titles checked by hand</dt><dd data-count="total">69</dd></div>
-            <div><dt>free to read today</dt><dd data-count="free">60</dd></div>
-            <div><dt>open catalogues searched</dt><dd>3</dd></div>
-          </dl>
+          <div class="stage__plank" aria-hidden="true"></div>
         </div>
-
-        <div class="shelf" aria-label="A few books from the library">
-          <div class="shelf__row">
-            <a href="resource.html?id=pro-git" class="shelf__book" style="--h:96%"><img src="assets/covers/pro-git.jpg" alt="Pro Git" width="360" height="476"></a>
-            <a href="resource.html?id=tlcl" class="shelf__book" style="--h:92%"><img src="assets/covers/tlcl.jpg" alt="The Linux Command Line" width="360" height="474"></a>
-            <a href="resource.html?id=ostep" class="shelf__book shelf__book--lean" style="--h:100%"><img src="assets/covers/ostep.jpg" alt="Operating Systems: Three Easy Pieces" width="360" height="564"></a>
-            <a href="resource.html?id=ddia" class="shelf__book" style="--h:94%"><img src="assets/covers/ddia.jpg" alt="Designing Data-Intensive Applications" width="360" height="473"></a>
+        <div class="stage__row">
+          <div class="stage__books">
+              <a class="stage__book" href="resource.html?id=private-5g" style="--i:4"><img src="assets/covers/private-5g.jpg" alt="Private 5G: A Systems Approach" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=google-sre" style="--i:5"><img src="assets/covers/google-sre.jpg" alt="Site Reliability Engineering" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=ddia" style="--i:6"><img src="assets/covers/ddia.jpg" alt="Designing Data-Intensive Applications" width="360" height="480"></a>
+              <a class="stage__book" href="resource.html?id=eloquent-javascript" style="--i:7"><img src="assets/covers/eloquent-javascript.jpg" alt="Eloquent JavaScript" width="360" height="480"></a>
           </div>
-          <div class="shelf__row">
-            <a href="resource.html?id=private-5g" class="shelf__book" style="--h:90%"><img src="assets/covers/private-5g.jpg" alt="Private 5G: A Systems Approach" width="360" height="444"></a>
-            <a href="resource.html?id=cn-systems-approach" class="shelf__book" style="--h:97%"><img src="assets/covers/cn-systems-approach.jpg" alt="Computer Networks: A Systems Approach" width="360" height="465"></a>
-            <a href="resource.html?id=google-sre" class="shelf__book" style="--h:95%"><img src="assets/covers/google-sre.jpg" alt="Site Reliability Engineering" width="360" height="473"></a>
-            <a href="resource.html?id=eloquent-javascript" class="shelf__book shelf__book--lean-r" style="--h:93%"><img src="assets/covers/eloquent-javascript.jpg" alt="Eloquent JavaScript" width="360" height="477"></a>
-          </div>
+          <div class="stage__plank" aria-hidden="true"></div>
         </div>
       </div>
-    </section>
+    </main>
 
-    <section class="lp-sources" aria-label="Where the books come from">
-      <div class="container lp-sources__inner">
-        <span class="lp-sources__label">We link to</span>
-        <ul>
-          <li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>OWASP</li><li>NIST</li>
-        </ul>
+    <footer class="stage__foot">
+      <div class="marquee" aria-label="We link to these publishers and catalogues">
+        <ul><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
+        <ul aria-hidden="true"><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
       </div>
-    </section>
-
-    <section class="lp-section" aria-labelledby="toc-h">
-      <div class="container lp-split">
-        <div class="lp-split__aside">
-          <p class="kicker">Contents</p>
-          <h2 id="toc-h">Sorted by the work you do, not by publisher.</h2>
-          <p class="muted">Seven tracks for the people who keep systems running, plus Office skills, because the report still has to go out on Friday.</p>
-        </div>
-        <ol class="toc">
-          <li><a href="library.html?category=computer-science"><span class="toc__no">01</span><span class="toc__name">Programming &amp; Software</span><span class="toc__dots"></span><span class="toc__n"><span data-count="computer-science">15</span> titles</span></a></li>
-          <li><a href="library.html?category=networking"><span class="toc__no">02</span><span class="toc__name">Networking</span><span class="toc__dots"></span><span class="toc__n"><span data-count="networking">7</span> titles</span></a></li>
-          <li><a href="library.html?category=telecom"><span class="toc__no">03</span><span class="toc__name">Telecom, 4G &amp; 5G</span><span class="toc__dots"></span><span class="toc__n"><span data-count="telecom">5</span> titles</span></a></li>
-          <li><a href="library.html?category=cloud"><span class="toc__no">04</span><span class="toc__name">Cloud &amp; DevOps</span><span class="toc__dots"></span><span class="toc__n"><span data-count="cloud">5</span> titles</span></a></li>
-          <li><a href="library.html?category=security"><span class="toc__no">05</span><span class="toc__name">Security</span><span class="toc__dots"></span><span class="toc__n"><span data-count="security">3</span> titles</span></a></li>
-          <li><a href="library.html?category=data-ai"><span class="toc__no">06</span><span class="toc__name">Data &amp; AI</span><span class="toc__dots"></span><span class="toc__n"><span data-count="data-ai">5</span> titles</span></a></li>
-          <li><a href="library.html?category=linux"><span class="toc__no">07</span><span class="toc__name">Linux &amp; Systems</span><span class="toc__dots"></span><span class="toc__n"><span data-count="linux">3</span> titles</span></a></li>
-          <li><a href="office.html"><span class="toc__no">A</span><span class="toc__name">Appendix: Microsoft Office</span><span class="toc__dots"></span><span class="toc__n"><span data-count="office">11</span> guides</span></a></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="lp-section lp-section--paper" aria-labelledby="picks-h">
-      <div class="container">
-        <div class="lp-head">
-          <div><p class="kicker">Staff picks</p><h2 id="picks-h">Four books we keep recommending</h2></div>
-          <a class="lp-textlink" href="library.html?kind=book">All books</a>
-        </div>
-        <div class="picks">
-          <a class="pick" href="resource.html?id=cn-systems-approach">
-            <img src="assets/covers/cn-systems-approach.jpg" alt="" width="360" height="465" loading="lazy">
-            <div><h3>Computer Networks: A Systems Approach</h3><p class="pick__by">Peterson &amp; Davie</p><p>The one we hand to people starting on a transport or IP team. Read the first three chapters properly, then dip in as needed.</p><span class="pick__tag">Free online</span></div>
-          </a>
-          <a class="pick" href="resource.html?id=ostep">
-            <img src="assets/covers/ostep.jpg" alt="" width="360" height="564" loading="lazy">
-            <div><h3>Operating Systems: Three Easy Pieces</h3><p class="pick__by">Remzi &amp; Andrea Arpaci-Dusseau</p><p>Short chapters, a sense of humour, and the explanation of virtual memory that finally makes it click.</p><span class="pick__tag">Free online</span></div>
-          </a>
-          <a class="pick" href="resource.html?id=google-sre">
-            <img src="assets/covers/google-sre.jpg" alt="" width="360" height="473" loading="lazy">
-            <div><h3>Site Reliability Engineering</h3><p class="pick__by">Beyer, Jones, Petoff &amp; Murphy</p><p>How Google runs production. If you only read one chapter before your first on-call week, make it the one on monitoring.</p><span class="pick__tag">Free online</span></div>
-          </a>
-          <a class="pick" href="resource.html?id=private-5g">
-            <img src="assets/covers/private-5g.jpg" alt="" width="360" height="444" loading="lazy">
-            <div><h3>Private 5G: A Systems Approach</h3><p class="pick__by">Peterson, Sunay &amp; Davie</p><p>The clearest tour of the 5G core and RAN we've found that isn't a 3GPP specification.</p><span class="pick__tag">Free online</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="lp-section" aria-labelledby="ai-h">
-      <div class="container lp-split lp-split--ai">
-        <div class="lp-split__aside">
-          <p class="kicker">OMT AI</p>
-          <h2 id="ai-h">Ask before you read.</h2>
-          <p>Describe what you're stuck on. OMT AI explains it in plain words, then names the two or three books that cover it properly, with a link to each.</p>
-          <p class="muted small">It only recommends books it actually found in the library or in Google Books, Open Library and Project Gutenberg. No made-up titles, and no pirated PDFs.</p>
-          <a class="btn btn--secondary" href="assistant.html">Try OMT AI</a>
-        </div>
-        <figure class="term" aria-label="Example question and answer">
-          <div class="term__bar"><i></i><i></i><i></i><span>omt ai</span></div>
-          <pre class="term__body"><span class="term__p">you</span> what's the difference between the 4G EPC and the 5G core?
-
-<span class="term__p term__p--ai">omt</span> In 4G one box, the MME, handles both who you are and your
-    data sessions. The 5G core splits that job into small services:
-    <b>AMF</b> for access and mobility, <b>SMF</b> for sessions, and
-    <b>UPF</b> for moving your packets. They talk over HTTP APIs,
-    which is why people call it "service-based".
-
-    Read next:
-    › Private 5G: A Systems Approach, ch. 5   <em>free</em>
-    › 3GPP TS 23.501 (system architecture)  <em>official</em></pre>
-          <figcaption>Example answer, shortened.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="lp-section lp-section--paper" aria-labelledby="why-h">
-      <div class="container lp-note">
-        <p class="kicker">Why this exists</p>
-        <h2 id="why-h">Most of us learned from borrowed PDFs and dead links.</h2>
-        <div class="lp-note__body">
-          <p>OMT is the shelf we wished we'd had: the good books, sorted by the work you actually do, each one linked back to the people who wrote it.</p>
-          <p>We don't publish anything and we don't host copies. If a book is free, we send you to the free edition. If it isn't, we say so and tell you where to borrow or buy it.</p>
-          <p class="lp-note__sign">The OMT Working Group</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="lp-cta">
-      <div class="container lp-cta__inner">
-        <h2>Pull one off the shelf.</h2>
-        <a class="btn btn--light btn--lg" href="home.html">Get started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand brand--full" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations</span><span>Maintenance</span><span>and Training</span><span>Working Group</span></span></a>
-          <p>OMT, the Operations Maintenance and Training Working Group, keeps a free shelf of books, specs and courses for people who build and run software, networks and telecom systems.</p>
-        </div>
-        <div><h2>Explore</h2><ul>
-          <li><a href="home.html">Library home</a></li>
-          <li><a href="library.html">All titles</a></li>
-          <li><a href="office.html">Microsoft Office</a></li>
-          <li><a href="assistant.html">OMT AI</a></li></ul></div>
-        <div><h2>About</h2><ul>
-          <li><a href="about.html">About OMT</a></li>
-          <li><a href="about.html#contact">Contact</a></li>
-          <li><a href="about.html#copyright">Report a copyright issue</a></li></ul></div>
-        <div><h2>Legal</h2><ul>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="terms.html">Terms</a></li>
-          <li><a href="terms.html#attribution">Attribution</a></li></ul></div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="year">2026</span> OMT WORKING GROUP. Every book belongs to its author and publisher; we link to their official editions.</p>
-        <p>Microsoft, Word, Excel, PowerPoint, Access and Outlook are trademarks of Microsoft Corporation. OMT is independent and not affiliated with Microsoft.</p>
-      </div>
-    </div>
-  </footer>
+      <p class="stage__legal">© <span id="year">2026</span> OMT Working Group · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+    </footer>
+  </div>
 </body>
 </html>
