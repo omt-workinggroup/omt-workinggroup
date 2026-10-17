@@ -9,7 +9,7 @@ import { searchExternalBooks } from '../core/catalog.js';
 const CONCEPTS = [
   {
     keys: /subnet|cidr|\/\d\d\b|netmask|subnet mask|ip address(ing)?/,
-    query: 'subnetting',
+    query: 'networking',
     text: `**Subnetting** splits an IP network into smaller networks. The **prefix** (e.g. \`/26\`) says how many of the 32 bits are the network part. The rest are for hosts.
 
 1. Host bits = 32 − prefix. For \`/26\` that's 6.
@@ -23,7 +23,7 @@ const CONCEPTS = [
   },
   {
     keys: /\bosi\b|tcp\/ip model|network layers?|layer [1-7]\b/,
-    query: 'osi model',
+    query: 'networking',
     text: `The **OSI model** has seven layers, from the bottom up:
 
 1. **Physical**: bits on copper, fibre or radio
@@ -119,7 +119,7 @@ Read them with \`ls -l\`: \`-rwxr-xr-x\` means a file with permissions 755.
   },
   {
     keys: /\bv-?lookup\b|\bx-?lookup\b|\blook ?up\b/,
-    query: 'vlookup',
+    query: 'excel',
     text: `**VLOOKUP** finds a value in the first column of a table and returns something from the same row. Think of it as looking up a name in a phone list and reading across to the number.
 
 1. Click the cell where you want the answer.
@@ -233,7 +233,7 @@ Excel follows the usual order of operations: brackets first, then \`^\`, then \`
   },
   {
     keys: /table of contents|heading styles?|\bstyles?\b.*\bword\b|\bword\b.*\bstyles?\b/,
-    query: 'word essay',
+    query: 'word',
     text: `In Word, **styles** give your headings a consistent look and power the automatic **table of contents**.
 
 1. Select a heading and click **Home › Styles › Heading 1**. Use **Heading 2** for subsections.
@@ -283,7 +283,7 @@ Excel follows the usual order of operations: brackets first, then \`^\`, then \`
   },
   {
     keys: /(good|better|great) presentation|slide design|design (my )?slides|present(ation)? tips|public speaking|storytelling/,
-    query: 'slide design',
+    query: 'powerpoint',
     text: `Strong presentations follow a few simple rules:
 
 1. **One idea per slide**, with a headline that states the point ("Sales doubled after the redesign", not "Results").
@@ -296,7 +296,7 @@ Excel follows the usual order of operations: brackets first, then \`^\`, then \`
   },
   {
     keys: /smart (objectives|goals)|project proposal|write objectives/,
-    query: 'project proposal',
+    query: 'powerpoint',
     text: `Good proposal objectives are **SMART**: Specific, Measurable, Achievable, Relevant and Time-bound.
 
 - ❌ "Improve the library system."
@@ -321,7 +321,7 @@ In Access: **Database Tools › Relationships**, drag *StudentID* from Students 
   },
   {
     keys: /\bquery\b|\bqueries\b/,
-    query: 'access query',
+    query: 'access',
     text: `An Access **query** asks a question of your tables and shows only the matching records.
 
 1. **Create › Query Design** and add the tables you need.

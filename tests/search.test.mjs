@@ -9,20 +9,20 @@ const ids = (q, opts = {}) => searchCatalog(resources, { q, ...opts }).map((r) =
 test('keyword search matches title, tags and category, ignoring case and spaces', () => {
   const excel = ids('  EXCEL ');
   assert.ok(excel.length >= 5);
-  assert.ok(excel.includes('omt-excel-lookup'));
-  assert.ok(ids('vlookup').includes('omt-excel-lookup'));
+  assert.ok(excel.includes('ms-excel-help'));
+  assert.ok(ids('pivottable').includes('ms-excel-help'));
   assert.deepEqual(ids('Achebe'), ['things-fall-apart']);
 });
 
 test('partial words and synonyms work', () => {
-  assert.ok(ids('spreadsheet budget').includes('omt-excel-student-budget'));
-  assert.ok(ids('resume').includes('omt-word-student-cv'));
+  assert.ok(ids('spreadsheet').includes('gcf-excel'));
+  assert.ok(ids('resume templates').includes('ms-create-templates'));
   assert.ok(ids('entrepren').includes('openstax-entrepreneurship'));
 });
 
 test('natural-language requests find the right resources', () => {
   assert.ok(ids('I need a book that teaches Python programming from the beginning').slice(0, 4).includes('think-python-3e'));
-  assert.equal(ids('I need something to help me create a professional project proposal in PowerPoint')[0], 'omt-ppt-project-proposal');
+  assert.ok(ids('I need a PowerPoint template for my presentation').includes('ms-create-templates'));
   const hints = parseQuery('beginner books on economics').hints;
   assert.deepEqual(hints, { level: 'beginner', kind: 'book' });
 });
@@ -37,17 +37,17 @@ test('no results for nonsense, filters and sorting apply', () => {
 });
 
 test('related resources exclude the resource itself', () => {
-  const r = resources.find((x) => x.id === 'omt-excel-lookup');
+  const r = resources.find((x) => x.id === 'ms-excel-help');
   const rel = relatedResources(resources, r);
   assert.ok(rel.length > 0 && !rel.some((x) => x.id === r.id));
 });
 
 test('tech searches find tech resources', () => {
-  assert.ok(ids('subnetting').includes('omt-subnetting'));
+  assert.ok(ids('routing protocols').includes('cn-systems-approach'));
   assert.ok(ids('k8s').includes('k8s-tutorials'));
-  assert.ok(ids('5g core').slice(0, 3).includes('private-5g') || ids('5g core').slice(0, 3).includes('omt-mobile-generations'));
+  assert.ok(ids('5g core').slice(0, 3).includes('private-5g'));
   assert.ok(ids('learn linux command line').includes('tlcl'));
   assert.ok(ids('fiber optic').includes('foa-reference'));
   assert.ok(ids('cyber').includes('owasp-top10') || ids('cybersecurity').includes('owasp-top10'));
-  assert.ok(ids('I want to learn networking from scratch').some((id) => ['net-intro', 'cn-systems-approach', 'omt-osi-model'].includes(id)));
+  assert.ok(ids('I want to learn networking from scratch').some((id) => ['net-intro', 'cn-systems-approach'].includes(id)));
 });

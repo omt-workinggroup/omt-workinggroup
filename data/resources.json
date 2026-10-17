@@ -1,148 +1,8 @@
 {
   "version": 1,
   "updated": "2026-10-16",
-  "notes": "Starter catalogue. 'omt' resources are original OMT WORKING GROUP content. External records link to the official source; run `npm run check-links` before each deploy to confirm the links still work.",
+  "notes": "Curated starter catalogue of external resources. OMT WORKING GROUP is not the author of any of them; every record links to its official source. Run `npm run check-links` before each deploy.",
   "resources": [
-    {
-      "id": "omt-subnetting",
-      "title": "IPv4 Subnetting Made Simple",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "networking",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Work out network addresses, broadcast addresses and usable hosts for any CIDR prefix, with a step-by-step /26 example and a cheat sheet.",
-      "tags": [
-        "subnetting",
-        "ipv4",
-        "cidr",
-        "ip address",
-        "networking",
-        "ccna",
-        "subnet mask"
-      ],
-      "guide": "data/guides/omt-subnetting.html",
-      "added": "2026-10-16",
-      "featured": true
-    },
-    {
-      "id": "omt-osi-model",
-      "title": "The OSI and TCP/IP Models Explained",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "networking",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "The seven OSI layers and four TCP/IP layers, what lives at each one, how encapsulation works, and how to use the layers to troubleshoot.",
-      "tags": [
-        "osi model",
-        "tcp/ip",
-        "networking",
-        "layers",
-        "protocols",
-        "troubleshooting",
-        "ccna"
-      ],
-      "guide": "data/guides/omt-osi-model.html",
-      "added": "2026-10-16"
-    },
-    {
-      "id": "omt-mobile-generations",
-      "title": "From 2G to 5G: Mobile Networks at a Glance",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "telecom",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "What changed in each mobile generation, from GSM to LTE and 5G NR, plus the core network elements telecom engineers meet every day.",
-      "tags": [
-        "5g",
-        "4g",
-        "lte",
-        "gsm",
-        "umts",
-        "telecom",
-        "mobile networks",
-        "3gpp",
-        "ran",
-        "core network"
-      ],
-      "guide": "data/guides/omt-mobile-generations.html",
-      "added": "2026-10-16",
-      "featured": true
-    },
-    {
-      "id": "omt-linux-commands",
-      "title": "25 Linux Commands Every Engineer Should Know",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "linux",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Navigate, inspect logs, manage processes and services, check disks and network ports: the everyday commands for servers and network gear.",
-      "tags": [
-        "linux",
-        "command line",
-        "bash",
-        "terminal",
-        "sysadmin",
-        "shell",
-        "servers"
-      ],
-      "guide": "data/guides/omt-linux-commands.html",
-      "added": "2026-10-16",
-      "featured": true
-    },
-    {
-      "id": "omt-git-basics",
-      "title": "Git Basics in 15 Minutes",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "computer-science",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Set up Git, commit, branch, merge and push to GitHub, and safely undo mistakes. The workflow every developer uses daily.",
-      "tags": [
-        "git",
-        "github",
-        "version control",
-        "developer",
-        "programming",
-        "branching"
-      ],
-      "guide": "data/guides/omt-git-basics.html",
-      "added": "2026-10-16"
-    },
     {
       "id": "cn-systems-approach",
       "title": "Computer Networks: A Systems Approach",
@@ -228,7 +88,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://www.net-intro.com/",
       "added": "2026-10-16",
-      "readUrl": "https://www.net-intro.com/"
+      "readUrl": "https://www.net-intro.com/",
+      "featured": true
     },
     {
       "id": "beej-network",
@@ -401,7 +262,8 @@
       "sourceName": "3GPP",
       "sourceUrl": "https://www.3gpp.org/specifications-technologies",
       "added": "2026-10-16",
-      "readUrl": "https://www.3gpp.org/specifications-technologies"
+      "readUrl": "https://www.3gpp.org/specifications-technologies",
+      "featured": true
     },
     {
       "id": "itu-t-recs",
@@ -546,7 +408,8 @@
       "sourceName": "Kubernetes",
       "sourceUrl": "https://kubernetes.io/docs/tutorials/",
       "added": "2026-10-16",
-      "readUrl": "https://kubernetes.io/docs/tutorials/"
+      "readUrl": "https://kubernetes.io/docs/tutorials/",
+      "featured": true
     },
     {
       "id": "docker-get-started",
@@ -916,7 +779,8 @@
       "sourceName": "Authors' website",
       "sourceUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
       "added": "2026-10-16",
-      "readUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      "readUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "featured": true
     },
     {
       "id": "missing-semester",
@@ -1143,374 +1007,6 @@
       "added": "2026-10-16"
     },
     {
-      "id": "omt-excel-lookup",
-      "title": "VLOOKUP and XLOOKUP for Beginners",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "excel",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Learn to pull matching data from one table into another — step by step, with a worked example of a class marks sheet.",
-      "tags": [
-        "excel",
-        "formulas",
-        "vlookup",
-        "xlookup",
-        "lookup",
-        "spreadsheet",
-        "functions"
-      ],
-      "guide": "data/guides/omt-excel-lookup.html",
-      "featured": true,
-      "added": "2026-10-14"
-    },
-    {
-      "id": "omt-excel-essential-formulas",
-      "title": "10 Excel Formulas Every Student Should Know",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "excel",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "SUM, AVERAGE, COUNTIF, IF, ROUND and five more — what each one does, when to use it, and a copy-ready example.",
-      "tags": [
-        "excel",
-        "formulas",
-        "functions",
-        "sum",
-        "average",
-        "if",
-        "countif",
-        "spreadsheet",
-        "beginner"
-      ],
-      "guide": "data/guides/omt-excel-essential-formulas.html",
-      "added": "2026-10-14"
-    },
-    {
-      "id": "omt-excel-student-budget",
-      "title": "Student Monthly Budget Spreadsheet",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "excel",
-      "level": "beginner",
-      "formats": [
-        "XLSX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "A ready-to-use Excel budget: enter your income and spending and the totals, balance and category breakdown update automatically.",
-      "tags": [
-        "excel",
-        "budget",
-        "template",
-        "money",
-        "finance",
-        "spreadsheet",
-        "student"
-      ],
-      "guide": "data/guides/omt-excel-student-budget.html",
-      "downloadUrl": "assets/downloads/omt-student-budget.xlsx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-excel-study-planner",
-      "title": "Study Planner and Grade Tracker",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "excel",
-      "level": "beginner",
-      "formats": [
-        "XLSX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Track assignments, deadlines and scores for each course. Weighted averages are calculated for you.",
-      "tags": [
-        "excel",
-        "planner",
-        "grades",
-        "gpa",
-        "study",
-        "template",
-        "student",
-        "tracker"
-      ],
-      "guide": "data/guides/omt-excel-study-planner.html",
-      "downloadUrl": "assets/downloads/omt-study-planner.xlsx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-word-student-cv",
-      "title": "Student CV Template and Writing Guide",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "word",
-      "level": "beginner",
-      "formats": [
-        "DOCX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "A clean one-page CV built with Word styles, plus a short guide to writing each section when you have little work experience.",
-      "tags": [
-        "word",
-        "cv",
-        "resume",
-        "résumé",
-        "template",
-        "job",
-        "internship",
-        "career"
-      ],
-      "guide": "data/guides/omt-word-student-cv.html",
-      "downloadUrl": "assets/downloads/omt-student-cv.docx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-word-academic-essay",
-      "title": "Format an Academic Essay in Word",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "word",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Headings, automatic table of contents, page numbers, line spacing and references — the formatting most assignments ask for.",
-      "tags": [
-        "word",
-        "essay",
-        "assignment",
-        "formatting",
-        "table of contents",
-        "styles",
-        "references",
-        "academic",
-        "report"
-      ],
-      "guide": "data/guides/omt-word-academic-essay.html",
-      "added": "2026-10-13"
-    },
-    {
-      "id": "omt-word-letter",
-      "title": "Formal Letter Template",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "word",
-      "level": "beginner",
-      "formats": [
-        "DOCX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "A formal letter layout for applications, requests and official correspondence, with guidance notes in each section.",
-      "tags": [
-        "word",
-        "letter",
-        "business letter",
-        "formal",
-        "application",
-        "template"
-      ],
-      "guide": "data/guides/omt-word-letter.html",
-      "downloadUrl": "assets/downloads/omt-formal-letter.docx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-ppt-academic",
-      "title": "Academic Presentation Template",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "presentations",
-      "level": "beginner",
-      "formats": [
-        "PPTX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "A 10-slide PowerPoint structure for seminars and class presentations: title, problem, method, findings, conclusion and references.",
-      "tags": [
-        "powerpoint",
-        "presentation",
-        "academic",
-        "seminar",
-        "template",
-        "slides",
-        "school",
-        "university"
-      ],
-      "guide": "data/guides/omt-ppt-academic.html",
-      "downloadUrl": "assets/downloads/omt-academic-presentation.pptx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-ppt-project-proposal",
-      "title": "Project Proposal Presentation Template",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "template",
-      "category": "presentations",
-      "level": "intermediate",
-      "formats": [
-        "PPTX"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Pitch a project to a lecturer, sponsor or panel: objectives, scope, timeline, budget and risks in a clear 9-slide flow.",
-      "tags": [
-        "powerpoint",
-        "project proposal",
-        "proposal",
-        "pitch",
-        "pitch deck",
-        "business",
-        "template",
-        "slides",
-        "presentation"
-      ],
-      "guide": "data/guides/omt-ppt-project-proposal.html",
-      "downloadUrl": "assets/downloads/omt-project-proposal.pptx",
-      "added": "2026-10-15"
-    },
-    {
-      "id": "omt-ppt-design-principles",
-      "title": "Slide Design Principles for Clear Presentations",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "powerpoint",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "One idea per slide, readable text, honest charts and confident delivery — practical rules for better PowerPoint slides.",
-      "tags": [
-        "powerpoint",
-        "slide design",
-        "design",
-        "presentation",
-        "storytelling",
-        "public speaking",
-        "slides"
-      ],
-      "guide": "data/guides/omt-ppt-design-principles.html",
-      "added": "2026-10-12"
-    },
-    {
-      "id": "omt-access-basics",
-      "title": "Access Databases: Tables, Keys and Relationships",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "access",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Understand how a database differs from a spreadsheet, then design a simple student-records database with linked tables and a query.",
-      "tags": [
-        "access",
-        "database",
-        "tables",
-        "primary key",
-        "relationships",
-        "query",
-        "forms",
-        "reports"
-      ],
-      "guide": "data/guides/omt-access-basics.html",
-      "added": "2026-10-12"
-    },
-    {
-      "id": "omt-outlook-students",
-      "title": "Outlook for Students: Email Etiquette and Calendar",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "outlook",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Write professional emails to lecturers and employers, organise your inbox with folders and rules, and plan your week in Outlook Calendar.",
-      "tags": [
-        "outlook",
-        "email",
-        "etiquette",
-        "calendar",
-        "productivity",
-        "communication",
-        "inbox"
-      ],
-      "guide": "data/guides/omt-outlook-students.html",
-      "added": "2026-10-11"
-    },
-    {
-      "id": "omt-study-methods",
-      "title": "Study Smarter: Evidence-Based Learning Techniques",
-      "author": "OMT WORKING GROUP",
-      "publisher": "OMT WORKING GROUP",
-      "year": "2026",
-      "kind": "guide",
-      "category": "study-skills",
-      "level": "beginner",
-      "formats": [
-        "Web guide"
-      ],
-      "accessType": "omt",
-      "license": "CC BY 4.0 — OMT WORKING GROUP original",
-      "description": "Retrieval practice, spaced repetition, interleaving and focused study sessions — what research supports and how to use it before exams.",
-      "tags": [
-        "study",
-        "exams",
-        "revision",
-        "memory",
-        "spaced repetition",
-        "active recall",
-        "pomodoro",
-        "learning"
-      ],
-      "guide": "data/guides/omt-study-methods.html",
-      "added": "2026-10-11"
-    },
-    {
       "id": "think-python-3e",
       "title": "Think Python, 3rd Edition",
       "author": "Allen B. Downey",
@@ -1536,8 +1032,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://allendowney.github.io/ThinkPython/",
       "readUrl": "https://allendowney.github.io/ThinkPython/",
-      "featured": true,
-      "added": "2026-10-10"
+      "added": "2026-10-10",
+      "featured": true
     },
     {
       "id": "automate-boring-stuff",

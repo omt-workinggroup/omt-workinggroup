@@ -24,18 +24,11 @@ function notFound(message) {
 
 function actionsHTML(r) {
   const parts = [];
-  if (r.accessType === 'omt' && r.guide) {
-    parts.push(`<a class="btn btn--primary" href="#guide">${icons.read}Read the guide</a>`);
-  } else if (r.readUrl && ['open', 'official'].includes(r.accessType)) {
+  if (r.readUrl && ['open', 'official'].includes(r.accessType)) {
     const label = r.kind !== 'book' ? 'Open on official site' : r.accessType === 'official' && r.external ? 'Borrow free on Open Library' : 'Read online (free)';
     parts.push(externalLink(r.readUrl, label, 'btn btn--primary'));
   } else if (r.readUrl && r.accessType === 'preview') {
     parts.push(externalLink(r.readUrl, 'Read the free preview', 'btn btn--primary'));
-  }
-  const download = safeUrl(r.downloadUrl);
-  if (download && r.accessType === 'omt') {
-    const fmt = (r.formats ?? []).find((f) => ['DOCX', 'XLSX', 'PPTX', 'PDF'].includes(f)) ?? 'file';
-    parts.push(`<a class="btn btn--secondary" href="${e(download)}" download data-download>${icons.download}Download ${e(fmt)}</a>`);
   }
   if (r.sourceUrl && r.sourceUrl !== r.readUrl) {
     const label = r.accessType === 'paid' && r.sourceName?.startsWith('Open Library') ? 'Find a copy on Open Library' : `View on ${r.sourceName ?? 'official source'}`;
@@ -59,20 +52,6 @@ function metaRows(r) {
     ['Added to OMT', r.added ? formatDate(r.added) : ''],
   ];
   return rows.filter(([, v]) => v).map(([k, v]) => `<tr><th scope="row">${e(k)}</th><td>${e(v)}</td></tr>`).join('');
-}
-
-async function loadGuide(r) {
-  const slot = document.getElementById('guide-body');
-  const path = safeUrl(r.guide);
-  if (!slot || !path || /^https?:/i.test(path)) return;
-  try {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error(String(res.status));
-    // Guides are first-party HTML files in data/guides/, reviewed like the rest of the code.
-    slot.innerHTML = await res.text();
-  } catch {
-    slot.innerHTML = stateHTML({ title: 'This guide couldn\'t load', text: 'Please check your connection and refresh the page.', error: true });
-  }
 }
 
 function render(r, all) {
@@ -106,32 +85,16 @@ function render(r, all) {
         <p style="font-size:1.08rem">${e(r.description)}</p>
         <section class="access-box" aria-labelledby="access-h">
           <h2 id="access-h">${e(access.title)}</h2>
-          <p>${e(access.explain)}${r.sourceName && r.accessType !== 'omt' ? ` Source: ${e(r.sourceName)}.` : ''}</p>${paidNote}
+          <p>${e(access.explain)}${r.sourceName ? ` Source: ${e(r.sourceName)}.` : ''}</p>${paidNote}
         </section>
         <table class="meta-table"><caption class="sr-only">Resource details</caption><tbody>${metaRows(r)}</tbody></table>
         ${(r.tags ?? []).length ? `<h2 class="small muted" style="text-transform:uppercase;letter-spacing:.06em">Tags</h2><div class="tag-list">${r.tags.map((t) => `<a class="tag" href="library.html?q=${encodeURIComponent(t)}">${e(t)}</a>`).join('')}</div>` : ''}
         ${r.external ? `<p class="small muted" style="margin-top:18px">${r.addedBy === 'ai' ? 'Added to the OMT library by OMT AI' : 'Suggested by a reader and approved'} from ${e(r.sourceName)}. Details come from ${e(r.sourceName)}.</p>` : ''}
-        ${r.accessType !== 'omt' ? '<p class="small muted" style="margin-top:18px">Link not working? <a href="about.html?topic=broken#contact">Tell us</a> and we\'ll fix it.</p>' : ''}
+        <p class="small muted" style="margin-top:18px">Link not working? <a href="about.html?topic=broken#contact">Tell us</a> and we'll fix it.</p>
       </div>
     </article>
-    ${r.guide ? `<section id="guide" class="guide-wrap prose" aria-label="Guide"><div id="guide-body"><p class="muted">Loading guide…</p></div></section>` : ''}
     ${related.length ? `<section class="section" aria-labelledby="rel-h"><div class="section-head"><h2 id="rel-h">Related resources</h2></div><div class="grid grid--cards">${related.map(cardHTML).join('')}</div></section>` : '<div style="height:48px"></div>'}
   `;
-  if (r.guide) loadGuide(r);
-  checkDownload();
-}
-
-// Never show a download button for a file that isn't actually there.
-function checkDownload() {
-  const link = root.querySelector('[data-download]');
-  if (!link) return;
-  const unavailable = () => {
-    const note = document.createElement('p');
-    note.className = 'small muted';
-    note.textContent = 'The download is temporarily unavailable. Please try again later.';
-    link.replaceWith(note);
-  };
-  fetch(link.getAttribute('href'), { method: 'HEAD' }).then((res) => { if (!res.ok) unavailable(); }).catch(unavailable);
 }
 
 if (!id) {

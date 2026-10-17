@@ -27,11 +27,6 @@ export const OFFICE_APPS = ['word', 'excel', 'powerpoint', 'access', 'outlook'];
 
 /** The five access types the platform distinguishes. */
 export const ACCESS = {
-  omt: {
-    label: 'On OMT', badge: 'omt',
-    title: 'Available on OMT WORKING GROUP',
-    explain: 'Original OMT WORKING GROUP content. Read it here, and download any attached template for free.',
-  },
   open: {
     label: 'Free & open', badge: 'open',
     title: 'Free: public domain or openly licensed',

@@ -107,7 +107,12 @@ function render() {
   }
   els.more.hidden = shown.length >= list.length;
   els.beyond.hidden = !state.q;
-  els.olResults.innerHTML = '';
+  // Search outside sources automatically for every new query.
+  if (state.q !== lastExternalQ) {
+    lastExternalQ = state.q;
+    els.olResults.innerHTML = '';
+    if (state.q) autoExternal();
+  }
   els.askAi.href = state.q ? `assistant.html?q=${encodeURIComponent(state.q)}` : 'assistant.html';
   renderActive();
   syncQuickTabs();
@@ -116,10 +121,9 @@ function render() {
 // ---------- Mobile quick tabs and filter sheet ----------
 const QUICK = {
   all: { access: [], kind: [] },
-  free: { access: ['omt', 'open', 'official'], kind: [] },
+  free: { access: ['open', 'official'], kind: [] },
   new: { access: [], kind: [], sort: 'newest' },
   az: { access: [], kind: [], sort: 'title' },
-  omt: { access: ['omt'], kind: [] },
   book: { access: [], kind: ['book'] },
   template: { access: [], kind: ['template'] },
   guide: { access: [], kind: ['guide'] },
@@ -170,6 +174,8 @@ function update({ push = false, facets = true } = {}) {
 // ---------- External books (Google Books, Open Library, Project Gutenberg) ----------
 const SOURCE_NAMES = { googlebooks: 'Google Books', openlibrary: 'Open Library', gutenberg: 'Project Gutenberg' };
 let olController;
+let lastExternalQ = null;
+const autoExternal = debounce(() => runOpenLibrary(), 450);
 
 async function externalResults(q, signal) {
   try {

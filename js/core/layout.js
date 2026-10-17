@@ -77,7 +77,7 @@ function footerHTML() {
         <li><a href="terms.html#attribution">Resource attribution</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© ${year} OMT WORKING GROUP. Original guides and templates are licensed CC BY 4.0. External resources belong to their owners.</p>
+      <p>© ${year} OMT WORKING GROUP. We are not the authors: every book and resource belongs to its author and publisher, and OMT links to their official sources.</p>
       <p>Microsoft, Word, Excel, PowerPoint, Access and Outlook are trademarks of Microsoft Corporation. OMT WORKING GROUP is an independent platform, not affiliated with Microsoft.</p>
     </div>
   </div>`;

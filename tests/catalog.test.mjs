@@ -19,19 +19,16 @@ test('every resource has a unique id and the required fields', () => {
   }
 });
 
-test('downloads exist only for OMT-owned files, and the files are present', async () => {
+test('OMT is never listed as an author and hosts no files', () => {
   for (const r of resources) {
-    if (!r.downloadUrl) continue;
-    assert.equal(r.accessType, 'omt', `${r.id}: only OMT originals may offer a direct download`);
-    assert.ok(!/^https?:/.test(r.downloadUrl), `${r.id}: downloads must be local files`);
-    await access(new URL(`../${r.downloadUrl}`, import.meta.url));
+    assert.notEqual(r.author, 'OMT WORKING GROUP', `${r.id}: OMT is a discovery platform, not an author`);
+    assert.ok(!r.downloadUrl && !r.guide, `${r.id}: no hosted files`);
   }
 });
 
-test('OMT guides exist; external resources link to an https source', async () => {
+test('every resource links to an https source', () => {
   for (const r of resources) {
-    if (r.guide) await access(new URL(`../${r.guide}`, import.meta.url));
-    if (r.accessType !== 'omt') assert.ok(/^https:\/\//.test(r.sourceUrl ?? ''), `${r.id} needs an https sourceUrl`);
+    assert.ok(/^https:\/\//.test(r.sourceUrl ?? ''), `${r.id} needs an https sourceUrl`);
     if (r.accessType === 'paid') assert.ok(!r.readUrl && !r.downloadUrl, `${r.id}: copyrighted books must not have read/download links`);
   }
 });

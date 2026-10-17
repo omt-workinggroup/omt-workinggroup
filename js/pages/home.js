@@ -53,8 +53,7 @@ try {
   const stats = {
     total: all.length,
     free: all.filter((r) => r.accessType !== 'paid' && r.accessType !== 'info').length,
-    guides: all.filter((r) => r.accessType === 'omt' && r.kind === 'guide').length,
-    templates: all.filter((r) => r.accessType === 'omt' && r.downloadUrl).length,
+    sources: new Set(all.map((r) => r.sourceName).filter(Boolean)).size,
   };
   for (const [key, value] of Object.entries(stats)) {
     const el = document.querySelector(`[data-stat="${key}"]`);
@@ -81,7 +80,7 @@ function renderMobile(all) {
   // Featured banner carousel
   const banner = document.getElementById('m-banner');
   const dots = document.getElementById('m-dots');
-  const picks = ['cn-systems-approach', 'private-5g', 'omt-subnetting', 'google-sre', 'pro-git', 'tlcl']
+  const picks = ['cn-systems-approach', 'private-5g', 'google-sre', 'pro-git', 'tlcl', 'd2l']
     .map((id) => all.find((r) => r.id === id)).filter(Boolean);
   banner.innerHTML = picks.map((r, i) => `
     <a class="m-banner__slide" href="${resourceUrl(r)}" aria-roledescription="slide" aria-label="${e(r.title)}, ${i + 1} of ${picks.length}">
@@ -128,7 +127,7 @@ function renderMobile(all) {
 
   // Continue exploring: real recently viewed items, or a starter list.
   const recent = getRecent().map((x) => ({ r: all.find((a) => a.id === x.id), t: x.t })).filter((x) => x.r).slice(0, 3);
-  const rows = recent.length ? recent : ['omt-subnetting', 'omt-linux-commands', 'omt-mobile-generations'].map((id) => ({ r: all.find((a) => a.id === id) })).filter((x) => x.r);
+  const rows = recent.length ? recent : ['net-intro', 'tlcl', 'missing-semester'].map((id) => ({ r: all.find((a) => a.id === id) })).filter((x) => x.r);
   if (!recent.length) document.getElementById('m-continue-h').textContent = 'Start here';
   document.getElementById('m-continue').innerHTML = rows.map(({ r, t }) => `
     <a class="m-row" href="${resourceUrl(r)}">
@@ -148,6 +147,6 @@ function renderMobile(all) {
     return `<a href="library.html?category=${slug}" style="--app:${c.color}"><b>${icons[c.icon]}</b><span>${e(c.label.split(' & ')[0])}</span></a>`;
   }).join('') + `<a href="library.html?kind=standard" style="--app:#4338ca"><b>${icons.flag}</b><span>Standards</span></a>`;
 
-  // Free templates rail
-  document.getElementById('m-templates').innerHTML = all.filter((r) => r.accessType === 'omt' && r.downloadUrl).map(cardHTML).join('');
+  // Free-to-read rail
+  document.getElementById('m-templates').innerHTML = all.filter((r) => r.accessType === 'open' && r.kind === 'book').slice(0, 10).map(cardHTML).join('');
 }

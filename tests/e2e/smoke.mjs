@@ -40,7 +40,7 @@ async function newPage(width = 1280) {
   return page;
 }
 
-const PAGES = ['index.html', 'library.html', 'library.html?q=excel', 'resource.html?id=omt-excel-lookup', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
+const PAGES = ['index.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
 const WIDTHS = [320, 375, 430, 768, 1024, 1440];
 
 for (const width of WIDTHS) {
@@ -70,17 +70,16 @@ for (const width of WIDTHS) {
   await page.goto(`${BASE}/library.html?category=powerpoint`, { waitUntil: 'networkidle' });
   const cats = await page.locator('#results .card__meta').allTextContents();
   check(cats.length > 0 && cats.every((c) => c.includes('PowerPoint')), 'category filter from URL');
-  await page.check('#f-access-omt');
+  await page.check('#f-access-official');
   const afterAccess = await page.locator('#results .badge').allTextContents();
-  check(afterAccess.length > 0 && afterAccess.every((b) => b === 'On OMT'), 'access filter checkbox');
+  check(afterAccess.length > 0 && afterAccess.every((b) => b === 'Official source'), 'access filter checkbox');
 
   await page.goto(`${BASE}/library.html?q=zzqqxx`, { waitUntil: 'networkidle' });
   check(await page.locator('.state h3', { hasText: 'No matching resources' }).count() === 1, 'empty state');
 
-  await page.goto(`${BASE}/resource.html?id=omt-excel-student-budget`, { waitUntil: 'networkidle' });
-  check((await page.locator('h1').textContent()).includes('Student Monthly Budget'), 'resource page title');
-  check(await page.locator('a[download]').count() === 1, 'download button on OMT template');
-  await page.waitForSelector('#guide-body h2');
+  await page.goto(`${BASE}/resource.html?id=pro-git`, { waitUntil: 'networkidle' });
+  check((await page.locator('h1').textContent()).includes('Pro Git'), 'resource page title');
+  check(await page.locator('a[download]').count() === 0, 'no hosted downloads');
   await page.click('button[data-fav]');
   await page.reload({ waitUntil: 'networkidle' });
   check((await page.getAttribute('button[data-fav]', 'aria-pressed')) === 'true', 'favorite persists after reload');
