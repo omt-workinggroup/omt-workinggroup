@@ -177,7 +177,8 @@ function setupPrefetch() {
   document.addEventListener('focusin', prefetch);
 }
 
-export function initLayout() {
+/** Shared header, footer and navigation. A standalone page (the OMT AI app) brings its own chrome. */
+export function initLayout({ standalone = false } = {}) {
   // Static images may have failed before this script ran.
   document.querySelectorAll('img[data-fallback]').forEach((img) => {
     if (img.complete && img.naturalWidth === 0 && !img.dataset.fellBack) { img.dataset.fellBack = '1'; img.src = img.dataset.fallback; }
@@ -187,6 +188,13 @@ export function initLayout() {
   const footer = document.getElementById('site-footer');
   if (header) header.innerHTML = headerHTML(page);
   if (footer) footer.innerHTML = footerHTML();
+
+  if (standalone) {
+    setupPrefetch();
+    window.addEventListener('offline', () => toast('You are offline. Some features may not work.'));
+    window.addEventListener('online', () => toast('You are back online.'));
+    return;
+  }
 
   const drawer = document.createElement('div');
   drawer.className = 'drawer';

@@ -154,7 +154,7 @@ for (const width of WIDTHS) {
   await context.route(/covers\.openlibrary\.org/, (route) => route.fulfill({ contentType: 'image/png', body: png }));
   const page = await context.newPage();
   await page.goto(`${BASE}/resource.html?id=think-python-3e`);
-  await page.waitForSelector('.detail__cover .cover.has-photo', { timeout: 5000 }).catch(() => {});
+  await page.waitForSelector('.detail__cover img[src="assets/covers/think-python-3e.jpg"]', { timeout: 10000 }).catch(() => {});
   check(await page.locator('.detail__cover img[src="assets/covers/think-python-3e.jpg"]').count() === 1, 'catalogue book shows its own stored cover');
   await page.goto(`${BASE}/resource.html?id=sdn-systems-approach`);
   await page.waitForSelector('.detail__cover .cover.has-photo', { timeout: 5000 }).catch(() => {});
