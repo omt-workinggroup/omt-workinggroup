@@ -570,7 +570,7 @@ main { flex: 1; }
 .tabbar, .sheet-backdrop { display: none; }
 .cover__poster { display: none; }
 .cover__photo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: calc(100% - 28px); aspect-ratio: 2 / 3; object-fit: cover; border-radius: 3px 8px 8px 3px; box-shadow: 0 8px 18px rgba(0,0,0,.3); background: #fff; }
-.cover.has-photo .cover__book { visibility: hidden; }
+.cover.has-photo .cover__book, .cover.has-photo .cover__label { visibility: hidden; }
 
 @media (max-width: 767px) {
   :root { --tabbar-h: 68px; --radius: 16px; }

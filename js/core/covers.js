@@ -1,6 +1,8 @@
-// Real book covers from Open Library's free Covers API (https://openlibrary.org/dev/docs/api/covers).
-// Looked up in the visitor's browser, cached for a week, and only used when the author matches,
-// so a wrong cover is never shown. The drawn poster stays as the fallback.
+// Real book covers. Catalogue books carry their own cover (assets/covers/, taken from the official
+// source or Open Library and checked by hand). Other books are looked up on Open Library's free
+// Covers API (https://openlibrary.org/dev/docs/api/covers) in the visitor's browser, cached for a
+// week, and only used when the author matches, so a wrong cover is never shown. The drawn poster
+// stays as the fallback.
 import { storage } from './util.js';
 import { normalize } from './search.js';
 
@@ -42,7 +44,7 @@ async function lookup(r) {
 }
 
 export function coverFor(r) {
-  if (r.cover && /^https:\/\//.test(r.cover)) return Promise.resolve(r.cover);
+  if (r.cover && /^(https:\/\/|assets\/covers\/)/.test(r.cover)) return Promise.resolve(r.cover);
   const hit = cache[r.id];
   if (hit && Date.now() - hit.t < TTL) return Promise.resolve(hit.url);
   if (!pending.has(r.id)) {

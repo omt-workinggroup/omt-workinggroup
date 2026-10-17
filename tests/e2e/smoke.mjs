@@ -147,16 +147,19 @@ for (const width of WIDTHS) {
   const png = await readFile(join(ROOT, 'assets/icons/icon-512.png'));
   await context.route(/openlibrary\.org\/search\.json/, (route) => {
     const q = new URL(route.request().url()).searchParams.get('q').toLowerCase();
-    const docs = q.includes('think python') ? [{ title: 'Think Python', author_name: ['Allen B. Downey'], cover_i: 42 }]
-      : q.includes('atomic') ? [{ title: 'Atomic Habits', author_name: ['Someone Else'], cover_i: 7 }] : [];
+    const docs = q.includes('software') ? [{ title: 'Software-Defined Networks', author_name: ['Larry Peterson'], cover_i: 42 }]
+      : q.includes('open data') ? [{ title: 'Open Data Structures', author_name: ['Someone Else'], cover_i: 7 }] : [];
     route.fulfill({ contentType: 'application/json', body: JSON.stringify({ docs }) });
   });
   await context.route(/covers\.openlibrary\.org/, (route) => route.fulfill({ contentType: 'image/png', body: png }));
   const page = await context.newPage();
   await page.goto(`${BASE}/resource.html?id=think-python-3e`);
   await page.waitForSelector('.detail__cover .cover.has-photo', { timeout: 5000 }).catch(() => {});
-  check(await page.locator('.detail__cover .cover.has-photo').count() === 1, 'real cover shown when the author matches');
-  await page.goto(`${BASE}/resource.html?id=atomic-habits`);
+  check(await page.locator('.detail__cover img[src="assets/covers/think-python-3e.jpg"]').count() === 1, 'catalogue book shows its own stored cover');
+  await page.goto(`${BASE}/resource.html?id=sdn-systems-approach`);
+  await page.waitForSelector('.detail__cover .cover.has-photo', { timeout: 5000 }).catch(() => {});
+  check(await page.locator('.detail__cover .cover.has-photo').count() === 1, 'Open Library cover shown when the author matches');
+  await page.goto(`${BASE}/resource.html?id=open-data-structures`);
   await page.waitForTimeout(800);
   check(await page.locator('.detail__cover .cover.has-photo').count() === 0, 'cover rejected when the author does not match');
   await context.close();

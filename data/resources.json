@@ -31,7 +31,8 @@
       "sourceUrl": "https://book.systemsapproach.org/",
       "added": "2026-10-16",
       "readUrl": "https://book.systemsapproach.org/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/cn-systems-approach.jpg"
     },
     {
       "id": "sdn-systems-approach",
@@ -89,7 +90,8 @@
       "sourceUrl": "https://www.net-intro.com/",
       "added": "2026-10-16",
       "readUrl": "https://www.net-intro.com/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/net-intro.jpg"
     },
     {
       "id": "beej-network",
@@ -119,7 +121,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://beej.us/guide/bgnet/",
       "added": "2026-10-16",
-      "readUrl": "https://beej.us/guide/bgnet/"
+      "readUrl": "https://beej.us/guide/bgnet/",
+      "cover": "assets/covers/beej-network.jpg"
     },
     {
       "id": "wireshark-guide",
@@ -202,7 +205,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Computer+Networking+A+Top-Down+Approach+Kurose",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "cover": "assets/covers/kurose-ross.jpg"
     },
     {
       "id": "private-5g",
@@ -232,7 +236,8 @@
       "sourceUrl": "https://5g.systemsapproach.org/",
       "added": "2026-10-16",
       "readUrl": "https://5g.systemsapproach.org/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/private-5g.jpg"
     },
     {
       "id": "3gpp-specs",
@@ -380,7 +385,8 @@
       "sourceUrl": "https://sre.google/books/",
       "added": "2026-10-16",
       "readUrl": "https://sre.google/books/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/google-sre.jpg"
     },
     {
       "id": "k8s-tutorials",
@@ -493,7 +499,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Phoenix+Project+Gene+Kim",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "cover": "assets/covers/phoenix-project.jpg"
     },
     {
       "id": "owasp-top10",
@@ -610,7 +617,8 @@
       "sourceUrl": "https://d2l.ai/",
       "added": "2026-10-16",
       "readUrl": "https://d2l.ai/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/d2l.jpg"
     },
     {
       "id": "pdsh",
@@ -638,7 +646,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/",
       "added": "2026-10-16",
-      "readUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/"
+      "readUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+      "cover": "assets/covers/pdsh.jpg"
     },
     {
       "id": "google-mlcc",
@@ -721,7 +730,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Designing+Data-Intensive+Applications+Kleppmann",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "cover": "assets/covers/ddia.jpg"
     },
     {
       "id": "tlcl",
@@ -750,7 +760,8 @@
       "sourceUrl": "https://linuxcommand.org/tlcl.php",
       "added": "2026-10-16",
       "readUrl": "https://linuxcommand.org/tlcl.php",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/tlcl.jpg"
     },
     {
       "id": "ostep",
@@ -780,7 +791,8 @@
       "sourceUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
       "added": "2026-10-16",
       "readUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/ostep.jpg"
     },
     {
       "id": "missing-semester",
@@ -840,7 +852,8 @@
       "sourceUrl": "https://git-scm.com/book/en/v2",
       "added": "2026-10-16",
       "readUrl": "https://git-scm.com/book/en/v2",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/pro-git.jpg"
     },
     {
       "id": "mdn-learn",
@@ -922,7 +935,8 @@
       "sourceName": "Rust",
       "sourceUrl": "https://doc.rust-lang.org/book/",
       "added": "2026-10-16",
-      "readUrl": "https://doc.rust-lang.org/book/"
+      "readUrl": "https://doc.rust-lang.org/book/",
+      "cover": "assets/covers/rust-book.jpg"
     },
     {
       "id": "go-tour",
@@ -1004,7 +1018,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Pragmatic+Programmer+Thomas+Hunt",
-      "added": "2026-10-16"
+      "added": "2026-10-16",
+      "cover": "assets/covers/pragmatic-programmer.jpg"
     },
     {
       "id": "think-python-3e",
@@ -1033,7 +1048,8 @@
       "sourceUrl": "https://allendowney.github.io/ThinkPython/",
       "readUrl": "https://allendowney.github.io/ThinkPython/",
       "added": "2026-10-10",
-      "featured": true
+      "featured": true,
+      "cover": "assets/covers/think-python-3e.jpg"
     },
     {
       "id": "automate-boring-stuff",
@@ -1062,7 +1078,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://automatetheboringstuff.com/",
       "readUrl": "https://automatetheboringstuff.com/",
-      "added": "2026-10-10"
+      "added": "2026-10-10",
+      "cover": "assets/covers/automate-boring-stuff.jpg"
     },
     {
       "id": "eloquent-javascript",
@@ -1091,7 +1108,8 @@
       "sourceName": "Author's website",
       "sourceUrl": "https://eloquentjavascript.net/",
       "readUrl": "https://eloquentjavascript.net/",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "cover": "assets/covers/eloquent-javascript.jpg"
     },
     {
       "id": "openstax-intro-python",
@@ -1120,7 +1138,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/introduction-python-programming",
       "readUrl": "https://openstax.org/details/books/introduction-python-programming",
-      "added": "2026-10-09"
+      "added": "2026-10-09",
+      "cover": "assets/covers/openstax-intro-python.jpg"
     },
     {
       "id": "openstax-intro-cs",
@@ -1150,7 +1169,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/introduction-computer-science",
       "readUrl": "https://openstax.org/details/books/introduction-computer-science",
-      "added": "2026-10-08"
+      "added": "2026-10-08",
+      "cover": "assets/covers/openstax-intro-cs.jpg"
     },
     {
       "id": "openstax-workplace-software",
@@ -1181,7 +1201,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/workplace-software-skills",
       "readUrl": "https://openstax.org/details/books/workplace-software-skills",
-      "added": "2026-10-08"
+      "added": "2026-10-08",
+      "cover": "assets/covers/openstax-workplace-software.jpg"
     },
     {
       "id": "openstax-intro-business",
@@ -1210,7 +1231,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/introduction-business",
       "readUrl": "https://openstax.org/details/books/introduction-business",
-      "added": "2026-10-07"
+      "added": "2026-10-07",
+      "cover": "assets/covers/openstax-intro-business.jpg"
     },
     {
       "id": "openstax-principles-management",
@@ -1240,7 +1262,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/principles-management",
       "readUrl": "https://openstax.org/details/books/principles-management",
-      "added": "2026-10-07"
+      "added": "2026-10-07",
+      "cover": "assets/covers/openstax-principles-management.jpg"
     },
     {
       "id": "openstax-entrepreneurship",
@@ -1270,7 +1293,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/entrepreneurship",
       "readUrl": "https://openstax.org/details/books/entrepreneurship",
-      "added": "2026-10-06"
+      "added": "2026-10-06",
+      "cover": "assets/covers/openstax-entrepreneurship.jpg"
     },
     {
       "id": "openstax-principles-economics",
@@ -1298,7 +1322,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/principles-economics-3e",
       "readUrl": "https://openstax.org/details/books/principles-economics-3e",
-      "added": "2026-10-06"
+      "added": "2026-10-06",
+      "cover": "assets/covers/openstax-principles-economics.jpg"
     },
     {
       "id": "openstax-college-success",
@@ -1329,7 +1354,8 @@
       "sourceName": "OpenStax",
       "sourceUrl": "https://openstax.org/details/books/college-success",
       "readUrl": "https://openstax.org/details/books/college-success",
-      "added": "2026-10-05"
+      "added": "2026-10-05",
+      "cover": "assets/covers/openstax-college-success.jpg"
     },
     {
       "id": "cs50x",
@@ -1748,7 +1774,8 @@
       "sourceName": "Project Gutenberg",
       "sourceUrl": "https://www.gutenberg.org/ebooks/3300",
       "readUrl": "https://www.gutenberg.org/ebooks/3300",
-      "added": "2026-09-27"
+      "added": "2026-09-27",
+      "cover": "assets/covers/gutenberg-wealth-of-nations.jpg"
     },
     {
       "id": "gutenberg-art-of-war",
@@ -1778,7 +1805,8 @@
       "sourceName": "Project Gutenberg",
       "sourceUrl": "https://www.gutenberg.org/ebooks/132",
       "readUrl": "https://www.gutenberg.org/ebooks/132",
-      "added": "2026-09-26"
+      "added": "2026-09-26",
+      "cover": "assets/covers/gutenberg-art-of-war.jpg"
     },
     {
       "id": "gutenberg-meditations",
@@ -1808,7 +1836,8 @@
       "sourceName": "Project Gutenberg",
       "sourceUrl": "https://www.gutenberg.org/ebooks/2680",
       "readUrl": "https://www.gutenberg.org/ebooks/2680",
-      "added": "2026-09-26"
+      "added": "2026-09-26",
+      "cover": "assets/covers/gutenberg-meditations.jpg"
     },
     {
       "id": "gutenberg-pride-prejudice",
@@ -1838,7 +1867,8 @@
       "sourceName": "Project Gutenberg",
       "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
       "readUrl": "https://www.gutenberg.org/ebooks/1342",
-      "added": "2026-09-25"
+      "added": "2026-09-25",
+      "cover": "assets/covers/gutenberg-pride-prejudice.jpg"
     },
     {
       "id": "gutenberg-franklin-autobiography",
@@ -1869,7 +1899,8 @@
       "sourceName": "Project Gutenberg",
       "sourceUrl": "https://www.gutenberg.org/ebooks/20203",
       "readUrl": "https://www.gutenberg.org/ebooks/20203",
-      "added": "2026-09-25"
+      "added": "2026-09-25",
+      "cover": "assets/covers/gutenberg-franklin-autobiography.jpg"
     },
     {
       "id": "things-fall-apart",
@@ -1898,7 +1929,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Things+Fall+Apart+Chinua+Achebe",
-      "added": "2026-09-24"
+      "added": "2026-09-24",
+      "cover": "assets/covers/things-fall-apart.jpg"
     },
     {
       "id": "atomic-habits",
@@ -1926,7 +1958,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Atomic+Habits+James+Clear",
-      "added": "2026-09-24"
+      "added": "2026-09-24",
+      "cover": "assets/covers/atomic-habits.jpg"
     },
     {
       "id": "deep-work",
@@ -1955,7 +1988,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Deep+Work+Cal+Newport",
-      "added": "2026-09-23"
+      "added": "2026-09-23",
+      "cover": "assets/covers/deep-work.jpg"
     },
     {
       "id": "lean-startup",
@@ -1984,7 +2018,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Lean+Startup+Eric+Ries",
-      "added": "2026-09-23"
+      "added": "2026-09-23",
+      "cover": "assets/covers/lean-startup.jpg"
     },
     {
       "id": "clean-code",
@@ -2011,7 +2046,8 @@
       ],
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Clean+Code+Robert+C.+Martin",
-      "added": "2026-09-22"
+      "added": "2026-09-22",
+      "cover": "assets/covers/clean-code.jpg"
     }
   ]
 }
