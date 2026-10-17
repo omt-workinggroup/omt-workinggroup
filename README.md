@@ -59,6 +59,18 @@ How the function works:
 
 The AI provider is isolated in `server/ai.mjs`, so switching providers later means changing only that file.
 
+## External books (Google Books, Open Library, Project Gutenberg)
+
+- `/api/books?q=` searches all three sources at once (`server/books.mjs`). One source failing never breaks the others.
+- **Library page:** "Search beyond our library" shows the results with access labels. Visitors can click **Add to OMT library** to suggest a book.
+- **OMT AI:** in live mode the AI searches the same sources. Any external book it recommends is **added to the library automatically** and linked to its own page there.
+- **Storage:** additions live in the Supabase table `public.library_additions`.
+  - AI additions are approved straight away.
+  - Visitor suggestions wait until you set `approved` to `true` in **Supabase › Table Editor › library_additions**.
+  - The public can read approved rows only. Database checks restrict links and covers to the official source domains.
+- **What readers can do:** read Project Gutenberg books in full, borrow Open Library books, and preview or buy Google Books titles. OMT never copies book files.
+- **Optional:** set `GOOGLE_BOOKS_API_KEY` for higher Google Books limits.
+
 ## Deploy (Vercel)
 
 The site is a static site plus two Vercel Functions in `api/`. `vercel.json` sets the security headers, caching and function timeouts. There is no build step.

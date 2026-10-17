@@ -42,6 +42,11 @@ export const ACCESS = {
     title: 'Free on the official provider\'s website',
     explain: 'Free to use on the publisher\'s or provider\'s own website. OMT links to it and does not host a copy.',
   },
+  preview: {
+    label: 'Preview', badge: 'official',
+    title: 'Free preview on Google Books',
+    explain: 'Read a free sample of this book on Google Books. Buy it or borrow it from a library for the full text.',
+  },
   paid: {
     label: 'Buy or borrow', badge: 'paid',
     title: 'In copyright: buy it or borrow it from a library',

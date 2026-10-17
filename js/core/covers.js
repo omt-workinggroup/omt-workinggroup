@@ -42,6 +42,7 @@ async function lookup(r) {
 }
 
 export function coverFor(r) {
+  if (r.cover && /^https:\/\//.test(r.cover)) return Promise.resolve(r.cover);
   const hit = cache[r.id];
   if (hit && Date.now() - hit.t < TTL) return Promise.resolve(hit.url);
   if (!pending.has(r.id)) {

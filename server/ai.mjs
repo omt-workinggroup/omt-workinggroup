@@ -11,7 +11,9 @@ import Anthropic from '@anthropic-ai/sdk';
 import catalogData from '../data/resources.json' with { type: 'json' };
 import { searchCatalog } from '../js/core/search.js';
 import { ACCESS, CATEGORIES } from '../js/core/taxonomy.js';
-import { normalizeOpenLibraryDoc } from '../js/core/openlibrary.js';
+import { searchExternal } from './books.mjs';
+import { saveAdditions } from './additions.mjs';
+import { resourceIdFor } from '../js/core/external.js';
 import { createRateLimiter, fail, json } from './http.mjs';
 
 const MODEL = process.env.OMT_AI_MODEL || 'claude-opus-5-5';
@@ -31,6 +33,9 @@ and students. You help them (1) find books and learning resources, (2) understan
 
 Each user turn comes with a <search_results> block that the website builds from its catalogue and from Open Library.
 Base every recommendation on those results:
+- <search_results> holds the OMT catalogue and external_books found on Google Books, Open Library and Project
+  Gutenberg. External books you recommend are added to the OMT library automatically, so recommend them freely
+  when they fit, especially when the OMT catalogue has nothing suitable.
 - Recommend only resources that appear in <search_results>, and refer to them by title. Never invent a title, author,
   publisher, year, link or availability. If nothing fits, say so and suggest better search words or a kind of
   resource to look for (for example an OpenStax textbook or a library loan).
@@ -110,23 +115,7 @@ const catalogRecord = (r) => ({
   tags: r.tags,
 });
 
-async function openLibrary(query, fetchImpl) {
-  const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query.slice(0, 200))}&limit=5&fields=key,title,author_name,first_publish_year,cover_i,ebook_access`;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 4000);
-  try {
-    const res = await fetchImpl(url, { signal: controller.signal, headers: { 'User-Agent': 'OMT-WORKING-GROUP/1.0' } });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.docs ?? []).map(normalizeOpenLibraryDoc).filter((d) => d.url);
-  } catch {
-    return [];
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-/** Build the retrieval context for this turn: catalogue matches plus Open Library records. */
+/** Build the retrieval context for this turn: catalogue matches plus Google Books, Open Library and Gutenberg records. */
 export async function buildContext({ messages, resourceId, fetchImpl = fetch }) {
   const question = messages[messages.length - 1].content;
   const selected = resourceId ? catalog.find((r) => r.id === resourceId) : null;
@@ -137,34 +126,45 @@ export async function buildContext({ messages, resourceId, fetchImpl = fetch }) 
   if (selected) matches = [selected, ...searchCatalog(catalog, { q: selected.tags?.slice(0, 3).join(' ') ?? '' })];
   const unique = [...new Map(matches.map((r) => [r.id, r])).values()].slice(0, 8);
 
-  const external = selected && selected.accessType !== 'paid' ? [] : await openLibrary(selected ? selected.title : question, fetchImpl);
-  const olRecords = external.map((d, i) => ({ id: `ol-${i + 1}`, title: d.title, author: d.author, year: d.year, source: 'Open Library', access: d.access === 'public' ? 'Free to read on Open Library' : d.access === 'borrowable' ? 'Borrow free with an Open Library account' : 'Catalogue record only (no free ebook)', url: d.url }));
+  let external = [];
+  if (!selected || selected.accessType === 'paid') {
+    try { external = (await searchExternal(selected ? selected.title : question, { fetchImpl, max: 8 })).results; } catch { external = []; }
+  }
+  const ACCESS_TEXT = { open: 'Free to read in full', official: 'Free to borrow with an Open Library account', preview: 'Free preview on Google Books', paid: 'In copyright: buy or borrow' };
+  const extRecords = external.map((d, i) => ({ id: `ext-${i + 1}`, title: d.title, author: d.authors, year: d.year, source: d.source, access: ACCESS_TEXT[d.access], description: d.description?.slice(0, 300) || undefined }));
 
   const block = {
     selected_resource: selected ? catalogRecord(selected) : null,
     omt_catalogue: unique.map(catalogRecord),
-    open_library: olRecords,
+    external_books: extRecords,
   };
   return {
     text: `<search_results>\n${JSON.stringify(block)}\n</search_results>`,
-    lookup: { catalogue: new Map(unique.map((r) => [r.id, r])), external: new Map(olRecords.map((r, i) => [r.id, external[i]])) },
+    lookup: { catalogue: new Map(unique.map((r) => [r.id, r])), external: new Map(extRecords.map((r, i) => [r.id, external[i]])) },
   };
 }
 
-function toResourceCards(ids, lookup) {
+/** Map the model's picks to cards. External picks are saved into the OMT library and link to their page there. */
+async function toResourceCards(ids, lookup, { fetchImpl, env }) {
   const out = [];
+  const externalPicks = [];
   for (const id of ids ?? []) {
     if (typeof id !== 'string' || out.length >= 4) continue;
     const r = lookup.catalogue.get(id);
     if (r) { out.push({ source: 'omt', id: r.id, title: r.title, author: r.author, accessType: r.accessType, url: `resource.html?id=${encodeURIComponent(r.id)}` }); continue; }
     const d = lookup.external.get(id);
-    if (d && /^https:\/\/openlibrary\.org\/works\//.test(d.url)) out.push({ source: 'openlibrary', title: d.title, author: d.author, year: d.year, access: d.access, url: d.url });
+    if (d) { externalPicks.push(d); out.push(d); }
   }
-  return out;
+  const saved = externalPicks.length ? await saveAdditions(externalPicks, 'ai', { fetchImpl, env }) : false;
+  return out.map((d) => (d.source === 'omt' ? d : {
+    source: d.source, title: d.title, author: d.authors, year: d.year, accessType: d.access,
+    url: saved ? `resource.html?id=${encodeURIComponent(resourceIdFor(d.extId))}` : d.url,
+    addedToLibrary: saved,
+  }));
 }
 
 // ---------- handler ----------
-export function createHandler({ client, fetchImpl = fetch } = {}) {
+export function createHandler({ client, fetchImpl = fetch, env = process.env } = {}) {
   return async (req, context = {}) => {
     const apiKeyConfigured = Boolean(client || process.env.ANTHROPIC_API_KEY);
     if (req.method === 'GET') return json(200, { configured: apiKeyConfigured });
@@ -207,7 +207,7 @@ export function createHandler({ client, fetchImpl = fetch } = {}) {
       if (!parsed || typeof parsed.reply !== 'string') {
         return fail(502, 'bad_response', 'The AI returned an unexpected answer. Please try again.');
       }
-      return json(200, { ok: true, mode: 'live', reply: parsed.reply.slice(0, 8000), resources: toResourceCards(parsed.recommended, lookup) });
+      return json(200, { ok: true, mode: 'live', reply: parsed.reply.slice(0, 8000), resources: await toResourceCards(parsed.recommended, lookup, { fetchImpl, env }) });
     } catch (err) {
       // Log the status/type only; never log message content or keys.
       console.error('AI provider error', err?.status ?? '', err?.name ?? '');

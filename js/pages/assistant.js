@@ -34,16 +34,21 @@ function restore() {
 }
 
 // ---------- Rendering ----------
+const SOURCE_NAMES = { googlebooks: 'Google Books', openlibrary: 'Open Library', gutenberg: 'Project Gutenberg' };
+
 function recHTML(rec) {
   const url = safeUrl(rec.url);
   if (!url) return '';
   const external = /^https?:/.test(url);
-  const badge = rec.source === 'openlibrary'
-    ? (() => { const a = OL_ACCESS[rec.access] ?? OL_ACCESS.no_ebook; return `<span class="badge badge--${a.badge}" title="${e(a.explain)}">${e(a.label)}</span>`; })()
-    : (() => { const a = ACCESS[rec.accessType] ?? ACCESS.info; return `<span class="badge badge--${a.badge}">${e(a.label)}</span>`; })();
-  const sourceNote = rec.source === 'openlibrary' ? `Open Library record${rec.year ? ` · first published ${e(rec.year)}` : ''}` : (rec.why ? e(rec.why) : 'In the OMT library');
+  // Live answers carry an OMT access type; demo Open Library records carry Open Library's own access field.
+  const a = rec.accessType ? (ACCESS[rec.accessType] ?? ACCESS.info) : (OL_ACCESS[rec.access] ?? OL_ACCESS.no_ebook);
+  const badge = `<span class="badge badge--${a.badge}" title="${e(a.explain ?? a.title ?? '')}">${e(a.label)}</span>`;
+  const sourceNote = rec.source !== 'omt'
+    ? `${e(SOURCE_NAMES[rec.source] ?? 'External')}${rec.year ? ` · ${e(rec.year)}` : ''}`
+    : (rec.why ? e(rec.why) : 'In the OMT library');
+  const added = rec.addedToLibrary ? `<span class="rec__added">${icons.sparkle.replace('<svg', '<svg width="12" height="12"')} Added to the OMT library</span>` : '';
   return `<div class="rec"><div class="rec__top"><a href="${e(url)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${e(rec.title)}${external ? '<span class="sr-only"> (opens in a new tab)</span>' : ''}</a>${badge}</div>
-    <span class="rec__why">${rec.author ? `${e(rec.author)} · ` : ''}${sourceNote}</span></div>`;
+    <span class="rec__why">${rec.author ? `${e(rec.author)} · ` : ''}${sourceNote}</span>${added}</div>`;
 }
 
 function messageHTML(msg) {

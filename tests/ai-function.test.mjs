@@ -66,3 +66,22 @@ test('rate limiting kicks in', async () => {
   for (let i = 0; i < 21; i++) last = await handler(post({ messages: [{ role: 'user', content: 'hi' }] }), { ip: 'rl-test' });
   assert.equal(last.status, 429);
 });
+
+test('external books the AI recommends are added to the library and linked there', async () => {
+  const supa = [];
+  const fetchImpl = async (url, init) => {
+    const u = String(url);
+    if (u.includes('supabase.co')) { supa.push(JSON.parse(init.body)); return new Response(null, { status: 201 }); }
+    if (u.includes('gutendex.com')) return new Response(JSON.stringify({ results: [{ id: 2701, title: 'Moby Dick', authors: [{ name: 'Melville, Herman' }], formats: {} }] }));
+    return new Response(JSON.stringify({}), { status: 200 });
+  };
+  const handler = createHandler({
+    fetchImpl,
+    env: { SUPABASE_URL: 'https://example.supabase.co', SUPABASE_PUBLISHABLE_KEY: 'k' },
+    client: fakeClient(() => ({ stop_reason: 'end_turn', content: [{ type: 'text', text: JSON.stringify({ reply: 'Try Moby Dick.', recommended: ['ext-1'] }) }] })),
+  });
+  const data = await (await handler(post({ messages: [{ role: 'user', content: 'a classic whale novel' }] }), { ip: 'ext-test' })).json();
+  assert.equal(data.resources[0].addedToLibrary, true);
+  assert.equal(data.resources[0].url, 'resource.html?id=ext-pg-2701');
+  assert.equal(supa[0][0].added_by, 'ai');
+});

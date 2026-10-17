@@ -1,10 +1,11 @@
 import { initLayout } from '../core/layout.js';
 import { watchCovers } from '../core/covers.js';
-import { loadCatalog } from '../core/catalog.js';
+import { loadCatalog, searchExternalBooks, suggestBook } from '../core/catalog.js';
+import { resourceIdFor } from '../core/external.js';
 import { searchCatalog } from '../core/search.js';
 import { ACCESS, CATEGORIES, KINDS } from '../core/taxonomy.js';
 import { cardHTML, skeletons, stateHTML } from '../core/render.js';
-import { searchOpenLibrary, OL_ACCESS } from '../core/openlibrary.js';
+import { searchOpenLibrary } from '../core/openlibrary.js';
 import { icons } from '../core/icons.js';
 import { SITE } from '../core/config.js';
 import { $, debounce, escapeHtml as e, storage } from '../core/util.js';
@@ -166,34 +167,77 @@ function update({ push = false, facets = true } = {}) {
   render();
 }
 
-// ---------- Open Library ----------
+// ---------- External books (Google Books, Open Library, Project Gutenberg) ----------
+const SOURCE_NAMES = { googlebooks: 'Google Books', openlibrary: 'Open Library', gutenberg: 'Project Gutenberg' };
 let olController;
+
+async function externalResults(q, signal) {
+  try {
+    return { list: await searchExternalBooks(q, { signal }), canAdd: true };
+  } catch (err) {
+    if (err.name === 'AbortError') throw err;
+    // No server functions (e.g. a plain static server): fall back to Open Library in the browser.
+    const docs = await searchOpenLibrary(q, { limit: 8, signal });
+    return {
+      list: docs.map((d) => ({ extId: null, source: 'openlibrary', title: d.title, authors: d.author, year: d.year, url: d.url, access: d.access === 'public' ? 'open' : d.access === 'borrowable' ? 'official' : 'paid' })),
+      canAdd: false,
+    };
+  }
+}
+
+function externalHTML(d, canAdd) {
+  const a = ACCESS[d.access] ?? ACCESS.paid;
+  const inLibrary = d.extId && catalog.some((r) => r.id === resourceIdFor(d.extId));
+  const action = inLibrary
+    ? `<a class="btn btn--secondary btn--sm" href="resource.html?id=${encodeURIComponent(resourceIdFor(d.extId))}">In the library</a>`
+    : canAdd && d.extId ? `<button type="button" class="btn btn--secondary btn--sm" data-suggest="${e(d.extId)}">${icons.heart.replace('<svg', '<svg width="14" height="14"')} Add to OMT library</button>` : '';
+  return `<div class="rec ext-rec">
+    ${d.cover ? `<img class="ext-rec__cover" src="${e(d.cover)}" alt="" loading="lazy" width="46" height="66">` : ''}
+    <div class="ext-rec__body">
+      <div class="rec__top"><a href="${e(d.url)}" target="_blank" rel="noopener noreferrer">${e(d.title)}<span class="sr-only"> (opens ${e(SOURCE_NAMES[d.source])} in a new tab)</span></a><span class="badge badge--${a.badge}" title="${e(a.title)}">${e(a.label)}</span></div>
+      <span class="rec__why">${e(d.authors || 'Unknown author')}${d.year ? ` · ${e(d.year)}` : ''} · ${e(SOURCE_NAMES[d.source])}</span>
+      <div class="ext-rec__actions">${action}<span class="small muted" role="status"></span></div>
+    </div>
+  </div>`;
+}
+
 async function runOpenLibrary() {
   const q = state.q;
   if (!q) return;
   olController?.abort();
   olController = new AbortController();
   els.olBtn.disabled = true;
-  els.olResults.innerHTML = '<p class="muted" role="status">Searching Open Library…</p>';
+  els.olResults.innerHTML = '<p class="muted" role="status">Searching Google Books, Open Library and Project Gutenberg…</p>';
   try {
-    const docs = await searchOpenLibrary(q, { limit: 8, signal: olController.signal });
+    const { list, canAdd } = await externalResults(q, olController.signal);
     if (q !== state.q) return;
-    if (!docs.length) {
-      els.olResults.innerHTML = stateHTML({ title: 'No books found on Open Library', text: 'Try the author\'s name or a shorter title, or ask OMT AI to suggest alternatives.' });
+    if (!list.length) {
+      els.olResults.innerHTML = stateHTML({ title: 'No books found outside the library', text: 'Try the author\'s name or a shorter title, or ask OMT AI to suggest alternatives.' });
       return;
     }
-    els.olResults.innerHTML = `<p class="small muted">Results from <a href="https://openlibrary.org" target="_blank" rel="noopener noreferrer">Open Library</a>. These are catalogue records: “Info only” means there is no free ebook, so check a library or bookseller.</p>` +
-      docs.map((d) => {
-        const a = OL_ACCESS[d.access];
-        return `<div class="rec"><div class="rec__top"><a href="${e(d.url)}" target="_blank" rel="noopener noreferrer">${e(d.title)}<span class="sr-only"> (opens Open Library in a new tab)</span></a><span class="badge badge--${a.badge}" title="${e(a.explain)}">${e(a.label)}</span></div><span class="rec__why">${e(d.author)}${d.year ? ` · first published ${e(d.year)}` : ''}</span></div>`;
-      }).join('');
+    els.olResults.innerHTML = `<p class="small muted">Results from Google Books, Open Library and Project Gutenberg. "Free & open" books can be read in full; others can be previewed, borrowed or bought.${canAdd ? ' Add a book to suggest it for the OMT library.' : ''}</p>` + list.map((d) => externalHTML(d, canAdd)).join('');
   } catch (err) {
     if (err.name === 'AbortError' && q !== state.q) return;
-    els.olResults.innerHTML = stateHTML({ title: 'Open Library is unavailable right now', text: 'Check your connection and try again in a moment.', error: true });
+    els.olResults.innerHTML = stateHTML({ title: 'Book search is unavailable right now', text: 'Check your connection and try again in a moment.', error: true });
   } finally {
     els.olBtn.disabled = false;
   }
 }
+
+els.olResults.addEventListener('click', async (event) => {
+  const btn = event.target.closest('[data-suggest]');
+  if (!btn) return;
+  const status = btn.parentElement.querySelector('[role="status"]');
+  btn.disabled = true;
+  try {
+    const result = await suggestBook(btn.dataset.suggest);
+    btn.remove();
+    status.textContent = result.message;
+  } catch (err) {
+    btn.disabled = false;
+    status.textContent = err.message;
+  }
+});
 
 // ---------- View toggle ----------
 const viewButtons = document.querySelectorAll('[data-view]');

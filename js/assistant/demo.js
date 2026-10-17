@@ -3,6 +3,7 @@
 import { parseQuery, searchCatalog, relatedResources } from '../core/search.js';
 import { ACCESS, CATEGORIES, KINDS, LEVELS } from '../core/taxonomy.js';
 import { searchOpenLibrary } from '../core/openlibrary.js';
+import { searchExternalBooks } from '../core/catalog.js';
 
 // ---------- Prepared concept explanations ----------
 const CONCEPTS = [
@@ -451,11 +452,16 @@ async function findResources(message, all) {
   let external = [];
   const wantsBooks = parsed.hints.kind === 'book' || results.length < 2;
   if (wantsBooks && parsed.terms.length) {
-    try { external = (await searchOpenLibrary(parsed.terms.join(' '), { limit: 3 })); } catch { external = []; }
+    const q = parsed.terms.join(' ');
+    try {
+      external = (await searchExternalBooks(q)).slice(0, 4).map((d) => ({ source: d.source, title: d.title, author: d.authors, year: d.year, accessType: d.access, url: d.url }));
+    } catch {
+      try { external = (await searchOpenLibrary(q, { limit: 3 })); } catch { external = []; }
+    }
   }
   const resources = [
     ...results.map((r) => card(r, whyMatch(r, parsed))),
-    ...external.map((d) => ({ source: 'openlibrary', title: d.title, author: d.author, year: d.year, access: d.access, url: d.url })),
+    ...external.map((d) => (d.accessType ? d : { source: 'openlibrary', title: d.title, author: d.author, year: d.year, access: d.access, url: d.url })),
   ];
   if (!resources.length) {
     return {
@@ -464,9 +470,9 @@ async function findResources(message, all) {
     };
   }
   const intro = results.length
-    ? `Here ${results.length === 1 ? 'is a resource' : `are ${results.length} resources`} from the OMT library that match what you asked for${external.length ? ', plus related records from Open Library' : ''}:`
-    : 'I didn\'t find a match in the OMT library, but Open Library has these records:';
-  const note = external.length ? '\n\nOpen Library records show availability. "Info only" means there is no free ebook, so check a library or bookseller.' : '';
+    ? `Here ${results.length === 1 ? 'is a resource' : `are ${results.length} resources`} from the OMT library that match what you asked for${external.length ? ', plus books from outside the library' : ''}:`
+    : 'I didn\'t find a match in the OMT library, but I found these books elsewhere:';
+  const note = external.length ? '\n\nOutside books come from Google Books, Open Library and Project Gutenberg. Each label shows whether you can read it in full, preview it, borrow it or buy it.' : '';
   return { reply: intro + note, resources };
 }
 

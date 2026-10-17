@@ -27,7 +27,10 @@ function actionsHTML(r) {
   if (r.accessType === 'omt' && r.guide) {
     parts.push(`<a class="btn btn--primary" href="#guide">${icons.read}Read the guide</a>`);
   } else if (r.readUrl && ['open', 'official'].includes(r.accessType)) {
-    parts.push(externalLink(r.readUrl, r.kind === 'book' ? 'Read online (free)' : 'Open on official site', 'btn btn--primary'));
+    const label = r.kind !== 'book' ? 'Open on official site' : r.accessType === 'official' && r.external ? 'Borrow free on Open Library' : 'Read online (free)';
+    parts.push(externalLink(r.readUrl, label, 'btn btn--primary'));
+  } else if (r.readUrl && r.accessType === 'preview') {
+    parts.push(externalLink(r.readUrl, 'Read the free preview', 'btn btn--primary'));
   }
   const download = safeUrl(r.downloadUrl);
   if (download && r.accessType === 'omt') {
@@ -35,7 +38,8 @@ function actionsHTML(r) {
     parts.push(`<a class="btn btn--secondary" href="${e(download)}" download data-download>${icons.download}Download ${e(fmt)}</a>`);
   }
   if (r.sourceUrl && r.sourceUrl !== r.readUrl) {
-    parts.push(externalLink(r.sourceUrl, r.accessType === 'paid' ? 'Find a copy on Open Library' : `Visit ${r.sourceName ?? 'official source'}`));
+    const label = r.accessType === 'paid' && r.sourceName?.startsWith('Open Library') ? 'Find a copy on Open Library' : `View on ${r.sourceName ?? 'official source'}`;
+    parts.push(externalLink(r.sourceUrl, label));
   }
   const on = isFavorite(r.id);
   parts.push(`<button type="button" class="btn btn--secondary" data-fav="${e(r.id)}" data-fav-text aria-pressed="${on}" aria-label="${on ? 'Remove from' : 'Save to'} favorites: ${e(r.title)}">${icons.heart}<span class="fav-text">${on ? 'Saved to favorites' : 'Add to favorites'}</span></button>`);
@@ -106,6 +110,7 @@ function render(r, all) {
         </section>
         <table class="meta-table"><caption class="sr-only">Resource details</caption><tbody>${metaRows(r)}</tbody></table>
         ${(r.tags ?? []).length ? `<h2 class="small muted" style="text-transform:uppercase;letter-spacing:.06em">Tags</h2><div class="tag-list">${r.tags.map((t) => `<a class="tag" href="library.html?q=${encodeURIComponent(t)}">${e(t)}</a>`).join('')}</div>` : ''}
+        ${r.external ? `<p class="small muted" style="margin-top:18px">${r.addedBy === 'ai' ? 'Added to the OMT library by OMT AI' : 'Suggested by a reader and approved'} from ${e(r.sourceName)}. Details come from ${e(r.sourceName)}.</p>` : ''}
         ${r.accessType !== 'omt' ? '<p class="small muted" style="margin-top:18px">Link not working? <a href="about.html?topic=broken#contact">Tell us</a> and we\'ll fix it.</p>' : ''}
       </div>
     </article>

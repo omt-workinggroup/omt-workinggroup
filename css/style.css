@@ -850,3 +850,11 @@ main { flex: 1; }
 @media (min-width: 768px) {
   body[data-page="library"] .poster__app { width: 30px; height: 30px; margin-bottom: 6px; padding: 3px; border-radius: 9px; background: rgba(255,255,255,.95); box-shadow: 0 4px 10px rgba(0,0,0,.2); }
 }
+
+/* External book results */
+.ext-rec { display: flex; gap: 12px; align-items: flex-start; }
+.ext-rec__cover { flex: none; width: 46px; height: 66px; object-fit: cover; border-radius: 4px; box-shadow: 0 3px 8px rgba(0,0,0,.18); background: var(--surface-2); }
+.ext-rec__body { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.ext-rec__actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.rec__added { display: inline-flex; align-items: center; gap: 4px; font-size: .74rem; font-weight: 700; color: var(--primary); }
+#ol-search { white-space: normal; text-align: left; line-height: 1.25; padding-block: 8px; height: auto; }
