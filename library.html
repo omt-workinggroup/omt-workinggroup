@@ -46,15 +46,22 @@
   <main id="main">
 
     <div class="container">
-      <div class="page-head">
-        <h1>Explore the Library</h1>
-        <p>Books, courses, standards and guides for people who build and run software, networks and telecom systems.</p>
-        <form class="search search--lg search--stack" id="lib-search" role="search">
-          <label class="sr-only" for="lib-q">Search the library</label>
-          <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="lib-q" name="q" type="search" placeholder="Try “subnetting”, “5G core”, “kubernetes” or “python”" enterkeyhint="search" autocomplete="off" maxlength="200"></div>
-          <button class="btn btn--primary" type="submit">Search</button>
-          <button class="search__filter m-only" type="button" id="open-filters" aria-label="Show filters" aria-controls="filters"></button>
-        </form>
+      <div class="page-head stacks">
+        <div class="stacks__grid">
+          <div class="stacks__text">
+            <p class="stacks__kicker"><span>The stacks</span> <b data-stat="total">236</b> titles <small class="stacks__free"><i>·</i> <b data-stat="free">92</b> free to read</small></p>
+            <h1>Every book worth <em>opening.</em></h1>
+            <p class="stacks__lead">Programming, networks, 5G, Linux, security, design and the classics, each one linked to the official edition or a library copy.</p>
+            <form class="search search--lg search--stack" id="lib-search" role="search">
+              <label class="sr-only" for="lib-q">Search the library</label>
+              <div class="search__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="lib-q" name="q" type="search" placeholder="Try “subnetting”, “5G core”, “kubernetes” or “python”" enterkeyhint="search" autocomplete="off" maxlength="200"></div>
+              <button class="btn btn--primary" type="submit">Search</button>
+              <button class="search__filter m-only" type="button" id="open-filters" aria-label="Show filters" aria-controls="filters"></button>
+            </form>
+          </div>
+          <div class="stacks__pile" id="stacks-pile" aria-hidden="true"><span class="desk__glow"></span></div>
+        </div>
+        <div class="spines" id="spines" role="group" aria-label="Browse by shelf"></div>
         <div class="m-tabs lib-tabs" role="tablist" aria-label="Quick filters" id="quick-tabs">
           <button type="button" role="tab" data-quick="all">All results</button>
           <button type="button" role="tab" data-quick="free">Free</button>

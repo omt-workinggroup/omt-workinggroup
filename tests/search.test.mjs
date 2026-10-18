@@ -11,7 +11,7 @@ test('keyword search matches title, tags and category, ignoring case and spaces'
   assert.ok(excel.length >= 5);
   assert.ok(excel.includes('ms-excel-help'));
   assert.ok(ids('pivottable').includes('ms-excel-help'));
-  assert.deepEqual(ids('Achebe'), ['things-fall-apart']);
+  assert.deepEqual(ids('Achebe').sort(), ['arrow-of-god', 'things-fall-apart']);
 });
 
 test('partial words and synonyms work', () => {

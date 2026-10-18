@@ -76,9 +76,62 @@ function renderFacets() {
       return `<label class="check" for="${id}"><input type="checkbox" id="${id}" data-facet="${name}" value="${e(v)}"${checked}>${e(facet.label(v))}<span class="count"${counts.get(v) ? '' : ' data-zero'}>${counts.get(v)}</span></label>`;
     }).join('');
   }
+  renderSpines();
   const authors = [...new Set(catalog.map((r) => r.author).filter(Boolean))].sort((a, b) => a.localeCompare(b));
   els.author.innerHTML = '<option value="">All authors</option>' +
     authors.map((a) => `<option value="${e(a)}"${a === state.author ? ' selected' : ''}>${e(a)}</option>`).join('');
+}
+
+// ---------- Shelf spines (category quick-pick) ----------
+const spines = document.getElementById('spines');
+const SPINE_H = [100, 88, 96, 84, 100, 92, 86, 98, 90, 94];
+const spineLabel = (label) => label.replace(/^Microsoft /, '').split(/ & | and /)[0].replace(/^Presentation Templates$/, 'Templates');
+function renderSpines() {
+  const pool = searchCatalog(catalog, toOptions(state, 'category'));
+  const counts = new Map();
+  for (const r of pool) counts.set(r.category, (counts.get(r.category) ?? 0) + 1);
+  const cats = Object.keys(CATEGORIES).filter((c) => catalog.some((r) => r.category === c));
+  const one = state.category.length === 1 ? state.category[0] : null;
+  const spine = (key, label, code, n, color, i) => `<button type="button" class="spine" data-spine="${e(key)}" aria-pressed="${key === 'all' ? !state.category.length : key === one}" style="--c:${color};--h:${SPINE_H[i % SPINE_H.length]}%"${n ? '' : ' data-zero'}><span class="spine__code">${e(code)}</span><span class="spine__label">${e(label)}</span><span class="spine__n">${n}</span></button>`;
+  spines.innerHTML = `<div class="spines__row">${spine('all', 'Everything', 'ALL', pool.length, 'var(--text)', 0)}${cats.map((c, i) => spine(c, spineLabel(CATEGORIES[c].label), CATEGORIES[c].short, counts.get(c) ?? 0, CATEGORIES[c].color, i + 1)).join('')}</div><div class="spines__plank" aria-hidden="true"></div>`;
+}
+spines.addEventListener('click', (event) => {
+  const b = event.target.closest('[data-spine]');
+  if (!b) return;
+  const key = b.dataset.spine;
+  state.category = key === 'all' || (state.category.length === 1 && state.category[0] === key) ? [] : [key];
+  update();
+});
+
+// ---------- Hero: stats and a pile of covers ----------
+function renderHero() {
+  const free = catalog.filter((r) => r.accessType !== 'paid' && r.accessType !== 'info').length;
+  document.querySelectorAll('[data-stat="total"]').forEach((el) => { el.textContent = String(catalog.length); });
+  document.querySelectorAll('[data-stat="free"]').forEach((el) => { el.textContent = String(free); });
+  const seen = new Set();
+  const picks = catalog.filter((r) => r.cover).sort(() => Math.random() - 0.5)
+    .filter((r) => !seen.has(r.category) && seen.add(r.category)).slice(0, 5);
+  document.getElementById('stacks-pile').insertAdjacentHTML('beforeend', picks.map((r, i) =>
+    `<a href="resource.html?id=${encodeURIComponent(r.id)}" tabindex="-1" style="--i:${i}"><img src="${e(r.cover)}" alt="" width="360" height="480" decoding="async"></a>`).join(''));
+}
+
+// With no query, lead with real covers and mix the shelves so the first screen isn't all one subject.
+// The mix is shuffled once a day, so it stays put while you browse but changes tomorrow.
+const DAY = new Date().toISOString().slice(0, 10);
+const dailyRank = (id) => { let h = 2166136261; for (const ch of DAY + id) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return h >>> 0; };
+function curated(list) {
+  const buckets = new Map();
+  const rest = [];
+  const mixed = [...list].sort((a, b) => dailyRank(a.id) - dailyRank(b.id));
+  for (const r of mixed) {
+    if (!r.cover) { rest.push(r); continue; }
+    if (!buckets.has(r.category)) buckets.set(r.category, []);
+    buckets.get(r.category).push(r);
+  }
+  const out = [];
+  const queues = [...buckets.values()];
+  for (let i = 0; queues.some((q) => q[i]); i++) for (const q of queues) if (q[i]) out.push(q[i]);
+  return out.concat(rest);
 }
 
 function renderActive() {
@@ -92,7 +145,8 @@ function renderActive() {
 
 // ---------- Results ----------
 function render() {
-  const list = searchCatalog(catalog, toOptions(state));
+  const found = searchCatalog(catalog, toOptions(state));
+  const list = !state.q && state.sort === 'relevance' ? curated(found) : found;
   const shown = list.slice(0, SITE.pageSize * state.page);
   els.count.textContent = `${list.length} resource${list.length === 1 ? '' : 's'}${state.q ? ` for “${state.q}”` : ''}`;
   if (!list.length) {
@@ -116,6 +170,7 @@ function render() {
   els.askAi.href = state.q ? `assistant.html?q=${encodeURIComponent(state.q)}` : 'assistant.html';
   renderActive();
   syncQuickTabs();
+  spines.querySelectorAll('[data-spine]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.spine === 'all' ? !state.category.length : state.category.length === 1 && state.category[0] === b.dataset.spine)));
 }
 
 // ---------- Mobile quick tabs and filter sheet ----------
@@ -316,10 +371,11 @@ window.addEventListener('popstate', () => {
 // ---------- Start ----------
 els.q.value = state.q;
 els.sort.value = state.sort;
-els.results.innerHTML = skeletons(6);
+els.results.innerHTML = skeletons(12);
 try {
   catalog = await loadCatalog();
   watchCovers(document.getElementById('main'), catalog);
+  renderHero();
   renderFacets();
   render();
 } catch (err) {

@@ -4286,6 +4286,2375 @@
       "readUrl": "https://www.gutenberg.org/ebooks/21291",
       "added": "2026-10-18",
       "cover": "assets/covers/gutenberg-pushing-to-the-front.jpg"
+    },
+    {
+      "id": "tcp-ip-illustrated",
+      "title": "TCP/IP Illustrated, Volume 1",
+      "author": "W. Richard Stevens, Kevin R. Fall",
+      "publisher": "Addison-Wesley",
+      "year": "1994",
+      "kind": "book",
+      "category": "networking",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The protocols of the internet shown packet by packet: IP, ARP, ICMP, UDP, TCP, DNS and routing, traced with real tools on a real network.",
+      "tags": [
+        "tcp/ip",
+        "protocols",
+        "packets",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=TCP/IP+Illustrated,+Volume+1+W.+Richard+Stevens",
+      "added": "2026-10-18",
+      "cover": "assets/covers/tcp-ip-illustrated.jpg"
+    },
+    {
+      "id": "computer-networks-tanenbaum",
+      "title": "Computer Networks",
+      "author": "Andrew S. Tanenbaum, David J. Wetherall",
+      "publisher": "Pearson",
+      "year": "1981",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Tanenbaum's classic textbook, layer by layer from the physical medium to applications, with plenty on wireless and network security.",
+      "tags": [
+        "textbook",
+        "osi model",
+        "protocols",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Computer+Networks+Andrew+S.+Tanenbaum",
+      "added": "2026-10-18",
+      "cover": "assets/covers/computer-networks-tanenbaum.jpg"
+    },
+    {
+      "id": "internetworking-with-tcp-ip",
+      "title": "Internetworking with TCP/IP",
+      "author": "Douglas E. Comer",
+      "publisher": "Prentice Hall",
+      "year": "1988",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The design principles behind TCP/IP and the internet architecture, from addressing and routing to transport and applications.",
+      "tags": [
+        "tcp/ip",
+        "internet architecture",
+        "routing",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Internetworking+with+TCP/IP+Douglas+E.+Comer",
+      "added": "2026-10-18",
+      "cover": "assets/covers/internetworking-with-tcp-ip.jpg"
+    },
+    {
+      "id": "routing-tcp-ip",
+      "title": "Routing TCP/IP, Volume 1",
+      "author": "Jeff Doyle",
+      "publisher": "Cisco Press",
+      "year": "1998",
+      "kind": "book",
+      "category": "networking",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The standard reference for interior routing: RIP, EIGRP, OSPF and IS-IS, with Cisco configuration and troubleshooting examples.",
+      "tags": [
+        "routing",
+        "ospf",
+        "cisco",
+        "ccie",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Routing+TCP/IP,+Volume+1+Jeff+Doyle",
+      "added": "2026-10-18",
+      "cover": "assets/covers/routing-tcp-ip.jpg"
+    },
+    {
+      "id": "tcp-ip-guide",
+      "title": "The TCP/IP Guide",
+      "author": "Charles M. Kozierok",
+      "publisher": "No Starch Press",
+      "year": "2005",
+      "kind": "book",
+      "category": "networking",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Free to read online",
+      "description": "An encyclopaedic, clearly written guide to every TCP/IP protocol and the OSI model. The full text is free to read online on the author's site.",
+      "tags": [
+        "tcp/ip",
+        "reference",
+        "osi model",
+        "book"
+      ],
+      "sourceName": "The TCP/IP Guide (author's site)",
+      "sourceUrl": "https://www.tcpipguide.com/free/",
+      "readUrl": "https://www.tcpipguide.com/free/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/tcp-ip-guide.jpg"
+    },
+    {
+      "id": "high-performance-browser-networking",
+      "title": "High Performance Browser Networking",
+      "author": "Ilya Grigorik",
+      "publisher": "O'Reilly",
+      "year": "2013",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "official",
+      "license": "Free to read online by arrangement with O'Reilly",
+      "description": "What every web developer should know about TCP, TLS, HTTP/2, WebSocket, WebRTC and mobile networks, and how to make pages load fast. Free online.",
+      "tags": [
+        "performance",
+        "http",
+        "tls",
+        "web",
+        "book"
+      ],
+      "sourceName": "hpbn.co (free edition)",
+      "sourceUrl": "https://hpbn.co/",
+      "readUrl": "https://hpbn.co/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/high-performance-browser-networking.jpg"
+    },
+    {
+      "id": "interconnections-perlman",
+      "title": "Interconnections: Bridges, Routers, Switches and Internetworking Protocols",
+      "author": "Radia Perlman",
+      "publisher": "Addison-Wesley",
+      "year": "1992",
+      "kind": "book",
+      "category": "networking",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The inventor of the spanning tree protocol explains how bridges and routers really work, and why protocols are designed the way they are.",
+      "tags": [
+        "switching",
+        "spanning tree",
+        "protocol design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Interconnections:+Bridges,+Routers,+Switches+and+Internetworking+Protocols+Radia+Perlman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/interconnections-perlman.jpg"
+    },
+    {
+      "id": "dns-and-bind",
+      "title": "DNS and BIND",
+      "author": "Cricket Liu, Paul Albitz",
+      "publisher": "O'Reilly",
+      "year": "1992",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How the Domain Name System works and how to run it: zones, resolvers, delegation, security and troubleshooting with BIND.",
+      "tags": [
+        "dns",
+        "bind",
+        "sysadmin",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=DNS+and+BIND+Cricket+Liu",
+      "added": "2026-10-18",
+      "cover": "assets/covers/dns-and-bind.jpg"
+    },
+    {
+      "id": "network-programmability-automation",
+      "title": "Network Programmability and Automation",
+      "author": "Jason Edelman, Scott S. Lowe, Matt Oswalt",
+      "publisher": "O'Reilly",
+      "year": "2018",
+      "kind": "book",
+      "category": "networking",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Python, Ansible, APIs, Jinja templates, Git and CI for network engineers who want to stop configuring devices by hand.",
+      "tags": [
+        "network automation",
+        "python",
+        "ansible",
+        "netdevops",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Network+Programmability+and+Automation+Jason+Edelman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/network-programmability-automation.jpg"
+    },
+    {
+      "id": "5g-nr-dahlman",
+      "title": "5G NR: The Next Generation Wireless Access Technology",
+      "author": "Erik Dahlman, Stefan Parkvall, Johan Sköld",
+      "publisher": "Academic Press",
+      "year": "2018",
+      "kind": "book",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Written by Ericsson engineers who helped write the standard: the 5G NR physical layer, beamforming, scheduling and the overall radio-access design.",
+      "tags": [
+        "5g",
+        "nr",
+        "3gpp",
+        "radio access",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=5G+NR:+The+Next+Generation+Wireless+Access+Technology+Erik+Dahlman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/5g-nr-dahlman.jpg"
+    },
+    {
+      "id": "fundamentals-wireless-communication",
+      "title": "Fundamentals of Wireless Communication",
+      "author": "David Tse, Pramod Viswanath",
+      "publisher": "Cambridge University Press",
+      "year": "2005",
+      "kind": "book",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "PDF",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Free PDF shared by the authors",
+      "description": "The modern textbook on fading channels, diversity, MIMO and multi-user wireless systems. The authors share the full book for free on Stanford's site.",
+      "tags": [
+        "wireless",
+        "mimo",
+        "information theory",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Stanford University (author page)",
+      "sourceUrl": "https://web.stanford.edu/~dntse/wireless_book.html",
+      "readUrl": "https://web.stanford.edu/~dntse/wireless_book.html",
+      "added": "2026-10-18",
+      "cover": "assets/covers/fundamentals-wireless-communication.jpg"
+    },
+    {
+      "id": "wireless-communications-goldsmith",
+      "title": "Wireless Communications",
+      "author": "Andrea Goldsmith",
+      "publisher": "Cambridge University Press",
+      "year": "2005",
+      "kind": "book",
+      "category": "telecom",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A Stanford textbook on path loss, fading, modulation, capacity, OFDM, MIMO and cellular system design.",
+      "tags": [
+        "wireless",
+        "ofdm",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Wireless+Communications+Andrea+Goldsmith",
+      "added": "2026-10-18",
+      "cover": "assets/covers/wireless-communications-goldsmith.jpg"
+    },
+    {
+      "id": "wireless-communications-rappaport",
+      "title": "Wireless Communications: Principles and Practice",
+      "author": "Theodore S. Rappaport",
+      "publisher": "Prentice Hall",
+      "year": "1996",
+      "kind": "book",
+      "category": "telecom",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The classic introduction to cellular radio: frequency reuse, propagation models, modulation and the standards that grew into 4G and 5G.",
+      "tags": [
+        "cellular",
+        "propagation",
+        "rf",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Wireless+Communications:+Principles+and+Practice+Theodore+S.+Rappaport",
+      "added": "2026-10-18",
+      "cover": "assets/covers/wireless-communications-rappaport.jpg"
+    },
+    {
+      "id": "mobile-communications-schiller",
+      "title": "Mobile Communications",
+      "author": "Jochen Schiller",
+      "publisher": "Addison-Wesley",
+      "year": "2000",
+      "kind": "book",
+      "category": "telecom",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A broad survey of mobile systems: GSM, UMTS, satellite, wireless LANs, mobile IP and mobile transport protocols.",
+      "tags": [
+        "gsm",
+        "umts",
+        "wireless lan",
+        "mobile ip",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Mobile+Communications+Jochen+Schiller",
+      "added": "2026-10-18",
+      "cover": "assets/covers/mobile-communications-schiller.jpg"
+    },
+    {
+      "id": "master-switch-wu",
+      "title": "The Master Switch: The Rise and Fall of Information Empires",
+      "author": "Tim Wu",
+      "publisher": "Knopf",
+      "year": "2010",
+      "kind": "book",
+      "category": "telecom",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A history of the telephone, radio, film and cable industries, and how each open technology ended up controlled by a giant.",
+      "tags": [
+        "telecom history",
+        "net neutrality",
+        "industry",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Master+Switch:+The+Rise+and+Fall+of+Information+Empires+Tim+Wu",
+      "added": "2026-10-18",
+      "cover": "assets/covers/master-switch-wu.jpg"
+    },
+    {
+      "id": "understanding-telephone-electronics",
+      "title": "Understanding Telephone Electronics",
+      "author": "John L. Fike, George E. Friend",
+      "publisher": "Howard W. Sams",
+      "year": "1983",
+      "kind": "book",
+      "category": "telecom",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How the classic telephone network works electrically: the subscriber loop, signalling, switching and transmission, explained for technicians.",
+      "tags": [
+        "telephony",
+        "pstn",
+        "electronics",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Understanding+Telephone+Electronics+John+L.+Fike",
+      "added": "2026-10-18",
+      "cover": "assets/covers/understanding-telephone-electronics.jpg"
+    },
+    {
+      "id": "devops-handbook",
+      "title": "The DevOps Handbook",
+      "author": "Gene Kim, Jez Humble, Patrick Debois, John Willis",
+      "publisher": "IT Revolution",
+      "year": "2016",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The practical companion to The Phoenix Project: flow, feedback and continual learning, with case studies from Google, Amazon and Etsy.",
+      "tags": [
+        "devops",
+        "ci/cd",
+        "culture",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+DevOps+Handbook+Gene+Kim",
+      "added": "2026-10-18",
+      "cover": "assets/covers/devops-handbook.jpg"
+    },
+    {
+      "id": "accelerate-forsgren",
+      "title": "Accelerate",
+      "author": "Nicole Forsgren, Jez Humble, Gene Kim",
+      "publisher": "IT Revolution",
+      "year": "2018",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The research behind the DORA metrics: what high-performing software teams actually do differently, backed by four years of survey data.",
+      "tags": [
+        "dora metrics",
+        "devops",
+        "research",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Accelerate+Nicole+Forsgren",
+      "added": "2026-10-18",
+      "cover": "assets/covers/accelerate-forsgren.jpg"
+    },
+    {
+      "id": "kubernetes-up-and-running",
+      "title": "Kubernetes: Up and Running",
+      "author": "Brendan Burns, Joe Beda, Kelsey Hightower",
+      "publisher": "O'Reilly",
+      "year": "2017",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Written by Kubernetes co-creators: pods, services, deployments, storage and running real applications on a cluster.",
+      "tags": [
+        "kubernetes",
+        "containers",
+        "orchestration",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Kubernetes:+Up+and+Running+Brendan+Burns",
+      "added": "2026-10-18",
+      "cover": "assets/covers/kubernetes-up-and-running.jpg"
+    },
+    {
+      "id": "docker-deep-dive",
+      "title": "Docker Deep Dive",
+      "author": "Nigel Poulton",
+      "publisher": "Independently published",
+      "year": "2017",
+      "kind": "book",
+      "category": "cloud",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A clear, hands-on path from your first container to images, Compose, networking, volumes and Swarm.",
+      "tags": [
+        "docker",
+        "containers",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Docker+Deep+Dive+Nigel+Poulton",
+      "added": "2026-10-18",
+      "cover": "assets/covers/docker-deep-dive.jpg"
+    },
+    {
+      "id": "terraform-up-and-running",
+      "title": "Terraform: Up & Running",
+      "author": "Yevgeniy Brikman",
+      "publisher": "O'Reilly",
+      "year": "2017",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Infrastructure as code with Terraform: state, modules, testing and team workflows for AWS and other clouds.",
+      "tags": [
+        "terraform",
+        "iac",
+        "aws",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Terraform:+Up+&+Running+Yevgeniy+Brikman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/terraform-up-and-running.jpg"
+    },
+    {
+      "id": "continuous-delivery",
+      "title": "Continuous Delivery",
+      "author": "Jez Humble, David Farley",
+      "publisher": "Addison-Wesley",
+      "year": "2010",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The book that defined the deployment pipeline: automated builds, tests and releases so software can ship any time.",
+      "tags": [
+        "continuous delivery",
+        "deployment pipeline",
+        "automation",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Continuous+Delivery+Jez+Humble",
+      "added": "2026-10-18",
+      "cover": "assets/covers/continuous-delivery.jpg"
+    },
+    {
+      "id": "building-microservices",
+      "title": "Building Microservices",
+      "author": "Sam Newman",
+      "publisher": "O'Reilly",
+      "year": "2015",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to split a system into small services: boundaries, integration, deployment, testing, monitoring and security.",
+      "tags": [
+        "microservices",
+        "architecture",
+        "distributed systems",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Building+Microservices+Sam+Newman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/building-microservices.jpg"
+    },
+    {
+      "id": "unicorn-project",
+      "title": "The Unicorn Project",
+      "author": "Gene Kim",
+      "publisher": "IT Revolution",
+      "year": "2019",
+      "kind": "book",
+      "category": "cloud",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The developer-side sequel to The Phoenix Project: a novel about fixing a failing company through better engineering culture.",
+      "tags": [
+        "devops",
+        "novel",
+        "developer experience",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Unicorn+Project+Gene+Kim",
+      "added": "2026-10-18",
+      "cover": "assets/covers/unicorn-project.jpg"
+    },
+    {
+      "id": "infrastructure-as-code-morris",
+      "title": "Infrastructure as Code",
+      "author": "Kief Morris",
+      "publisher": "O'Reilly",
+      "year": "2016",
+      "kind": "book",
+      "category": "cloud",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Patterns for managing cloud servers, networks and stacks as code, with testing and delivery practices that keep them reliable.",
+      "tags": [
+        "iac",
+        "cloud",
+        "automation",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Infrastructure+as+Code+Kief+Morris",
+      "added": "2026-10-18",
+      "cover": "assets/covers/infrastructure-as-code-morris.jpg"
+    },
+    {
+      "id": "hands-on-machine-learning",
+      "title": "Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow",
+      "author": "Aurélien Géron",
+      "publisher": "O'Reilly",
+      "year": "2017",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The most popular practical ML book: from linear regression and trees to deep learning, CNNs and transformers, all in Python notebooks.",
+      "tags": [
+        "machine learning",
+        "python",
+        "tensorflow",
+        "scikit-learn",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Hands-On+Machine+Learning+with+Scikit-Learn,+Keras+and+TensorFlow+Aurélien+Géron",
+      "added": "2026-10-18",
+      "cover": "assets/covers/hands-on-machine-learning.jpg"
+    },
+    {
+      "id": "deep-learning-goodfellow",
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+      "publisher": "MIT Press",
+      "year": "2016",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "advanced",
+      "formats": [
+        "Online book",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Free to read online by arrangement with MIT Press",
+      "description": "The standard deep learning textbook: the maths foundations, feedforward and convolutional networks, sequence models and research topics. Free to read online.",
+      "tags": [
+        "deep learning",
+        "neural networks",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "deeplearningbook.org (official site)",
+      "sourceUrl": "https://www.deeplearningbook.org/",
+      "readUrl": "https://www.deeplearningbook.org/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/deep-learning-goodfellow.jpg"
+    },
+    {
+      "id": "prml-bishop",
+      "title": "Pattern Recognition and Machine Learning",
+      "author": "Christopher M. Bishop",
+      "publisher": "Springer",
+      "year": "2006",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "advanced",
+      "formats": [
+        "PDF",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Free PDF from Microsoft Research",
+      "description": "The Bayesian classic on probability, linear models, kernels, graphical models and mixture models. Microsoft Research offers the PDF for free.",
+      "tags": [
+        "machine learning",
+        "bayesian",
+        "statistics",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Microsoft Research",
+      "sourceUrl": "https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/",
+      "readUrl": "https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/prml-bishop.jpg"
+    },
+    {
+      "id": "islr",
+      "title": "An Introduction to Statistical Learning",
+      "author": "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani",
+      "publisher": "Springer",
+      "year": "2013",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "PDF",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Free PDF from the authors",
+      "description": "The friendly introduction to regression, classification, resampling, trees and SVMs, with labs in R and Python. Free PDFs from the authors.",
+      "tags": [
+        "statistics",
+        "machine learning",
+        "r",
+        "python",
+        "book"
+      ],
+      "sourceName": "statlearning.com (official site)",
+      "sourceUrl": "https://www.statlearning.com/",
+      "readUrl": "https://www.statlearning.com/",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "python-for-data-analysis",
+      "title": "Python for Data Analysis, 3rd Edition",
+      "author": "Wes McKinney",
+      "publisher": "O'Reilly",
+      "year": "2022",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "Print"
+      ],
+      "accessType": "official",
+      "license": "Open access online edition",
+      "description": "Data wrangling with pandas, NumPy and Jupyter, written by the creator of pandas. The third edition is open access online.",
+      "tags": [
+        "pandas",
+        "python",
+        "data analysis",
+        "book"
+      ],
+      "sourceName": "wesmckinney.com (open access edition)",
+      "sourceUrl": "https://wesmckinney.com/book/",
+      "readUrl": "https://wesmckinney.com/book/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/python-for-data-analysis.jpg"
+    },
+    {
+      "id": "storytelling-with-data",
+      "title": "Storytelling with Data",
+      "author": "Cole Nussbaumer Knaflic",
+      "publisher": "Wiley",
+      "year": "2015",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to choose the right chart, remove clutter and focus attention so your data makes its point in slides and reports.",
+      "tags": [
+        "data visualisation",
+        "charts",
+        "presentations",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Storytelling+with+Data+Cole+Nussbaumer+Knaflic",
+      "added": "2026-10-18",
+      "cover": "assets/covers/storytelling-with-data.jpg"
+    },
+    {
+      "id": "weapons-of-math-destruction",
+      "title": "Weapons of Math Destruction",
+      "author": "Cathy O'Neil",
+      "publisher": "Crown",
+      "year": "2016",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A data scientist on how opaque algorithms in hiring, lending, policing and schools can reinforce inequality.",
+      "tags": [
+        "algorithms",
+        "ethics",
+        "big data",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Weapons+of+Math+Destruction+Cathy+O'Neil",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "aima-russell-norvig",
+      "title": "Artificial Intelligence: A Modern Approach",
+      "author": "Stuart Russell, Peter Norvig",
+      "publisher": "Pearson",
+      "year": "1995",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The leading AI textbook: search, logic, planning, probabilistic reasoning, machine learning, robotics and the ethics of AI.",
+      "tags": [
+        "artificial intelligence",
+        "textbook",
+        "search",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Artificial+Intelligence:+A+Modern+Approach+Stuart+Russell",
+      "added": "2026-10-18",
+      "cover": "assets/covers/aima-russell-norvig.jpg"
+    },
+    {
+      "id": "naked-statistics",
+      "title": "Naked Statistics",
+      "author": "Charles Wheelan",
+      "publisher": "W. W. Norton",
+      "year": "2013",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Statistics without the dread: averages, correlation, regression and inference, explained with humour and real stories.",
+      "tags": [
+        "statistics",
+        "introduction",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Naked+Statistics+Charles+Wheelan",
+      "added": "2026-10-18",
+      "cover": "assets/covers/naked-statistics.jpg"
+    },
+    {
+      "id": "signal-and-the-noise",
+      "title": "The Signal and the Noise",
+      "author": "Nate Silver",
+      "publisher": "Penguin Press",
+      "year": "2012",
+      "kind": "book",
+      "category": "data-ai",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Why so many predictions fail and some do not, from weather and elections to baseball and poker, and how to think in probabilities.",
+      "tags": [
+        "forecasting",
+        "probability",
+        "bayesian",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Signal+and+the+Noise+Nate+Silver",
+      "added": "2026-10-18",
+      "cover": "assets/covers/signal-and-the-noise.jpg"
+    },
+    {
+      "id": "c-programming-language",
+      "title": "The C Programming Language",
+      "author": "Brian W. Kernighan, Dennis M. Ritchie",
+      "publisher": "Prentice Hall",
+      "year": "1978",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "K&R: the short, precise book by the creators of C, and still one of the best-written programming books ever.",
+      "tags": [
+        "c",
+        "classic",
+        "systems programming",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+C+Programming+Language+Brian+W.+Kernighan",
+      "added": "2026-10-18",
+      "cover": "assets/covers/c-programming-language.jpg"
+    },
+    {
+      "id": "sicp",
+      "title": "Structure and Interpretation of Computer Programs",
+      "author": "Harold Abelson, Gerald Jay Sussman, Julie Sussman",
+      "publisher": "MIT Press",
+      "year": "1985",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "advanced",
+      "formats": [
+        "Online book",
+        "Print"
+      ],
+      "accessType": "open",
+      "license": "Creative Commons BY-SA 4.0",
+      "description": "MIT's legendary textbook on abstraction, recursion, interpreters and the craft of programming, using Scheme. The second edition is free online.",
+      "tags": [
+        "scheme",
+        "lisp",
+        "classic",
+        "abstraction",
+        "book"
+      ],
+      "sourceName": "MIT Press",
+      "sourceUrl": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html",
+      "readUrl": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html",
+      "added": "2026-10-18",
+      "cover": "assets/covers/sicp.jpg"
+    },
+    {
+      "id": "code-complete",
+      "title": "Code Complete",
+      "author": "Steve McConnell",
+      "publisher": "Microsoft Press",
+      "year": "1993",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The encyclopaedia of software construction: naming, routines, defensive programming, debugging and code quality.",
+      "tags": [
+        "software construction",
+        "best practices",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Code+Complete+Steve+McConnell",
+      "added": "2026-10-18",
+      "cover": "assets/covers/code-complete.jpg"
+    },
+    {
+      "id": "clrs-introduction-to-algorithms",
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+      "publisher": "MIT Press",
+      "year": "1990",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "CLRS, the definitive algorithms textbook: sorting, data structures, graph algorithms, dynamic programming and NP-completeness.",
+      "tags": [
+        "algorithms",
+        "data structures",
+        "textbook",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Introduction+to+Algorithms+Thomas+H.+Cormen",
+      "added": "2026-10-18",
+      "cover": "assets/covers/clrs-introduction-to-algorithms.jpg"
+    },
+    {
+      "id": "refactoring-fowler",
+      "title": "Refactoring",
+      "author": "Martin Fowler",
+      "publisher": "Addison-Wesley",
+      "year": "1999",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A catalogue of small, safe changes that improve the design of existing code, with tests as the safety net.",
+      "tags": [
+        "refactoring",
+        "clean code",
+        "design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Refactoring+Martin+Fowler",
+      "added": "2026-10-18",
+      "cover": "assets/covers/refactoring-fowler.jpg"
+    },
+    {
+      "id": "design-patterns-gof",
+      "title": "Design Patterns",
+      "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+      "publisher": "Addison-Wesley",
+      "year": "1994",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The Gang of Four book: 23 reusable object-oriented designs such as Observer, Strategy and Factory.",
+      "tags": [
+        "design patterns",
+        "oop",
+        "architecture",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Design+Patterns+Erich+Gamma",
+      "added": "2026-10-18",
+      "cover": "assets/covers/design-patterns-gof.jpg"
+    },
+    {
+      "id": "grokking-algorithms",
+      "title": "Grokking Algorithms",
+      "author": "Aditya Bhargava",
+      "publisher": "Manning",
+      "year": "2016",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "An illustrated, friendly guide to binary search, recursion, hash tables, graphs and dynamic programming.",
+      "tags": [
+        "algorithms",
+        "beginner",
+        "illustrated",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Grokking+Algorithms+Aditya+Bhargava",
+      "added": "2026-10-18",
+      "cover": "assets/covers/grokking-algorithms.jpg"
+    },
+    {
+      "id": "cracking-the-coding-interview",
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "publisher": "CareerCup",
+      "year": "2008",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "189 programming interview questions with solutions, plus how tech companies hire and how to prepare.",
+      "tags": [
+        "interviews",
+        "career",
+        "algorithms",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Cracking+the+Coding+Interview+Gayle+Laakmann+McDowell",
+      "added": "2026-10-18",
+      "cover": "assets/covers/cracking-the-coding-interview.jpg"
+    },
+    {
+      "id": "mythical-man-month",
+      "title": "The Mythical Man-Month",
+      "author": "Frederick P. Brooks Jr.",
+      "publisher": "Addison-Wesley",
+      "year": "1975",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Essays on software project management from IBM's OS/360, including Brooks's law: adding people to a late project makes it later.",
+      "tags": [
+        "project management",
+        "classic",
+        "essays",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Mythical+Man-Month+Frederick+P.+Brooks+Jr.",
+      "added": "2026-10-18",
+      "cover": "assets/covers/mythical-man-month.jpg"
+    },
+    {
+      "id": "you-dont-know-js",
+      "title": "You Don't Know JS Yet",
+      "author": "Kyle Simpson",
+      "publisher": "Independently published",
+      "year": "2014",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "intermediate",
+      "formats": [
+        "Online book"
+      ],
+      "accessType": "open",
+      "license": "Creative Commons BY-NC-ND 4.0",
+      "description": "A deep series on how JavaScript really works: scope, closures, this, prototypes, types and async. Free to read on GitHub.",
+      "tags": [
+        "javascript",
+        "closures",
+        "web",
+        "book"
+      ],
+      "sourceName": "GitHub (author repository)",
+      "sourceUrl": "https://github.com/getify/You-Dont-Know-JS",
+      "readUrl": "https://github.com/getify/You-Dont-Know-JS",
+      "added": "2026-10-18",
+      "cover": "assets/covers/you-dont-know-js.jpg"
+    },
+    {
+      "id": "zero-to-one",
+      "title": "Zero to One",
+      "author": "Peter Thiel, Blake Masters",
+      "publisher": "Crown Business",
+      "year": "2014",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The PayPal co-founder on building something genuinely new rather than copying, and why monopoly is the goal of every startup.",
+      "tags": [
+        "startups",
+        "innovation",
+        "strategy",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Zero+to+One+Peter+Thiel",
+      "added": "2026-10-18",
+      "cover": "assets/covers/zero-to-one.jpg"
+    },
+    {
+      "id": "good-to-great",
+      "title": "Good to Great",
+      "author": "Jim Collins",
+      "publisher": "HarperBusiness",
+      "year": "2001",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A five-year study of companies that made the leap from average to great, and the leadership and discipline behind it.",
+      "tags": [
+        "leadership",
+        "management",
+        "research",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Good+to+Great+Jim+Collins",
+      "added": "2026-10-18",
+      "cover": "assets/covers/good-to-great.jpg"
+    },
+    {
+      "id": "hard-thing-about-hard-things",
+      "title": "The Hard Thing About Hard Things",
+      "author": "Ben Horowitz",
+      "publisher": "HarperBusiness",
+      "year": "2014",
+      "kind": "book",
+      "category": "business",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Blunt advice on running a startup when things go wrong: layoffs, firing friends, raising money and keeping your nerve.",
+      "tags": [
+        "startups",
+        "ceo",
+        "leadership",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Hard+Thing+About+Hard+Things+Ben+Horowitz",
+      "added": "2026-10-18",
+      "cover": "assets/covers/hard-thing-about-hard-things.jpg"
+    },
+    {
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "publisher": "Farrar, Straus and Giroux",
+      "year": "2011",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A Nobel laureate on the two systems that drive how we think, and the biases that lead smart people to poor decisions.",
+      "tags": [
+        "psychology",
+        "decision making",
+        "behavioural economics",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Thinking,+Fast+and+Slow+Daniel+Kahneman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/thinking-fast-and-slow.jpg"
+    },
+    {
+      "id": "innovators-dilemma",
+      "title": "The Innovator's Dilemma",
+      "author": "Clayton M. Christensen",
+      "publisher": "Harvard Business School Press",
+      "year": "1997",
+      "kind": "book",
+      "category": "business",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Why well-run companies lose to cheaper, simpler disruptive technologies, and what managers can do about it.",
+      "tags": [
+        "disruption",
+        "innovation",
+        "strategy",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Innovator's+Dilemma+Clayton+M.+Christensen",
+      "added": "2026-10-18",
+      "cover": "assets/covers/innovators-dilemma.jpg"
+    },
+    {
+      "id": "rework",
+      "title": "Rework",
+      "author": "Jason Fried, David Heinemeier Hansson",
+      "publisher": "Crown Business",
+      "year": "2010",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The Basecamp founders on starting and running a business with less: less planning, fewer meetings and less money.",
+      "tags": [
+        "small business",
+        "startups",
+        "work culture",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Rework+Jason+Fried",
+      "added": "2026-10-18",
+      "cover": "assets/covers/rework.jpg"
+    },
+    {
+      "id": "shoe-dog",
+      "title": "Shoe Dog",
+      "author": "Phil Knight",
+      "publisher": "Scribner",
+      "year": "2016",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Nike's founder tells how he started by selling Japanese running shoes from his car and built a global brand.",
+      "tags": [
+        "memoir",
+        "entrepreneurship",
+        "nike",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Shoe+Dog+Phil+Knight",
+      "added": "2026-10-18",
+      "cover": "assets/covers/shoe-dog.jpg"
+    },
+    {
+      "id": "blue-ocean-strategy",
+      "title": "Blue Ocean Strategy",
+      "author": "W. Chan Kim, Renée Mauborgne",
+      "publisher": "Harvard Business School Press",
+      "year": "2005",
+      "kind": "book",
+      "category": "business",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to create new markets (\"blue oceans\") instead of fighting rivals for the same customers.",
+      "tags": [
+        "strategy",
+        "markets",
+        "innovation",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Blue+Ocean+Strategy+W.+Chan+Kim",
+      "added": "2026-10-18",
+      "cover": "assets/covers/blue-ocean-strategy.jpg"
+    },
+    {
+      "id": "e-myth-revisited",
+      "title": "The E-Myth Revisited",
+      "author": "Michael E. Gerber",
+      "publisher": "HarperBusiness",
+      "year": "1995",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Why most small businesses fail, and how to build one that runs on systems rather than on the owner working all hours.",
+      "tags": [
+        "small business",
+        "systems",
+        "franchise",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+E-Myth+Revisited+Michael+E.+Gerber",
+      "added": "2026-10-18",
+      "cover": "assets/covers/e-myth-revisited.jpg"
+    },
+    {
+      "id": "measure-what-matters",
+      "title": "Measure What Matters",
+      "author": "John Doerr",
+      "publisher": "Portfolio",
+      "year": "2018",
+      "kind": "book",
+      "category": "business",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How Intel, Google and others use OKRs (objectives and key results) to set goals and focus teams.",
+      "tags": [
+        "okrs",
+        "goals",
+        "management",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Measure+What+Matters+John+Doerr",
+      "added": "2026-10-18",
+      "cover": "assets/covers/measure-what-matters.jpg"
+    },
+    {
+      "id": "purple-hibiscus",
+      "title": "Purple Hibiscus",
+      "author": "Chimamanda Ngozi Adichie",
+      "publisher": "Algonquin Books",
+      "year": "2003",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Adichie's first novel: a teenage girl in Enugu finds her voice as her family and Nigeria face upheaval.",
+      "tags": [
+        "nigerian literature",
+        "novel",
+        "african literature",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Purple+Hibiscus+Chimamanda+Ngozi+Adichie",
+      "added": "2026-10-18",
+      "cover": "assets/covers/purple-hibiscus.jpg"
+    },
+    {
+      "id": "half-of-a-yellow-sun",
+      "title": "Half of a Yellow Sun",
+      "author": "Chimamanda Ngozi Adichie",
+      "publisher": "Fourth Estate",
+      "year": "2006",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "An Orange Prize-winning novel of love and loyalty during the Nigerian Civil War and the short life of Biafra.",
+      "tags": [
+        "nigerian literature",
+        "novel",
+        "history",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Half+of+a+Yellow+Sun+Chimamanda+Ngozi+Adichie",
+      "added": "2026-10-18",
+      "cover": "assets/covers/half-of-a-yellow-sun.jpg"
+    },
+    {
+      "id": "americanah",
+      "title": "Americanah",
+      "author": "Chimamanda Ngozi Adichie",
+      "publisher": "Knopf",
+      "year": "2013",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Ifemelu leaves Lagos for America and discovers race, while her first love tries a new life in London.",
+      "tags": [
+        "nigerian literature",
+        "novel",
+        "migration",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Americanah+Chimamanda+Ngozi+Adichie",
+      "added": "2026-10-18",
+      "cover": "assets/covers/americanah.jpg"
+    },
+    {
+      "id": "arrow-of-god",
+      "title": "Arrow of God",
+      "author": "Chinua Achebe",
+      "publisher": "Heinemann",
+      "year": "1964",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The third novel in Achebe's African trilogy: an Igbo chief priest's struggle with colonial power and his own people.",
+      "tags": [
+        "nigerian literature",
+        "novel",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Arrow+of+God+Chinua+Achebe",
+      "added": "2026-10-18",
+      "cover": "assets/covers/arrow-of-god.jpg"
+    },
+    {
+      "id": "famished-road",
+      "title": "The Famished Road",
+      "author": "Ben Okri",
+      "publisher": "Jonathan Cape",
+      "year": "1991",
+      "kind": "book",
+      "category": "general",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The 1991 Booker Prize winner: Azaro, a spirit child in a Nigerian city, caught between the living and the spirit world.",
+      "tags": [
+        "nigerian literature",
+        "booker prize",
+        "novel",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Famished+Road+Ben+Okri",
+      "added": "2026-10-18",
+      "cover": "assets/covers/famished-road.jpg"
+    },
+    {
+      "id": "sapiens",
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "publisher": "Harper",
+      "year": "2011",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How Homo sapiens came to rule the planet, through the cognitive, agricultural and scientific revolutions.",
+      "tags": [
+        "history",
+        "anthropology",
+        "big ideas",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Sapiens:+A+Brief+History+of+Humankind+Yuval+Noah+Harari",
+      "added": "2026-10-18",
+      "cover": "assets/covers/sapiens.jpg"
+    },
+    {
+      "id": "educated-westover",
+      "title": "Educated",
+      "author": "Tara Westover",
+      "publisher": "Random House",
+      "year": "2018",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A memoir of growing up without school in rural Idaho and going on to earn a PhD from Cambridge.",
+      "tags": [
+        "memoir",
+        "education",
+        "resilience",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Educated+Tara+Westover",
+      "added": "2026-10-18",
+      "cover": "assets/covers/educated-westover.jpg"
+    },
+    {
+      "id": "gutenberg-frankenstein",
+      "title": "Frankenstein",
+      "author": "Mary Wollstonecraft Shelley",
+      "publisher": "Project Gutenberg",
+      "year": "1818",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The original science-fiction novel: Victor Frankenstein builds a living being and is destroyed by what he has made.",
+      "tags": [
+        "science fiction",
+        "novel",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/84",
+      "readUrl": "https://www.gutenberg.org/ebooks/84",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-frankenstein.jpg"
+    },
+    {
+      "id": "gutenberg-sherlock-holmes",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "publisher": "Project Gutenberg",
+      "year": "1892",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Twelve short stories featuring the great detective and Dr Watson, including \"A Scandal in Bohemia\" and \"The Red-Headed League\".",
+      "tags": [
+        "detective",
+        "short stories",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1661",
+      "readUrl": "https://www.gutenberg.org/ebooks/1661",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-sherlock-holmes.jpg"
+    },
+    {
+      "id": "gutenberg-alice",
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "publisher": "Project Gutenberg",
+      "year": "1865",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Alice follows a white rabbit into a world of riddles, logic games and nonsense. Carroll was also a mathematician.",
+      "tags": [
+        "fantasy",
+        "novel",
+        "logic",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/11",
+      "readUrl": "https://www.gutenberg.org/ebooks/11",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-alice.jpg"
+    },
+    {
+      "id": "gutenberg-the-prince",
+      "title": "The Prince",
+      "author": "Niccolò Machiavelli",
+      "publisher": "Project Gutenberg",
+      "year": "1532",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The famous Renaissance handbook on gaining and keeping power, still quoted in politics and business.",
+      "tags": [
+        "politics",
+        "philosophy",
+        "leadership",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1232",
+      "readUrl": "https://www.gutenberg.org/ebooks/1232",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-the-prince.jpg"
+    },
+    {
+      "id": "gutenberg-walden",
+      "title": "Walden",
+      "author": "Henry David Thoreau",
+      "publisher": "Project Gutenberg",
+      "year": "1854",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Thoreau on two years living simply in a cabin by Walden Pond, with his essay on civil disobedience.",
+      "tags": [
+        "philosophy",
+        "simple living",
+        "essays",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/205",
+      "readUrl": "https://www.gutenberg.org/ebooks/205",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-walden.jpg"
+    },
+    {
+      "id": "gutenberg-moby-dick",
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "publisher": "Project Gutenberg",
+      "year": "1851",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Captain Ahab's obsessive hunt for the white whale, narrated by the sailor Ishmael.",
+      "tags": [
+        "novel",
+        "adventure",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
+      "readUrl": "https://www.gutenberg.org/ebooks/2701",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-moby-dick.jpg"
+    },
+    {
+      "id": "gutenberg-republic",
+      "title": "The Republic",
+      "author": "Plato",
+      "publisher": "Project Gutenberg",
+      "year": "-375",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Plato's dialogue on justice and the ideal state, including the allegory of the cave. Translated by Benjamin Jowett.",
+      "tags": [
+        "philosophy",
+        "politics",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1497",
+      "readUrl": "https://www.gutenberg.org/ebooks/1497",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-republic.jpg"
+    },
+    {
+      "id": "gutenberg-frederick-douglass",
+      "title": "Narrative of the Life of Frederick Douglass",
+      "author": "Frederick Douglass",
+      "publisher": "Project Gutenberg",
+      "year": "1845",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Douglass's own account of his life in slavery, teaching himself to read and escaping to freedom.",
+      "tags": [
+        "autobiography",
+        "history",
+        "freedom",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/23",
+      "readUrl": "https://www.gutenberg.org/ebooks/23",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-frederick-douglass.jpg"
+    },
+    {
+      "id": "gutenberg-dracula",
+      "title": "Dracula",
+      "author": "Bram Stoker",
+      "publisher": "Project Gutenberg",
+      "year": "1897",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The gothic novel told in letters and diaries: Count Dracula leaves Transylvania for England.",
+      "tags": [
+        "gothic",
+        "horror",
+        "novel",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/345",
+      "readUrl": "https://www.gutenberg.org/ebooks/345",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-dracula.jpg"
+    },
+    {
+      "id": "gutenberg-monte-cristo",
+      "title": "The Count of Monte Cristo",
+      "author": "Alexandre Dumas",
+      "publisher": "Project Gutenberg",
+      "year": "1844",
+      "kind": "book",
+      "category": "general",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Wrongly imprisoned, Edmond Dantès escapes, finds a fortune and returns as the mysterious Count to take revenge.",
+      "tags": [
+        "adventure",
+        "novel",
+        "revenge",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1184",
+      "readUrl": "https://www.gutenberg.org/ebooks/1184",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-monte-cristo.jpg"
+    },
+    {
+      "id": "make-it-stick",
+      "title": "Make It Stick: The Science of Successful Learning",
+      "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+      "publisher": "Belknap Press",
+      "year": "2014",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "What memory research says about studying: retrieval practice, spacing and interleaving beat re-reading and highlighting.",
+      "tags": [
+        "learning science",
+        "memory",
+        "studying",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Make+It+Stick:+The+Science+of+Successful+Learning+Peter+C.+Brown",
+      "added": "2026-10-18",
+      "cover": "assets/covers/make-it-stick.jpg"
+    },
+    {
+      "id": "a-mind-for-numbers",
+      "title": "A Mind for Numbers",
+      "author": "Barbara Oakley",
+      "publisher": "TarcherPerigee",
+      "year": "2014",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to get better at maths and science, even if you struggled before: focused and diffuse thinking, chunking and beating procrastination.",
+      "tags": [
+        "learning",
+        "maths",
+        "stem",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=A+Mind+for+Numbers+Barbara+Oakley",
+      "added": "2026-10-18",
+      "cover": "assets/covers/a-mind-for-numbers.jpg"
+    },
+    {
+      "id": "how-to-read-a-book",
+      "title": "How to Read a Book",
+      "author": "Mortimer J. Adler, Charles Van Doren",
+      "publisher": "Simon & Schuster",
+      "year": "1940",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The classic guide to reading actively at four levels, from elementary reading to comparing many books on one subject.",
+      "tags": [
+        "reading",
+        "classic",
+        "critical thinking",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=How+to+Read+a+Book+Mortimer+J.+Adler",
+      "added": "2026-10-18",
+      "cover": "assets/covers/how-to-read-a-book.jpg"
+    },
+    {
+      "id": "ultralearning",
+      "title": "Ultralearning",
+      "author": "Scott H. Young",
+      "publisher": "Harper Business",
+      "year": "2019",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Strategies for learning hard skills fast through intense, self-directed projects, from someone who did the MIT CS curriculum in a year.",
+      "tags": [
+        "learning",
+        "self-education",
+        "skills",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Ultralearning+Scott+H.+Young",
+      "added": "2026-10-18",
+      "cover": "assets/covers/ultralearning.jpg"
+    },
+    {
+      "id": "moonwalking-with-einstein",
+      "title": "Moonwalking with Einstein",
+      "author": "Joshua Foer",
+      "publisher": "Penguin Press",
+      "year": "2011",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A journalist trains his memory for a year and wins the US Memory Championship, explaining memory palaces along the way.",
+      "tags": [
+        "memory",
+        "techniques",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Moonwalking+with+Einstein+Joshua+Foer",
+      "added": "2026-10-18",
+      "cover": "assets/covers/moonwalking-with-einstein.jpg"
+    },
+    {
+      "id": "straight-a-student",
+      "title": "How to Become a Straight-A Student",
+      "author": "Cal Newport",
+      "publisher": "Broadway Books",
+      "year": "2006",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The study habits of top university students: smarter scheduling, note-taking, exam prep and essay writing, without all-nighters.",
+      "tags": [
+        "studying",
+        "exams",
+        "university",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=How+to+Become+a+Straight-A+Student+Cal+Newport",
+      "added": "2026-10-18",
+      "cover": "assets/covers/straight-a-student.jpg"
+    },
+    {
+      "id": "peak-ericsson",
+      "title": "Peak: Secrets from the New Science of Expertise",
+      "author": "Anders Ericsson, Robert Pool",
+      "publisher": "Houghton Mifflin Harcourt",
+      "year": "2016",
+      "kind": "book",
+      "category": "study-skills",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The researcher behind \"deliberate practice\" on how experts in any field are made, not born.",
+      "tags": [
+        "deliberate practice",
+        "expertise",
+        "skills",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Peak:+Secrets+from+the+New+Science+of+Expertise+Anders+Ericsson",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "getting-things-done",
+      "title": "Getting Things Done",
+      "author": "David Allen",
+      "publisher": "Viking",
+      "year": "2001",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The GTD method: capture everything, decide the next action, organise by context and review weekly to keep your head clear.",
+      "tags": [
+        "gtd",
+        "task management",
+        "organisation",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Getting+Things+Done+David+Allen",
+      "added": "2026-10-18",
+      "cover": "assets/covers/getting-things-done.jpg"
+    },
+    {
+      "id": "eat-that-frog",
+      "title": "Eat That Frog!",
+      "author": "Brian Tracy",
+      "publisher": "Berrett-Koehler",
+      "year": "2001",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Twenty-one short techniques for beating procrastination, starting with the hardest, most important task each day.",
+      "tags": [
+        "procrastination",
+        "priorities",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Eat+That+Frog!+Brian+Tracy",
+      "added": "2026-10-18",
+      "cover": "assets/covers/eat-that-frog.jpg"
+    },
+    {
+      "id": "indistractable",
+      "title": "Indistractable",
+      "author": "Nir Eyal",
+      "publisher": "BenBella Books",
+      "year": "2019",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to control your attention: handle internal triggers, plan your time and hack back the phone and email.",
+      "tags": [
+        "focus",
+        "attention",
+        "distraction",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Indistractable+Nir+Eyal",
+      "added": "2026-10-18",
+      "cover": "assets/covers/indistractable.jpg"
+    },
+    {
+      "id": "the-one-thing",
+      "title": "The ONE Thing",
+      "author": "Gary Keller, Jay Papasan",
+      "publisher": "Bard Press",
+      "year": "2013",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Narrow your focus to the one thing that makes everything else easier or unnecessary, and protect time to do it.",
+      "tags": [
+        "focus",
+        "priorities",
+        "goals",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+ONE+Thing+Gary+Keller",
+      "added": "2026-10-18",
+      "cover": "assets/covers/the-one-thing.jpg"
+    },
+    {
+      "id": "make-time",
+      "title": "Make Time",
+      "author": "Jake Knapp, John Zeratsky",
+      "publisher": "Currency",
+      "year": "2018",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Two ex-Google designers on picking one daily highlight, staying laser-focused and resisting busy-ness and infinite feeds.",
+      "tags": [
+        "time management",
+        "focus",
+        "habits",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Make+Time+Jake+Knapp",
+      "added": "2026-10-18",
+      "cover": "assets/covers/make-time.jpg"
+    },
+    {
+      "id": "four-thousand-weeks",
+      "title": "Four Thousand Weeks",
+      "author": "Oliver Burkeman",
+      "publisher": "Farrar, Straus and Giroux",
+      "year": "2021",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Time management for mortals: accepting limits, choosing what to neglect, and why productivity hacks often make things worse.",
+      "tags": [
+        "time",
+        "philosophy",
+        "priorities",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Four+Thousand+Weeks+Oliver+Burkeman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/four-thousand-weeks.jpg"
+    },
+    {
+      "id": "digital-minimalism",
+      "title": "Digital Minimalism",
+      "author": "Cal Newport",
+      "publisher": "Portfolio",
+      "year": "2019",
+      "kind": "book",
+      "category": "productivity",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A philosophy for using technology on purpose: a 30-day digital declutter and how to reclaim solitude and leisure.",
+      "tags": [
+        "digital wellbeing",
+        "focus",
+        "social media",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Digital+Minimalism+Cal+Newport",
+      "added": "2026-10-18",
+      "cover": "assets/covers/digital-minimalism.jpg"
     }
   ]
 }

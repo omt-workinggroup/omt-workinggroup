@@ -5,5 +5,5 @@ export const SITE = {
   // Endpoint for the AI assistant (the Vercel Function in api/ai.js).
   aiEndpoint: '/api/ai',
   catalogUrl: 'data/resources.json',
-  pageSize: 12,
+  pageSize: 60,
 };

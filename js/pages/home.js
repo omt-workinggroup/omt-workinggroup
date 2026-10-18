@@ -93,7 +93,7 @@ function renderShelves(all) {
   host.innerHTML = SHELVES.map((s) => {
     const picked = s.pick(all);
     const lead = picked.find((r) => r.id === s.lead) ?? picked[0];
-    const list = [lead, ...picked.filter((r) => r !== lead)].slice(0, 20);
+    const list = [lead, ...picked.filter((r) => r !== lead)].slice(0, 50);
     if (!lead) return '';
     return `<section class="shelf-sec shelf-sec--${s.key}${s.desktopOnly ? ' d-only' : ''}" aria-labelledby="shelf-${s.key}">
       <div class="container">
