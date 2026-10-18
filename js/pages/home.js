@@ -47,15 +47,15 @@ const LEVEL = { beginner: 0, intermediate: 1, advanced: 2 };
 const byLevel = (a, b) => (LEVEL[a.level] ?? 1) - (LEVEL[b.level] ?? 1);
 const freeFirst = (a, b) => Number(a.accessType === 'paid') - Number(b.accessType === 'paid');
 const SHELVES = [
-  { key: 'free', no: '01', kicker: 'Free to read now', title: 'Open one tonight', blurb: 'Complete books you can read in full, free and legally, from the people who wrote them.', href: 'library.html?access=open', desktopOnly: true,
+  { key: 'free', lead: 'ostep', no: '01', kicker: 'Free to read now', title: 'Open one tonight', blurb: 'Complete books you can read in full, free and legally, from the people who wrote them.', href: 'library.html?access=open', desktopOnly: true,
     pick: (all) => all.filter((r) => r.kind === 'book' && r.accessType === 'open' && r.cover) },
-  { key: 'canva', no: '02', kicker: 'Canva tips', title: 'Design like you meant it', blurb: "Canva's own free lessons, then the classic books designers keep within reach: layout, type, colour and logos.", href: 'library.html?category=design',
+  { key: 'canva', lead: 'non-designers-design-book', no: '02', kicker: 'Canva tips', title: 'Design like you meant it', blurb: "Canva's own free lessons, then the classic books designers keep within reach: layout, type, colour and logos.", href: 'library.html?category=design',
     pick: (all) => all.filter((r) => r.category === 'design').sort(freeFirst) },
-  { key: 'linux', no: '03', kicker: 'Linux overview', title: 'Learn the machine that runs the internet', blurb: 'From your first ls to kernel internals, in the order we would read them.', href: 'library.html?category=linux',
+  { key: 'linux', lead: 'tlcl', no: '03', kicker: 'Linux overview', title: 'Learn the machine that runs the internet', blurb: 'From your first ls to kernel internals, in the order we would read them.', href: 'library.html?category=linux',
     pick: (all) => all.filter((r) => r.category === 'linux').sort((a, b) => byLevel(a, b) || freeFirst(a, b)) },
-  { key: 'security', no: '04', kicker: 'Cybersecurity ebooks', title: 'Think like an attacker. Build like a defender.', blurb: 'True stories that read like thrillers, then the hands-on books security teams actually use.', href: 'library.html?category=security',
+  { key: 'security', lead: 'cuckoos-egg', no: '04', kicker: 'Cybersecurity ebooks', title: 'Think like an attacker. Build like a defender.', blurb: 'True stories that read like thrillers, then the hands-on books security teams actually use.', href: 'library.html?category=security',
     pick: (all) => all.filter((r) => r.category === 'security' && r.kind === 'book').sort(byLevel) },
-  { key: 'success', no: '05', kicker: 'Books on success', title: 'The long game', blurb: 'Habits, mindset and money, from the free 19th-century classics to the books everyone is still quoting.', href: 'library.html?category=success',
+  { key: 'success', lead: 'atomic-habits', no: '05', kicker: 'Books on success', title: 'The long game', blurb: 'Habits, mindset and money, from the free 19th-century classics to the books everyone is still quoting.', href: 'library.html?category=success',
     pick: (all) => all.filter((r) => r.category === 'success').sort(freeFirst) },
 ];
 
@@ -71,16 +71,35 @@ function shelfBookHTML(r) {
     </a>`;
 }
 
+/** The shelf's spotlight: a wide card with the cover, a short description and a clear way in. */
+function leadHTML(r) {
+  const access = { open: 'Free to read', official: 'Free from the publisher', preview: 'Free preview', paid: 'Buy or borrow', info: 'Info' }[r.accessType] ?? '';
+  const cover = r.cover ? `<img src="${e(r.cover)}" alt="" loading="lazy" decoding="async" width="360" height="520">`
+    : `<span class="book__poster" style="--c:${CATEGORIES[r.category]?.color ?? '#334155'}"><small>${e(r.sourceName ?? '')}</small><b>${e(r.title)}</b><i>${e(r.author)}</i></span>`;
+  return `<a class="lead" href="${resourceUrl(r)}" role="listitem">
+      <span class="book__cover lead__cover">${cover}</span>
+      <span class="lead__body">
+        <span class="lead__pick">Our pick</span>
+        <span class="lead__title">${e(r.title)}</span>
+        <span class="lead__by">${e(r.author)}${/^\d{4}$/.test(r.year ?? '') ? ` · ${e(r.year)}` : ''}</span>
+        <span class="lead__desc">${e(r.description ?? '')}</span>
+        <span class="lead__foot"><span class="book__tag book__tag--${e(r.accessType)}">${access}</span><span class="lead__go">Open the book →</span></span>
+      </span>
+    </a>`;
+}
+
 function renderShelves(all) {
   const host = document.getElementById('home-shelves');
   host.innerHTML = SHELVES.map((s) => {
-    const list = s.pick(all).slice(0, 14);
-    if (!list.length) return '';
+    const picked = s.pick(all);
+    const lead = picked.find((r) => r.id === s.lead) ?? picked[0];
+    const list = [lead, ...picked.filter((r) => r !== lead)].slice(0, 20);
+    if (!lead) return '';
     return `<section class="shelf-sec shelf-sec--${s.key}${s.desktopOnly ? ' d-only' : ''}" aria-labelledby="shelf-${s.key}">
       <div class="container">
         <div class="shelf-sec__head">
           <div class="shelf-sec__text">
-            <p class="kicker"><span class="shelf-sec__no">No. ${s.no}</span> ${e(s.kicker)}</p>
+            <p class="kicker"><span class="shelf-sec__no">No. ${s.no}</span> ${e(s.kicker)} <span class="shelf-sec__count">${picked.length} titles</span></p>
             <h2 id="shelf-${s.key}">${e(s.title)}</h2>
             <p>${e(s.blurb)}</p>
           </div>
@@ -90,7 +109,7 @@ function renderShelves(all) {
             <a class="shelf-sec__all" href="${s.href}">See all →</a>
           </div>
         </div>
-        <div class="shelf-rail" role="list" tabindex="0" aria-label="${e(s.kicker)}">${list.map(shelfBookHTML).join('')}</div>
+        <div class="shelf-rail" role="list" tabindex="0" aria-label="${e(s.kicker)}">${leadHTML(lead)}${list.slice(1).map(shelfBookHTML).join('')}</div>
       </div>
     </section>`;
   }).join('');

@@ -108,7 +108,7 @@ test('external books the AI recommends are added to the library and linked there
 
 test('streaming: sends the answer as deltas, hides the metadata line, then a done event', async () => {
   const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ text: `**Linux** is great.\n${meta(['tlcl'], ['Where do I start?', 'Is it free?'])}` })) });
-  const res = await handler(post({ stream: true, messages: [{ role: 'user', content: 'linux book' }] }), { ip: 'stream-test' });
+  const res = await handler(post({ stream: true, messages: [{ role: 'user', content: 'The Linux Command Line by William Shotts' }] }), { ip: 'stream-test' });
   assert.match(res.headers.get('content-type'), /ndjson/);
   const events = (await res.text()).trim().split('\n').map((l) => JSON.parse(l));
   const shown = events.filter((e) => e.type === 'delta').map((e) => e.text).join('');

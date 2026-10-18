@@ -3274,6 +3274,1018 @@
       "readUrl": "https://www.gutenberg.org/ebooks/8581",
       "added": "2026-10-17",
       "cover": "assets/covers/gutenberg-art-of-money-getting.jpg"
+    },
+    {
+      "id": "dont-make-me-think",
+      "title": "Don't Make Me Think",
+      "author": "Steve Krug",
+      "publisher": "New Riders",
+      "year": "2000",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The friendliest book on usability: why people scan instead of read, and how to design pages and slides they understand at a glance.",
+      "tags": [
+        "usability",
+        "web design",
+        "ux",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Don't+Make+Me+Think+Steve+Krug",
+      "added": "2026-10-18",
+      "cover": "assets/covers/dont-make-me-think.jpg"
+    },
+    {
+      "id": "elements-of-typographic-style",
+      "title": "The Elements of Typographic Style",
+      "author": "Robert Bringhurst",
+      "publisher": "Hartley & Marks",
+      "year": "1992",
+      "kind": "book",
+      "category": "design",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The typographer's bible: choosing and pairing typefaces, spacing, page proportions and the small details that make text beautiful.",
+      "tags": [
+        "typography",
+        "fonts",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Elements+of+Typographic+Style+Robert+Bringhurst",
+      "added": "2026-10-18",
+      "cover": "assets/covers/elements-of-typographic-style.jpg"
+    },
+    {
+      "id": "universal-principles-of-design",
+      "title": "Universal Principles of Design",
+      "author": "William Lidwell, Kritina Holden, Jill Butler",
+      "publisher": "Rockport Publishers",
+      "year": "2003",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "One hundred-plus design principles, each on a single illustrated spread, from the golden ratio to the rule of thirds.",
+      "tags": [
+        "design principles",
+        "reference",
+        "layout",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Universal+Principles+of+Design+William+Lidwell",
+      "added": "2026-10-18",
+      "cover": "assets/covers/universal-principles-of-design.jpg"
+    },
+    {
+      "id": "making-and-breaking-the-grid",
+      "title": "Making and Breaking the Grid",
+      "author": "Timothy Samara",
+      "publisher": "Rockport Publishers",
+      "year": "2002",
+      "kind": "book",
+      "category": "design",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How designers build layouts on a grid, and when breaking it makes a page more alive, shown through hundreds of real examples.",
+      "tags": [
+        "grid",
+        "layout",
+        "graphic design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Making+and+Breaking+the+Grid+Timothy+Samara",
+      "added": "2026-10-18",
+      "cover": "assets/covers/making-and-breaking-the-grid.jpg"
+    },
+    {
+      "id": "graphic-design-new-basics",
+      "title": "Graphic Design: The New Basics",
+      "author": "Ellen Lupton, Jennifer Cole Phillips",
+      "publisher": "Princeton Architectural Press",
+      "year": "2008",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The visual building blocks of design (point, line, scale, texture, colour, framing, rhythm) explained with student and professional work.",
+      "tags": [
+        "graphic design",
+        "basics",
+        "visual language",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Graphic+Design:+The+New+Basics+Ellen+Lupton",
+      "added": "2026-10-18",
+      "cover": "assets/covers/graphic-design-new-basics.jpg"
+    },
+    {
+      "id": "designing-brand-identity",
+      "title": "Designing Brand Identity",
+      "author": "Alina Wheeler",
+      "publisher": "Wiley",
+      "year": "2003",
+      "kind": "book",
+      "category": "design",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The step-by-step process behind a brand: research, strategy, logo, colour, type and the guidelines that keep it consistent.",
+      "tags": [
+        "branding",
+        "logo",
+        "identity",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Designing+Brand+Identity+Alina+Wheeler",
+      "added": "2026-10-18",
+      "cover": "assets/covers/designing-brand-identity.jpg"
+    },
+    {
+      "id": "graphic-designer-without-losing-your-soul",
+      "title": "How to Be a Graphic Designer Without Losing Your Soul",
+      "author": "Adrian Shaughnessy",
+      "publisher": "Laurence King",
+      "year": "2005",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Honest advice on working as a designer: portfolios, clients, pricing, freelancing and staying creative.",
+      "tags": [
+        "career",
+        "freelance",
+        "graphic design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=How+to+Be+a+Graphic+Designer+Without+Losing+Your+Soul+Adrian+Shaughnessy",
+      "added": "2026-10-18",
+      "cover": "assets/covers/graphic-designer-without-losing-your-soul.jpg"
+    },
+    {
+      "id": "hey-whipple-squeeze-this",
+      "title": "Hey, Whipple, Squeeze This",
+      "author": "Luke Sullivan",
+      "publisher": "Wiley",
+      "year": "1998",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The classic guide to making ads people actually notice, from headlines to social media, by a long-time agency creative.",
+      "tags": [
+        "advertising",
+        "copywriting",
+        "marketing",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Hey,+Whipple,+Squeeze+This+Luke+Sullivan",
+      "added": "2026-10-18",
+      "cover": "assets/covers/hey-whipple-squeeze-this.jpg"
+    },
+    {
+      "id": "contagious-berger",
+      "title": "Contagious",
+      "author": "Jonah Berger",
+      "publisher": "Simon & Schuster",
+      "year": "2013",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Research on why some posts, products and ideas spread while others die, and six principles for making yours catch on.",
+      "tags": [
+        "marketing",
+        "social media",
+        "virality",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Contagious+Jonah+Berger",
+      "added": "2026-10-18",
+      "cover": "assets/covers/contagious-berger.jpg"
+    },
+    {
+      "id": "linux-device-drivers-3",
+      "title": "Linux Device Drivers",
+      "author": "Jonathan Corbet, Alessandro Rubini, Greg Kroah-Hartman",
+      "publisher": "O'Reilly",
+      "year": "2005",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "PDF"
+      ],
+      "accessType": "official",
+      "license": "Third edition free under a Creative Commons licence",
+      "description": "How to write drivers for the Linux kernel: modules, char devices, concurrency, memory, interrupts and USB. The third edition is free to read.",
+      "tags": [
+        "kernel",
+        "drivers",
+        "linux",
+        "book"
+      ],
+      "sourceName": "LWN.net",
+      "sourceUrl": "https://lwn.net/Kernel/LDD3/",
+      "readUrl": "https://lwn.net/Kernel/LDD3/",
+      "added": "2026-10-18",
+      "cover": "assets/covers/linux-device-drivers-3.jpg"
+    },
+    {
+      "id": "learning-the-bash-shell",
+      "title": "Learning the bash Shell",
+      "author": "Cameron Newham, Bill Rosenblatt",
+      "publisher": "O'Reilly",
+      "year": "1995",
+      "kind": "book",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "O'Reilly's classic introduction to bash: editing commands, customising your shell, variables, functions and scripting.",
+      "tags": [
+        "bash",
+        "shell",
+        "command line",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Learning+the+bash+Shell+Cameron+Newham",
+      "added": "2026-10-18",
+      "cover": "assets/covers/learning-the-bash-shell.jpg"
+    },
+    {
+      "id": "linux-in-a-nutshell",
+      "title": "Linux in a Nutshell",
+      "author": "Ellen Siever, Stephen Figgins, Robert Love, Arnold Robbins",
+      "publisher": "O'Reilly",
+      "year": "1997",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The desk reference for Linux commands, shells, editors, package managers and system configuration.",
+      "tags": [
+        "linux",
+        "reference",
+        "commands",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+in+a+Nutshell+Ellen+Siever",
+      "added": "2026-10-18",
+      "cover": "assets/covers/linux-in-a-nutshell.jpg"
+    },
+    {
+      "id": "sed-and-awk",
+      "title": "sed & awk",
+      "author": "Dale Dougherty, Arnold Robbins",
+      "publisher": "O'Reilly",
+      "year": "1990",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The two classic UNIX text-processing tools, explained from simple substitutions to full report-generating programs.",
+      "tags": [
+        "sed",
+        "awk",
+        "text processing",
+        "unix",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=sed+&+awk+Dale+Dougherty",
+      "added": "2026-10-18",
+      "cover": "assets/covers/sed-and-awk.jpg"
+    },
+    {
+      "id": "classic-shell-scripting",
+      "title": "Classic Shell Scripting",
+      "author": "Arnold Robbins, Nelson H. F. Beebe",
+      "publisher": "O'Reilly",
+      "year": "2005",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Writing portable, reliable shell scripts with the standard UNIX tools: pipelines, regular expressions, files and processes.",
+      "tags": [
+        "shell scripting",
+        "unix",
+        "automation",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Classic+Shell+Scripting+Arnold+Robbins",
+      "added": "2026-10-18",
+      "cover": "assets/covers/classic-shell-scripting.jpg"
+    },
+    {
+      "id": "unix-programming-environment",
+      "title": "The UNIX Programming Environment",
+      "author": "Brian W. Kernighan, Rob Pike",
+      "publisher": "Prentice Hall",
+      "year": "1984",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The 1984 classic by two Bell Labs legends on using and programming UNIX: the shell, filters, pipes and C tools. Still sharp today.",
+      "tags": [
+        "unix",
+        "classic",
+        "shell",
+        "c",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+UNIX+Programming+Environment+Brian+W.+Kernighan",
+      "added": "2026-10-18",
+      "cover": "assets/covers/unix-programming-environment.jpg"
+    },
+    {
+      "id": "unix-power-tools",
+      "title": "UNIX Power Tools",
+      "author": "Jerry Peek, Tim O'Reilly, Mike Loukides",
+      "publisher": "O'Reilly",
+      "year": "1993",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Hundreds of short, practical tricks for getting more out of the UNIX and Linux command line.",
+      "tags": [
+        "unix",
+        "tips",
+        "command line",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=UNIX+Power+Tools+Jerry+Peek",
+      "added": "2026-10-18",
+      "cover": "assets/covers/unix-power-tools.jpg"
+    },
+    {
+      "id": "advanced-programming-unix-environment",
+      "title": "Advanced Programming in the UNIX Environment",
+      "author": "W. Richard Stevens, Stephen A. Rago",
+      "publisher": "Addison-Wesley",
+      "year": "1992",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Stevens' definitive guide to UNIX system programming: files, processes, signals, threads, daemons and inter-process communication.",
+      "tags": [
+        "system programming",
+        "unix",
+        "c",
+        "posix",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Advanced+Programming+in+the+UNIX+Environment+W.+Richard+Stevens",
+      "added": "2026-10-18",
+      "cover": "assets/covers/advanced-programming-unix-environment.jpg"
+    },
+    {
+      "id": "linux-firewalls-rash",
+      "title": "Linux Firewalls",
+      "author": "Michael Rash",
+      "publisher": "No Starch Press",
+      "year": "2007",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Detecting and responding to attacks with iptables, psad and fwsnort: turning a Linux firewall into an intrusion detection system.",
+      "tags": [
+        "firewall",
+        "iptables",
+        "security",
+        "linux",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+Firewalls+Michael+Rash",
+      "added": "2026-10-18",
+      "cover": "assets/covers/linux-firewalls-rash.jpg"
+    },
+    {
+      "id": "penetration-testing-weidman",
+      "title": "Penetration Testing",
+      "author": "Georgia Weidman",
+      "publisher": "No Starch Press",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A hands-on introduction to hacking: setting up a lab, recon, exploitation with Metasploit, web and wireless attacks, and post-exploitation.",
+      "tags": [
+        "pentesting",
+        "ethical hacking",
+        "metasploit",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Penetration+Testing+Georgia+Weidman",
+      "added": "2026-10-18",
+      "cover": "assets/covers/penetration-testing-weidman.jpg"
+    },
+    {
+      "id": "hacker-playbook",
+      "title": "The Hacker Playbook",
+      "author": "Peter Kim",
+      "publisher": "Secure Planet",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A red-teamer's step-by-step playbook, organised like a football game: from scanning and exploitation to lateral movement.",
+      "tags": [
+        "red team",
+        "pentesting",
+        "playbook",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Hacker+Playbook+Peter+Kim",
+      "added": "2026-10-18",
+      "cover": "assets/covers/hacker-playbook.jpg"
+    },
+    {
+      "id": "social-engineering-hadnagy",
+      "title": "Social Engineering: The Art of Human Hacking",
+      "author": "Christopher Hadnagy",
+      "publisher": "Wiley",
+      "year": "2010",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How attackers manipulate people through pretexting, influence and elicitation, and how organisations train staff to resist.",
+      "tags": [
+        "social engineering",
+        "phishing",
+        "human factor",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Social+Engineering:+The+Art+of+Human+Hacking+Christopher+Hadnagy",
+      "added": "2026-10-18",
+      "cover": "assets/covers/social-engineering-hadnagy.jpg"
+    },
+    {
+      "id": "threat-modeling-shostack",
+      "title": "Threat Modeling: Designing for Security",
+      "author": "Adam Shostack",
+      "publisher": "Wiley",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Microsoft's threat-modelling lead on finding security flaws while you design, using STRIDE, attack trees and data-flow diagrams.",
+      "tags": [
+        "threat modelling",
+        "secure design",
+        "stride",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Threat+Modeling:+Designing+for+Security+Adam+Shostack",
+      "added": "2026-10-18",
+      "cover": "assets/covers/threat-modeling-shostack.jpg"
+    },
+    {
+      "id": "tangled-web",
+      "title": "The Tangled Web",
+      "author": "Michal Zalewski",
+      "publisher": "No Starch Press",
+      "year": "2011",
+      "kind": "book",
+      "category": "security",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A deep tour of how browsers really work and why the web's security model is so fragile, from a Google security researcher.",
+      "tags": [
+        "web security",
+        "browsers",
+        "xss",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Tangled+Web+Michal+Zalewski",
+      "added": "2026-10-18",
+      "cover": "assets/covers/tangled-web.jpg"
+    },
+    {
+      "id": "silence-on-the-wire",
+      "title": "Silence on the Wire",
+      "author": "Michal Zalewski",
+      "publisher": "No Starch Press",
+      "year": "2005",
+      "kind": "book",
+      "category": "security",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Passive reconnaissance and indirect attacks: what quietly leaks from networks, keyboards and protocols.",
+      "tags": [
+        "network security",
+        "reconnaissance",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Silence+on+the+Wire+Michal+Zalewski",
+      "added": "2026-10-18",
+      "cover": "assets/covers/silence-on-the-wire.jpg"
+    },
+    {
+      "id": "cybersecurity-and-cyberwar",
+      "title": "Cybersecurity and Cyberwar: What Everyone Needs to Know",
+      "author": "P. W. Singer, Allan Friedman",
+      "publisher": "Oxford University Press",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Plain-language answers to the big questions on cyber threats, cyberwar and internet governance, for non-specialists.",
+      "tags": [
+        "cyber policy",
+        "cyberwar",
+        "introduction",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Cybersecurity+and+Cyberwar:+What+Everyone+Needs+to+Know+P.+W.+Singer",
+      "added": "2026-10-18",
+      "cover": "assets/covers/cybersecurity-and-cyberwar.jpg"
+    },
+    {
+      "id": "this-is-how-they-tell-me",
+      "title": "This Is How They Tell Me the World Ends",
+      "author": "Nicole Perlroth",
+      "publisher": "Bloomsbury",
+      "year": "2021",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A New York Times reporter on the secretive market for zero-day exploits and the cyberweapons arms race.",
+      "tags": [
+        "zero day",
+        "cyber warfare",
+        "true story",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=This+Is+How+They+Tell+Me+the+World+Ends+Nicole+Perlroth",
+      "added": "2026-10-18",
+      "cover": "assets/covers/this-is-how-they-tell-me.jpg"
+    },
+    {
+      "id": "tracers-in-the-dark",
+      "title": "Tracers in the Dark",
+      "author": "Andy Greenberg",
+      "publisher": "Doubleday",
+      "year": "2022",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How investigators learned to follow cryptocurrency and took down dark-web markets and their kingpins.",
+      "tags": [
+        "crypto",
+        "investigation",
+        "true story",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Tracers+in+the+Dark+Andy+Greenberg",
+      "added": "2026-10-18",
+      "cover": "assets/covers/tracers-in-the-dark.jpg"
+    },
+    {
+      "id": "cant-hurt-me",
+      "title": "Can't Hurt Me",
+      "author": "David Goggins",
+      "publisher": "Lioncrest Publishing",
+      "year": "2018",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A former Navy SEAL's story of turning a hard childhood into extreme discipline, and the mental tools he used to do it.",
+      "tags": [
+        "discipline",
+        "mental toughness",
+        "memoir",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Can't+Hurt+Me+David+Goggins",
+      "added": "2026-10-18",
+      "cover": "assets/covers/cant-hurt-me.jpg"
+    },
+    {
+      "id": "essentialism-mckeown",
+      "title": "Essentialism",
+      "author": "Greg McKeown",
+      "publisher": "Crown Business",
+      "year": "2014",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The disciplined pursuit of less: how to work out what really matters, say no to the rest, and do better work.",
+      "tags": [
+        "focus",
+        "priorities",
+        "productivity",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Essentialism+Greg+McKeown",
+      "added": "2026-10-18",
+      "cover": "assets/covers/essentialism-mckeown.jpg"
+    },
+    {
+      "id": "start-with-why",
+      "title": "Start with Why",
+      "author": "Simon Sinek",
+      "publisher": "Portfolio",
+      "year": "2009",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Why leaders and companies that begin with purpose inspire people more than those that begin with what they sell.",
+      "tags": [
+        "leadership",
+        "purpose",
+        "business",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Start+with+Why+Simon+Sinek",
+      "added": "2026-10-18",
+      "cover": "assets/covers/start-with-why.jpg"
+    },
+    {
+      "id": "four-hour-workweek",
+      "title": "The 4-Hour Workweek",
+      "author": "Timothy Ferriss",
+      "publisher": "Crown",
+      "year": "2007",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Ferriss on cutting low-value work, automating income and designing a life around time rather than titles.",
+      "tags": [
+        "entrepreneurship",
+        "productivity",
+        "lifestyle",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+4-Hour+Workweek+Timothy+Ferriss",
+      "added": "2026-10-18",
+      "cover": "assets/covers/four-hour-workweek.jpg"
+    },
+    {
+      "id": "compound-effect",
+      "title": "The Compound Effect",
+      "author": "Darren Hardy",
+      "publisher": "Vanguard Press",
+      "year": "2010",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How small, steady choices add up over time, and how to build the routines that make them stick.",
+      "tags": [
+        "habits",
+        "consistency",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Compound+Effect+Darren+Hardy",
+      "added": "2026-10-18",
+      "cover": "assets/covers/compound-effect.jpg"
+    },
+    {
+      "id": "magic-of-thinking-big",
+      "title": "The Magic of Thinking Big",
+      "author": "David J. Schwartz",
+      "publisher": "Prentice Hall",
+      "year": "1959",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The 1959 classic on confidence, ambition and acting before you feel ready.",
+      "tags": [
+        "confidence",
+        "motivation",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Magic+of+Thinking+Big+David+J.+Schwartz",
+      "added": "2026-10-18",
+      "cover": "assets/covers/magic-of-thinking-big.jpg"
+    },
+    {
+      "id": "richest-man-in-babylon",
+      "title": "The Richest Man in Babylon",
+      "author": "George S. Clason",
+      "publisher": "Clason Publishing",
+      "year": "1926",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Simple money rules (pay yourself first, live below your means, make savings work) told as parables from ancient Babylon.",
+      "tags": [
+        "money",
+        "saving",
+        "classic",
+        "personal finance",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Richest+Man+in+Babylon+George+S.+Clason",
+      "added": "2026-10-18",
+      "cover": "assets/covers/richest-man-in-babylon.jpg"
+    },
+    {
+      "id": "who-moved-my-cheese",
+      "title": "Who Moved My Cheese?",
+      "author": "Spencer Johnson",
+      "publisher": "Putnam",
+      "year": "1998",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A short fable about two mice and two little people that is really about handling change at work and in life.",
+      "tags": [
+        "change",
+        "fable",
+        "career",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Who+Moved+My+Cheese?+Spencer+Johnson",
+      "added": "2026-10-18",
+      "cover": "assets/covers/who-moved-my-cheese.jpg"
+    },
+    {
+      "id": "gutenberg-up-from-slavery",
+      "title": "Up from Slavery",
+      "author": "Booker T. Washington",
+      "publisher": "Project Gutenberg",
+      "year": "1901",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Booker T. Washington's autobiography: from slavery to founding Tuskegee Institute through education and relentless work.",
+      "tags": [
+        "autobiography",
+        "education",
+        "perseverance",
+        "success",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2376",
+      "readUrl": "https://www.gutenberg.org/ebooks/2376",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-up-from-slavery.jpg"
+    },
+    {
+      "id": "gutenberg-pushing-to-the-front",
+      "title": "Pushing to the Front",
+      "author": "Orison Swett Marden",
+      "publisher": "Project Gutenberg",
+      "year": "1894",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "A 19th-century bestseller of short chapters on ambition, grit and character, drawn from the lives of achievers of the time.",
+      "tags": [
+        "motivation",
+        "self-help",
+        "success",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21291",
+      "readUrl": "https://www.gutenberg.org/ebooks/21291",
+      "added": "2026-10-18",
+      "cover": "assets/covers/gutenberg-pushing-to-the-front.jpg"
     }
   ]
 }
