@@ -11,6 +11,8 @@ export const CATEGORIES = {
   business: { label: 'Business & Entrepreneurship', short: 'BIZ', color: '#8a5a00', icon: 'briefcase', description: 'Management, economics, startups and finance.' },
   'study-skills': { label: 'Study Materials', short: 'STU', color: '#0e7c7b', icon: 'cap', description: 'Study methods, exam preparation and university life.' },
   productivity: { label: 'Productivity', short: 'PRO', color: '#a3367a', icon: 'bolt', description: 'Focus, habits and workplace software skills.' },
+  design: { label: 'Design & Canva', short: 'DSN', color: '#00a3b4', icon: 'slides', description: 'Canva, layout, typography, colour and branding.' },
+  success: { label: 'Success & Mindset', short: 'WIN', color: '#b7791f', icon: 'bolt', description: 'Habits, mindset, money and the classics on getting ahead.' },
   general: { label: 'General Learning', short: 'GEN', color: '#6b4e9b', icon: 'globe', description: 'Literature, philosophy and classic works.' },
   word: { label: 'Microsoft Word', short: 'W', color: '#2b579a', office: true, description: 'Documents, CVs, letters and reports.' },
   excel: { label: 'Microsoft Excel', short: 'X', color: '#217346', office: true, description: 'Formulas, budgets, charts and data.' },

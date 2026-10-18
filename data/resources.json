@@ -1939,7 +1939,7 @@
       "publisher": "Avery",
       "year": "2018",
       "kind": "book",
-      "category": "productivity",
+      "category": "success",
       "level": "beginner",
       "formats": [
         "Print",
@@ -1968,7 +1968,7 @@
       "publisher": "Grand Central Publishing",
       "year": "2016",
       "kind": "book",
-      "category": "productivity",
+      "category": "success",
       "level": "beginner",
       "formats": [
         "Print",
@@ -2048,6 +2048,1232 @@
       "sourceUrl": "https://openlibrary.org/search?q=Clean+Code+Robert+C.+Martin",
       "added": "2026-09-22",
       "cover": "assets/covers/clean-code.jpg"
+    },
+    {
+      "id": "canva-design-school",
+      "title": "Canva Design School",
+      "author": "Canva",
+      "publisher": "Canva",
+      "year": "Updated regularly",
+      "kind": "course",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Online course",
+        "Video"
+      ],
+      "accessType": "official",
+      "license": "Free on Canva's website",
+      "description": "Canva's own free courses and short lessons on layout, colour, typography, branding and presentations, taught inside the Canva editor.",
+      "tags": [
+        "canva",
+        "graphic design",
+        "design tips",
+        "social media",
+        "presentations",
+        "course"
+      ],
+      "sourceName": "Canva",
+      "sourceUrl": "https://www.canva.com/designschool/",
+      "readUrl": "https://www.canva.com/designschool/",
+      "added": "2026-10-17"
+    },
+    {
+      "id": "canva-help-center",
+      "title": "Canva Help Center",
+      "author": "Canva",
+      "publisher": "Canva",
+      "year": "Updated regularly",
+      "kind": "tutorial",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Web tutorial"
+      ],
+      "accessType": "official",
+      "license": "Free on Canva's website",
+      "description": "Step-by-step help for every Canva feature: templates, brand kits, presentations, video editing, printing and sharing with a team.",
+      "tags": [
+        "canva",
+        "how to",
+        "templates",
+        "brand kit",
+        "tutorial"
+      ],
+      "sourceName": "Canva",
+      "sourceUrl": "https://www.canva.com/help/",
+      "readUrl": "https://www.canva.com/help/",
+      "added": "2026-10-17"
+    },
+    {
+      "id": "non-designers-design-book",
+      "title": "The Non-Designer's Design Book",
+      "author": "Robin Williams",
+      "publisher": "Peachpit Press",
+      "year": "1994",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The four principles behind every good layout (contrast, repetition, alignment and proximity), explained for people who never studied design. The ideal companion to Canva.",
+      "tags": [
+        "design basics",
+        "layout",
+        "typography",
+        "canva",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Non-Designer's+Design+Book+Robin+Williams",
+      "added": "2026-10-17",
+      "cover": "assets/covers/non-designers-design-book.jpg"
+    },
+    {
+      "id": "thinking-with-type",
+      "title": "Thinking with Type",
+      "author": "Ellen Lupton",
+      "publisher": "Princeton Architectural Press",
+      "year": "2004",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A short, visual guide to typography: letters, text and grids, with examples you can copy straight into your own posters and slides.",
+      "tags": [
+        "typography",
+        "fonts",
+        "layout",
+        "graphic design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Thinking+with+Type+Ellen+Lupton",
+      "added": "2026-10-17",
+      "cover": "assets/covers/thinking-with-type.jpg"
+    },
+    {
+      "id": "steal-like-an-artist",
+      "title": "Steal Like an Artist",
+      "author": "Austin Kleon",
+      "publisher": "Workman Publishing",
+      "year": "2012",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Ten short, illustrated lessons on creativity: collect ideas, copy your heroes, then make the work your own.",
+      "tags": [
+        "creativity",
+        "design",
+        "ideas",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Steal+Like+an+Artist+Austin+Kleon",
+      "added": "2026-10-17",
+      "cover": "assets/covers/steal-like-an-artist.jpg"
+    },
+    {
+      "id": "show-your-work",
+      "title": "Show Your Work!",
+      "author": "Austin Kleon",
+      "publisher": "Workman Publishing",
+      "year": "2014",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A small, practical book on sharing your process online so the right people find your work.",
+      "tags": [
+        "creativity",
+        "social media",
+        "portfolio",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Show+Your+Work!+Austin+Kleon",
+      "added": "2026-10-17",
+      "cover": "assets/covers/show-your-work.jpg"
+    },
+    {
+      "id": "design-for-hackers",
+      "title": "Design for Hackers",
+      "author": "David Kadavy",
+      "publisher": "Wiley",
+      "year": "2011",
+      "kind": "book",
+      "category": "design",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Design principles for developers and engineers, taught by reverse-engineering well-known websites, posters and paintings.",
+      "tags": [
+        "design",
+        "web design",
+        "colour",
+        "typography",
+        "developers",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Design+for+Hackers+David+Kadavy",
+      "added": "2026-10-17",
+      "cover": "assets/covers/design-for-hackers.jpg"
+    },
+    {
+      "id": "logo-design-love",
+      "title": "Logo Design Love",
+      "author": "David Airey",
+      "publisher": "New Riders",
+      "year": "2010",
+      "kind": "book",
+      "category": "design",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How professional designers create logos and brand identities, with real client projects followed from the brief to the final mark.",
+      "tags": [
+        "logo",
+        "branding",
+        "graphic design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Logo+Design+Love+David+Airey",
+      "added": "2026-10-17",
+      "cover": "assets/covers/logo-design-love.jpg"
+    },
+    {
+      "id": "grid-systems-graphic-design",
+      "title": "Grid Systems in Graphic Design",
+      "author": "Josef Müller-Brockmann",
+      "publisher": "Niggli",
+      "year": "1981",
+      "kind": "book",
+      "category": "design",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The classic Swiss manual on building layouts with grids, from page proportions to placing type and pictures.",
+      "tags": [
+        "grid",
+        "layout",
+        "swiss design",
+        "graphic design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Grid+Systems+in+Graphic+Design+Josef+Müller-Brockmann",
+      "added": "2026-10-17",
+      "cover": "assets/covers/grid-systems-graphic-design.jpg"
+    },
+    {
+      "id": "interaction-of-color",
+      "title": "Interaction of Color",
+      "author": "Josef Albers",
+      "publisher": "Yale University Press",
+      "year": "1963",
+      "kind": "book",
+      "category": "design",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Albers' famous course on how colours change next to each other, still the basis of colour teaching in art schools.",
+      "tags": [
+        "colour",
+        "color theory",
+        "design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Interaction+of+Color+Josef+Albers",
+      "added": "2026-10-17",
+      "cover": "assets/covers/interaction-of-color.jpg"
+    },
+    {
+      "id": "tldp-intro-linux",
+      "title": "Introduction to Linux: A Hands-on Guide",
+      "author": "Machtelt Garrels",
+      "publisher": "The Linux Documentation Project",
+      "year": "2008",
+      "kind": "guide",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "GNU Free Documentation License",
+      "description": "A friendly first tour of Linux: files and directories, processes, the shell, text editors, networking and installing software.",
+      "tags": [
+        "linux",
+        "beginner",
+        "command line",
+        "guide"
+      ],
+      "sourceName": "The Linux Documentation Project",
+      "sourceUrl": "https://tldp.org/LDP/intro-linux/html/",
+      "readUrl": "https://tldp.org/LDP/intro-linux/html/",
+      "added": "2026-10-17"
+    },
+    {
+      "id": "tldp-bash-beginners",
+      "title": "Bash Guide for Beginners",
+      "author": "Machtelt Garrels",
+      "publisher": "The Linux Documentation Project",
+      "year": "2008",
+      "kind": "guide",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "PDF"
+      ],
+      "accessType": "open",
+      "license": "GNU Free Documentation License",
+      "description": "Writing shell scripts from scratch: variables, conditions, loops, functions and the text tools sed and awk.",
+      "tags": [
+        "bash",
+        "shell scripting",
+        "linux",
+        "guide"
+      ],
+      "sourceName": "The Linux Documentation Project",
+      "sourceUrl": "https://tldp.org/LDP/Bash-Beginners-Guide/html/",
+      "readUrl": "https://tldp.org/LDP/Bash-Beginners-Guide/html/",
+      "added": "2026-10-17"
+    },
+    {
+      "id": "how-linux-works",
+      "title": "How Linux Works",
+      "author": "Brian Ward",
+      "publisher": "No Starch Press",
+      "year": "2004",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "What happens under the hood of a Linux system: booting, the kernel, devices, processes, networking and the shell.",
+      "tags": [
+        "linux",
+        "internals",
+        "sysadmin",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=How+Linux+Works+Brian+Ward",
+      "added": "2026-10-17",
+      "cover": "assets/covers/how-linux-works.jpg"
+    },
+    {
+      "id": "linux-bible",
+      "title": "Linux Bible",
+      "author": "Christopher Negus",
+      "publisher": "Wiley",
+      "year": "2005",
+      "kind": "book",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A broad, hands-on tour of Linux for new users and aspiring administrators, covering Fedora, Red Hat Enterprise Linux and Ubuntu.",
+      "tags": [
+        "linux",
+        "administration",
+        "red hat",
+        "ubuntu",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+Bible+Christopher+Negus",
+      "added": "2026-10-17",
+      "cover": "assets/covers/linux-bible.jpg"
+    },
+    {
+      "id": "linux-shell-scripting-bible",
+      "title": "Linux Command Line and Shell Scripting Bible",
+      "author": "Richard Blum, Christine Bresnahan",
+      "publisher": "Wiley",
+      "year": "2008",
+      "kind": "book",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "From your first commands to full bash scripts: text processing, job control and automating everyday admin work.",
+      "tags": [
+        "bash",
+        "shell scripting",
+        "command line",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+Command+Line+and+Shell+Scripting+Bible+Richard+Blum",
+      "added": "2026-10-17",
+      "cover": "assets/covers/linux-shell-scripting-bible.jpg"
+    },
+    {
+      "id": "linux-basics-for-hackers",
+      "title": "Linux Basics for Hackers",
+      "author": "OccupyTheWeb",
+      "publisher": "No Starch Press",
+      "year": "2018",
+      "kind": "book",
+      "category": "linux",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Linux fundamentals for future security people, taught on Kali: files, permissions, networking, services and scripting.",
+      "tags": [
+        "linux",
+        "kali",
+        "security",
+        "hacking",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+Basics+for+Hackers+OccupyTheWeb",
+      "added": "2026-10-17",
+      "cover": "assets/covers/linux-basics-for-hackers.jpg"
+    },
+    {
+      "id": "unix-linux-sysadmin-handbook",
+      "title": "UNIX and Linux System Administration Handbook",
+      "author": "Evi Nemeth, Garth Snyder, Trent R. Hein, Ben Whaley",
+      "publisher": "Addison-Wesley",
+      "year": "2010",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The standard handbook for system administrators: users, storage, networking, DNS, mail, security and automation.",
+      "tags": [
+        "sysadmin",
+        "unix",
+        "linux",
+        "operations",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=UNIX+and+Linux+System+Administration+Handbook+Evi+Nemeth",
+      "added": "2026-10-17",
+      "cover": "assets/covers/unix-linux-sysadmin-handbook.jpg"
+    },
+    {
+      "id": "linux-programming-interface",
+      "title": "The Linux Programming Interface",
+      "author": "Michael Kerrisk",
+      "publisher": "No Starch Press",
+      "year": "2010",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The definitive guide to Linux and UNIX system calls and libraries, written by the maintainer of the Linux man pages.",
+      "tags": [
+        "linux",
+        "system programming",
+        "c",
+        "posix",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Linux+Programming+Interface+Michael+Kerrisk",
+      "added": "2026-10-17",
+      "cover": "assets/covers/linux-programming-interface.jpg"
+    },
+    {
+      "id": "linux-kernel-development",
+      "title": "Linux Kernel Development",
+      "author": "Robert Love",
+      "publisher": "Addison-Wesley",
+      "year": "2003",
+      "kind": "book",
+      "category": "linux",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A clear guide to how the Linux kernel works: processes, scheduling, system calls, memory management and filesystems.",
+      "tags": [
+        "kernel",
+        "linux",
+        "operating systems",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Linux+Kernel+Development+Robert+Love",
+      "added": "2026-10-17",
+      "cover": "assets/covers/linux-kernel-development.jpg"
+    },
+    {
+      "id": "art-of-unix-programming",
+      "title": "The Art of UNIX Programming",
+      "author": "Eric S. Raymond",
+      "publisher": "Addison-Wesley",
+      "year": "2003",
+      "kind": "book",
+      "category": "linux",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The design philosophy behind UNIX and Linux tools (small programs, plain text, composition), told through real history and examples.",
+      "tags": [
+        "unix",
+        "philosophy",
+        "software design",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Art+of+UNIX+Programming+Eric+S.+Raymond",
+      "added": "2026-10-17",
+      "cover": "assets/covers/art-of-unix-programming.jpg"
+    },
+    {
+      "id": "security-engineering-anderson",
+      "title": "Security Engineering",
+      "author": "Ross Anderson",
+      "publisher": "Wiley",
+      "year": "2008",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "PDF"
+      ],
+      "accessType": "official",
+      "license": "Second edition free to read from the author",
+      "description": "How to build systems that stay dependable in the face of error, malice and greed, from passwords and banking to telecoms and hardware.",
+      "tags": [
+        "security engineering",
+        "cryptography",
+        "threat modelling",
+        "book"
+      ],
+      "sourceName": "University of Cambridge (author's site)",
+      "sourceUrl": "https://www.cl.cam.ac.uk/~rja14/book.html",
+      "readUrl": "https://www.cl.cam.ac.uk/~rja14/book.html",
+      "added": "2026-10-17",
+      "cover": "assets/covers/security-engineering-anderson.jpg"
+    },
+    {
+      "id": "hacking-art-of-exploitation",
+      "title": "Hacking: The Art of Exploitation",
+      "author": "Jon Erickson",
+      "publisher": "No Starch Press",
+      "year": "2003",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Hacking from first principles: C, assembly, buffer overflows, shellcode, networking and cryptography, with a live CD to follow along.",
+      "tags": [
+        "hacking",
+        "exploitation",
+        "c",
+        "assembly",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Hacking:+The+Art+of+Exploitation+Jon+Erickson",
+      "added": "2026-10-17",
+      "cover": "assets/covers/hacking-art-of-exploitation.jpg"
+    },
+    {
+      "id": "cuckoos-egg",
+      "title": "The Cuckoo's Egg",
+      "author": "Clifford Stoll",
+      "publisher": "Doubleday",
+      "year": "1989",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The true story of an astronomer turned sysadmin who traced a 75-cent accounting error to a hacker selling secrets to the KGB.",
+      "tags": [
+        "true story",
+        "incident response",
+        "hacking history",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Cuckoo's+Egg+Clifford+Stoll",
+      "added": "2026-10-17",
+      "cover": "assets/covers/cuckoos-egg.jpg"
+    },
+    {
+      "id": "countdown-to-zero-day",
+      "title": "Countdown to Zero Day",
+      "author": "Kim Zetter",
+      "publisher": "Crown",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The story of Stuxnet, the first digital weapon, and of the researchers who took it apart.",
+      "tags": [
+        "stuxnet",
+        "cyber warfare",
+        "true story",
+        "ics",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Countdown+to+Zero+Day+Kim+Zetter",
+      "added": "2026-10-17",
+      "cover": "assets/covers/countdown-to-zero-day.jpg"
+    },
+    {
+      "id": "sandworm",
+      "title": "Sandworm",
+      "author": "Andy Greenberg",
+      "publisher": "Doubleday",
+      "year": "2019",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Inside the Russian hacking group behind the Ukraine power blackouts and NotPetya, the most destructive cyberattack so far.",
+      "tags": [
+        "cyber warfare",
+        "notpetya",
+        "true story",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Sandworm+Andy+Greenberg",
+      "added": "2026-10-17",
+      "cover": "assets/covers/sandworm.jpg"
+    },
+    {
+      "id": "art-of-deception",
+      "title": "The Art of Deception",
+      "author": "Kevin D. Mitnick, William L. Simon",
+      "publisher": "Wiley",
+      "year": "2002",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How social engineers trick people into handing over access, told through stories, with the defences that stop them.",
+      "tags": [
+        "social engineering",
+        "phishing",
+        "awareness",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Art+of+Deception+Kevin+D.+Mitnick",
+      "added": "2026-10-17",
+      "cover": "assets/covers/art-of-deception.jpg"
+    },
+    {
+      "id": "ghost-in-the-wires",
+      "title": "Ghost in the Wires",
+      "author": "Kevin D. Mitnick, William L. Simon",
+      "publisher": "Little, Brown",
+      "year": "2011",
+      "kind": "book",
+      "category": "security",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Kevin Mitnick's own account of his years as the world's most wanted hacker.",
+      "tags": [
+        "memoir",
+        "hacking history",
+        "social engineering",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Ghost+in+the+Wires+Kevin+D.+Mitnick",
+      "added": "2026-10-17",
+      "cover": "assets/covers/ghost-in-the-wires.jpg"
+    },
+    {
+      "id": "practical-malware-analysis",
+      "title": "Practical Malware Analysis",
+      "author": "Michael Sikorski, Andrew Honig",
+      "publisher": "No Starch Press",
+      "year": "2012",
+      "kind": "book",
+      "category": "security",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Hands-on malware analysis: building a safe lab, static and dynamic analysis, debugging and unpacking real samples.",
+      "tags": [
+        "malware",
+        "reverse engineering",
+        "blue team",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Practical+Malware+Analysis+Michael+Sikorski",
+      "added": "2026-10-17",
+      "cover": "assets/covers/practical-malware-analysis.jpg"
+    },
+    {
+      "id": "black-hat-python",
+      "title": "Black Hat Python",
+      "author": "Justin Seitz, Tim Arnold",
+      "publisher": "No Starch Press",
+      "year": "2014",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Writing your own security tools in Python: sniffers, proxies, trojans and web hacking scripts.",
+      "tags": [
+        "python",
+        "pentesting",
+        "tools",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Black+Hat+Python+Justin+Seitz",
+      "added": "2026-10-17",
+      "cover": "assets/covers/black-hat-python.jpg"
+    },
+    {
+      "id": "serious-cryptography",
+      "title": "Serious Cryptography",
+      "author": "Jean-Philippe Aumasson",
+      "publisher": "No Starch Press",
+      "year": "2017",
+      "kind": "book",
+      "category": "security",
+      "level": "intermediate",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "A modern, practical introduction to encryption, hashing, authentication and TLS, and the mistakes that break them.",
+      "tags": [
+        "cryptography",
+        "tls",
+        "encryption",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Serious+Cryptography+Jean-Philippe+Aumasson",
+      "added": "2026-10-17",
+      "cover": "assets/covers/serious-cryptography.jpg"
+    },
+    {
+      "id": "applied-cryptography",
+      "title": "Applied Cryptography",
+      "author": "Bruce Schneier",
+      "publisher": "Wiley",
+      "year": "1994",
+      "kind": "book",
+      "category": "security",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The classic survey of cryptographic protocols, algorithms and source code that brought cryptography to working programmers.",
+      "tags": [
+        "cryptography",
+        "protocols",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Applied+Cryptography+Bruce+Schneier",
+      "added": "2026-10-17",
+      "cover": "assets/covers/applied-cryptography.jpg"
+    },
+    {
+      "id": "seven-habits",
+      "title": "The 7 Habits of Highly Effective People",
+      "author": "Stephen R. Covey",
+      "publisher": "Free Press",
+      "year": "1989",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Seven principles for personal and professional effectiveness, from 'be proactive' to 'sharpen the saw'.",
+      "tags": [
+        "habits",
+        "leadership",
+        "personal development",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+7+Habits+of+Highly+Effective+People+Stephen+R.+Covey",
+      "added": "2026-10-17",
+      "cover": "assets/covers/seven-habits.jpg"
+    },
+    {
+      "id": "mindset-dweck",
+      "title": "Mindset",
+      "author": "Carol S. Dweck",
+      "publisher": "Random House",
+      "year": "2006",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Why believing your abilities can grow, a growth mindset, changes how you learn, work and handle failure.",
+      "tags": [
+        "mindset",
+        "psychology",
+        "learning",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Mindset+Carol+S.+Dweck",
+      "added": "2026-10-17",
+      "cover": "assets/covers/mindset-dweck.jpg"
+    },
+    {
+      "id": "grit-duckworth",
+      "title": "Grit",
+      "author": "Angela Duckworth",
+      "publisher": "Scribner",
+      "year": "2016",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Research on why passion and long-term persistence predict success better than talent alone.",
+      "tags": [
+        "grit",
+        "perseverance",
+        "psychology",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Grit+Angela+Duckworth",
+      "added": "2026-10-17",
+      "cover": "assets/covers/grit-duckworth.jpg"
+    },
+    {
+      "id": "power-of-habit",
+      "title": "The Power of Habit",
+      "author": "Charles Duhigg",
+      "publisher": "Random House",
+      "year": "2012",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How habits work (cue, routine, reward) and how people and companies change them.",
+      "tags": [
+        "habits",
+        "psychology",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Power+of+Habit+Charles+Duhigg",
+      "added": "2026-10-17",
+      "cover": "assets/covers/power-of-habit.jpg"
+    },
+    {
+      "id": "outliers-gladwell",
+      "title": "Outliers",
+      "author": "Malcolm Gladwell",
+      "publisher": "Little, Brown",
+      "year": "2008",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "What really lies behind exceptional success: opportunity, culture, timing and thousands of hours of practice.",
+      "tags": [
+        "success",
+        "practice",
+        "culture",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Outliers+Malcolm+Gladwell",
+      "added": "2026-10-17",
+      "cover": "assets/covers/outliers-gladwell.jpg"
+    },
+    {
+      "id": "psychology-of-money",
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "publisher": "Harriman House",
+      "year": "2020",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Short stories about how people really think about money, and the habits that build wealth over time.",
+      "tags": [
+        "money",
+        "personal finance",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Psychology+of+Money+Morgan+Housel",
+      "added": "2026-10-17",
+      "cover": "assets/covers/psychology-of-money.jpg"
+    },
+    {
+      "id": "rich-dad-poor-dad",
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert T. Kiyosaki",
+      "publisher": "Warner Books",
+      "year": "1997",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Kiyosaki's lessons on assets, cash flow and financial independence, told through the advice of his two 'dads'.",
+      "tags": [
+        "money",
+        "personal finance",
+        "investing",
+        "success",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Rich+Dad+Poor+Dad+Robert+T.+Kiyosaki",
+      "added": "2026-10-17",
+      "cover": "assets/covers/rich-dad-poor-dad.jpg"
+    },
+    {
+      "id": "think-and-grow-rich",
+      "title": "Think and Grow Rich",
+      "author": "Napoleon Hill",
+      "publisher": "The Ralston Society",
+      "year": "1937",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "The 1937 classic on desire, persistence and planning, drawn from interviews with successful people of its era.",
+      "tags": [
+        "success",
+        "motivation",
+        "classic",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Think+and+Grow+Rich+Napoleon+Hill",
+      "added": "2026-10-17",
+      "cover": "assets/covers/think-and-grow-rich.jpg"
+    },
+    {
+      "id": "gutenberg-as-a-man-thinketh",
+      "title": "As a Man Thinketh",
+      "author": "James Allen",
+      "publisher": "Project Gutenberg",
+      "year": "1903",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "A short essay on how your thoughts shape your character and circumstances. You can read it in one sitting.",
+      "tags": [
+        "mindset",
+        "self-help",
+        "success",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/4507",
+      "readUrl": "https://www.gutenberg.org/ebooks/4507",
+      "added": "2026-10-17",
+      "cover": "assets/covers/gutenberg-as-a-man-thinketh.jpg"
+    },
+    {
+      "id": "gutenberg-science-of-getting-rich",
+      "title": "The Science of Getting Rich",
+      "author": "Wallace D. Wattles",
+      "publisher": "Project Gutenberg",
+      "year": "1910",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Wattles' 1910 guide to building wealth through purpose and steady action; it inspired many later success books.",
+      "tags": [
+        "money",
+        "success",
+        "self-help",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/59844",
+      "readUrl": "https://www.gutenberg.org/ebooks/59844",
+      "added": "2026-10-17",
+      "cover": "assets/covers/gutenberg-science-of-getting-rich.jpg"
+    },
+    {
+      "id": "gutenberg-self-help",
+      "title": "Self-Help",
+      "author": "Samuel Smiles",
+      "publisher": "Project Gutenberg",
+      "year": "1859",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "The original 1859 self-help book: short lives of inventors, engineers and workers who got ahead through perseverance.",
+      "tags": [
+        "perseverance",
+        "self-help",
+        "success",
+        "biography",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/935",
+      "readUrl": "https://www.gutenberg.org/ebooks/935",
+      "added": "2026-10-17",
+      "cover": "assets/covers/gutenberg-self-help.jpg"
+    },
+    {
+      "id": "gutenberg-acres-of-diamonds",
+      "title": "Acres of Diamonds",
+      "author": "Russell H. Conwell",
+      "publisher": "Project Gutenberg",
+      "year": "1890",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "Conwell's famous lecture: the opportunity you are searching for is often right where you already are.",
+      "tags": [
+        "opportunity",
+        "motivation",
+        "success",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/368",
+      "readUrl": "https://www.gutenberg.org/ebooks/368",
+      "added": "2026-10-17",
+      "cover": "assets/covers/gutenberg-acres-of-diamonds.jpg"
+    },
+    {
+      "id": "gutenberg-art-of-money-getting",
+      "title": "The Art of Money Getting",
+      "author": "P. T. Barnum",
+      "publisher": "Project Gutenberg",
+      "year": "1880",
+      "kind": "book",
+      "category": "success",
+      "level": "beginner",
+      "formats": [
+        "Online book",
+        "EPUB",
+        "Kindle"
+      ],
+      "accessType": "open",
+      "license": "Public domain in the USA",
+      "description": "P. T. Barnum's rules for making and keeping money, from avoiding debt to choosing work that suits you.",
+      "tags": [
+        "money",
+        "business",
+        "success",
+        "classic",
+        "public domain",
+        "book"
+      ],
+      "sourceName": "Project Gutenberg",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/8581",
+      "readUrl": "https://www.gutenberg.org/ebooks/8581",
+      "added": "2026-10-17",
+      "cover": "assets/covers/gutenberg-art-of-money-getting.jpg"
     }
   ]
 }

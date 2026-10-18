@@ -42,6 +42,76 @@ document.getElementById('home-categories').innerHTML = HOME_CATEGORIES.map((c) =
     <span><h3>${e(c.label)}</h3><p>${e(c.description)}</p></span>
   </a>`).join('');
 
+// ---------- Themed shelves (carousels) ----------
+const LEVEL = { beginner: 0, intermediate: 1, advanced: 2 };
+const byLevel = (a, b) => (LEVEL[a.level] ?? 1) - (LEVEL[b.level] ?? 1);
+const freeFirst = (a, b) => Number(a.accessType === 'paid') - Number(b.accessType === 'paid');
+const SHELVES = [
+  { key: 'free', no: '01', kicker: 'Free to read now', title: 'Open one tonight', blurb: 'Complete books you can read in full, free and legally, from the people who wrote them.', href: 'library.html?access=open', desktopOnly: true,
+    pick: (all) => all.filter((r) => r.kind === 'book' && r.accessType === 'open' && r.cover) },
+  { key: 'canva', no: '02', kicker: 'Canva tips', title: 'Design like you meant it', blurb: "Canva's own free lessons, then the classic books designers keep within reach: layout, type, colour and logos.", href: 'library.html?category=design',
+    pick: (all) => all.filter((r) => r.category === 'design').sort(freeFirst) },
+  { key: 'linux', no: '03', kicker: 'Linux overview', title: 'Learn the machine that runs the internet', blurb: 'From your first ls to kernel internals, in the order we would read them.', href: 'library.html?category=linux',
+    pick: (all) => all.filter((r) => r.category === 'linux').sort((a, b) => byLevel(a, b) || freeFirst(a, b)) },
+  { key: 'security', no: '04', kicker: 'Cybersecurity ebooks', title: 'Think like an attacker. Build like a defender.', blurb: 'True stories that read like thrillers, then the hands-on books security teams actually use.', href: 'library.html?category=security',
+    pick: (all) => all.filter((r) => r.category === 'security' && r.kind === 'book').sort(byLevel) },
+  { key: 'success', no: '05', kicker: 'Books on success', title: 'The long game', blurb: 'Habits, mindset and money, from the free 19th-century classics to the books everyone is still quoting.', href: 'library.html?category=success',
+    pick: (all) => all.filter((r) => r.category === 'success').sort(freeFirst) },
+];
+
+function shelfBookHTML(r) {
+  const access = { open: 'Free', official: 'Free', preview: 'Preview', paid: 'Buy or borrow', info: 'Info' }[r.accessType] ?? '';
+  const cover = r.cover
+    ? `<img src="${e(r.cover)}" alt="" loading="lazy" decoding="async" width="360" height="520">`
+    : `<span class="book__poster" style="--c:${CATEGORIES[r.category]?.color ?? '#334155'}"><small>${e(r.sourceName ?? '')}</small><b>${e(r.title)}</b><i>${e(r.author)}</i></span>`;
+  return `<a class="book" href="${resourceUrl(r)}" role="listitem">
+      <span class="book__cover">${cover}<span class="book__tag book__tag--${e(r.accessType)}">${access}</span></span>
+      <span class="book__title">${e(r.title)}</span>
+      <span class="book__by">${e(r.author)}</span>
+    </a>`;
+}
+
+function renderShelves(all) {
+  const host = document.getElementById('home-shelves');
+  host.innerHTML = SHELVES.map((s) => {
+    const list = s.pick(all).slice(0, 14);
+    if (!list.length) return '';
+    return `<section class="shelf-sec shelf-sec--${s.key}${s.desktopOnly ? ' d-only' : ''}" aria-labelledby="shelf-${s.key}">
+      <div class="container">
+        <div class="shelf-sec__head">
+          <div class="shelf-sec__text">
+            <p class="kicker"><span class="shelf-sec__no">No. ${s.no}</span> ${e(s.kicker)}</p>
+            <h2 id="shelf-${s.key}">${e(s.title)}</h2>
+            <p>${e(s.blurb)}</p>
+          </div>
+          <div class="shelf-sec__nav">
+            <button type="button" class="shelf-btn" data-dir="-1" aria-label="Scroll ${e(s.kicker)} back" disabled>${icons.chevron}</button>
+            <button type="button" class="shelf-btn" data-dir="1" aria-label="Scroll ${e(s.kicker)} forward">${icons.chevron}</button>
+            <a class="shelf-sec__all" href="${s.href}">See all →</a>
+          </div>
+        </div>
+        <div class="shelf-rail" role="list" tabindex="0" aria-label="${e(s.kicker)}">${list.map(shelfBookHTML).join('')}</div>
+      </div>
+    </section>`;
+  }).join('');
+
+  host.querySelectorAll('.shelf-sec').forEach((sec) => {
+    const rail = sec.querySelector('.shelf-rail');
+    const [prev, next] = sec.querySelectorAll('.shelf-btn');
+    const update = () => {
+      prev.disabled = rail.scrollLeft < 8;
+      next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
+    };
+    sec.querySelector('.shelf-sec__nav').addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.shelf-btn');
+      if (btn) rail.scrollBy({ left: Number(btn.dataset.dir) * rail.clientWidth * 0.85, behavior: 'smooth' });
+    });
+    rail.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(rail);
+    update();
+  });
+}
+
 // --- Featured and recently added ---
 const featured = document.getElementById('home-featured');
 const recent = document.getElementById('home-recent');
@@ -62,6 +132,7 @@ try {
   renderCards(featured, all.filter((r) => r.featured).slice(0, 8));
   renderCards(recent, [...all].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '')).slice(0, 4));
   renderMobile(all);
+  renderShelves(all);
   watchCovers(document.getElementById('main'), all);
 } catch (err) {
   document.getElementById('m-rail').innerHTML = stateHTML({ title: 'Resources unavailable', text: err.message, error: true });
