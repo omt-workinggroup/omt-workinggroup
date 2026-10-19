@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-  <title>OMT AI · Ask the library</title>
-  <meta name="description" content="Ask OMT AI to find tech books and courses, or explain subnetting, 5G, Linux, Git, Docker and more step by step.">
+  <title>OMT AI</title>
+  <meta name="description" content="OMT AI answers questions, writes and explains code, draws diagrams and charts, reads your files, and finds the right tech book.">
   <link rel="canonical" href="https://omt-working-group.vercel.app/assistant.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
@@ -25,8 +25,12 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="data/resources.json" as="fetch" crossorigin>
+  <link rel="modulepreload" href="js/assistant/attach.js">
+  <link rel="modulepreload" href="js/assistant/chats.js">
   <link rel="modulepreload" href="js/assistant/demo.js">
+  <link rel="modulepreload" href="js/assistant/highlight.js">
   <link rel="modulepreload" href="js/assistant/markdown.js">
+  <link rel="modulepreload" href="js/assistant/viz.js">
   <link rel="modulepreload" href="js/core/appicons.js">
   <link rel="modulepreload" href="js/core/catalog.js">
   <link rel="modulepreload" href="js/core/config.js">
@@ -44,29 +48,54 @@
 <body data-page="assistant" class="ai-app">
   <a class="skip-link" href="#chat-input">Skip to the message box</a>
   <div class="ai is-empty" id="ai-app">
-    <header class="ai__bar">
-      <a class="ai__back" href="home.html" aria-label="Back to the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-      <div class="ai__id">
-        <img src="assets/logo-mark.svg" alt="" width="36" height="28">
-        <div><h1 class="ai__title">OMT AI</h1><span class="ai__mode" id="ai-mode">Checking…</span></div>
+    <aside class="ai__side" id="ai-side" aria-label="Your chats">
+      <div class="ai__side-top">
+        <a class="ai__brand" href="home.html" aria-label="OMT home"><img src="assets/logo-mark.svg" alt="" width="34" height="27"><span>OMT <em>AI</em></span></a>
+        <button type="button" class="ai__icon-btn" id="side-close" aria-label="Close the chat list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg></button>
       </div>
-      <nav class="ai__actions" aria-label="Chat">
-        <a class="ai__link" href="library.html">Library</a>
-        <button type="button" class="ai__new" id="clear-chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>New chat</span></button>
-      </nav>
-    </header>
-    <div class="ai__context" id="context-slot"></div>
-    <main class="ai__log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></main>
-    <div class="ai__dock">
-      <div class="ai__suggest"><p class="sr-only">Suggested questions</p><ul class="chips" id="suggestions"></ul></div>
-      <form class="ai__composer" id="chat-form">
-        <label class="sr-only" for="chat-input">Message OMT AI</label>
-        <textarea id="chat-input" rows="1" maxlength="2000" placeholder="Message OMT AI…" required enterkeyhint="send" autocomplete="off"></textarea>
-        <button class="ai__send" type="submit" id="send-btn"><span class="sr-only">Send</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
-      </form>
-      <p class="ai__hint">OMT AI can get things wrong. Check anything important with the source it links.</p>
+      <button type="button" class="ai__new-chat" id="new-chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>New chat</span><kbd>Ctrl ⇧ O</kbd></button>
+      <label class="ai__find"><span class="sr-only">Search your chats</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="chat-search" placeholder="Search chats" autocomplete="off"></label>
+      <nav class="ai__history" id="chat-list" aria-label="Chat history"></nav>
+      <div class="ai__side-foot">
+        <a href="library.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.4 12 6v13c-2.7-1.6-5.5-1.7-8-.5z"/><path d="M20 5.5c-2.5-1.2-5.3-1.1-8 .5v13c2.7-1.6 5.5-1.7 8-.5z"/></svg>Browse the library</a>
+        <button type="button" id="clear-all">Clear all chats</button>
+        <p>Chats are saved in this browser only.</p>
+      </div>
+    </aside>
+    <div class="ai__scrim" id="ai-scrim" hidden></div>
+
+    <div class="ai__main">
+      <header class="ai__bar">
+        <button type="button" class="ai__icon-btn" id="side-open" aria-label="Show your chats" aria-controls="ai-side" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg></button>
+        <a class="ai__back" href="home.html" aria-label="Back to the library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+        <div class="ai__id">
+          <div><h1 class="ai__title" id="chat-title">OMT AI</h1><span class="ai__mode" id="ai-mode">Checking…</span></div>
+        </div>
+        <nav class="ai__actions" aria-label="Chat">
+          <a class="ai__link" href="library.html">Library</a>
+          <button type="button" class="ai__new" id="clear-chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>New chat</span></button>
+        </nav>
+      </header>
+      <div class="ai__context" id="context-slot"></div>
+      <main class="ai__log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></main>
+      <div class="ai__dock">
+        <button type="button" class="ai__jump" id="jump-down" aria-label="Scroll to the newest message" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></button>
+        <div class="ai__suggest"><p class="sr-only">Suggested questions</p><ul class="chips" id="suggestions"></ul></div>
+        <form class="ai__composer" id="chat-form">
+          <div class="ai__files" id="attach-list" hidden></div>
+          <div class="ai__row">
+            <label class="ai__attach" title="Attach images, PDFs or text files"><span class="sr-only">Attach files</span><input type="file" id="attach-input" multiple><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 11.5-8.6 8.6a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l8-8"/></svg></label>
+            <label class="sr-only" for="chat-input">Message OMT AI</label>
+            <textarea id="chat-input" rows="1" maxlength="20000" placeholder="Message OMT AI…" required enterkeyhint="send" autocomplete="off"></textarea>
+            <button class="ai__send" type="submit" id="send-btn"><span class="sr-only">Send</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+          </div>
+        </form>
+        <p class="ai__hint">OMT AI can make mistakes. Check important facts with the source it links.</p>
+      </div>
     </div>
   </div>
+  <dialog class="viz-dialog" id="viz-dialog" aria-label="Illustration"><button type="button" class="viz-dialog__close" data-close aria-label="Close">×</button><div class="viz-dialog__art"></div></dialog>
+  <div class="ai__drop" id="drop-zone" hidden><p>Drop files to attach them</p></div>
   <noscript><p class="container">OMT AI needs JavaScript. You can still <a href="library.html">browse the library</a>.</p></noscript>
 </body>
 </html>

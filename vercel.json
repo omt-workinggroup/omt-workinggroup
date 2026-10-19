@@ -5,7 +5,7 @@
   "outputDirectory": ".",
   "functions": {
     "api/ai.js": {
-      "maxDuration": 60
+      "maxDuration": 300
     },
     "api/contact.js": {
       "maxDuration": 10

@@ -53,3 +53,30 @@ test('"Help me ..." requests search instead of greeting', async () => {
   assert.ok(r.resources.length > 0);
   assert.match((await demoReply({ message: 'Hi there!', all })).reply, /I can help you/);
 });
+
+test('markdown renders headings, tables, quotes, highlighted code and illustration placeholders', () => {
+  const html = renderMarkdown('## Plan\n\n| A | B |\n|---|--:|\n| 1 | **2** |\n\n> key point\n\n```python\ndef f():\n    return 1  # one\n```\n\n```mermaid\nflowchart LR\n  A --> B\n```\n\n- top\n  - nested');
+  assert.match(html, /<h3>Plan<\/h3>/);
+  assert.match(html, /<table><thead><tr><th>A<\/th><th style="text-align:right">B<\/th><\/tr><\/thead><tbody><tr><td>1<\/td><td style="text-align:right"><strong>2<\/strong><\/td><\/tr>/);
+  assert.match(html, /<blockquote><p>key point<\/p><\/blockquote>/);
+  assert.match(html, /<span class="tok-kw">def<\/span>/);
+  assert.match(html, /<span class="tok-com"># one<\/span>/);
+  assert.match(html, /<figure class="viz" data-viz="mermaid" data-src="flowchart LR\n  A --&gt; B">/);
+  assert.match(html, /<ul><li>top<ul><li>nested<\/li><\/ul><\/li><\/ul>/);
+});
+
+test('markdown keeps code spans literal and an unfinished illustration pending', () => {
+  assert.match(renderMarkdown('use `**not bold**` here'), /<code>\*\*not bold\*\*<\/code>/);
+  assert.match(renderMarkdown('```svg\n<svg>'), /viz is-pending/);
+  assert.ok(!renderMarkdown('```svg\n<svg onload="x()"></svg>\n```').includes('<svg onload'));
+});
+
+test('charts are drawn from JSON with escaped labels', async () => {
+  const { chartSVG } = await import('../js/assistant/viz.js');
+  const svg = chartSVG({ type: 'bar', title: '<b>t</b>', labels: ['a', 'b'], series: [{ name: 's', data: [1, 3] }] });
+  assert.match(svg, /^<svg/);
+  assert.equal((svg.match(/<rect /g) ?? []).length, 2);
+  assert.ok(!svg.includes('<b>'));
+  assert.match(chartSVG({ type: 'pie', labels: ['x', 'y'], series: [{ data: [1, 1] }] }), /50%/);
+  assert.throws(() => chartSVG({ type: 'bar', labels: [], series: [] }));
+});

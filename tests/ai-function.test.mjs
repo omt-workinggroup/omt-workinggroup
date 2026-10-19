@@ -40,7 +40,7 @@ test('request validation', () => {
   assert.ok(validateBody({}));
   assert.ok(validateBody({ messages: [] }));
   assert.ok(validateBody({ messages: [{ role: 'system', content: 'x' }] }));
-  assert.ok(validateBody({ messages: [{ role: 'user', content: 'x'.repeat(2001) }] }));
+  assert.ok(validateBody({ messages: [{ role: 'user', content: 'x'.repeat(24001) }] }));
   assert.ok(validateBody({ messages: [{ role: 'user', content: 'x' }, { role: 'assistant', content: 'y' }] }));
   assert.ok(validateBody({ messages: [{ role: 'user', content: 'x' }], resourceId: '../etc' }));
   assert.equal(validateBody({ messages: [{ role: 'user', content: 'x' }], resourceId: 'atomic-habits' }), null);
@@ -83,7 +83,7 @@ test('refusals return a safe message', async () => {
 test('rate limiting kicks in', async () => {
   const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient(() => ({ text: 'ok' })) });
   let last;
-  for (let i = 0; i < 21; i++) last = await handler(post({ messages: [{ role: 'user', content: 'hi' }] }), { ip: 'rl-test' });
+  for (let i = 0; i < 41; i++) last = await handler(post({ messages: [{ role: 'user', content: 'hi' }] }), { ip: 'rl-test' });
   assert.equal(last.status, 429);
 });
 
@@ -126,4 +126,22 @@ test('streaming: provider errors arrive as an error event', async () => {
   const res = await handler(post({ stream: true, messages: [{ role: 'user', content: 'x' }] }), { ip: 'stream-err' });
   const events = (await res.text()).trim().split('\n').map((l) => JSON.parse(l));
   assert.equal(events.at(-1).type, 'error');
+});
+
+test('attachments: only on the newest user message, images and PDFs as base64, sent as content blocks', async () => {
+  const img = { kind: 'image', mediaType: 'image/jpeg', data: 'aGVsbG8=', name: 'a.jpg' };
+  assert.equal(validateBody({ messages: [{ role: 'user', content: 'what is this?', attachments: [img] }] }), null);
+  assert.ok(validateBody({ messages: [{ role: 'user', content: 'x', attachments: [img] }, { role: 'assistant', content: 'y' }, { role: 'user', content: 'z' }] }));
+  assert.ok(validateBody({ messages: [{ role: 'user', content: 'x', attachments: [{ ...img, mediaType: 'image/svg+xml' }] }] }));
+  assert.ok(validateBody({ messages: [{ role: 'user', content: 'x', attachments: [{ ...img, data: 'not base64!' }] }] }));
+  let sent;
+  const handler = createHandler({ fetchImpl: offlineFetch, client: fakeClient((params) => { sent = params; return { text: 'A cat.' }; }) });
+  const pdf = { kind: 'pdf', mediaType: 'application/pdf', data: 'JVBERi0=', name: 'notes.pdf' };
+  const data = await (await handler(post({ messages: [{ role: 'user', content: 'what is this?', attachments: [img, pdf] }] }), { ip: 'att-test' })).json();
+  assert.equal(data.reply, 'A cat.');
+  const content = sent.messages.at(-1).content;
+  assert.deepEqual(content.map((b) => b.type), ['image', 'document', 'text']);
+  assert.equal(content[0].source.media_type, 'image/jpeg');
+  assert.equal(content[1].title, 'notes.pdf');
+  assert.match(content[2].text, /what is this\?/);
 });

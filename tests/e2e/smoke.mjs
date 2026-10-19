@@ -100,12 +100,19 @@ for (const width of WIDTHS) {
   await page.press('#chat-input', 'Enter');
   await page.waitForSelector('.msg--ai .badge--demo');
   check((await page.locator('.msg--ai').last().textContent()).includes('VLOOKUP'), 'assistant demo concept answer');
-  await page.click('[data-prompt="Help me learn networking from scratch"]');
+  await page.fill('#chat-input', 'Help me learn networking from scratch');
+  await page.press('#chat-input', 'Enter');
   await page.waitForFunction(() => document.querySelectorAll('.msg--ai .rec').length > 2);
-  check(true, '');
+  // The conversation is saved in the chat list and a new chat starts empty.
+  check(await page.locator('#chat-list [data-chat]').count() === 1, 'chat saved in the sidebar');
+  await page.click('#clear-chat');
+  check(await page.locator('#chat-log .msg--user').count() === 0, 'new chat starts empty');
+  await page.click('#side-open').catch(() => {});
+  await page.locator('#chat-list [data-chat]').first().click();
+  check(await page.locator('#chat-log .msg--user').count() === 2, 'saved chat reopens');
   await page.goto(`${BASE}/assistant.html?resource=gutenberg-meditations`, { waitUntil: 'networkidle' });
   await page.waitForSelector('.context-pill');
-  await page.waitForFunction(() => document.querySelectorAll('.msg--ai').length >= 2);
+  await page.waitForFunction(() => document.querySelectorAll('.msg--ai:not(.typing)').length >= 1);
   check((await page.locator('.msg--ai').last().textContent()).includes('Meditations'), 'assistant explains selected resource');
   check(page.errors.length === 0, `functional console errors: ${page.errors.join(' | ')}`);
   await page.context().close();
