@@ -68,7 +68,7 @@ hierarchies, comparisons, data, or when the user asks you to draw, sketch, illus
 one of these fenced blocks. Keep each one focused; at most three per answer.
 1. \`\`\`mermaid for diagrams: flowchart, sequenceDiagram, classDiagram, stateDiagram-v2, erDiagram, gantt, mindmap,
    timeline, pie. Use simple node ids, quote labels that contain punctuation: A["Core (5GC)"]. No click handlers, no
-   %%{init}%% directives, no HTML in labels.
+   %%{init}%% directives, no HTML in labels. In sequenceDiagram write participant R as Recursive resolver (no quotes).
 2. \`\`\`chart for data charts, as JSON only:
    {"type":"bar"|"line"|"pie"|"donut","title":"...","labels":["..."],"series":[{"name":"...","data":[1,2]}],"unit":"%"}
    Use real or clearly illustrative numbers and say which.
@@ -82,7 +82,8 @@ photo-style request, draw an SVG illustration instead and say so.
 Files: the user may attach images, PDFs or text files. Read them carefully and refer to what is actually in them.
 
 Web: you may have a web_search tool. Use it for current events, prices, versions, release dates or anything after
-your training, and cite what you found with Markdown links to the pages you used. Don't search for things you know.
+your training, and cite what you found with Markdown links to the pages you used. Don't search for things you know,
+and never narrate tool use ("Let me search…"): just search, then answer.
 
 Books and the OMT library. Every user turn comes with a <search_results> block that the website builds from the OMT
 catalogue (and, for book-related questions, from Google Books, Open Library and Project Gutenberg):
@@ -330,6 +331,12 @@ export function createHandler({ client, fetchImpl = fetch, env = process.env } =
     const run = async (onText, onStatus = () => {}) => {
       let text = '';
       let shown = 0;
+      // The first words are held back briefly, so "let me look that up" before a web search can be dropped.
+      let released = false;
+      const emit = () => {
+        const end = visibleLength(text);
+        if (end > shown) { onText(text.slice(shown, end)); shown = end; }
+      };
       const cited = new Set();
       let msgs = messages;
       // pause_turn: the server paused a long web-search loop; send the turn back and it carries on.
@@ -339,15 +346,16 @@ export function createHandler({ client, fetchImpl = fetch, env = process.env } =
           for await (const event of stream) {
             if (event.type === 'content_block_start' && event.content_block?.type === 'server_tool_use') {
               onStatus('Searching the web…');
-              // Separate the text written before and after a search.
-              if (text && !/\s$/.test(text)) text += ' ';
+              if (!released) text = '';
+              // Text after a search starts a new paragraph.
+              else if (!/\n\s*$/.test(text)) text += '\n\n';
             }
             if (event.type !== 'content_block_delta') continue;
             if (event.delta?.type === 'citations_delta' && event.delta.citation?.url) cited.add(event.delta.citation.url);
             if (event.delta?.type !== 'text_delta') continue;
             text += event.delta.text;
-            const end = visibleLength(text);
-            if (end > shown) { onText(text.slice(shown, end)); shown = end; }
+            if (!released && (text.length >= 140 || text.includes('\n'))) released = true;
+            if (released) emit();
           }
         } catch (err) {
           // An account without web search rejects the tool before any text: retry once without it.
@@ -355,6 +363,8 @@ export function createHandler({ client, fetchImpl = fetch, env = process.env } =
           throw err;
         }
         const final = await stream.finalMessage();
+        released = true;
+        emit();
         if (final.stop_reason === 'refusal') return { reply: REFUSAL_REPLY, resources: [], followups: [], links: [], refused: true };
         for (const block of final.content ?? []) {
           if (block.type === 'web_search_tool_result' && Array.isArray(block.content)) for (const r of block.content) if (r?.url) cited.add(r.url);

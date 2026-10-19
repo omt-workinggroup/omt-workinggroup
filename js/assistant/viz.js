@@ -22,6 +22,7 @@ function loadMermaid() {
       window.mermaid.initialize({
         startOnLoad: false, securityLevel: 'strict', theme: isDark() ? 'dark' : 'neutral',
         fontFamily: '"IBM Plex Sans", system-ui, sans-serif', themeVariables: { fontSize: '16px' }, flowchart: { htmlLabels: false, curve: 'basis', useMaxWidth: true },
+        sequence: { actorFontSize: 15, messageFontSize: 15, noteFontSize: 14, useMaxWidth: true, mirrorActors: false },
       });
       resolve(window.mermaid);
     };

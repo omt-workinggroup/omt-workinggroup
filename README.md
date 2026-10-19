@@ -56,15 +56,24 @@ To switch on live mode:
 2. In Vercel: **Project › Settings › Environment Variables**, add `ANTHROPIC_API_KEY` (Production and Preview).
 3. Redeploy. The badge on the assistant page changes from **Demo mode** to **Live AI**.
 
-Optional variables (see `.env.example`): `OMT_AI_MODEL` (default `claude-opus-5-5`), `OMT_AI_EFFORT` (`low` by default, which keeps answers fast and cheap), and `OMT_AI_RATE_LIMIT` (requests per visitor per 10 minutes, default 20).
+Optional variables (see `.env.example`): `OMT_AI_MODEL` (default `claude-opus-5-5`), `OMT_AI_EFFORT` (`low` by default, which keeps answers fast; hard questions such as debugging, proofs or long pasted code are raised to `medium` automatically), `OMT_AI_WEB_SEARCH` (`off` disables web search) and `OMT_AI_RATE_LIMIT` (requests per visitor per 10 minutes, default 40).
+
+What OMT AI can do (`assistant.html`, `js/pages/assistant.js`):
+
+- **A full chat app.** A chat-history rail (search, grouped by date, delete, Ctrl+Shift+O for a new chat). Chats are saved in the visitor's browser only, never on the server.
+- **Answers anything**, with OMT's tech and book know-how on top. Answers render headings, tables, quotes, nested lists and syntax-highlighted code with copy buttons (`js/assistant/markdown.js`, `highlight.js`).
+- **Draws.** The model can answer with ```` ```mermaid ```` diagrams, ```` ```chart ```` JSON (bar, line, pie, donut) or an ```` ```svg ```` drawing. `js/assistant/viz.js` renders them: Mermaid is self-hosted in `assets/vendor/` and loaded only when a diagram appears; charts are drawn locally as SVG; model-drawn SVG is shown through `<img>`, so no script in it can run. Every picture can be enlarged and downloaded.
+- **Reads files.** Images (resized in the browser), PDFs (up to 3 MB) and text or code files can be attached, pasted or dropped. Images and PDFs are sent once, with their message, as Claude content blocks.
+- **Searches the web** for current facts (Anthropic's web search tool, at most 3 searches per answer), and links the pages it used. If the account doesn't allow web search, the function retries without it.
+- **Message tools:** copy, read aloud, regenerate, and edit-and-resend.
 
 How the function works:
 
-- **Streams the answer.** Text appears word by word as the model writes it (newline-delimited JSON events), with a stop button. Follow-up questions appear as tappable chips.
-- **Searches first, quickly.** For each question it searches the OMT catalogue and Google Books, Open Library and Project Gutenberg. Sources slower than 2.5 seconds are skipped, results are cached for 10 minutes, and small talk skips the search.
-- **Grounded in the website.** The model may recommend only records from those results; the function drops any id that isn't in them. Links in answers are limited to those results, the site's own pages, and Open Library / Google Books search links; any other URL is shown as plain text.
+- **Streams the answer.** Text appears as the model writes it (newline-delimited JSON events: `status`, `delta`, `done`, `error`), with a stop button. Follow-up questions appear as tappable chips.
+- **Searches books only when it helps.** Every question gets instant OMT catalogue matches; questions about books and learning also search Google Books, Open Library and Project Gutenberg (sources slower than 2.5 seconds are skipped, results cached for 10 minutes).
+- **Grounded in the website.** The model may recommend only records from those results; the function drops any id that isn't in them. Links in answers are limited to those results, pages found by web search, well-known documentation sites, the site's own pages and book-search links; any other URL is shown as plain text.
 - The system prompt enforces the copyright rules: no unauthorised copies, no long quotations, no claims to have read text it wasn't given.
-- It validates every request (at most 20 messages of 2,000 characters, body capped at 32 KB), applies per-visitor rate limiting, returns consistent JSON errors and never logs message content.
+- It validates every request (at most 40 messages of 24,000 characters, up to 4 attachments, body capped at 4.4 MB), applies per-visitor rate limiting, returns consistent JSON errors and never logs message content.
 - The API key exists only in the server environment. It never appears in frontend code.
 
 The AI provider is isolated in `server/ai.mjs`, so switching providers later means changing only that file.
