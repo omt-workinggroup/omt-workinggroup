@@ -145,3 +145,9 @@ test('attachments: only on the newest user message, images and PDFs as base64, s
   assert.equal(content[1].title, 'notes.pdf');
   assert.match(content[2].text, /what is this\?/);
 });
+
+test('every library book id, including books added from Google Books, is accepted as resourceId', () => {
+  for (const id of ['atomic-habits', 'ext-gb-e2HzFKHXxEkC', 'ext-ol-OL123W', 'ext-pg-1342']) {
+    assert.equal(validateBody({ messages: [{ role: 'user', content: 'x' }], resourceId: id }), null, id);
+  }
+});

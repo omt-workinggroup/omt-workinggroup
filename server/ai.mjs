@@ -19,8 +19,8 @@ import catalogData from '../data/resources.json' with { type: 'json' };
 import { searchCatalog } from '../js/core/search.js';
 import { ACCESS, CATEGORIES } from '../js/core/taxonomy.js';
 import { searchExternal } from './books.mjs';
-import { saveAdditions } from './additions.mjs';
-import { resourceIdFor } from '../js/core/external.js';
+import { listAdditions, saveAdditions } from './additions.mjs';
+import { resourceIdFor, toResource } from '../js/core/external.js';
 import { createRateLimiter, fail, json } from './http.mjs';
 
 const MODEL = process.env.OMT_AI_MODEL || 'claude-opus-5-5';
@@ -123,7 +123,7 @@ export function validateBody(body) {
     }
   }
   if (messages[messages.length - 1].role !== 'user') return 'The last message must be from the user.';
-  if (resourceId !== undefined && resourceId !== null && !(typeof resourceId === 'string' && /^[a-z0-9-]{1,80}$/.test(resourceId))) {
+  if (resourceId !== undefined && resourceId !== null && !(typeof resourceId === 'string' && /^[A-Za-z0-9_.-]{1,120}$/.test(resourceId))) {
     return 'resourceId is invalid.';
   }
   return null;
@@ -201,10 +201,21 @@ async function cachedExternalSearch(q, fetchImpl) {
   return results;
 }
 
+// Books added from Google Books, Open Library and Gutenberg live in Supabase, not in resources.json.
+let additionsCache = { at: 0, list: [] };
+async function findResource(id, fetchImpl) {
+  const local = catalog.find((r) => r.id === id);
+  if (local || !id.startsWith('ext-')) return local ?? null;
+  if (Date.now() - additionsCache.at > 5 * 60 * 1000) {
+    try { additionsCache = { at: Date.now(), list: (await listAdditions({ fetchImpl })).map(toResource) }; } catch { /* keep the old list */ }
+  }
+  return additionsCache.list.find((r) => r.id === id) ?? null;
+}
+
 /** Build the retrieval context for this turn: catalogue matches plus Google Books, Open Library and Gutenberg records. */
 export async function buildContext({ messages, resourceId, fetchImpl = fetch }) {
   const question = messages[messages.length - 1].content;
-  const selected = resourceId ? catalog.find((r) => r.id === resourceId) : null;
+  const selected = resourceId ? await findResource(resourceId, fetchImpl) : null;
   // Search with the newest message; include the previous user turn so follow-ups keep their topic.
   const previous = [...messages].reverse().find((m, i) => i > 0 && m.role === 'user')?.content ?? '';
   let matches = searchCatalog(catalog, { q: question });
