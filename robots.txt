@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /favorites.html
 
-# Replace the domain below with your real domain before deploying.
-Sitemap: https://omt-working-group.vercel.app/sitemap.xml
+Sitemap: https://omt-workinggroup.com/sitemap.xml
