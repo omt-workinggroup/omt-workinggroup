@@ -34,6 +34,10 @@ function loadMermaid() {
 
 // ---------- charts ----------
 const fmt = (n) => (Math.abs(n) >= 1000 ? n.toLocaleString('en', { maximumFractionDigits: 1 }) : String(Math.round(n * 100) / 100));
+// Axis labels stay short: 200K, 1.5M.
+const short = (n) => (Math.abs(n) >= 1000 ? new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(n) : fmt(n));
+// Currency signs go in front ($5), other units after (5 ms, 40%).
+const withUnit = (text, unit) => (!unit ? text : /^[$€£¥₦₹]$/.test(unit) ? `${text.startsWith('-') ? '-' : ''}${unit}${text.replace(/^-/, '')}` : `${text}${/^[%°]/.test(unit) ? '' : ' '}${unit}`);
 
 function niceMax(v) {
   if (v <= 0) return 1;
@@ -66,20 +70,20 @@ export function chartSVG(spec) {
         ? `M ${cx - r} ${cy} a ${r} ${r} 0 1 0 ${r * 2} 0 a ${r} ${r} 0 1 0 ${-r * 2} 0`
         : `M ${p(a0, r)} A ${r} ${r} 0 ${large} 1 ${p(a1, r)} L ${hole ? p(a1, hole) : `${cx} ${cy}`} ${hole ? `A ${hole} ${hole} 0 ${large} 0 ${p(a0, hole)}` : ''} Z`;
       a0 = a1;
-      return `<path d="${d}" fill="${PALETTE[i % PALETTE.length]}" stroke="var(--c-bg)" stroke-width="2"><title>${e(labels[i])}: ${fmt(v)}${e(unit)}</title></path>`;
+      return `<path d="${d}" fill="${PALETTE[i % PALETTE.length]}" stroke="var(--c-bg)" stroke-width="2"><title>${e(labels[i])}: ${e(withUnit(fmt(v), unit))}</title></path>`;
     }).join('');
     const legend = labels.map((l, i) => `<g transform="translate(340 ${cy - labels.length * 13 + i * 26})"><rect width="14" height="14" rx="3" fill="${PALETTE[i % PALETTE.length]}"/><text x="22" y="12" class="c-label">${e(l.slice(0, 28))} <tspan class="c-muted">${Math.round((vals[i] / total) * 100)}%</tspan></text></g>`).join('');
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" class="chart" role="img" aria-label="${e(spec.title ?? 'Chart')}">${title}${slices}${hole ? `<text x="${cx}" y="${cy + 6}" text-anchor="middle" class="c-total">${fmt(total)}${e(unit)}</text>` : ''}${legend}</svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" class="chart" role="img" aria-label="${e(spec.title ?? 'Chart')}">${title}${slices}${hole ? `<text x="${cx}" y="${cy + 6}" text-anchor="middle" class="c-total">${e(withUnit(fmt(total), unit))}</text>` : ''}${legend}</svg>`;
   }
 
-  const H = 360; const L = 56; const R = 20; const T = spec.title ? 52 : 24; const B = series.length > 1 ? 74 : 52;
+  const H = 360; const L = 64; const R = 20; const T = spec.title ? 52 : 24; const B = series.length > 1 ? 74 : 52;
   const all = series.flatMap((s) => s.data.filter(Number.isFinite));
   const min = Math.min(0, ...all); const max = niceMax(Math.max(...all, 0));
   const y = (v) => T + (H - T - B) * (1 - (v - min) / (max - min || 1));
   const band = (W - L - R) / labels.length;
   const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => {
     const v = min + (max - min) * f;
-    return `<line x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" class="c-grid"/><text x="${L - 8}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end" class="c-muted">${fmt(v)}${e(unit)}</text>`;
+    return `<line x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" class="c-grid"/><text x="${L - 8}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end" class="c-muted">${e(withUnit(short(v), unit))}</text>`;
   }).join('');
   const step = Math.ceil(labels.length / 10);
   const xl = labels.map((l, i) => (i % step ? '' : `<text x="${(L + band * (i + 0.5)).toFixed(1)}" y="${H - B + 20}" text-anchor="middle" class="c-muted">${e(l.slice(0, 14))}</text>`)).join('');
@@ -90,14 +94,14 @@ export function chartSVG(spec) {
       if (!Number.isFinite(v)) return;
       const x = L + band * (i + 0.5) - (bw * series.length) / 2 + k * bw;
       const top = y(Math.max(v, 0)); const h = Math.abs(y(v) - y(0));
-      marks += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${(bw - 3).toFixed(1)}" height="${Math.max(h, 1).toFixed(1)}" rx="3" fill="${PALETTE[k % PALETTE.length]}"><title>${e(s.name)} · ${e(labels[i])}: ${fmt(v)}${e(unit)}</title></rect>`;
+      marks += `<rect x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${(bw - 3).toFixed(1)}" height="${Math.max(h, 1).toFixed(1)}" rx="3" fill="${PALETTE[k % PALETTE.length]}"><title>${e(s.name)} · ${e(labels[i])}: ${e(withUnit(fmt(v), unit))}</title></rect>`;
     }));
   } else {
     series.forEach((s, k) => {
       const pts = s.data.map((v, i) => (Number.isFinite(v) ? [L + band * (i + 0.5), y(v)] : null)).filter(Boolean);
       const c = PALETTE[k % PALETTE.length];
       marks += `<polyline points="${pts.map((p) => p.map((n) => n.toFixed(1)).join(',')).join(' ')}" fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
-      marks += pts.map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" fill="var(--c-bg)" stroke="${c}" stroke-width="2.5"><title>${e(s.name)} · ${e(labels[i])}: ${fmt(s.data[i])}${e(unit)}</title></circle>`).join('');
+      marks += pts.map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" fill="var(--c-bg)" stroke="${c}" stroke-width="2.5"><title>${e(s.name)} · ${e(labels[i])}: ${e(withUnit(fmt(s.data[i]), unit))}</title></circle>`).join('');
     });
   }
   const legend = series.length > 1 ? series.map((s, k) => `<g transform="translate(${L + k * 150} ${H - 22})"><rect width="12" height="12" rx="3" fill="${PALETTE[k % PALETTE.length]}"/><text x="18" y="11" class="c-label">${e(s.name.slice(0, 18))}</text></g>`).join('') : '';
