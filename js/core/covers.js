@@ -45,6 +45,7 @@ async function lookup(r) {
 
 export function coverFor(r) {
   if (r.cover && /^(https:\/\/|assets\/covers\/)/.test(r.cover)) return Promise.resolve(r.cover);
+  if (r.noCover) return Promise.resolve(null); // checked by hand: no good cover exists, keep the drawn one
   const hit = cache[r.id];
   if (hit && Date.now() - hit.t < TTL) return Promise.resolve(hit.url);
   if (!pending.has(r.id)) {

@@ -47,6 +47,7 @@ const SYNONYMS = {
 const LEVEL_HINTS = {
   beginner: 'beginner', beginners: 'beginner', basic: 'beginner', basics: 'beginner', intro: 'beginner',
   introduction: 'beginner', introductory: 'beginner', easy: 'beginner', simple: 'beginner', scratch: 'beginner', zero: 'beginner',
+  beginning: 'beginner', novice: 'beginner', newbie: 'beginner',
   intermediate: 'intermediate', advanced: 'advanced', expert: 'advanced',
 };
 const KIND_HINTS = {
@@ -149,6 +150,8 @@ export function scoreResource(resource, parsed) {
     if (resource.level === hints.level) score += 2;
     else if (!terms.length && !hints.kind) return 0;
   }
+  // Between similar matches, prefer what a reader can open today: free to read, then free to borrow.
+  if (score > 0) score += { open: 1.5, official: 1 }[resource.accessType] ?? 0;
   return score;
 }
 
