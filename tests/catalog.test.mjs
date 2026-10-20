@@ -35,7 +35,7 @@ test('every resource links to an https source', () => {
 
 test('book covers are local files that exist, and only on books', async () => {
   for (const r of resources.filter((x) => x.cover)) {
-    assert.match(r.cover, /^assets\/covers\/[a-z0-9-]+\.jpg$/, r.id);
+    assert.match(r.cover, /^assets\/covers\/[a-z0-9-]+\.webp$/, r.id);
     assert.equal(r.kind, 'book', `${r.id}: only books have covers`);
     await access(new URL(`../${r.cover}`, import.meta.url));
   }

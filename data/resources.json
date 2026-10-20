@@ -32,7 +32,7 @@
       "added": "2026-10-16",
       "readUrl": "https://book.systemsapproach.org/",
       "featured": true,
-      "cover": "assets/covers/cn-systems-approach.jpg"
+      "cover": "assets/covers/cn-systems-approach.webp"
     },
     {
       "id": "sdn-systems-approach",
@@ -91,7 +91,7 @@
       "added": "2026-10-16",
       "readUrl": "https://www.net-intro.com/",
       "featured": true,
-      "cover": "assets/covers/net-intro.jpg"
+      "cover": "assets/covers/net-intro.webp"
     },
     {
       "id": "beej-network",
@@ -122,7 +122,7 @@
       "sourceUrl": "https://beej.us/guide/bgnet/",
       "added": "2026-10-16",
       "readUrl": "https://beej.us/guide/bgnet/",
-      "cover": "assets/covers/beej-network.jpg"
+      "cover": "assets/covers/beej-network.webp"
     },
     {
       "id": "wireshark-guide",
@@ -206,7 +206,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Computer+Networking+A+Top-Down+Approach+Kurose",
       "added": "2026-10-16",
-      "cover": "assets/covers/kurose-ross.jpg"
+      "cover": "assets/covers/kurose-ross.webp"
     },
     {
       "id": "private-5g",
@@ -237,7 +237,7 @@
       "added": "2026-10-16",
       "readUrl": "https://5g.systemsapproach.org/",
       "featured": true,
-      "cover": "assets/covers/private-5g.jpg"
+      "cover": "assets/covers/private-5g.webp"
     },
     {
       "id": "3gpp-specs",
@@ -386,7 +386,7 @@
       "added": "2026-10-16",
       "readUrl": "https://sre.google/books/",
       "featured": true,
-      "cover": "assets/covers/google-sre.jpg"
+      "cover": "assets/covers/google-sre.webp"
     },
     {
       "id": "k8s-tutorials",
@@ -500,7 +500,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Phoenix+Project+Gene+Kim",
       "added": "2026-10-16",
-      "cover": "assets/covers/phoenix-project.jpg"
+      "cover": "assets/covers/phoenix-project.webp"
     },
     {
       "id": "owasp-top10",
@@ -618,7 +618,7 @@
       "added": "2026-10-16",
       "readUrl": "https://d2l.ai/",
       "featured": true,
-      "cover": "assets/covers/d2l.jpg"
+      "cover": "assets/covers/d2l.webp"
     },
     {
       "id": "pdsh",
@@ -647,7 +647,7 @@
       "sourceUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/",
       "added": "2026-10-16",
       "readUrl": "https://jakevdp.github.io/PythonDataScienceHandbook/",
-      "cover": "assets/covers/pdsh.jpg"
+      "cover": "assets/covers/pdsh.webp"
     },
     {
       "id": "google-mlcc",
@@ -731,7 +731,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Designing+Data-Intensive+Applications+Kleppmann",
       "added": "2026-10-16",
-      "cover": "assets/covers/ddia.jpg"
+      "cover": "assets/covers/ddia.webp"
     },
     {
       "id": "tlcl",
@@ -761,7 +761,7 @@
       "added": "2026-10-16",
       "readUrl": "https://linuxcommand.org/tlcl.php",
       "featured": true,
-      "cover": "assets/covers/tlcl.jpg"
+      "cover": "assets/covers/tlcl.webp"
     },
     {
       "id": "ostep",
@@ -792,7 +792,7 @@
       "added": "2026-10-16",
       "readUrl": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
       "featured": true,
-      "cover": "assets/covers/ostep.jpg"
+      "cover": "assets/covers/ostep.webp"
     },
     {
       "id": "missing-semester",
@@ -853,7 +853,7 @@
       "added": "2026-10-16",
       "readUrl": "https://git-scm.com/book/en/v2",
       "featured": true,
-      "cover": "assets/covers/pro-git.jpg"
+      "cover": "assets/covers/pro-git.webp"
     },
     {
       "id": "mdn-learn",
@@ -936,7 +936,7 @@
       "sourceUrl": "https://doc.rust-lang.org/book/",
       "added": "2026-10-16",
       "readUrl": "https://doc.rust-lang.org/book/",
-      "cover": "assets/covers/rust-book.jpg"
+      "cover": "assets/covers/rust-book.webp"
     },
     {
       "id": "go-tour",
@@ -1019,7 +1019,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Pragmatic+Programmer+Thomas+Hunt",
       "added": "2026-10-16",
-      "cover": "assets/covers/pragmatic-programmer.jpg"
+      "cover": "assets/covers/pragmatic-programmer.webp"
     },
     {
       "id": "think-python-3e",
@@ -1049,7 +1049,7 @@
       "readUrl": "https://allendowney.github.io/ThinkPython/",
       "added": "2026-10-10",
       "featured": true,
-      "cover": "assets/covers/think-python-3e.jpg"
+      "cover": "assets/covers/think-python-3e.webp"
     },
     {
       "id": "automate-boring-stuff",
@@ -1079,7 +1079,7 @@
       "sourceUrl": "https://automatetheboringstuff.com/",
       "readUrl": "https://automatetheboringstuff.com/",
       "added": "2026-10-10",
-      "cover": "assets/covers/automate-boring-stuff.jpg"
+      "cover": "assets/covers/automate-boring-stuff.webp"
     },
     {
       "id": "eloquent-javascript",
@@ -1109,7 +1109,7 @@
       "sourceUrl": "https://eloquentjavascript.net/",
       "readUrl": "https://eloquentjavascript.net/",
       "added": "2026-10-09",
-      "cover": "assets/covers/eloquent-javascript.jpg"
+      "cover": "assets/covers/eloquent-javascript.webp"
     },
     {
       "id": "openstax-intro-python",
@@ -1139,7 +1139,7 @@
       "sourceUrl": "https://openstax.org/details/books/introduction-python-programming",
       "readUrl": "https://openstax.org/details/books/introduction-python-programming",
       "added": "2026-10-09",
-      "cover": "assets/covers/openstax-intro-python.jpg"
+      "cover": "assets/covers/openstax-intro-python.webp"
     },
     {
       "id": "openstax-intro-cs",
@@ -1170,7 +1170,7 @@
       "sourceUrl": "https://openstax.org/details/books/introduction-computer-science",
       "readUrl": "https://openstax.org/details/books/introduction-computer-science",
       "added": "2026-10-08",
-      "cover": "assets/covers/openstax-intro-cs.jpg"
+      "cover": "assets/covers/openstax-intro-cs.webp"
     },
     {
       "id": "openstax-workplace-software",
@@ -1202,7 +1202,7 @@
       "sourceUrl": "https://openstax.org/details/books/workplace-software-skills",
       "readUrl": "https://openstax.org/details/books/workplace-software-skills",
       "added": "2026-10-08",
-      "cover": "assets/covers/openstax-workplace-software.jpg"
+      "cover": "assets/covers/openstax-workplace-software.webp"
     },
     {
       "id": "openstax-intro-business",
@@ -1232,7 +1232,7 @@
       "sourceUrl": "https://openstax.org/details/books/introduction-business",
       "readUrl": "https://openstax.org/details/books/introduction-business",
       "added": "2026-10-07",
-      "cover": "assets/covers/openstax-intro-business.jpg"
+      "cover": "assets/covers/openstax-intro-business.webp"
     },
     {
       "id": "openstax-principles-management",
@@ -1263,7 +1263,7 @@
       "sourceUrl": "https://openstax.org/details/books/principles-management",
       "readUrl": "https://openstax.org/details/books/principles-management",
       "added": "2026-10-07",
-      "cover": "assets/covers/openstax-principles-management.jpg"
+      "cover": "assets/covers/openstax-principles-management.webp"
     },
     {
       "id": "openstax-entrepreneurship",
@@ -1294,7 +1294,7 @@
       "sourceUrl": "https://openstax.org/details/books/entrepreneurship",
       "readUrl": "https://openstax.org/details/books/entrepreneurship",
       "added": "2026-10-06",
-      "cover": "assets/covers/openstax-entrepreneurship.jpg"
+      "cover": "assets/covers/openstax-entrepreneurship.webp"
     },
     {
       "id": "openstax-principles-economics",
@@ -1323,7 +1323,7 @@
       "sourceUrl": "https://openstax.org/details/books/principles-economics-3e",
       "readUrl": "https://openstax.org/details/books/principles-economics-3e",
       "added": "2026-10-06",
-      "cover": "assets/covers/openstax-principles-economics.jpg"
+      "cover": "assets/covers/openstax-principles-economics.webp"
     },
     {
       "id": "openstax-college-success",
@@ -1355,7 +1355,7 @@
       "sourceUrl": "https://openstax.org/details/books/college-success",
       "readUrl": "https://openstax.org/details/books/college-success",
       "added": "2026-10-05",
-      "cover": "assets/covers/openstax-college-success.jpg"
+      "cover": "assets/covers/openstax-college-success.webp"
     },
     {
       "id": "cs50x",
@@ -1775,7 +1775,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/3300",
       "readUrl": "https://www.gutenberg.org/ebooks/3300",
       "added": "2026-09-27",
-      "cover": "assets/covers/gutenberg-wealth-of-nations.jpg"
+      "cover": "assets/covers/gutenberg-wealth-of-nations.webp"
     },
     {
       "id": "gutenberg-art-of-war",
@@ -1806,7 +1806,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/132",
       "readUrl": "https://www.gutenberg.org/ebooks/132",
       "added": "2026-09-26",
-      "cover": "assets/covers/gutenberg-art-of-war.jpg"
+      "cover": "assets/covers/gutenberg-art-of-war.webp"
     },
     {
       "id": "gutenberg-meditations",
@@ -1837,7 +1837,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/2680",
       "readUrl": "https://www.gutenberg.org/ebooks/2680",
       "added": "2026-09-26",
-      "cover": "assets/covers/gutenberg-meditations.jpg"
+      "cover": "assets/covers/gutenberg-meditations.webp"
     },
     {
       "id": "gutenberg-pride-prejudice",
@@ -1868,7 +1868,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
       "readUrl": "https://www.gutenberg.org/ebooks/1342",
       "added": "2026-09-25",
-      "cover": "assets/covers/gutenberg-pride-prejudice.jpg"
+      "cover": "assets/covers/gutenberg-pride-prejudice.webp"
     },
     {
       "id": "gutenberg-franklin-autobiography",
@@ -1900,7 +1900,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/20203",
       "readUrl": "https://www.gutenberg.org/ebooks/20203",
       "added": "2026-09-25",
-      "cover": "assets/covers/gutenberg-franklin-autobiography.jpg"
+      "cover": "assets/covers/gutenberg-franklin-autobiography.webp"
     },
     {
       "id": "things-fall-apart",
@@ -1930,7 +1930,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Things+Fall+Apart+Chinua+Achebe",
       "added": "2026-09-24",
-      "cover": "assets/covers/things-fall-apart.jpg"
+      "cover": "assets/covers/things-fall-apart.webp"
     },
     {
       "id": "atomic-habits",
@@ -1959,7 +1959,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Atomic+Habits+James+Clear",
       "added": "2026-09-24",
-      "cover": "assets/covers/atomic-habits.jpg"
+      "cover": "assets/covers/atomic-habits.webp"
     },
     {
       "id": "deep-work",
@@ -1989,7 +1989,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Deep+Work+Cal+Newport",
       "added": "2026-09-23",
-      "cover": "assets/covers/deep-work.jpg"
+      "cover": "assets/covers/deep-work.webp"
     },
     {
       "id": "lean-startup",
@@ -2019,7 +2019,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Lean+Startup+Eric+Ries",
       "added": "2026-09-23",
-      "cover": "assets/covers/lean-startup.jpg"
+      "cover": "assets/covers/lean-startup.webp"
     },
     {
       "id": "clean-code",
@@ -2047,7 +2047,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Clean+Code+Robert+C.+Martin",
       "added": "2026-09-22",
-      "cover": "assets/covers/clean-code.jpg"
+      "cover": "assets/covers/clean-code.webp"
     },
     {
       "id": "canva-design-school",
@@ -2131,7 +2131,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Non-Designer's+Design+Book+Robin+Williams",
       "added": "2026-10-17",
-      "cover": "assets/covers/non-designers-design-book.jpg"
+      "cover": "assets/covers/non-designers-design-book.webp"
     },
     {
       "id": "thinking-with-type",
@@ -2159,7 +2159,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Thinking+with+Type+Ellen+Lupton",
       "added": "2026-10-17",
-      "cover": "assets/covers/thinking-with-type.jpg"
+      "cover": "assets/covers/thinking-with-type.webp"
     },
     {
       "id": "steal-like-an-artist",
@@ -2186,7 +2186,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Steal+Like+an+Artist+Austin+Kleon",
       "added": "2026-10-17",
-      "cover": "assets/covers/steal-like-an-artist.jpg"
+      "cover": "assets/covers/steal-like-an-artist.webp"
     },
     {
       "id": "show-your-work",
@@ -2213,7 +2213,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Show+Your+Work!+Austin+Kleon",
       "added": "2026-10-17",
-      "cover": "assets/covers/show-your-work.jpg"
+      "cover": "assets/covers/show-your-work.webp"
     },
     {
       "id": "design-for-hackers",
@@ -2242,7 +2242,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Design+for+Hackers+David+Kadavy",
       "added": "2026-10-17",
-      "cover": "assets/covers/design-for-hackers.jpg"
+      "cover": "assets/covers/design-for-hackers.webp"
     },
     {
       "id": "logo-design-love",
@@ -2269,7 +2269,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Logo+Design+Love+David+Airey",
       "added": "2026-10-17",
-      "cover": "assets/covers/logo-design-love.jpg"
+      "cover": "assets/covers/logo-design-love.webp"
     },
     {
       "id": "grid-systems-graphic-design",
@@ -2297,7 +2297,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Grid+Systems+in+Graphic+Design+Josef+Müller-Brockmann",
       "added": "2026-10-17",
-      "cover": "assets/covers/grid-systems-graphic-design.jpg"
+      "cover": "assets/covers/grid-systems-graphic-design.webp"
     },
     {
       "id": "interaction-of-color",
@@ -2324,7 +2324,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Interaction+of+Color+Josef+Albers",
       "added": "2026-10-17",
-      "cover": "assets/covers/interaction-of-color.jpg"
+      "cover": "assets/covers/interaction-of-color.webp"
     },
     {
       "id": "tldp-intro-linux",
@@ -2405,7 +2405,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=How+Linux+Works+Brian+Ward",
       "added": "2026-10-17",
-      "cover": "assets/covers/how-linux-works.jpg"
+      "cover": "assets/covers/how-linux-works.webp"
     },
     {
       "id": "linux-bible",
@@ -2433,7 +2433,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+Bible+Christopher+Negus",
       "added": "2026-10-17",
-      "cover": "assets/covers/linux-bible.jpg"
+      "cover": "assets/covers/linux-bible.webp"
     },
     {
       "id": "linux-shell-scripting-bible",
@@ -2460,7 +2460,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+Command+Line+and+Shell+Scripting+Bible+Richard+Blum",
       "added": "2026-10-17",
-      "cover": "assets/covers/linux-shell-scripting-bible.jpg"
+      "cover": "assets/covers/linux-shell-scripting-bible.webp"
     },
     {
       "id": "linux-basics-for-hackers",
@@ -2488,7 +2488,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+Basics+for+Hackers+OccupyTheWeb",
       "added": "2026-10-17",
-      "cover": "assets/covers/linux-basics-for-hackers.jpg"
+      "cover": "assets/covers/linux-basics-for-hackers.webp"
     },
     {
       "id": "unix-linux-sysadmin-handbook",
@@ -2516,7 +2516,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=UNIX+and+Linux+System+Administration+Handbook+Evi+Nemeth",
       "added": "2026-10-17",
-      "cover": "assets/covers/unix-linux-sysadmin-handbook.jpg"
+      "cover": "assets/covers/unix-linux-sysadmin-handbook.webp"
     },
     {
       "id": "linux-programming-interface",
@@ -2544,7 +2544,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Linux+Programming+Interface+Michael+Kerrisk",
       "added": "2026-10-17",
-      "cover": "assets/covers/linux-programming-interface.jpg"
+      "cover": "assets/covers/linux-programming-interface.webp"
     },
     {
       "id": "linux-kernel-development",
@@ -2571,7 +2571,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+Kernel+Development+Robert+Love",
       "added": "2026-10-17",
-      "cover": "assets/covers/linux-kernel-development.jpg"
+      "cover": "assets/covers/linux-kernel-development.webp"
     },
     {
       "id": "art-of-unix-programming",
@@ -2598,7 +2598,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Art+of+UNIX+Programming+Eric+S.+Raymond",
       "added": "2026-10-17",
-      "cover": "assets/covers/art-of-unix-programming.jpg"
+      "cover": "assets/covers/art-of-unix-programming.webp"
     },
     {
       "id": "security-engineering-anderson",
@@ -2625,7 +2625,7 @@
       "sourceUrl": "https://www.cl.cam.ac.uk/~rja14/book.html",
       "readUrl": "https://www.cl.cam.ac.uk/~rja14/book.html",
       "added": "2026-10-17",
-      "cover": "assets/covers/security-engineering-anderson.jpg"
+      "cover": "assets/covers/security-engineering-anderson.webp"
     },
     {
       "id": "hacking-art-of-exploitation",
@@ -2653,7 +2653,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Hacking:+The+Art+of+Exploitation+Jon+Erickson",
       "added": "2026-10-17",
-      "cover": "assets/covers/hacking-art-of-exploitation.jpg"
+      "cover": "assets/covers/hacking-art-of-exploitation.webp"
     },
     {
       "id": "cuckoos-egg",
@@ -2680,7 +2680,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Cuckoo's+Egg+Clifford+Stoll",
       "added": "2026-10-17",
-      "cover": "assets/covers/cuckoos-egg.jpg"
+      "cover": "assets/covers/cuckoos-egg.webp"
     },
     {
       "id": "countdown-to-zero-day",
@@ -2708,7 +2708,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Countdown+to+Zero+Day+Kim+Zetter",
       "added": "2026-10-17",
-      "cover": "assets/covers/countdown-to-zero-day.jpg"
+      "cover": "assets/covers/countdown-to-zero-day.webp"
     },
     {
       "id": "sandworm",
@@ -2735,7 +2735,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Sandworm+Andy+Greenberg",
       "added": "2026-10-17",
-      "cover": "assets/covers/sandworm.jpg"
+      "cover": "assets/covers/sandworm.webp"
     },
     {
       "id": "art-of-deception",
@@ -2762,7 +2762,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Art+of+Deception+Kevin+D.+Mitnick",
       "added": "2026-10-17",
-      "cover": "assets/covers/art-of-deception.jpg"
+      "cover": "assets/covers/art-of-deception.webp"
     },
     {
       "id": "ghost-in-the-wires",
@@ -2789,7 +2789,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Ghost+in+the+Wires+Kevin+D.+Mitnick",
       "added": "2026-10-17",
-      "cover": "assets/covers/ghost-in-the-wires.jpg"
+      "cover": "assets/covers/ghost-in-the-wires.webp"
     },
     {
       "id": "practical-malware-analysis",
@@ -2816,7 +2816,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Practical+Malware+Analysis+Michael+Sikorski",
       "added": "2026-10-17",
-      "cover": "assets/covers/practical-malware-analysis.jpg"
+      "cover": "assets/covers/practical-malware-analysis.webp"
     },
     {
       "id": "black-hat-python",
@@ -2843,7 +2843,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Black+Hat+Python+Justin+Seitz",
       "added": "2026-10-17",
-      "cover": "assets/covers/black-hat-python.jpg"
+      "cover": "assets/covers/black-hat-python.webp"
     },
     {
       "id": "serious-cryptography",
@@ -2870,7 +2870,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Serious+Cryptography+Jean-Philippe+Aumasson",
       "added": "2026-10-17",
-      "cover": "assets/covers/serious-cryptography.jpg"
+      "cover": "assets/covers/serious-cryptography.webp"
     },
     {
       "id": "applied-cryptography",
@@ -2897,7 +2897,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Applied+Cryptography+Bruce+Schneier",
       "added": "2026-10-17",
-      "cover": "assets/covers/applied-cryptography.jpg"
+      "cover": "assets/covers/applied-cryptography.webp"
     },
     {
       "id": "seven-habits",
@@ -2925,7 +2925,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+7+Habits+of+Highly+Effective+People+Stephen+R.+Covey",
       "added": "2026-10-17",
-      "cover": "assets/covers/seven-habits.jpg"
+      "cover": "assets/covers/seven-habits.webp"
     },
     {
       "id": "mindset-dweck",
@@ -2953,7 +2953,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Mindset+Carol+S.+Dweck",
       "added": "2026-10-17",
-      "cover": "assets/covers/mindset-dweck.jpg"
+      "cover": "assets/covers/mindset-dweck.webp"
     },
     {
       "id": "grit-duckworth",
@@ -2981,7 +2981,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Grit+Angela+Duckworth",
       "added": "2026-10-17",
-      "cover": "assets/covers/grit-duckworth.jpg"
+      "cover": "assets/covers/grit-duckworth.webp"
     },
     {
       "id": "power-of-habit",
@@ -3008,7 +3008,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Power+of+Habit+Charles+Duhigg",
       "added": "2026-10-17",
-      "cover": "assets/covers/power-of-habit.jpg"
+      "cover": "assets/covers/power-of-habit.webp"
     },
     {
       "id": "outliers-gladwell",
@@ -3035,7 +3035,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Outliers+Malcolm+Gladwell",
       "added": "2026-10-17",
-      "cover": "assets/covers/outliers-gladwell.jpg"
+      "cover": "assets/covers/outliers-gladwell.webp"
     },
     {
       "id": "psychology-of-money",
@@ -3062,7 +3062,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Psychology+of+Money+Morgan+Housel",
       "added": "2026-10-17",
-      "cover": "assets/covers/psychology-of-money.jpg"
+      "cover": "assets/covers/psychology-of-money.webp"
     },
     {
       "id": "rich-dad-poor-dad",
@@ -3090,7 +3090,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Rich+Dad+Poor+Dad+Robert+T.+Kiyosaki",
       "added": "2026-10-17",
-      "cover": "assets/covers/rich-dad-poor-dad.jpg"
+      "cover": "assets/covers/rich-dad-poor-dad.webp"
     },
     {
       "id": "think-and-grow-rich",
@@ -3117,7 +3117,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Think+and+Grow+Rich+Napoleon+Hill",
       "added": "2026-10-17",
-      "cover": "assets/covers/think-and-grow-rich.jpg"
+      "cover": "assets/covers/think-and-grow-rich.webp"
     },
     {
       "id": "gutenberg-as-a-man-thinketh",
@@ -3148,7 +3148,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/4507",
       "readUrl": "https://www.gutenberg.org/ebooks/4507",
       "added": "2026-10-17",
-      "cover": "assets/covers/gutenberg-as-a-man-thinketh.jpg"
+      "cover": "assets/covers/gutenberg-as-a-man-thinketh.webp"
     },
     {
       "id": "gutenberg-science-of-getting-rich",
@@ -3179,7 +3179,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/59844",
       "readUrl": "https://www.gutenberg.org/ebooks/59844",
       "added": "2026-10-17",
-      "cover": "assets/covers/gutenberg-science-of-getting-rich.jpg"
+      "cover": "assets/covers/gutenberg-science-of-getting-rich.webp"
     },
     {
       "id": "gutenberg-self-help",
@@ -3211,7 +3211,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/935",
       "readUrl": "https://www.gutenberg.org/ebooks/935",
       "added": "2026-10-17",
-      "cover": "assets/covers/gutenberg-self-help.jpg"
+      "cover": "assets/covers/gutenberg-self-help.webp"
     },
     {
       "id": "gutenberg-acres-of-diamonds",
@@ -3242,7 +3242,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/368",
       "readUrl": "https://www.gutenberg.org/ebooks/368",
       "added": "2026-10-17",
-      "cover": "assets/covers/gutenberg-acres-of-diamonds.jpg"
+      "cover": "assets/covers/gutenberg-acres-of-diamonds.webp"
     },
     {
       "id": "gutenberg-art-of-money-getting",
@@ -3273,7 +3273,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/8581",
       "readUrl": "https://www.gutenberg.org/ebooks/8581",
       "added": "2026-10-17",
-      "cover": "assets/covers/gutenberg-art-of-money-getting.jpg"
+      "cover": "assets/covers/gutenberg-art-of-money-getting.webp"
     },
     {
       "id": "dont-make-me-think",
@@ -3300,7 +3300,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Don't+Make+Me+Think+Steve+Krug",
       "added": "2026-10-18",
-      "cover": "assets/covers/dont-make-me-think.jpg"
+      "cover": "assets/covers/dont-make-me-think.webp"
     },
     {
       "id": "elements-of-typographic-style",
@@ -3327,7 +3327,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Elements+of+Typographic+Style+Robert+Bringhurst",
       "added": "2026-10-18",
-      "cover": "assets/covers/elements-of-typographic-style.jpg"
+      "cover": "assets/covers/elements-of-typographic-style.webp"
     },
     {
       "id": "universal-principles-of-design",
@@ -3354,7 +3354,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Universal+Principles+of+Design+William+Lidwell",
       "added": "2026-10-18",
-      "cover": "assets/covers/universal-principles-of-design.jpg"
+      "cover": "assets/covers/universal-principles-of-design.webp"
     },
     {
       "id": "making-and-breaking-the-grid",
@@ -3381,7 +3381,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Making+and+Breaking+the+Grid+Timothy+Samara",
       "added": "2026-10-18",
-      "cover": "assets/covers/making-and-breaking-the-grid.jpg"
+      "cover": "assets/covers/making-and-breaking-the-grid.webp"
     },
     {
       "id": "graphic-design-new-basics",
@@ -3408,7 +3408,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Graphic+Design:+The+New+Basics+Ellen+Lupton",
       "added": "2026-10-18",
-      "cover": "assets/covers/graphic-design-new-basics.jpg"
+      "cover": "assets/covers/graphic-design-new-basics.webp"
     },
     {
       "id": "designing-brand-identity",
@@ -3435,7 +3435,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Designing+Brand+Identity+Alina+Wheeler",
       "added": "2026-10-18",
-      "cover": "assets/covers/designing-brand-identity.jpg"
+      "cover": "assets/covers/designing-brand-identity.webp"
     },
     {
       "id": "graphic-designer-without-losing-your-soul",
@@ -3462,7 +3462,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=How+to+Be+a+Graphic+Designer+Without+Losing+Your+Soul+Adrian+Shaughnessy",
       "added": "2026-10-18",
-      "cover": "assets/covers/graphic-designer-without-losing-your-soul.jpg"
+      "cover": "assets/covers/graphic-designer-without-losing-your-soul.webp"
     },
     {
       "id": "hey-whipple-squeeze-this",
@@ -3489,7 +3489,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Hey,+Whipple,+Squeeze+This+Luke+Sullivan",
       "added": "2026-10-18",
-      "cover": "assets/covers/hey-whipple-squeeze-this.jpg"
+      "cover": "assets/covers/hey-whipple-squeeze-this.webp"
     },
     {
       "id": "contagious-berger",
@@ -3516,7 +3516,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Contagious+Jonah+Berger",
       "added": "2026-10-18",
-      "cover": "assets/covers/contagious-berger.jpg"
+      "cover": "assets/covers/contagious-berger.webp"
     },
     {
       "id": "linux-device-drivers-3",
@@ -3543,7 +3543,7 @@
       "sourceUrl": "https://lwn.net/Kernel/LDD3/",
       "readUrl": "https://lwn.net/Kernel/LDD3/",
       "added": "2026-10-18",
-      "cover": "assets/covers/linux-device-drivers-3.jpg"
+      "cover": "assets/covers/linux-device-drivers-3.webp"
     },
     {
       "id": "learning-the-bash-shell",
@@ -3570,7 +3570,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Learning+the+bash+Shell+Cameron+Newham",
       "added": "2026-10-18",
-      "cover": "assets/covers/learning-the-bash-shell.jpg"
+      "cover": "assets/covers/learning-the-bash-shell.webp"
     },
     {
       "id": "linux-in-a-nutshell",
@@ -3597,7 +3597,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+in+a+Nutshell+Ellen+Siever",
       "added": "2026-10-18",
-      "cover": "assets/covers/linux-in-a-nutshell.jpg"
+      "cover": "assets/covers/linux-in-a-nutshell.webp"
     },
     {
       "id": "sed-and-awk",
@@ -3625,7 +3625,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=sed+&+awk+Dale+Dougherty",
       "added": "2026-10-18",
-      "cover": "assets/covers/sed-and-awk.jpg"
+      "cover": "assets/covers/sed-and-awk.webp"
     },
     {
       "id": "classic-shell-scripting",
@@ -3652,7 +3652,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Classic+Shell+Scripting+Arnold+Robbins",
       "added": "2026-10-18",
-      "cover": "assets/covers/classic-shell-scripting.jpg"
+      "cover": "assets/covers/classic-shell-scripting.webp"
     },
     {
       "id": "unix-programming-environment",
@@ -3680,7 +3680,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+UNIX+Programming+Environment+Brian+W.+Kernighan",
       "added": "2026-10-18",
-      "cover": "assets/covers/unix-programming-environment.jpg"
+      "cover": "assets/covers/unix-programming-environment.webp"
     },
     {
       "id": "unix-power-tools",
@@ -3707,7 +3707,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=UNIX+Power+Tools+Jerry+Peek",
       "added": "2026-10-18",
-      "cover": "assets/covers/unix-power-tools.jpg"
+      "cover": "assets/covers/unix-power-tools.webp"
     },
     {
       "id": "advanced-programming-unix-environment",
@@ -3735,7 +3735,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Advanced+Programming+in+the+UNIX+Environment+W.+Richard+Stevens",
       "added": "2026-10-18",
-      "cover": "assets/covers/advanced-programming-unix-environment.jpg"
+      "cover": "assets/covers/advanced-programming-unix-environment.webp"
     },
     {
       "id": "linux-firewalls-rash",
@@ -3763,7 +3763,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Linux+Firewalls+Michael+Rash",
       "added": "2026-10-18",
-      "cover": "assets/covers/linux-firewalls-rash.jpg"
+      "cover": "assets/covers/linux-firewalls-rash.webp"
     },
     {
       "id": "penetration-testing-weidman",
@@ -3790,7 +3790,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Penetration+Testing+Georgia+Weidman",
       "added": "2026-10-18",
-      "cover": "assets/covers/penetration-testing-weidman.jpg"
+      "cover": "assets/covers/penetration-testing-weidman.webp"
     },
     {
       "id": "hacker-playbook",
@@ -3817,7 +3817,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Hacker+Playbook+Peter+Kim",
       "added": "2026-10-18",
-      "cover": "assets/covers/hacker-playbook.jpg"
+      "cover": "assets/covers/hacker-playbook.webp"
     },
     {
       "id": "social-engineering-hadnagy",
@@ -3844,7 +3844,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Social+Engineering:+The+Art+of+Human+Hacking+Christopher+Hadnagy",
       "added": "2026-10-18",
-      "cover": "assets/covers/social-engineering-hadnagy.jpg"
+      "cover": "assets/covers/social-engineering-hadnagy.webp"
     },
     {
       "id": "threat-modeling-shostack",
@@ -3871,7 +3871,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Threat+Modeling:+Designing+for+Security+Adam+Shostack",
       "added": "2026-10-18",
-      "cover": "assets/covers/threat-modeling-shostack.jpg"
+      "cover": "assets/covers/threat-modeling-shostack.webp"
     },
     {
       "id": "tangled-web",
@@ -3898,7 +3898,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Tangled+Web+Michal+Zalewski",
       "added": "2026-10-18",
-      "cover": "assets/covers/tangled-web.jpg"
+      "cover": "assets/covers/tangled-web.webp"
     },
     {
       "id": "silence-on-the-wire",
@@ -3924,7 +3924,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Silence+on+the+Wire+Michal+Zalewski",
       "added": "2026-10-18",
-      "cover": "assets/covers/silence-on-the-wire.jpg"
+      "cover": "assets/covers/silence-on-the-wire.webp"
     },
     {
       "id": "cybersecurity-and-cyberwar",
@@ -3951,7 +3951,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Cybersecurity+and+Cyberwar:+What+Everyone+Needs+to+Know+P.+W.+Singer",
       "added": "2026-10-18",
-      "cover": "assets/covers/cybersecurity-and-cyberwar.jpg"
+      "cover": "assets/covers/cybersecurity-and-cyberwar.webp"
     },
     {
       "id": "this-is-how-they-tell-me",
@@ -3978,7 +3978,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=This+Is+How+They+Tell+Me+the+World+Ends+Nicole+Perlroth",
       "added": "2026-10-18",
-      "cover": "assets/covers/this-is-how-they-tell-me.jpg"
+      "cover": "assets/covers/this-is-how-they-tell-me.webp"
     },
     {
       "id": "tracers-in-the-dark",
@@ -4005,7 +4005,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Tracers+in+the+Dark+Andy+Greenberg",
       "added": "2026-10-18",
-      "cover": "assets/covers/tracers-in-the-dark.jpg"
+      "cover": "assets/covers/tracers-in-the-dark.webp"
     },
     {
       "id": "cant-hurt-me",
@@ -4032,7 +4032,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Can't+Hurt+Me+David+Goggins",
       "added": "2026-10-18",
-      "cover": "assets/covers/cant-hurt-me.jpg"
+      "cover": "assets/covers/cant-hurt-me.webp"
     },
     {
       "id": "essentialism-mckeown",
@@ -4059,7 +4059,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Essentialism+Greg+McKeown",
       "added": "2026-10-18",
-      "cover": "assets/covers/essentialism-mckeown.jpg"
+      "cover": "assets/covers/essentialism-mckeown.webp"
     },
     {
       "id": "start-with-why",
@@ -4086,7 +4086,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Start+with+Why+Simon+Sinek",
       "added": "2026-10-18",
-      "cover": "assets/covers/start-with-why.jpg"
+      "cover": "assets/covers/start-with-why.webp"
     },
     {
       "id": "four-hour-workweek",
@@ -4113,7 +4113,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+4-Hour+Workweek+Timothy+Ferriss",
       "added": "2026-10-18",
-      "cover": "assets/covers/four-hour-workweek.jpg"
+      "cover": "assets/covers/four-hour-workweek.webp"
     },
     {
       "id": "compound-effect",
@@ -4140,7 +4140,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Compound+Effect+Darren+Hardy",
       "added": "2026-10-18",
-      "cover": "assets/covers/compound-effect.jpg"
+      "cover": "assets/covers/compound-effect.webp"
     },
     {
       "id": "magic-of-thinking-big",
@@ -4167,7 +4167,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Magic+of+Thinking+Big+David+J.+Schwartz",
       "added": "2026-10-18",
-      "cover": "assets/covers/magic-of-thinking-big.jpg"
+      "cover": "assets/covers/magic-of-thinking-big.webp"
     },
     {
       "id": "richest-man-in-babylon",
@@ -4195,7 +4195,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Richest+Man+in+Babylon+George+S.+Clason",
       "added": "2026-10-18",
-      "cover": "assets/covers/richest-man-in-babylon.jpg"
+      "cover": "assets/covers/richest-man-in-babylon.webp"
     },
     {
       "id": "who-moved-my-cheese",
@@ -4222,7 +4222,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Who+Moved+My+Cheese?+Spencer+Johnson",
       "added": "2026-10-18",
-      "cover": "assets/covers/who-moved-my-cheese.jpg"
+      "cover": "assets/covers/who-moved-my-cheese.webp"
     },
     {
       "id": "gutenberg-up-from-slavery",
@@ -4254,7 +4254,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/2376",
       "readUrl": "https://www.gutenberg.org/ebooks/2376",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-up-from-slavery.jpg"
+      "cover": "assets/covers/gutenberg-up-from-slavery.webp"
     },
     {
       "id": "gutenberg-pushing-to-the-front",
@@ -4285,7 +4285,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/21291",
       "readUrl": "https://www.gutenberg.org/ebooks/21291",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-pushing-to-the-front.jpg"
+      "cover": "assets/covers/gutenberg-pushing-to-the-front.webp"
     },
     {
       "id": "tcp-ip-illustrated",
@@ -4313,7 +4313,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=TCP/IP+Illustrated,+Volume+1+W.+Richard+Stevens",
       "added": "2026-10-18",
-      "cover": "assets/covers/tcp-ip-illustrated.jpg"
+      "cover": "assets/covers/tcp-ip-illustrated.webp"
     },
     {
       "id": "computer-networks-tanenbaum",
@@ -4340,7 +4340,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Computer+Networks+Andrew+S.+Tanenbaum",
       "added": "2026-10-18",
-      "cover": "assets/covers/computer-networks-tanenbaum.jpg"
+      "cover": "assets/covers/computer-networks-tanenbaum.webp"
     },
     {
       "id": "internetworking-with-tcp-ip",
@@ -4367,7 +4367,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Internetworking+with+TCP/IP+Douglas+E.+Comer",
       "added": "2026-10-18",
-      "cover": "assets/covers/internetworking-with-tcp-ip.jpg"
+      "cover": "assets/covers/internetworking-with-tcp-ip.webp"
     },
     {
       "id": "routing-tcp-ip",
@@ -4395,7 +4395,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Routing+TCP/IP,+Volume+1+Jeff+Doyle",
       "added": "2026-10-18",
-      "cover": "assets/covers/routing-tcp-ip.jpg"
+      "cover": "assets/covers/routing-tcp-ip.webp"
     },
     {
       "id": "tcp-ip-guide",
@@ -4423,7 +4423,7 @@
       "sourceUrl": "https://www.tcpipguide.com/free/",
       "readUrl": "https://www.tcpipguide.com/free/",
       "added": "2026-10-18",
-      "cover": "assets/covers/tcp-ip-guide.jpg"
+      "cover": "assets/covers/tcp-ip-guide.webp"
     },
     {
       "id": "high-performance-browser-networking",
@@ -4451,7 +4451,7 @@
       "sourceUrl": "https://hpbn.co/",
       "readUrl": "https://hpbn.co/",
       "added": "2026-10-18",
-      "cover": "assets/covers/high-performance-browser-networking.jpg"
+      "cover": "assets/covers/high-performance-browser-networking.webp"
     },
     {
       "id": "interconnections-perlman",
@@ -4478,7 +4478,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Interconnections:+Bridges,+Routers,+Switches+and+Internetworking+Protocols+Radia+Perlman",
       "added": "2026-10-18",
-      "cover": "assets/covers/interconnections-perlman.jpg"
+      "cover": "assets/covers/interconnections-perlman.webp"
     },
     {
       "id": "dns-and-bind",
@@ -4505,7 +4505,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=DNS+and+BIND+Cricket+Liu",
       "added": "2026-10-18",
-      "cover": "assets/covers/dns-and-bind.jpg"
+      "cover": "assets/covers/dns-and-bind.webp"
     },
     {
       "id": "network-programmability-automation",
@@ -4533,7 +4533,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Network+Programmability+and+Automation+Jason+Edelman",
       "added": "2026-10-18",
-      "cover": "assets/covers/network-programmability-automation.jpg"
+      "cover": "assets/covers/network-programmability-automation.webp"
     },
     {
       "id": "5g-nr-dahlman",
@@ -4561,7 +4561,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=5G+NR:+The+Next+Generation+Wireless+Access+Technology+Erik+Dahlman",
       "added": "2026-10-18",
-      "cover": "assets/covers/5g-nr-dahlman.jpg"
+      "cover": "assets/covers/5g-nr-dahlman.webp"
     },
     {
       "id": "fundamentals-wireless-communication",
@@ -4590,7 +4590,7 @@
       "sourceUrl": "https://web.stanford.edu/~dntse/wireless_book.html",
       "readUrl": "https://web.stanford.edu/~dntse/wireless_book.html",
       "added": "2026-10-18",
-      "cover": "assets/covers/fundamentals-wireless-communication.jpg"
+      "cover": "assets/covers/fundamentals-wireless-communication.webp"
     },
     {
       "id": "wireless-communications-goldsmith",
@@ -4617,7 +4617,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Wireless+Communications+Andrea+Goldsmith",
       "added": "2026-10-18",
-      "cover": "assets/covers/wireless-communications-goldsmith.jpg"
+      "cover": "assets/covers/wireless-communications-goldsmith.webp"
     },
     {
       "id": "wireless-communications-rappaport",
@@ -4645,7 +4645,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Wireless+Communications:+Principles+and+Practice+Theodore+S.+Rappaport",
       "added": "2026-10-18",
-      "cover": "assets/covers/wireless-communications-rappaport.jpg"
+      "cover": "assets/covers/wireless-communications-rappaport.webp"
     },
     {
       "id": "mobile-communications-schiller",
@@ -4673,7 +4673,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Mobile+Communications+Jochen+Schiller",
       "added": "2026-10-18",
-      "cover": "assets/covers/mobile-communications-schiller.jpg"
+      "cover": "assets/covers/mobile-communications-schiller.webp"
     },
     {
       "id": "master-switch-wu",
@@ -4700,7 +4700,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Master+Switch:+The+Rise+and+Fall+of+Information+Empires+Tim+Wu",
       "added": "2026-10-18",
-      "cover": "assets/covers/master-switch-wu.jpg"
+      "cover": "assets/covers/master-switch-wu.webp"
     },
     {
       "id": "understanding-telephone-electronics",
@@ -4727,7 +4727,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Understanding+Telephone+Electronics+John+L.+Fike",
       "added": "2026-10-18",
-      "cover": "assets/covers/understanding-telephone-electronics.jpg"
+      "cover": "assets/covers/understanding-telephone-electronics.webp"
     },
     {
       "id": "devops-handbook",
@@ -4754,7 +4754,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+DevOps+Handbook+Gene+Kim",
       "added": "2026-10-18",
-      "cover": "assets/covers/devops-handbook.jpg"
+      "cover": "assets/covers/devops-handbook.webp"
     },
     {
       "id": "accelerate-forsgren",
@@ -4781,7 +4781,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Accelerate+Nicole+Forsgren",
       "added": "2026-10-18",
-      "cover": "assets/covers/accelerate-forsgren.jpg"
+      "cover": "assets/covers/accelerate-forsgren.webp"
     },
     {
       "id": "kubernetes-up-and-running",
@@ -4808,7 +4808,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Kubernetes:+Up+and+Running+Brendan+Burns",
       "added": "2026-10-18",
-      "cover": "assets/covers/kubernetes-up-and-running.jpg"
+      "cover": "assets/covers/kubernetes-up-and-running.webp"
     },
     {
       "id": "docker-deep-dive",
@@ -4834,7 +4834,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Docker+Deep+Dive+Nigel+Poulton",
       "added": "2026-10-18",
-      "cover": "assets/covers/docker-deep-dive.jpg"
+      "cover": "assets/covers/docker-deep-dive.webp"
     },
     {
       "id": "terraform-up-and-running",
@@ -4861,7 +4861,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Terraform:+Up+&+Running+Yevgeniy+Brikman",
       "added": "2026-10-18",
-      "cover": "assets/covers/terraform-up-and-running.jpg"
+      "cover": "assets/covers/terraform-up-and-running.webp"
     },
     {
       "id": "continuous-delivery",
@@ -4888,7 +4888,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Continuous+Delivery+Jez+Humble",
       "added": "2026-10-18",
-      "cover": "assets/covers/continuous-delivery.jpg"
+      "cover": "assets/covers/continuous-delivery.webp"
     },
     {
       "id": "building-microservices",
@@ -4915,7 +4915,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Building+Microservices+Sam+Newman",
       "added": "2026-10-18",
-      "cover": "assets/covers/building-microservices.jpg"
+      "cover": "assets/covers/building-microservices.webp"
     },
     {
       "id": "unicorn-project",
@@ -4942,7 +4942,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Unicorn+Project+Gene+Kim",
       "added": "2026-10-18",
-      "cover": "assets/covers/unicorn-project.jpg"
+      "cover": "assets/covers/unicorn-project.webp"
     },
     {
       "id": "infrastructure-as-code-morris",
@@ -4969,7 +4969,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Infrastructure+as+Code+Kief+Morris",
       "added": "2026-10-18",
-      "cover": "assets/covers/infrastructure-as-code-morris.jpg"
+      "cover": "assets/covers/infrastructure-as-code-morris.webp"
     },
     {
       "id": "hands-on-machine-learning",
@@ -4997,7 +4997,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Hands-On+Machine+Learning+with+Scikit-Learn,+Keras+and+TensorFlow+Aurélien+Géron",
       "added": "2026-10-18",
-      "cover": "assets/covers/hands-on-machine-learning.jpg"
+      "cover": "assets/covers/hands-on-machine-learning.webp"
     },
     {
       "id": "deep-learning-goodfellow",
@@ -5025,7 +5025,7 @@
       "sourceUrl": "https://www.deeplearningbook.org/",
       "readUrl": "https://www.deeplearningbook.org/",
       "added": "2026-10-18",
-      "cover": "assets/covers/deep-learning-goodfellow.jpg"
+      "cover": "assets/covers/deep-learning-goodfellow.webp"
     },
     {
       "id": "prml-bishop",
@@ -5054,7 +5054,7 @@
       "sourceUrl": "https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/",
       "readUrl": "https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/",
       "added": "2026-10-18",
-      "cover": "assets/covers/prml-bishop.jpg"
+      "cover": "assets/covers/prml-bishop.webp"
     },
     {
       "id": "islr",
@@ -5110,7 +5110,7 @@
       "sourceUrl": "https://wesmckinney.com/book/",
       "readUrl": "https://wesmckinney.com/book/",
       "added": "2026-10-18",
-      "cover": "assets/covers/python-for-data-analysis.jpg"
+      "cover": "assets/covers/python-for-data-analysis.webp"
     },
     {
       "id": "storytelling-with-data",
@@ -5137,7 +5137,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Storytelling+with+Data+Cole+Nussbaumer+Knaflic",
       "added": "2026-10-18",
-      "cover": "assets/covers/storytelling-with-data.jpg"
+      "cover": "assets/covers/storytelling-with-data.webp"
     },
     {
       "id": "weapons-of-math-destruction",
@@ -5190,7 +5190,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Artificial+Intelligence:+A+Modern+Approach+Stuart+Russell",
       "added": "2026-10-18",
-      "cover": "assets/covers/aima-russell-norvig.jpg"
+      "cover": "assets/covers/aima-russell-norvig.webp"
     },
     {
       "id": "naked-statistics",
@@ -5216,7 +5216,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Naked+Statistics+Charles+Wheelan",
       "added": "2026-10-18",
-      "cover": "assets/covers/naked-statistics.jpg"
+      "cover": "assets/covers/naked-statistics.webp"
     },
     {
       "id": "signal-and-the-noise",
@@ -5243,7 +5243,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Signal+and+the+Noise+Nate+Silver",
       "added": "2026-10-18",
-      "cover": "assets/covers/signal-and-the-noise.jpg"
+      "cover": "assets/covers/signal-and-the-noise.webp"
     },
     {
       "id": "c-programming-language",
@@ -5270,7 +5270,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+C+Programming+Language+Brian+W.+Kernighan",
       "added": "2026-10-18",
-      "cover": "assets/covers/c-programming-language.jpg"
+      "cover": "assets/covers/c-programming-language.webp"
     },
     {
       "id": "sicp",
@@ -5299,7 +5299,7 @@
       "sourceUrl": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html",
       "readUrl": "https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html",
       "added": "2026-10-18",
-      "cover": "assets/covers/sicp.jpg"
+      "cover": "assets/covers/sicp.webp"
     },
     {
       "id": "code-complete",
@@ -5325,7 +5325,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Code+Complete+Steve+McConnell",
       "added": "2026-10-18",
-      "cover": "assets/covers/code-complete.jpg"
+      "cover": "assets/covers/code-complete.webp"
     },
     {
       "id": "clrs-introduction-to-algorithms",
@@ -5352,7 +5352,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Introduction+to+Algorithms+Thomas+H.+Cormen",
       "added": "2026-10-18",
-      "cover": "assets/covers/clrs-introduction-to-algorithms.jpg"
+      "cover": "assets/covers/clrs-introduction-to-algorithms.webp"
     },
     {
       "id": "refactoring-fowler",
@@ -5379,7 +5379,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Refactoring+Martin+Fowler",
       "added": "2026-10-18",
-      "cover": "assets/covers/refactoring-fowler.jpg"
+      "cover": "assets/covers/refactoring-fowler.webp"
     },
     {
       "id": "design-patterns-gof",
@@ -5406,7 +5406,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Design+Patterns+Erich+Gamma",
       "added": "2026-10-18",
-      "cover": "assets/covers/design-patterns-gof.jpg"
+      "cover": "assets/covers/design-patterns-gof.webp"
     },
     {
       "id": "grokking-algorithms",
@@ -5433,7 +5433,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Grokking+Algorithms+Aditya+Bhargava",
       "added": "2026-10-18",
-      "cover": "assets/covers/grokking-algorithms.jpg"
+      "cover": "assets/covers/grokking-algorithms.webp"
     },
     {
       "id": "cracking-the-coding-interview",
@@ -5460,7 +5460,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Cracking+the+Coding+Interview+Gayle+Laakmann+McDowell",
       "added": "2026-10-18",
-      "cover": "assets/covers/cracking-the-coding-interview.jpg"
+      "cover": "assets/covers/cracking-the-coding-interview.webp"
     },
     {
       "id": "mythical-man-month",
@@ -5487,7 +5487,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Mythical+Man-Month+Frederick+P.+Brooks+Jr.",
       "added": "2026-10-18",
-      "cover": "assets/covers/mythical-man-month.jpg"
+      "cover": "assets/covers/mythical-man-month.webp"
     },
     {
       "id": "you-dont-know-js",
@@ -5514,7 +5514,7 @@
       "sourceUrl": "https://github.com/getify/You-Dont-Know-JS",
       "readUrl": "https://github.com/getify/You-Dont-Know-JS",
       "added": "2026-10-18",
-      "cover": "assets/covers/you-dont-know-js.jpg"
+      "cover": "assets/covers/you-dont-know-js.webp"
     },
     {
       "id": "zero-to-one",
@@ -5541,7 +5541,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Zero+to+One+Peter+Thiel",
       "added": "2026-10-18",
-      "cover": "assets/covers/zero-to-one.jpg"
+      "cover": "assets/covers/zero-to-one.webp"
     },
     {
       "id": "good-to-great",
@@ -5568,7 +5568,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Good+to+Great+Jim+Collins",
       "added": "2026-10-18",
-      "cover": "assets/covers/good-to-great.jpg"
+      "cover": "assets/covers/good-to-great.webp"
     },
     {
       "id": "hard-thing-about-hard-things",
@@ -5595,7 +5595,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Hard+Thing+About+Hard+Things+Ben+Horowitz",
       "added": "2026-10-18",
-      "cover": "assets/covers/hard-thing-about-hard-things.jpg"
+      "cover": "assets/covers/hard-thing-about-hard-things.webp"
     },
     {
       "id": "thinking-fast-and-slow",
@@ -5622,7 +5622,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Thinking,+Fast+and+Slow+Daniel+Kahneman",
       "added": "2026-10-18",
-      "cover": "assets/covers/thinking-fast-and-slow.jpg"
+      "cover": "assets/covers/thinking-fast-and-slow.webp"
     },
     {
       "id": "innovators-dilemma",
@@ -5649,7 +5649,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Innovator's+Dilemma+Clayton+M.+Christensen",
       "added": "2026-10-18",
-      "cover": "assets/covers/innovators-dilemma.jpg"
+      "cover": "assets/covers/innovators-dilemma.webp"
     },
     {
       "id": "rework",
@@ -5676,7 +5676,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Rework+Jason+Fried",
       "added": "2026-10-18",
-      "cover": "assets/covers/rework.jpg"
+      "cover": "assets/covers/rework.webp"
     },
     {
       "id": "shoe-dog",
@@ -5703,7 +5703,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Shoe+Dog+Phil+Knight",
       "added": "2026-10-18",
-      "cover": "assets/covers/shoe-dog.jpg"
+      "cover": "assets/covers/shoe-dog.webp"
     },
     {
       "id": "blue-ocean-strategy",
@@ -5730,7 +5730,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Blue+Ocean+Strategy+W.+Chan+Kim",
       "added": "2026-10-18",
-      "cover": "assets/covers/blue-ocean-strategy.jpg"
+      "cover": "assets/covers/blue-ocean-strategy.webp"
     },
     {
       "id": "e-myth-revisited",
@@ -5757,7 +5757,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+E-Myth+Revisited+Michael+E.+Gerber",
       "added": "2026-10-18",
-      "cover": "assets/covers/e-myth-revisited.jpg"
+      "cover": "assets/covers/e-myth-revisited.webp"
     },
     {
       "id": "measure-what-matters",
@@ -5784,7 +5784,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Measure+What+Matters+John+Doerr",
       "added": "2026-10-18",
-      "cover": "assets/covers/measure-what-matters.jpg"
+      "cover": "assets/covers/measure-what-matters.webp"
     },
     {
       "id": "purple-hibiscus",
@@ -5811,7 +5811,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Purple+Hibiscus+Chimamanda+Ngozi+Adichie",
       "added": "2026-10-18",
-      "cover": "assets/covers/purple-hibiscus.jpg"
+      "cover": "assets/covers/purple-hibiscus.webp"
     },
     {
       "id": "half-of-a-yellow-sun",
@@ -5838,7 +5838,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Half+of+a+Yellow+Sun+Chimamanda+Ngozi+Adichie",
       "added": "2026-10-18",
-      "cover": "assets/covers/half-of-a-yellow-sun.jpg"
+      "cover": "assets/covers/half-of-a-yellow-sun.webp"
     },
     {
       "id": "americanah",
@@ -5865,7 +5865,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Americanah+Chimamanda+Ngozi+Adichie",
       "added": "2026-10-18",
-      "cover": "assets/covers/americanah.jpg"
+      "cover": "assets/covers/americanah.webp"
     },
     {
       "id": "arrow-of-god",
@@ -5892,7 +5892,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Arrow+of+God+Chinua+Achebe",
       "added": "2026-10-18",
-      "cover": "assets/covers/arrow-of-god.jpg"
+      "cover": "assets/covers/arrow-of-god.webp"
     },
     {
       "id": "famished-road",
@@ -5919,7 +5919,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+Famished+Road+Ben+Okri",
       "added": "2026-10-18",
-      "cover": "assets/covers/famished-road.jpg"
+      "cover": "assets/covers/famished-road.webp"
     },
     {
       "id": "sapiens",
@@ -5946,7 +5946,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Sapiens:+A+Brief+History+of+Humankind+Yuval+Noah+Harari",
       "added": "2026-10-18",
-      "cover": "assets/covers/sapiens.jpg"
+      "cover": "assets/covers/sapiens.webp"
     },
     {
       "id": "educated-westover",
@@ -5973,7 +5973,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Educated+Tara+Westover",
       "added": "2026-10-18",
-      "cover": "assets/covers/educated-westover.jpg"
+      "cover": "assets/covers/educated-westover.webp"
     },
     {
       "id": "gutenberg-frankenstein",
@@ -6003,7 +6003,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/84",
       "readUrl": "https://www.gutenberg.org/ebooks/84",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-frankenstein.jpg"
+      "cover": "assets/covers/gutenberg-frankenstein.webp"
     },
     {
       "id": "gutenberg-sherlock-holmes",
@@ -6033,7 +6033,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/1661",
       "readUrl": "https://www.gutenberg.org/ebooks/1661",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-sherlock-holmes.jpg"
+      "cover": "assets/covers/gutenberg-sherlock-holmes.webp"
     },
     {
       "id": "gutenberg-alice",
@@ -6064,7 +6064,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/11",
       "readUrl": "https://www.gutenberg.org/ebooks/11",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-alice.jpg"
+      "cover": "assets/covers/gutenberg-alice.webp"
     },
     {
       "id": "gutenberg-the-prince",
@@ -6095,7 +6095,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/1232",
       "readUrl": "https://www.gutenberg.org/ebooks/1232",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-the-prince.jpg"
+      "cover": "assets/covers/gutenberg-the-prince.webp"
     },
     {
       "id": "gutenberg-walden",
@@ -6126,7 +6126,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/205",
       "readUrl": "https://www.gutenberg.org/ebooks/205",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-walden.jpg"
+      "cover": "assets/covers/gutenberg-walden.webp"
     },
     {
       "id": "gutenberg-moby-dick",
@@ -6156,7 +6156,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
       "readUrl": "https://www.gutenberg.org/ebooks/2701",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-moby-dick.jpg"
+      "cover": "assets/covers/gutenberg-moby-dick.webp"
     },
     {
       "id": "gutenberg-republic",
@@ -6186,7 +6186,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/1497",
       "readUrl": "https://www.gutenberg.org/ebooks/1497",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-republic.jpg"
+      "cover": "assets/covers/gutenberg-republic.webp"
     },
     {
       "id": "gutenberg-frederick-douglass",
@@ -6217,7 +6217,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/23",
       "readUrl": "https://www.gutenberg.org/ebooks/23",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-frederick-douglass.jpg"
+      "cover": "assets/covers/gutenberg-frederick-douglass.webp"
     },
     {
       "id": "gutenberg-dracula",
@@ -6248,7 +6248,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/345",
       "readUrl": "https://www.gutenberg.org/ebooks/345",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-dracula.jpg"
+      "cover": "assets/covers/gutenberg-dracula.webp"
     },
     {
       "id": "gutenberg-monte-cristo",
@@ -6279,7 +6279,7 @@
       "sourceUrl": "https://www.gutenberg.org/ebooks/1184",
       "readUrl": "https://www.gutenberg.org/ebooks/1184",
       "added": "2026-10-18",
-      "cover": "assets/covers/gutenberg-monte-cristo.jpg"
+      "cover": "assets/covers/gutenberg-monte-cristo.webp"
     },
     {
       "id": "make-it-stick",
@@ -6306,7 +6306,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Make+It+Stick:+The+Science+of+Successful+Learning+Peter+C.+Brown",
       "added": "2026-10-18",
-      "cover": "assets/covers/make-it-stick.jpg"
+      "cover": "assets/covers/make-it-stick.webp"
     },
     {
       "id": "a-mind-for-numbers",
@@ -6333,7 +6333,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=A+Mind+for+Numbers+Barbara+Oakley",
       "added": "2026-10-18",
-      "cover": "assets/covers/a-mind-for-numbers.jpg"
+      "cover": "assets/covers/a-mind-for-numbers.webp"
     },
     {
       "id": "how-to-read-a-book",
@@ -6360,7 +6360,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=How+to+Read+a+Book+Mortimer+J.+Adler",
       "added": "2026-10-18",
-      "cover": "assets/covers/how-to-read-a-book.jpg"
+      "cover": "assets/covers/how-to-read-a-book.webp"
     },
     {
       "id": "ultralearning",
@@ -6387,7 +6387,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Ultralearning+Scott+H.+Young",
       "added": "2026-10-18",
-      "cover": "assets/covers/ultralearning.jpg"
+      "cover": "assets/covers/ultralearning.webp"
     },
     {
       "id": "moonwalking-with-einstein",
@@ -6413,7 +6413,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Moonwalking+with+Einstein+Joshua+Foer",
       "added": "2026-10-18",
-      "cover": "assets/covers/moonwalking-with-einstein.jpg"
+      "cover": "assets/covers/moonwalking-with-einstein.webp"
     },
     {
       "id": "straight-a-student",
@@ -6440,7 +6440,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=How+to+Become+a+Straight-A+Student+Cal+Newport",
       "added": "2026-10-18",
-      "cover": "assets/covers/straight-a-student.jpg"
+      "cover": "assets/covers/straight-a-student.webp"
     },
     {
       "id": "peak-ericsson",
@@ -6493,7 +6493,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Getting+Things+Done+David+Allen",
       "added": "2026-10-18",
-      "cover": "assets/covers/getting-things-done.jpg"
+      "cover": "assets/covers/getting-things-done.webp"
     },
     {
       "id": "eat-that-frog",
@@ -6519,7 +6519,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Eat+That+Frog!+Brian+Tracy",
       "added": "2026-10-18",
-      "cover": "assets/covers/eat-that-frog.jpg"
+      "cover": "assets/covers/eat-that-frog.webp"
     },
     {
       "id": "indistractable",
@@ -6546,7 +6546,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Indistractable+Nir+Eyal",
       "added": "2026-10-18",
-      "cover": "assets/covers/indistractable.jpg"
+      "cover": "assets/covers/indistractable.webp"
     },
     {
       "id": "the-one-thing",
@@ -6573,7 +6573,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=The+ONE+Thing+Gary+Keller",
       "added": "2026-10-18",
-      "cover": "assets/covers/the-one-thing.jpg"
+      "cover": "assets/covers/the-one-thing.webp"
     },
     {
       "id": "make-time",
@@ -6600,7 +6600,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Make+Time+Jake+Knapp",
       "added": "2026-10-18",
-      "cover": "assets/covers/make-time.jpg"
+      "cover": "assets/covers/make-time.webp"
     },
     {
       "id": "four-thousand-weeks",
@@ -6627,7 +6627,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Four+Thousand+Weeks+Oliver+Burkeman",
       "added": "2026-10-18",
-      "cover": "assets/covers/four-thousand-weeks.jpg"
+      "cover": "assets/covers/four-thousand-weeks.webp"
     },
     {
       "id": "digital-minimalism",
@@ -6654,7 +6654,7 @@
       "sourceName": "Open Library (find a library copy or edition)",
       "sourceUrl": "https://openlibrary.org/search?q=Digital+Minimalism+Cal+Newport",
       "added": "2026-10-18",
-      "cover": "assets/covers/digital-minimalism.jpg"
+      "cover": "assets/covers/digital-minimalism.webp"
     }
   ]
 }

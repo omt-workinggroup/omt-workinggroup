@@ -123,7 +123,7 @@ function recHTML(rec) {
     : (rec.why ? e(rec.why) : 'In the OMT library');
   const added = rec.addedToLibrary ? `<span class="rec__added">${icons.sparkle.replace('<svg', '<svg width="12" height="12"')} Added to the OMT library</span>` : '';
   const cover = rec.source === 'omt' ? catalog.find((r) => r.id === rec.id)?.cover : null;
-  return `<div class="rec">${cover ? `<img class="rec__cover" src="${e(cover)}" alt="" width="44" height="60" loading="lazy">` : ''}<div class="rec__main"><div class="rec__top"><a href="${e(url)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${e(rec.title)}${external ? '<span class="sr-only"> (opens in a new tab)</span>' : ''}</a>${badge}</div>
+  return `<div class="rec">${cover ? `<img class="rec__cover" src="${e(cover)}" alt="" width="44" height="60">` : ''}<div class="rec__main"><div class="rec__top"><a href="${e(url)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${e(rec.title)}${external ? '<span class="sr-only"> (opens in a new tab)</span>' : ''}</a>${badge}</div>
     <span class="rec__why">${rec.author ? `${e(rec.author)} · ` : ''}${sourceNote}</span>${added}</div></div>`;
 }
 
@@ -499,7 +499,7 @@ if (window.visualViewport) {
   fit();
 }
 els.log.addEventListener('scroll', () => { els.jump.hidden = nearBottom(240); }, { passive: true });
-els.jump.addEventListener('click', () => els.log.scrollTo({ top: els.log.scrollHeight, behavior: 'smooth' }));
+els.jump.addEventListener('click', () => els.log.scrollTo({ top: els.log.scrollHeight, behavior: 'auto' }));
 els.input.addEventListener('focus', () => {
   // The keyboard animates in for about 300 ms; follow it.
   if (nearBottom() || !history().length) [50, 320].forEach((ms) => setTimeout(scrollDown, ms));

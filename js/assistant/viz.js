@@ -132,7 +132,7 @@ async function draw(fig) {
     html = chartSVG(JSON.parse(src));
   } else if (kind === 'svg') {
     const { url } = svgDataUrl(src);
-    html = `<img src="${url}" alt="Illustration" loading="lazy">`;
+    html = `<img src="${url}" alt="Illustration">`;
   } else {
     const mermaid = await loadMermaid();
     const { svg } = await mermaid.render(`omt-mmd-${++seq}`, src);

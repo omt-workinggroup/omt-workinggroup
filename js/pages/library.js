@@ -199,7 +199,7 @@ quickTabs.addEventListener('click', (event) => {
   state.sort = q.sort ?? 'relevance';
   els.sort.value = state.sort;
   update();
-  b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
 });
 
 const mobile = window.matchMedia('(max-width: 767px)');
@@ -253,7 +253,7 @@ function externalHTML(d, canAdd) {
     ? `<a class="btn btn--secondary btn--sm" href="resource.html?id=${encodeURIComponent(resourceIdFor(d.extId))}">In the library</a>`
     : canAdd && d.extId ? `<button type="button" class="btn btn--secondary btn--sm" data-suggest="${e(d.extId)}">${icons.heart.replace('<svg', '<svg width="14" height="14"')} Add to OMT library</button>` : '';
   return `<div class="rec ext-rec">
-    ${d.cover ? `<img class="ext-rec__cover" src="${e(d.cover)}" alt="" loading="lazy" width="46" height="66">` : ''}
+    ${d.cover ? `<img class="ext-rec__cover" src="${e(d.cover)}" alt="" width="46" height="66">` : ''}
     <div class="ext-rec__body">
       <div class="rec__top"><a href="${e(d.url)}" target="_blank" rel="noopener noreferrer">${e(d.title)}<span class="sr-only"> (opens ${e(SOURCE_NAMES[d.source])} in a new tab)</span></a><span class="badge badge--${a.badge}" title="${e(a.title)}">${e(a.label)}</span></div>
       <span class="rec__why">${e(d.authors || 'Unknown author')}${d.year ? ` · ${e(d.year)}` : ''} · ${e(SOURCE_NAMES[d.source])}</span>

@@ -8,7 +8,7 @@ import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
-const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.xlsx': 'application/octet-stream', '.docx': 'application/octet-stream', '.pptx': 'application/octet-stream', '.xml': 'application/xml', '.txt': 'text/plain', '.webmanifest': 'application/manifest+json', '.ico': 'image/x-icon' };
+const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.xlsx': 'application/octet-stream', '.docx': 'application/octet-stream', '.pptx': 'application/octet-stream', '.xml': 'application/xml', '.txt': 'text/plain', '.webmanifest': 'application/manifest+json', '.ico': 'image/x-icon', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
 const server = createServer(async (req, res) => {
   const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
   const file = join(ROOT, path.endsWith('/') ? `${path}index.html` : path);
@@ -161,8 +161,8 @@ for (const width of WIDTHS) {
   await context.route(/covers\.openlibrary\.org/, (route) => route.fulfill({ contentType: 'image/png', body: png }));
   const page = await context.newPage();
   await page.goto(`${BASE}/resource.html?id=think-python-3e`);
-  await page.waitForSelector('.detail__cover img[src="assets/covers/think-python-3e.jpg"]', { timeout: 10000 }).catch(() => {});
-  check(await page.locator('.detail__cover img[src="assets/covers/think-python-3e.jpg"]').count() === 1, 'catalogue book shows its own stored cover');
+  await page.waitForSelector('.detail__cover img[src="assets/covers/think-python-3e.webp"]', { timeout: 10000 }).catch(() => {});
+  check(await page.locator('.detail__cover img[src="assets/covers/think-python-3e.webp"]').count() === 1, 'catalogue book shows its own stored cover');
   await page.goto(`${BASE}/resource.html?id=sdn-systems-approach`);
   await page.waitForSelector('.detail__cover .cover.has-photo', { timeout: 5000 }).catch(() => {});
   check(await page.locator('.detail__cover .cover.has-photo').count() === 1, 'Open Library cover shown when the author matches');

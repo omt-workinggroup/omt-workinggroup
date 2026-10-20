@@ -7,5 +7,5 @@ const NAMES = { word: 'Word', excel: 'Excel', powerpoint: 'PowerPoint', access: 
 
 export function appIconHTML(app, size = 48, cls = '') {
   if (!APPS.includes(app)) return '';
-  return `<img class="${cls}" src="${APP_ICON_CDN}${app}_48x1.svg" data-fallback="assets/icons/apps/${app}.svg" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" title="Microsoft ${NAMES[app]}">`;
+  return `<img class="${cls}" src="${APP_ICON_CDN}${app}_48x1.svg" data-fallback="assets/icons/apps/${app}.svg" alt="" width="${size}" height="${size}" decoding="async" title="Microsoft ${NAMES[app]}">`;
 }

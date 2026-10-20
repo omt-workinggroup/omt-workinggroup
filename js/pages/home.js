@@ -62,7 +62,7 @@ const SHELVES = [
 function shelfBookHTML(r) {
   const access = { open: 'Free', official: 'Free', preview: 'Preview', paid: 'Buy or borrow', info: 'Info' }[r.accessType] ?? '';
   const cover = r.cover
-    ? `<img src="${e(r.cover)}" alt="" loading="lazy" decoding="async" width="360" height="520">`
+    ? `<img src="${e(r.cover)}" alt="" decoding="async" width="360" height="520">`
     : `<span class="book__poster" style="--c:${CATEGORIES[r.category]?.color ?? '#334155'}"><small>${e(r.sourceName ?? '')}</small><b>${e(r.title)}</b><i>${e(r.author)}</i></span>`;
   return `<a class="book" href="${resourceUrl(r)}" role="listitem">
       <span class="book__cover">${cover}<span class="book__tag book__tag--${e(r.accessType)}">${access}</span></span>
@@ -74,7 +74,7 @@ function shelfBookHTML(r) {
 /** The shelf's spotlight: a wide card with the cover, a short description and a clear way in. */
 function leadHTML(r) {
   const access = { open: 'Free to read', official: 'Free from the publisher', preview: 'Free preview', paid: 'Buy or borrow', info: 'Info' }[r.accessType] ?? '';
-  const cover = r.cover ? `<img src="${e(r.cover)}" alt="" loading="lazy" decoding="async" width="360" height="520">`
+  const cover = r.cover ? `<img src="${e(r.cover)}" alt="" decoding="async" width="360" height="520">`
     : `<span class="book__poster" style="--c:${CATEGORIES[r.category]?.color ?? '#334155'}"><small>${e(r.sourceName ?? '')}</small><b>${e(r.title)}</b><i>${e(r.author)}</i></span>`;
   return `<a class="lead" href="${resourceUrl(r)}" role="listitem">
       <span class="book__cover lead__cover">${cover}</span>
@@ -123,7 +123,7 @@ function renderShelves(all) {
     };
     sec.querySelector('.shelf-sec__nav').addEventListener('click', (ev) => {
       const btn = ev.target.closest('.shelf-btn');
-      if (btn) rail.scrollBy({ left: Number(btn.dataset.dir) * rail.clientWidth * 0.85, behavior: 'smooth' });
+      if (btn) rail.scrollBy({ left: Number(btn.dataset.dir) * rail.clientWidth * 0.85, behavior: 'auto' });
     });
     rail.addEventListener('scroll', update, { passive: true });
     new ResizeObserver(update).observe(rail);
