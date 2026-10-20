@@ -19,12 +19,13 @@ for (const page of readdirSync(root).filter((f) => f.endsWith('.html'))) {
   let html = readFileSync(join(root, page), 'utf8');
   const entry = html.match(/<script type="module" src="([^"]+)"><\/script>/)?.[1];
   if (!entry) continue;
-  html = html.replace(/\n\s*<link rel="(?:modulepreload|preload)"[^>]*>/g, '');
-  const deps = graph(entry);
+  // Remove only the tags this script writes (other preloads, such as fonts, stay).
+  html = html.replace(/\n\s*<link rel="modulepreload"[^>]*>/g, '').replace(/\n\s*<link rel="preload" href="data\/resources\.json"[^>]*>/g, '');
+  const deps = graph(entry.split('?')[0]);
   const links = [...deps].sort().map((f) => `  <link rel="modulepreload" href="${f}">`);
   // Pages that show the library also start downloading the catalogue straight away.
   if (deps.has('js/core/catalog.js')) links.unshift('  <link rel="preload" href="data/resources.json" as="fetch" crossorigin>');
   html = html.replace(/(\n\s*<script type="module" src="[^"]+"><\/script>)/, `\n${links.join('\n')}$1`);
   writeFileSync(join(root, page), html);
-  console.log(page, graph(entry).size, 'modules');
+  console.log(page, deps.size, 'modules');
 }

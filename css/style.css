@@ -1796,3 +1796,6 @@ body[data-page="library"] .load-more .btn { min-width: 220px; border-radius: 999
 .grid--cards.grid--rail { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(150px, 42vw, 190px); grid-template-columns: none; gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; padding: 4px 2px 12px; scrollbar-width: thin; }
 .grid--rail > * { scroll-snap-align: start; }
 .app-section__count { margin: 6px 0 10px; font-family: var(--mono); font-size: .76rem; color: var(--text-muted); }
+
+/* Inside the mobile app: the company site is not part of it. */
+.in-app [data-site-only] { display: none !important; }

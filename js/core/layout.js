@@ -1,4 +1,5 @@
 // Shared header, mobile menu, header search and footer. Every page calls initLayout().
+import './app-mode.js';
 import { icons } from './icons.js';
 import { toast } from './util.js';
 import { getFavorites, onFavoritesChange } from './favorites.js';
@@ -48,7 +49,7 @@ function drawerHTML(current) {
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="drawer__top"><a class="brand" href="home.html">${LOGO}</a>
       <button type="button" class="icon-btn" data-close aria-label="Close menu">${icons.close}</button></div>
-    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li><li><a href="./">OMT company site</a></li></ul></nav>
+    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li><li data-site-only><a href="./">OMT company site</a></li></ul></nav>
     <a class="btn btn--ai btn--block" href="assistant.html">${icons.sparkle}Ask OMT AI</a>
   </div>`;
 }
@@ -68,7 +69,7 @@ function footerHTML() {
         <li><a href="assistant.html">AI Assistant</a></li>
         <li><a href="favorites.html">Your favorites</a></li></ul></div>
       <div><h2>About</h2><ul>
-        <li><a href="./">OMT company site</a></li>
+        <li data-site-only><a href="./">OMT company site</a></li>
         <li><a href="about.html">About the library</a></li>
         <li><a href="about.html#contact">Contact</a></li>
         <li><a href="about.html#copyright">Report a copyright issue</a></li></ul></div>

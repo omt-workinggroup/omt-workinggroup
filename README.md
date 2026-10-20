@@ -198,3 +198,17 @@ Run `npm run check-links` before each deploy. External sites change their URLs o
 - Favorites use `localStorage`. They are per-device and per-browser, and are not synced.
 - The chat conversation is kept in `sessionStorage` and disappears when the tab closes.
 - Microsoft, Word, Excel, PowerPoint, Access and Outlook are trademarks of Microsoft Corporation. OMT WORKING GROUP is independent and not affiliated with Microsoft.
+
+## Mobile app (`mobile/`)
+
+`mobile/` is an Expo app (Android and iOS) called **OMT Resources**. It shows the resource section of the live site (`/resources.html` onward) full screen, with a native launch screen, offline screen, Android back button and pull to refresh. Links to other sites and file downloads open in the phone's browser, and the company homepage is never shown inside the app. The site adds `in-app` to `<html>` when its user agent contains `OMTApp/` (see `js/core/app-mode.js`) and hides anything marked `data-site-only`.
+
+```sh
+cd mobile
+npm install
+npx expo start                  # open in Expo Go on a phone
+npx tsc --noEmit && npx expo-doctor
+npx eas-cli@latest build -p android --profile preview   # installable APK (needs an Expo account)
+```
+
+Set `EXPO_PUBLIC_SITE_URL` to point the app at another copy of the site. `mobile/` is listed in `.vercelignore`, so it is not deployed with the website.
