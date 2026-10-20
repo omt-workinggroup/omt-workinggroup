@@ -15,6 +15,13 @@ export const WebShell = forwardRef<ShellHandle, ShellProps>(function WebShell(pr
     title: 'OMT Resources',
     style: { flex: 1, width: '100%', height: '100%', border: 0 },
     onLoad: () => {
+      // The company homepage is not part of the app (the native app does this in onShouldStartLoadWithRequest).
+      try {
+        const path = frame.current?.contentWindow?.location.pathname;
+        if (path === '/' || path === '/index.html') { props.onGoHome(); return; }
+      } catch {
+        // Cross-origin page: leave it.
+      }
       props.onProgress(1);
       props.onLoaded();
       try {

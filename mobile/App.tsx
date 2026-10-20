@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { BackHandler, Platform, StyleSheet, View } from 'react-native';
+import { BackHandler, Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -80,15 +80,30 @@ function Shell() {
   );
 }
 
+// In a desktop browser (the web preview at /app), show the app in a phone-sized frame.
+function WebFrame({ children }: { children: React.ReactNode }) {
+  const { width } = useWindowDimensions();
+  if (Platform.OS !== 'web' || width < 600) return <>{children}</>;
+  return (
+    <View style={styles.desk}>
+      <View style={styles.phone}>{children}</View>
+    </View>
+  );
+}
+
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Shell />
+      <WebFrame>
+        <Shell />
+      </WebFrame>
     </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   fill: { flex: 1 },
+  desk: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#dfe8ec', padding: 24 },
+  phone: { width: 400, height: '100%', maxHeight: 860, borderRadius: 44, overflow: 'hidden', borderWidth: 10, borderColor: '#1a1a1d', backgroundColor: '#f4f1ea' },
   bar: { position: 'absolute', left: 0, height: 3, backgroundColor: '#0d6b4f', borderTopRightRadius: 3, borderBottomRightRadius: 3, ...(Platform.OS === 'web' ? {} : { elevation: 2 }) },
 });

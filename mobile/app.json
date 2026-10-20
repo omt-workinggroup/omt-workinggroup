@@ -28,7 +28,9 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "OMT Resources",
+      "themeColor": "#0b1530"
     },
     "plugins": [
       [
@@ -39,6 +41,9 @@
           "imageWidth": 200
         }
       ]
-    ]
+    ],
+    "experiments": {
+      "baseUrl": "/app"
+    }
   }
 }
