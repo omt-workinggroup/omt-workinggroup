@@ -28,66 +28,136 @@
   <link rel="modulepreload" href="js/core/taxonomy.js">
   <script type="module" src="js/pages/landing.js"></script>
 </head>
-<body data-page="landing" class="lp">
+<body data-page="landing" class="lp2">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="stage">
-    <header class="stage__top">
-      <a class="brand" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations Maintenance</span><span>and Training Working Group</span></span></a>
-      <nav class="stage__nav" aria-label="Main">
-        <a href="library.html">Library</a>
-        <a href="office.html">Office</a>
-        <a href="assistant.html">OMT AI</a>
-        <a href="about.html">About</a>
+
+  <!-- Phones: a welcome screen with a tilted wall of the most-read book from each track. -->
+  <section class="splash" aria-labelledby="splash-title">
+    <div class="splash__wall">
+      <div class="splash__col">
+        <a href="resource.html?id=tlcl" style="--i:0"><img src="assets/covers/tlcl.jpg" alt="The Linux Command Line" width="360" height="480"></a>
+        <a href="resource.html?id=tcp-ip-illustrated" style="--i:4"><img src="assets/covers/tcp-ip-illustrated.jpg" alt="TCP/IP Illustrated" width="360" height="480"></a>
+        <a href="resource.html?id=atomic-habits" style="--i:8"><img src="assets/covers/atomic-habits.jpg" alt="Atomic Habits" width="360" height="480"></a>
+        <a href="resource.html?id=c-programming-language" style="--i:12"><img src="assets/covers/c-programming-language.jpg" alt="The C Programming Language" width="360" height="480"></a>
+      </div>
+      <div class="splash__col">
+        <a href="resource.html?id=5g-nr-dahlman" style="--i:1"><img src="assets/covers/5g-nr-dahlman.jpg" alt="5G NR" width="360" height="480"></a>
+        <a href="resource.html?id=ddia" style="--i:5"><img src="assets/covers/ddia.jpg" alt="Designing Data-Intensive Applications" width="360" height="480"></a>
+        <a href="resource.html?id=cuckoos-egg" style="--i:9"><img src="assets/covers/cuckoos-egg.jpg" alt="The Cuckoo's Egg" width="360" height="480"></a>
+        <a href="resource.html?id=google-sre" style="--i:13"><img src="assets/covers/google-sre.jpg" alt="Site Reliability Engineering" width="360" height="480"></a>
+      </div>
+      <div class="splash__col">
+        <a href="resource.html?id=kubernetes-up-and-running" style="--i:2"><img src="assets/covers/kubernetes-up-and-running.jpg" alt="Kubernetes: Up and Running" width="360" height="480"></a>
+        <a href="resource.html?id=pro-git" style="--i:6"><img src="assets/covers/pro-git.jpg" alt="Pro Git" width="360" height="480"></a>
+        <a href="resource.html?id=hands-on-machine-learning" style="--i:10"><img src="assets/covers/hands-on-machine-learning.jpg" alt="Hands-On Machine Learning" width="360" height="480"></a>
+        <a href="resource.html?id=ostep" style="--i:14"><img src="assets/covers/ostep.jpg" alt="Operating Systems: Three Easy Pieces" width="360" height="480"></a>
+      </div>
+      <div class="splash__col">
+        <a href="resource.html?id=private-5g" style="--i:3"><img src="assets/covers/private-5g.jpg" alt="Private 5G" width="360" height="480"></a>
+        <a href="resource.html?id=non-designers-design-book" style="--i:7"><img src="assets/covers/non-designers-design-book.jpg" alt="The Non-Designer's Design Book" width="360" height="480"></a>
+        <a href="resource.html?id=hacking-art-of-exploitation" style="--i:11"><img src="assets/covers/hacking-art-of-exploitation.jpg" alt="Hacking: The Art of Exploitation" width="360" height="480"></a>
+        <a href="resource.html?id=clean-code" style="--i:15"><img src="assets/covers/clean-code.jpg" alt="Clean Code" width="360" height="480"></a>
+      </div>
+    </div>
+    <div class="splash__fade" aria-hidden="true"></div>
+    <div class="splash__copy">
+      <h1 id="splash-title">Welcome to <span>OMT</span></h1>
+      <p>Your go-to bookshelf for tech lovers, IT students and telecom engineers.</p>
+      <a class="splash__cta" href="home.html">Explore books</a>
+    </div>
+  </section>
+
+  <div class="hero">
+    <header class="hero__top">
+      <a class="hero__brand" href="./" aria-label="OMT Working Group front page"><img src="assets/logo-mark.svg" alt="" width="40" height="31"><span>OMT<em>.</em></span></a>
+      <nav class="hero__nav" aria-label="Main">
+        <a href="library.html">Book types</a>
+        <a href="assistant.html">Recommendation</a>
+        <a href="home.html">Popular</a>
+        <a href="office.html">Office skills</a>
       </nav>
-      <a class="stage__enter" href="home.html">Enter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      <a class="hero__login" href="assistant.html">Ask AI</a>
+      <a class="hero__start" href="home.html">Start for free</a>
     </header>
 
-    <main id="main" class="stage__main">
-      <div class="stage__copy">
-        <p class="stage__kicker"><span>Vol. 1</span> Operations<i>·</i>Maintenance<i>·</i>Training</p>
-        <h1>The engineer's <em>bookshelf.</em></h1>
-        <p class="stage__lead">Free books, specs and courses for the people who build and run software, networks and telecom. We find the good ones and send you to the official edition.</p>
-        <div class="stage__actions">
-          <a class="stage__cta" href="home.html"><span>Get started</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          <a class="stage__browse" href="library.html">Browse <span data-count="total">69</span> titles</a>
-        </div>
-        <dl class="stage__facts">
-          <div><dd data-count="total">69</dd><dt>titles, checked by hand</dt></div>
-          <div><dd data-count="free">60</dd><dt>free to read today</dt></div>
-          <div><dd>7</dd><dt>tracks, from code to 5G</dt></div>
+    <main id="main" class="hero__main">
+      <div class="hero__copy">
+        <p class="hero__who"><span class="hero__dot" aria-hidden="true"></span>For developers, IT students &amp; telecom engineers</p>
+        <h1>Find the tech book you’re looking for, <em>easier to read.</em></h1>
+        <p class="hero__lead">The free bookshelf for IT lovers: programming, networking, 5G and telecom, Linux, cloud and security, each linked to its official edition.</p>
+        <form class="hero__search" action="library.html" method="get" role="search">
+          <label class="sr-only" for="hero-q">Search for a tech book</label>
+          <span class="hero__search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <input id="hero-q" name="q" type="search" placeholder="Find your next tech book…" autocomplete="off" enterkeyhint="search">
+          <button type="submit">Search</button>
+        </form>
+        <ul class="hero__tracks" aria-label="Popular tracks">
+          <li><a href="library.html?category=networking">Networking</a></li>
+          <li><a href="library.html?category=telecom">5G &amp; Telecom</a></li>
+          <li><a href="library.html?category=linux">Linux</a></li>
+          <li><a href="library.html?category=computer-science">Programming</a></li>
+          <li><a href="library.html?category=security">Cybersecurity</a></li>
+          <li><a href="library.html?category=cloud">Cloud</a></li>
+        </ul>
+        <dl class="hero__facts">
+          <div><dd data-count="total">236</dd><dt>tech titles</dt></div>
+          <div><dd data-count="free">92</dd><dt>free to read</dt></div>
+          <div><dd>24/7</dd><dt>OMT AI tutor</dt></div>
         </dl>
       </div>
 
-      <div class="stage__shelf" aria-label="A few books from the library">
-        <div class="stage__light" aria-hidden="true"></div>
-        <div class="stage__row">
-          <div class="stage__books">
-              <a class="stage__book" href="resource.html?id=pro-git" style="--i:0"><img src="assets/covers/pro-git.jpg" alt="Pro Git" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=tlcl" style="--i:1"><img src="assets/covers/tlcl.jpg" alt="The Linux Command Line" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=ostep" style="--i:2"><img src="assets/covers/ostep.jpg" alt="Operating Systems: Three Easy Pieces" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=cn-systems-approach" style="--i:3"><img src="assets/covers/cn-systems-approach.jpg" alt="Computer Networks: A Systems Approach" width="360" height="480"></a>
-          </div>
-          <div class="stage__plank" aria-hidden="true"></div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="stack">
+          <div class="slab slab--1"><span>TCP/IP Illustrated</span></div>
+          <div class="slab slab--2"><span>5G NR · Dahlman</span></div>
+          <div class="slab slab--3"><span>The Linux Command Line</span></div>
+          <div class="slab slab--4"><span>Python Crash Course</span></div>
+          <div class="slab slab--5"><span>Kubernetes Up &amp; Running</span></div>
         </div>
-        <div class="stage__row">
-          <div class="stage__books">
-              <a class="stage__book" href="resource.html?id=private-5g" style="--i:4"><img src="assets/covers/private-5g.jpg" alt="Private 5G: A Systems Approach" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=google-sre" style="--i:5"><img src="assets/covers/google-sre.jpg" alt="Site Reliability Engineering" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=ddia" style="--i:6"><img src="assets/covers/ddia.jpg" alt="Designing Data-Intensive Applications" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=eloquent-javascript" style="--i:7"><img src="assets/covers/eloquent-javascript.jpg" alt="Eloquent JavaScript" width="360" height="480"></a>
-          </div>
-          <div class="stage__plank" aria-hidden="true"></div>
-        </div>
+        <svg class="hand" viewBox="0 0 420 230" preserveAspectRatio="xMidYMin meet">
+          <defs>
+            <linearGradient id="skin" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#f2c8a4"/><stop offset="1" stop-color="#d79a72"/></linearGradient>
+            <linearGradient id="fing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4cdaa"/><stop offset="1" stop-color="#e2a982"/></linearGradient>
+            <pattern id="knit" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-40)"><rect width="9" height="9" fill="#8a6a48"/><rect width="4.5" height="9" fill="#9b7954"/></pattern>
+          </defs>
+          <path d="M268 118 C 304 146 344 186 366 230 L 238 230 C 228 200 214 176 196 158 Z" fill="url(#knit)"/>
+          <g fill="url(#fing)">
+            <path d="M190 4 L 52 4 C 30 4 22 12 22 20 C 22 28 30 34 46 34 L 190 34 Z"/>
+            <path d="M190 32 L 66 32 C 46 32 38 40 38 48 C 38 56 46 62 62 62 L 190 62 Z"/>
+            <path d="M190 60 L 82 60 C 64 60 56 67 56 75 C 56 83 64 89 80 89 L 190 89 Z"/>
+            <path d="M190 87 L 100 87 C 84 87 77 93 77 100 C 77 107 84 112 98 112 L 190 112 Z"/>
+          </g>
+          <g stroke="#c48661" stroke-width="1.6" fill="none" opacity=".55">
+            <path d="M46 34 C 90 34 140 33 176 33"/><path d="M62 62 C 100 62 140 61 176 61"/><path d="M80 89 C 110 89 146 88 176 88"/>
+          </g>
+          <g fill="#fbe2cc" opacity=".75"><ellipse cx="36" cy="15" rx="9" ry="4"/><ellipse cx="52" cy="43" rx="8" ry="3.5"/><ellipse cx="70" cy="71" rx="8" ry="3.5"/><ellipse cx="90" cy="97" rx="7" ry="3"/></g>
+          <path d="M158 0 L 326 0 C 348 2 352 30 344 62 C 334 102 300 138 258 150 C 216 160 182 140 166 112 C 152 88 148 36 158 0 Z" fill="url(#skin)"/>
+          <path d="M176 64 C 210 78 252 80 300 66" stroke="#c48661" stroke-width="2" fill="none" opacity=".35"/>
+          <path d="M196 112 C 226 122 258 120 290 106" stroke="#c48661" stroke-width="2" fill="none" opacity=".3"/>
+        </svg>
+        <span class="tile tile--code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12.5 15H17"/></svg></span>
+        <span class="tile tile--tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10v11M8.5 21h7"/><circle cx="12" cy="8" r="2"/><path d="M8 4.5a5.5 5.5 0 0 0 0 7M16 4.5a5.5 5.5 0 0 1 0 7M5.2 2a9.5 9.5 0 0 0 0 12M18.8 2a9.5 9.5 0 0 1 0 12"/></svg></span>
+        <span class="tile tile--net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/></svg></span>
       </div>
     </main>
 
-    <footer class="stage__foot">
-      <div class="marquee" aria-label="We link to these publishers and catalogues">
-        <ul><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
-        <ul aria-hidden="true"><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
+    <section class="hero__strip" aria-label="From the library">
+      <div class="strip__intro">
+        <p class="strip__kicker">New in the library</p>
+        <h2>Have you chosen a good book?</h2>
       </div>
-      <p class="stage__legal">© <span id="year">2026</span> OMT Working Group · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
-    </footer>
+      <a class="strip__card" href="resource.html?id=private-5g">
+        <img src="assets/covers/private-5g.jpg" alt="" width="360" height="480" loading="lazy">
+        <span><small>Telecom · Free</small><strong>Where is 5G going? Start with <em>Private 5G</em></strong></span>
+      </a>
+      <a class="strip__card" href="resource.html?id=tlcl">
+        <img src="assets/covers/tlcl.jpg" alt="" width="360" height="480" loading="lazy">
+        <span><small>Linux · Free</small><strong>Own the terminal with <em>The Linux Command Line</em></strong></span>
+      </a>
+      <a class="strip__more" href="home.html">Enter the library <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    </section>
+    <p class="hero__legal">© <span id="year">2026</span> OMT Working Group · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
   </div>
 </body>
 </html>
