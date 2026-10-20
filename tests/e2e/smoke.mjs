@@ -40,7 +40,7 @@ async function newPage(width = 1280) {
   return page;
 }
 
-const PAGES = ['index.html', 'home.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
+const PAGES = ['index.html', 'resources.html', 'home.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'privacy.html', 'terms.html', 'nope.html'];
 const WIDTHS = [320, 375, 430, 768, 1024, 1440];
 
 for (const width of WIDTHS) {

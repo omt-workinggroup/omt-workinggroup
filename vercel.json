@@ -70,5 +70,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/resources",
+      "destination": "/resources.html"
+    }
   ]
 }

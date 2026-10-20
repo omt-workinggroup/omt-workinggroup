@@ -48,7 +48,7 @@ function drawerHTML(current) {
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="drawer__top"><a class="brand" href="home.html">${LOGO}</a>
       <button type="button" class="icon-btn" data-close aria-label="Close menu">${icons.close}</button></div>
-    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li></ul></nav>
+    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li><li><a href="./">OMT company site</a></li></ul></nav>
     <a class="btn btn--ai btn--block" href="assistant.html">${icons.sparkle}Ask OMT AI</a>
   </div>`;
 }
@@ -58,7 +58,7 @@ function footerHTML() {
   return `<div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand brand--full" href="./" aria-label="OMT WORKING GROUP front page">${LOGO_FULL}</a>
+        <a class="brand brand--full" href="./" aria-label="OMT WORKING GROUP company home">${LOGO_FULL}</a>
         <p>OMT, the Operations Maintenance and Training Working Group, keeps a free shelf of books, specs and courses for people who build and run software, networks and telecom systems.</p>
       </div>
       <div><h2>Explore</h2><ul>
@@ -68,7 +68,8 @@ function footerHTML() {
         <li><a href="assistant.html">AI Assistant</a></li>
         <li><a href="favorites.html">Your favorites</a></li></ul></div>
       <div><h2>About</h2><ul>
-        <li><a href="about.html">About OMT WORKING GROUP</a></li>
+        <li><a href="./">OMT company site</a></li>
+        <li><a href="about.html">About the library</a></li>
         <li><a href="about.html#contact">Contact</a></li>
         <li><a href="about.html#copyright">Report a copyright issue</a></li></ul></div>
       <div><h2>Legal</h2><ul>

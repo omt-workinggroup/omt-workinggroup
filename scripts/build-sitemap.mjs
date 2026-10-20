@@ -3,7 +3,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const SITE = (process.env.SITE_URL || 'https://omt-workinggroup.com').replace(/\/$/, '');
-const PAGES = ['', 'home.html', 'library.html', 'office.html', 'presentations.html', 'assistant.html', 'about.html', 'privacy.html', 'terms.html'];
+const PAGES = ['', 'resources', 'home.html', 'library.html', 'office.html', 'presentations.html', 'assistant.html', 'about.html', 'privacy.html', 'terms.html'];
 const { resources, updated } = JSON.parse(await readFile(new URL('../data/resources.json', import.meta.url), 'utf8'));
 const xmlEscape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 

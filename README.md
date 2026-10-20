@@ -10,7 +10,8 @@ OMT WORKING GROUP is a **discovery platform, not a publisher**. We don't write o
 
 ## Pages
 
-- `index.html` is the front page: a static landing page with the shelf, contents, staff picks and a **Get started** button.
+- `index.html` is the company homepage (who we are, services, mission and vision, values, deployment process, training, contact). It uses its own small stylesheet, `css/company.css`, and `js/pages/company.js`.
+- `resources.html` (also served at `/resources`) is the front page of the resource library: a phone splash and the desktop shelf, with an **Enter** button into `home.html`.
 - `home.html` is the library home people land on after **Get started**: search, tracks, featured books, Office and OMT AI.
 - Type is Source Serif 4 (headings) and IBM Plex Sans and Mono (text and labels), self-hosted in `assets/fonts/` under the SIL Open Font License.
 
@@ -115,7 +116,7 @@ The contact and copyright forms post to `/api/contact`, which stores them in the
 ## Project structure
 
 ```
-index.html, library.html, resource.html, office.html, presentations.html,
+index.html, resources.html, library.html, resource.html, office.html, presentations.html,
 assistant.html, favorites.html, about.html, privacy.html, terms.html, 404.html
 css/style.css              design tokens (light + dark), components, responsive rules
 js/core/                   shared modules: layout, search, catalogue, favorites, rendering, Open Library

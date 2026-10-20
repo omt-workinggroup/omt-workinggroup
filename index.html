@@ -3,128 +3,257 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMT Working Group: the engineer's bookshelf</title>
-  <meta name="description" content="Free books, specs and courses for people who build and run software, networks and telecom systems. Programming, networking, 5G, Linux, cloud, security and data, each linked to its official source.">
+  <title>OMT Working Group: operations, maintenance and training</title>
+  <meta name="description" content="OMT Working Group is an integrated operations, maintenance and training company serving renewable energy, power systems, civil works, ICT and telecommunications.">
   <link rel="canonical" href="https://omt-workinggroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
-  <meta property="og:title" content="OMT Working Group: the engineer's bookshelf">
-  <meta property="og:description" content="Free books, specs and courses for people who build and run software, networks and telecom systems.">
+  <meta property="og:title" content="OMT Working Group: operations, maintenance and training">
+  <meta property="og:description" content="Reliable operations, maintenance and training for energy, infrastructure and technology assets.">
   <meta property="og:url" content="https://omt-workinggroup.com/">
   <meta property="og:image" content="https://omt-workinggroup.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="OMT Working Group, the free tech library: books for developers, network and telecom engineers">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://omt-workinggroup.com/assets/og-image.png">
-  <meta name="apple-mobile-web-app-title" content="OMT Library">
-  <meta name="theme-color" content="#f4f1ea">
+  <meta name="theme-color" content="#0b1530">
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="prefetch" href="home.html">
+  <link rel="stylesheet" href="css/company.css">
+  <link rel="prefetch" href="resources.html">
 
-  <script type="module" src="js/pages/landing.js"></script>
+  <script type="module" src="js/pages/company.js"></script>
 </head>
-<body data-page="landing" class="lp">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Phones: a welcome screen with a tilted wall of the most-read book from each track. -->
-  <section class="splash" aria-labelledby="splash-title">
-    <div class="splash__wall">
-      <div class="splash__col">
-        <a href="resource.html?id=tlcl" style="--i:0"><img src="assets/covers/tlcl.webp" alt="The Linux Command Line" width="360" height="480"></a>
-        <a href="resource.html?id=tcp-ip-illustrated" style="--i:4"><img src="assets/covers/tcp-ip-illustrated.webp" alt="TCP/IP Illustrated" width="360" height="480"></a>
-        <a href="resource.html?id=atomic-habits" style="--i:8"><img src="assets/covers/atomic-habits.webp" alt="Atomic Habits" width="360" height="480"></a>
-        <a href="resource.html?id=c-programming-language" style="--i:12"><img src="assets/covers/c-programming-language.webp" alt="The C Programming Language" width="360" height="480"></a>
-      </div>
-      <div class="splash__col">
-        <a href="resource.html?id=5g-nr-dahlman" style="--i:1"><img src="assets/covers/5g-nr-dahlman.webp" alt="5G NR" width="360" height="480"></a>
-        <a href="resource.html?id=ddia" style="--i:5"><img src="assets/covers/ddia.webp" alt="Designing Data-Intensive Applications" width="360" height="480"></a>
-        <a href="resource.html?id=cuckoos-egg" style="--i:9"><img src="assets/covers/cuckoos-egg.webp" alt="The Cuckoo's Egg" width="360" height="480"></a>
-        <a href="resource.html?id=google-sre" style="--i:13"><img src="assets/covers/google-sre.webp" alt="Site Reliability Engineering" width="360" height="480"></a>
-      </div>
-      <div class="splash__col">
-        <a href="resource.html?id=kubernetes-up-and-running" style="--i:2"><img src="assets/covers/kubernetes-up-and-running.webp" alt="Kubernetes: Up and Running" width="360" height="480"></a>
-        <a href="resource.html?id=pro-git" style="--i:6"><img src="assets/covers/pro-git.webp" alt="Pro Git" width="360" height="480"></a>
-        <a href="resource.html?id=hands-on-machine-learning" style="--i:10"><img src="assets/covers/hands-on-machine-learning.webp" alt="Hands-On Machine Learning" width="360" height="480"></a>
-        <a href="resource.html?id=ostep" style="--i:14"><img src="assets/covers/ostep.webp" alt="Operating Systems: Three Easy Pieces" width="360" height="480"></a>
-      </div>
-      <div class="splash__col">
-        <a href="resource.html?id=private-5g" style="--i:3"><img src="assets/covers/private-5g.webp" alt="Private 5G" width="360" height="480"></a>
-        <a href="resource.html?id=non-designers-design-book" style="--i:7"><img src="assets/covers/non-designers-design-book.webp" alt="The Non-Designer's Design Book" width="360" height="480"></a>
-        <a href="resource.html?id=hacking-art-of-exploitation" style="--i:11"><img src="assets/covers/hacking-art-of-exploitation.webp" alt="Hacking: The Art of Exploitation" width="360" height="480"></a>
-        <a href="resource.html?id=clean-code" style="--i:15"><img src="assets/covers/clean-code.webp" alt="Clean Code" width="360" height="480"></a>
-      </div>
-    </div>
-    <div class="splash__fade" aria-hidden="true"></div>
-    <div class="splash__copy">
-      <h1 id="splash-title">Welcome to <span>OMT</span></h1>
-      <p>Your go-to bookshelf for tech lovers, IT students and telecom engineers.</p>
-      <a class="splash__cta" href="home.html">Explore books</a>
-    </div>
-  </section>
-
-  <div class="stage">
-    <header class="stage__top">
-      <a class="brand" href="./" aria-label="OMT WORKING GROUP front page"><img class="brand__mark" src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><span>Operations Maintenance</span><span>and Training Working Group</span></span></a>
-      <nav class="stage__nav" aria-label="Main">
-        <a href="library.html">Library</a>
-        <a href="office.html">Office</a>
-        <a href="assistant.html">OMT AI</a>
-        <a href="about.html">About</a>
+  <header class="top" id="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="./" aria-label="OMT WORKING GROUP home">
+        <img src="assets/logo-mark.svg" alt="" width="50" height="39">
+        <span class="brand__word"><b>OMT</b><span>Working Group</span></span>
+      </a>
+      <button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#values">Values</a>
+        <a href="#training">Training</a>
+        <a href="resources.html">Resources</a>
+        <a class="nav__cta" href="#contact">Contact us</a>
       </nav>
-      <a class="stage__enter" href="home.html">Enter <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-    </header>
+    </div>
+  </header>
 
-    <main id="main" class="stage__main">
-      <div class="stage__copy">
-        <p class="stage__kicker"><span>Vol. 1</span> Operations<i>·</i>Maintenance<i>·</i>Training</p>
-        <h1>The engineer's <em>bookshelf.</em></h1>
-        <p class="stage__lead">Free books, specs and courses for the people who build and run software, networks and telecom. We find the good ones and send you to the official edition.</p>
-        <div class="stage__actions">
-          <a class="stage__cta" href="home.html"><span>Get started</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          <a class="stage__browse" href="library.html">Browse <span data-count="total">1240</span> titles</a>
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">Operations · Maintenance · Training</p>
+          <h1>Keeping critical infrastructure running, and the people behind it ready.</h1>
+          <p class="hero__lead">OMT Working Group is an integrated operations, maintenance and training company serving renewable energy, power systems, civil works, ICT and telecommunications.</p>
+          <div class="hero__actions">
+            <a class="btn btn--green" href="#contact">Work with us</a>
+            <a class="btn btn--ghost" href="#services">Our services</a>
+          </div>
         </div>
-        <dl class="stage__facts">
-          <div><dd data-count="total">1240</dd><dt>titles, checked by hand</dt></div>
-          <div><dd data-count="free">419</dd><dt>free to read today</dt></div>
-          <div><dd>7</dd><dt>tracks, from code to 5G</dt></div>
+        <ol class="pillars" aria-label="What OMT stands for">
+          <li><b>O</b><div><h2>Operations</h2><p>Day-to-day running of critical assets to international best practice.</p></div></li>
+          <li><b>M</b><div><h2>Maintenance</h2><p>Planned and responsive work that cuts downtime and extends asset life.</p></div></li>
+          <li><b>T</b><div><h2>Training</h2><p>Targeted programmes that build local capacity and transfer knowledge.</p></div></li>
+        </ol>
+      </div>
+      <div class="wrap">
+        <ul class="sectors" aria-label="Sectors we serve">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M12 1.5v.5M7.5 3l.5.5M16.5 3l-.5.5"/><path d="M4 21l2-9h12l2 9z"/><path d="M5 16.5h14M10 12l-.8 9M14 12l.8 9"/></svg>Renewable energy</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Power systems</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9.5 21v-6h5v6"/></svg>Civil works</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9.5 8.5-2 1.5 2 1.5M14.5 8.5l2 1.5-2 1.5"/></svg>ICT</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10v12M8.5 22 12 10l3.5 12"/><circle cx="12" cy="8" r="1.8"/><path d="M8.2 4.6a5 5 0 0 0 0 6.8M15.8 4.6a5 5 0 0 1 0 6.8M5.4 2a9 9 0 0 0 0 12M18.6 2a9 9 0 0 1 0 12"/></svg>Telecommunications</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div>
+          <p class="kicker kicker--dark">Who we are</p>
+          <h2 id="about-title">A multidisciplinary partner for the assets that matter.</h2>
+        </div>
+        <div class="about__text">
+          <p class="about__lead">OMT – Working Group is an integrated operations, maintenance, and training company providing specialized services across renewable energy, power systems, civil works, information and communication technology (ICT), and telecommunications.</p>
+          <p>The company is structured to deliver reliable, efficient, and sustainable solutions through a combination of technical expertise, field experience, and a strong commitment to quality and safety. Our core mandate is to ensure the smooth operation and long-term performance of critical infrastructure assets while supporting capacity development through targeted training programs.</p>
+          <p>OMT – Working Group operates with a results-oriented approach, guided by international best practices and industry standards. We partner with public and private sector clients to deliver turnkey solutions that enhance operational efficiency, minimize downtime, and extend the lifecycle of assets.</p>
+          <p>Our multidisciplinary capability, coupled with a dedicated team of professionals, positions OMT as a trusted partner in the delivery of innovative, dependable, and cost-effective operations, maintenance, and training services.</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <dl class="facts">
+          <div><dt>5</dt><dd>sectors served under one partner</dd></div>
+          <div><dt>3</dt><dd>disciplines: operations, maintenance, training</dd></div>
+          <div><dt>Public &amp; private</dt><dd>sector clients, with turnkey delivery</dd></div>
+          <div><dt>1,240</dt><dd>free learning resources in our library</dd></div>
         </dl>
       </div>
+    </section>
 
-      <div class="stage__shelf" aria-label="A few books from the library">
-        <div class="stage__light" aria-hidden="true"></div>
-        <div class="stage__row">
-          <div class="stage__books">
-              <a class="stage__book" href="resource.html?id=pro-git" style="--i:0"><img src="assets/covers/pro-git.webp" alt="Pro Git" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=tlcl" style="--i:1"><img src="assets/covers/tlcl.webp" alt="The Linux Command Line" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=ostep" style="--i:2"><img src="assets/covers/ostep.webp" alt="Operating Systems: Three Easy Pieces" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=cn-systems-approach" style="--i:3"><img src="assets/covers/cn-systems-approach.webp" alt="Computer Networks: A Systems Approach" width="360" height="480"></a>
-          </div>
-          <div class="stage__plank" aria-hidden="true"></div>
+    <section class="section section--tint" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="head">
+          <p class="kicker kicker--dark">What we do</p>
+          <h2 id="services-title">Services across five sectors</h2>
+          <p>One team for the full life of an asset: we run it, keep it in shape, and train the people who depend on it.</p>
         </div>
-        <div class="stage__row">
-          <div class="stage__books">
-              <a class="stage__book" href="resource.html?id=private-5g" style="--i:4"><img src="assets/covers/private-5g.webp" alt="Private 5G: A Systems Approach" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=google-sre" style="--i:5"><img src="assets/covers/google-sre.webp" alt="Site Reliability Engineering" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=ddia" style="--i:6"><img src="assets/covers/ddia.webp" alt="Designing Data-Intensive Applications" width="360" height="480"></a>
-              <a class="stage__book" href="resource.html?id=eloquent-javascript" style="--i:7"><img src="assets/covers/eloquent-javascript.webp" alt="Eloquent JavaScript" width="360" height="480"></a>
-          </div>
-          <div class="stage__plank" aria-hidden="true"></div>
+        <div class="services">
+          <article class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M12 1.5v.5M7.5 3l.5.5M16.5 3l-.5.5"/><path d="M4 21l2-9h12l2 9z"/><path d="M5 16.5h14M10 12l-.8 9M14 12l.8 9"/></svg>
+            <h3>Renewable energy</h3>
+            <p>Operation, maintenance and performance monitoring of renewable installations, so they deliver the output they were built for.</p>
+          </article>
+          <article class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+            <h3>Power systems</h3>
+            <p>Care of generation, distribution and backup power equipment, with planned maintenance that keeps supply steady and safe.</p>
+          </article>
+          <article class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9.5 21v-6h5v6"/></svg>
+            <h3>Civil works</h3>
+            <p>Construction and upkeep of the sites, structures and foundations that technical infrastructure stands on.</p>
+          </article>
+          <article class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9.5 8.5-2 1.5 2 1.5M14.5 8.5l2 1.5-2 1.5"/></svg>
+            <h3>ICT</h3>
+            <p>Support for networks, systems and IT infrastructure, from installation to the routine work that keeps them available.</p>
+          </article>
+          <article class="service">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10v12M8.5 22 12 10l3.5 12"/><circle cx="12" cy="8" r="1.8"/><path d="M8.2 4.6a5 5 0 0 0 0 6.8M15.8 4.6a5 5 0 0 1 0 6.8M5.4 2a9 9 0 0 0 0 12M18.6 2a9 9 0 0 1 0 12"/></svg>
+            <h3>Telecommunications</h3>
+            <p>Operations and maintenance for telecom sites and networks, keeping coverage up and outages short.</p>
+          </article>
+          <article class="service service--dark">
+            <h3>Training &amp; capacity development</h3>
+            <p>Every service comes with knowledge transfer, so client teams grow with the assets they run.</p>
+            <a href="#training">How we train →</a>
+          </article>
         </div>
       </div>
-    </main>
+    </section>
 
-    <footer class="stage__foot">
-      <div class="marquee" aria-label="We link to these publishers and catalogues">
-        <ul><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
-        <ul aria-hidden="true"><li>Google Books</li><li>Open Library</li><li>Project Gutenberg</li><li>OpenStax</li><li>O'Reilly</li><li>No Starch Press</li><li>3GPP</li><li>ITU-T</li><li>OWASP</li><li>NIST</li><li>MIT OpenCourseWare</li><li>Harvard CS50</li></ul>
+    <section class="section mv" aria-label="Mission and vision">
+      <div class="wrap mv__grid">
+        <div class="mv__card">
+          <p class="kicker">Our mission</p>
+          <p class="mv__text">To provide reliable and sustainable operations, maintenance, and training solutions that optimize performance, empower people, and drive long-term value across energy, infrastructure, and technology sectors.</p>
+        </div>
+        <div class="mv__card">
+          <p class="kicker">Our vision</p>
+          <p class="mv__text">To be a leading regional provider of integrated technical and operational solutions, recognized for excellence, innovation, and the development of local capacity for sustainable growth.</p>
+        </div>
       </div>
-      <p class="stage__legal">© <span id="year">2026</span> OMT Working Group · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
-    </footer>
-  </div>
+    </section>
+
+    <section class="section" id="values" aria-labelledby="values-title">
+      <div class="wrap">
+        <div class="head">
+          <p class="kicker kicker--dark">Core values</p>
+          <h2 id="values-title">What guides every job we take on</h2>
+        </div>
+        <ol class="values">
+          <li><span>01</span><h3>Safety</h3><p>We uphold the highest safety standards in all our operations to protect our people, assets, and the environment.</p></li>
+          <li><span>02</span><h3>Integrity</h3><p>We conduct our business with transparency, accountability, and ethical responsibility in every engagement.</p></li>
+          <li><span>03</span><h3>Excellence</h3><p>We strive for superior quality in our service delivery, continuously improving our systems and performance.</p></li>
+          <li><span>04</span><h3>Innovation</h3><p>We embrace technology and creative problem-solving to deliver efficient and future-ready solutions.</p></li>
+          <li><span>05</span><h3>Collaboration</h3><p>We believe in strong partnerships and teamwork to achieve shared goals and sustainable outcomes.</p></li>
+          <li><span>06</span><h3>Capacity development</h3><p>We are committed to empowering local talent through continuous learning, training, and knowledge transfer.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="head">
+          <p class="kicker kicker--dark">How we deploy</p>
+          <h2 id="process-title">A deployment process shaped to each site</h2>
+          <p>Our internal deployment process is tailored to meet the requirements of a wide variety of areas.</p>
+        </div>
+        <!-- Placeholder steps until the CTO confirms the real process. -->
+        <ol class="steps">
+          <li><h3>Assess</h3><p>We study the site, the assets and what the client needs from them.</p></li>
+          <li><h3>Plan</h3><p>We set scope, safety measures and schedules against industry standards.</p></li>
+          <li><h3>Deliver</h3><p>Our teams carry out the work and hand over a fully working asset.</p></li>
+          <li><h3>Sustain</h3><p>We operate, maintain and train, so performance holds for the long term.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="training" aria-labelledby="training-title">
+      <div class="wrap training">
+        <div>
+          <p class="kicker kicker--dark">Training</p>
+          <h2 id="training-title">Building local capacity that lasts</h2>
+          <p>Training is the T in OMT. Alongside our field work we run targeted programmes for client teams and young professionals, so skills stay where the infrastructure is.</p>
+          <p>Anyone can start learning today in our free resource library: books, guides and courses on networking, telecom, power, cloud, security, Microsoft Office and more.</p>
+          <a class="btn btn--green" href="resources.html">Explore all resources</a>
+        </div>
+        <div class="shelf">
+          <div class="shelf__head"><b>From the OMT library</b><a href="resources.html">1,240 titles →</a></div>
+          <div class="shelf__books">
+            <a href="resource.html?id=tcp-ip-illustrated"><img src="assets/covers/tcp-ip-illustrated.webp" alt="TCP/IP Illustrated" width="300" height="400"></a>
+            <a href="resource.html?id=5g-nr-dahlman"><img src="assets/covers/5g-nr-dahlman.webp" alt="5G NR" width="300" height="400"></a>
+            <a href="resource.html?id=tlcl"><img src="assets/covers/tlcl.webp" alt="The Linux Command Line" width="300" height="400"></a>
+            <a href="resource.html?id=google-sre"><img src="assets/covers/google-sre.webp" alt="Site Reliability Engineering" width="300" height="400"></a>
+            <a href="resource.html?id=private-5g"><img src="assets/covers/private-5g.webp" alt="Private 5G" width="300" height="400"></a>
+            <a href="resource.html?id=kubernetes-up-and-running"><img src="assets/covers/kubernetes-up-and-running.webp" alt="Kubernetes: Up and Running" width="300" height="400"></a>
+          </div>
+          <ul class="shelf__links">
+            <li><a href="library.html">Explore library</a></li>
+            <li><a href="office.html">Microsoft Office</a></li>
+            <li><a href="assistant.html">Ask OMT AI</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__grid">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2 id="contact-title">Tell us about your project</h2>
+          <p>Whether you need a partner to run and maintain your assets, or training for your team, send us a short note and we will reply by email.</p>
+        </div>
+        <form class="form" id="contact-form" novalidate>
+          <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
+          <div class="form__row">
+            <label>Name<input name="name" autocomplete="name" required maxlength="100"></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+          </div>
+          <label>I'm interested in<select name="topic">
+            <option>Operations &amp; maintenance</option>
+            <option>Training</option>
+            <option>Partnership</option>
+            <option>General question</option>
+          </select></label>
+          <label>Message<textarea name="message" required maxlength="3000" rows="5"></textarea></label>
+          <button class="btn btn--green" type="submit">Send message</button>
+          <p class="form__status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <a class="brand" href="./"><img src="assets/logo-mark.svg" alt="" width="50" height="39"><span class="brand__word"><b>OMT</b><span>Working Group</span></span></a>
+        <p>Operations, maintenance and training for renewable energy, power systems, civil works, ICT and telecommunications.</p>
+      </div>
+      <nav aria-label="Company"><h2>Company</h2><a href="#about">About</a><a href="#services">Services</a><a href="#values">Values</a><a href="#contact">Contact</a></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><a href="resources.html">Resources home</a><a href="library.html">Library</a><a href="office.html">Microsoft Office</a><a href="assistant.html">OMT AI</a></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+    </div>
+    <div class="wrap"><p class="foot__bottom">© <span id="year">2026</span> OMT WORKING GROUP. All rights reserved.</p></div>
+  </footer>
 </body>
 </html>
