@@ -21,8 +21,10 @@ const container = document.getElementById('office-sections');
 // OMT originals first, then official/free tutorials, then everything else.
 const ORDER = { omt: 0, official: 1, open: 2, paid: 3, info: 4 };
 const belongsTo = (r, slug) => r.category === slug
-  || (slug === 'powerpoint' && r.category === 'presentations' && (r.formats ?? []).includes('PPTX'))
+  || (slug === 'powerpoint' && r.category === 'presentations')
   || (r.category === 'productivity' && (r.tags ?? []).includes(slug));
+// Each app shows a swipeable row; the full list is one tap away in the library.
+const ROW = 24;
 
 try {
   const all = await loadCatalog();
@@ -34,8 +36,8 @@ try {
       <div class="app-section__head">${appIconHTML(slug, 52, 'office-tile__icon')}
         <div><h2 id="${slug}-h" style="margin:0">${e(c.label)}</h2><p class="muted" style="margin:0">${e(c.description)}</p></div></div>
       <p class="app-section__topics">Covers: ${topics.map(e).join(' · ')}</p>
-      ${items.length ? `<div class="grid grid--cards">${items.map(cardHTML).join('')}</div>` : stateHTML({ title: 'Resources coming soon', text: 'Ask OMT AI for help with this app in the meantime.' })}
-      <p style="margin-top:16px"><a href="library.html?category=${slug}">See all ${e(c.label)} resources in the library</a> · <a href="assistant.html?q=${encodeURIComponent(`Help me learn ${c.label}`)}">Ask OMT AI about ${e(c.label.replace('Microsoft ', ''))}</a></p>
+      ${items.length ? `<p class="app-section__count">${items.length} books and guides${items.length > ROW ? ` · showing ${ROW}, swipe for more` : ''}</p><div class="grid grid--cards grid--rail">${items.slice(0, ROW).map(cardHTML).join('')}</div>` : stateHTML({ title: 'Resources coming soon', text: 'Ask OMT AI for help with this app in the meantime.' })}
+      <p style="margin-top:16px"><a href="library.html?category=${slug}">See all ${items.length} ${e(c.label)} resources in the library</a> · <a href="assistant.html?q=${encodeURIComponent(`Help me learn ${c.label}`)}">Ask OMT AI about ${e(c.label.replace('Microsoft ', ''))}</a></p>
     </section>`;
   }).join('');
   // Re-apply the hash jump now that the sections exist.

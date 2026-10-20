@@ -19,7 +19,7 @@ export const CATEGORIES = {
   powerpoint: { label: 'Microsoft PowerPoint', short: 'P', color: '#c43e1c', office: true, description: 'Slide design and presenting.' },
   access: { label: 'Microsoft Access', short: 'A', color: '#a4373a', office: true, description: 'Databases, queries, forms and reports.' },
   outlook: { label: 'Microsoft Outlook', short: 'O', color: '#0f6cbd', office: true, description: 'Email, calendar and communication.' },
-  presentations: { label: 'Presentation Templates', short: 'PT', color: '#c2410c', icon: 'slides', description: 'Ready-made decks for school and work.' },
+  presentations: { label: 'Presentations & Public Speaking', short: 'PT', color: '#c2410c', icon: 'slides', description: 'Slide design, public speaking, storytelling and ready-made decks.' },
 };
 
 /** Tech categories, in the order they are shown. */

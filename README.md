@@ -160,6 +160,16 @@ Rules (checked by `npm test`): ids are unique, every resource needs an `https` `
 
 Never invent metadata. Copy the title, author and year from the official source page.
 
+### How the big catalogue was built (October 2026)
+
+Most of the 1,000+ titles were added in bulk, but each one was still chosen by hand:
+
+1. **Candidates** came from Open Library subject searches for every category (sorted by how many readers have the book on their reading log), a second round of title searches for networking, and Project Gutenberg's most-read public-domain books. Conference proceedings, course packs, workbooks, fiction in non-fiction categories and anything adult were filtered out automatically.
+2. **Every candidate list was reviewed by hand** and each book placed in the category where it belongs (a security book found under "networking" goes to Cybersecurity).
+3. **Titles, authors, years and access** come from the source record. Open Library's own reading status decides the label: public → *Free & open*, borrowable → *Free to borrow*, otherwise *Buy or borrow* with a link to the Open Library work page.
+4. **Descriptions** are one factual sentence written by OMT AI for each book it knows; when it does not know a book, Open Library's description is used, and failing that a short line built from the book's subjects. Nothing is invented.
+5. **Covers** are the source's cover image, reviewed on contact sheets; blank title pages, scans, foreign-language editions and wrong covers were rejected (those books show the styled poster instead). Covers are stored as 300 px WebP files in `assets/covers/`.
+
 ## Testing
 
 ```bash
