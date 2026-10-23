@@ -1,12 +1,12 @@
 // Where the app's pages come from. The app shows the resource section of the website.
 // Override for local testing with EXPO_PUBLIC_SITE_URL, e.g. http://192.168.1.20:8080
-export const SITE_URL = (process.env.EXPO_PUBLIC_SITE_URL ?? 'https://omt-workinggroup.com').replace(/\/$/, '');
+export const SITE_URL = (process.env.EXPO_PUBLIC_SITE_URL ?? 'https://web.omt-workinggroup.com').replace(/\/$/, '');
 export const START_URL = `${SITE_URL}/resources.html?app=1`;
 
 // The website reads this from the user agent and hides links back to the company site.
 export const APP_USER_AGENT = 'OMTApp/1.0';
 
-const SITE_HOSTS = new Set([new URL(SITE_URL).host, 'www.omt-workinggroup.com', 'omt-working-group.vercel.app']);
+const SITE_HOSTS = new Set([new URL(SITE_URL).host, 'web.omt-workinggroup.com', 'omt-working-group.vercel.app']);
 const DOWNLOAD = /\.(pdf|docx?|xlsx?|pptx?|zip|epub)(\?|$)/i;
 
 export type Route = { kind: 'load' } | { kind: 'start' } | { kind: 'external' };

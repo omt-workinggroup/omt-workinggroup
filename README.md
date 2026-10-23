@@ -100,7 +100,7 @@ The site is a static site plus two Vercel Functions in `api/`. `vercel.json` set
 3. Environment variables (**Project › Settings › Environment Variables**):
    - `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` for the contact and copyright forms.
    - `ANTHROPIC_API_KEY` for live AI (optional).
-4. The site runs on **https://omt-workinggroup.com** (DNS at Namecheap: an A record to `76.76.21.21`, and `www` as a CNAME to `cname.vercel-dns.com`, which redirects to the main domain). The HTML `<head>` tags, `robots.txt` and the sitemap use that address; to change it, replace it there and run `SITE_URL=https://your-domain node scripts/build-sitemap.mjs`.
+4. The site runs on **https://web.omt-workinggroup.com** (DNS at Namecheap: an A record to `76.76.21.21`, and `www` as a CNAME to `cname.vercel-dns.com`, which redirects to the main domain). The HTML `<head>` tags, `robots.txt` and the sitemap use that address; to change it, replace it there and run `SITE_URL=https://your-domain node scripts/build-sitemap.mjs`.
 
 ### Form messages (Supabase)
 

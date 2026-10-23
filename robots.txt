@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /favorites.html
 
-Sitemap: https://omt-workinggroup.com/sitemap.xml
+Sitemap: https://web.omt-workinggroup.com/sitemap.xml

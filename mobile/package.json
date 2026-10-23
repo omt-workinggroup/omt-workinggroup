@@ -22,7 +22,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "export:web": "EXPO_PUBLIC_SITE_URL=https://omt-workinggroup.com expo export --platform web --output-dir ../app --clear"
+    "export:web": "EXPO_PUBLIC_SITE_URL=https://web.omt-workinggroup.com expo export --platform web --output-dir ../app --clear"
   },
   "private": true
 }
