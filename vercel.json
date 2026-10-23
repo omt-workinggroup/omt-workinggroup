@@ -69,6 +69,15 @@
           "value": "public, max-age=600, stale-while-revalidate=86400"
         }
       ]
+    },
+    {
+      "source": "/(llms.txt|sitemap.xml|robots.txt)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -79,6 +88,19 @@
     {
       "source": "/app",
       "destination": "/app/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "omt-working-group.vercel.app"
+        }
+      ],
+      "destination": "https://web.omt-workinggroup.com/:path*",
+      "permanent": true
     }
   ]
 }

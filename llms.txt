@@ -1,0 +1,44 @@
+# OMT Working Group
+
+> OMT – Working Group is an integrated operations, maintenance, and training company providing specialized services across renewable energy, power systems, civil works, information and communication technology (ICT), and telecommunications. Its website also hosts OMT Resources, a free engineering library of 1,240 books and learning resources (419 free to read), and OMT AI, a study assistant.
+
+## Company
+
+- Name: OMT Working Group (also written "OMT – Working Group"; OMT stands for Operations, Maintenance and Training)
+- What it does: operates and maintains critical infrastructure assets and trains the people who run them, with a results-oriented approach guided by international best practices and industry standards. It partners with public and private sector clients to deliver turnkey solutions that enhance operational efficiency, minimize downtime, and extend the lifecycle of assets.
+- Sectors: Renewable energy; Power systems; Civil works; Information and communication technology (ICT); Telecommunications; Training and capacity development
+- Mission: To provide reliable and sustainable operations, maintenance, and training solutions that optimize performance, empower people, and drive long-term value across energy, infrastructure, and technology sectors.
+- Vision: To be a leading regional provider of integrated technical and operational solutions, recognized for excellence, innovation, and the development of local capacity for sustainable growth.
+- Core values: Safety, Integrity, Excellence, Innovation, Collaboration, Capacity Development
+- Contact: the form at https://web.omt-workinggroup.com/#contact
+
+## Main pages
+
+- [Company homepage](https://web.omt-workinggroup.com/): who we are, services, mission and vision, values, deployment process, training, contact
+- [About](https://web.omt-workinggroup.com/about.html): about OMT and its library, how resource access works, contact, copyright reports
+- [OMT Resources](https://web.omt-workinggroup.com/resources): front page of the free library
+- [Explore the library](https://web.omt-workinggroup.com/library.html): search and filter every resource (add ?q=your+topic to search)
+- [Microsoft Office resource center](https://web.omt-workinggroup.com/office.html): Word, Excel, PowerPoint, Access and Outlook (192 resources)
+- [Presentations](https://web.omt-workinggroup.com/presentations.html): slide design and public speaking (48 resources)
+- [OMT AI](https://web.omt-workinggroup.com/assistant.html): AI assistant that explains technical topics, writes code, draws diagrams and charts, and recommends books
+- [Mobile app preview](https://web.omt-workinggroup.com/app): the OMT Resources app for Android and iOS
+
+## Library topics
+
+- Programming and computer science: 110 resources
+- Networking: 113
+- Telecom and 5G: 63
+- Cybersecurity: 102
+- Cloud and DevOps: 60
+- Linux and systems: 55
+- Data and AI: 54
+- Design: 73
+- Business: 90; Productivity: 44; Study skills: 61; Success: 84; General learning: 91
+
+Each book has its own page at https://web.omt-workinggroup.com/resource.html?id=<id>, listed in the sitemap. OMT does not host copyrighted books: every record links to its official source, a free open edition, or a library copy.
+
+## Optional
+
+- [Sitemap](https://web.omt-workinggroup.com/sitemap.xml)
+- [Privacy Policy](https://web.omt-workinggroup.com/privacy.html)
+- [Terms of Use](https://web.omt-workinggroup.com/terms.html)

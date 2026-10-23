@@ -11,6 +11,8 @@ import { escapeHtml as e, safeUrl, formatDate, setMeta } from '../core/util.js';
 
 initLayout();
 
+const SITE = 'https://web.omt-workinggroup.com';
+
 const root = document.getElementById('resource-root');
 const id = new URLSearchParams(location.search).get('id');
 
@@ -54,12 +56,46 @@ function metaRows(r) {
   return rows.filter(([, v]) => v).map(([k, v]) => `<tr><th scope="row">${e(k)}</th><td>${e(v)}</td></tr>`).join('');
 }
 
+// schema.org data for the book on show, so search engines and AI assistants can read its details.
+function writeStructuredData(r, cat, url) {
+  const authors = (r.author ?? '').split(/,\s*|\s+and\s+|\s*&\s*/).filter(Boolean);
+  const item = {
+    '@type': r.kind === 'book' ? 'Book' : 'LearningResource',
+    '@id': `${url}#resource`,
+    name: r.title,
+    url,
+    description: r.description,
+    inLanguage: 'en',
+    isAccessibleForFree: r.accessType === 'open' || r.accessType === 'official',
+    ...(authors.length && { author: authors.map((name) => ({ '@type': 'Person', name })) }),
+    ...(r.publisher && { publisher: { '@type': 'Organization', name: r.publisher } }),
+    ...(/^\d{4}$/.test(String(r.year ?? '')) && { datePublished: String(r.year) }),
+    ...(r.cover && { image: `${SITE}/${r.cover}` }),
+    ...(r.license && !/copyright/i.test(r.license) && { license: r.license }),
+    ...(cat && { genre: cat.label }),
+    ...(r.tags?.length && { keywords: r.tags.join(', ') }),
+    ...(r.sourceUrl && !/[?&]q=|\/search\b/.test(r.sourceUrl) && { sameAs: r.sourceUrl }),
+  };
+  const crumbs = { '@type': 'BreadcrumbList', itemListElement: [
+    ['Home', `${SITE}/`], ['Resources', `${SITE}/resources`], ['Explore library', `${SITE}/library.html`], [r.title, url],
+  ].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) };
+  let tag = document.getElementById('ld-resource');
+  if (!tag) {
+    tag = Object.assign(document.createElement('script'), { type: 'application/ld+json', id: 'ld-resource' });
+    document.head.append(tag);
+  }
+  tag.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': [item, crumbs] });
+}
+
 function render(r, all) {
   const access = ACCESS[r.accessType] ?? ACCESS.info;
   const cat = CATEGORIES[r.category];
   const isOffice = OFFICE_APPS.includes(r.category);
   setMeta(`${r.title} — OMT WORKING GROUP`, `${r.description} ${access.title}.`);
-  document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${location.origin}${location.pathname}?id=${encodeURIComponent(r.id)}`);
+  const url = `${SITE}/resource.html?id=${encodeURIComponent(r.id)}`;
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+  writeStructuredData(r, cat, url);
 
   const related = relatedResources(all, r, 4);
   const paidNote = r.accessType === 'paid'

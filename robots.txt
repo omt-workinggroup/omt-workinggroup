@@ -1,5 +1,29 @@
+# OMT Working Group — https://web.omt-workinggroup.com
+# Search engines and AI assistants are welcome to read and cite this site.
+
 User-agent: *
 Allow: /
 Disallow: /favorites.html
+Disallow: /api/
+Disallow: /app/
+
+# AI search and assistant crawlers (listed so it is explicit that they are allowed)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /favorites.html
+Disallow: /api/
+Disallow: /app/
 
 Sitemap: https://web.omt-workinggroup.com/sitemap.xml

@@ -212,3 +212,10 @@ npx eas-cli@latest build -p android --profile preview   # installable APK (needs
 ```
 
 Set `EXPO_PUBLIC_SITE_URL` to point the app at another copy of the site. `mobile/` is listed in `.vercelignore`, so it is not deployed with the website.
+
+## Search engines and AI assistants (SEO and GEO)
+
+- The site lives at `https://web.omt-workinggroup.com`; `omt-working-group.vercel.app` redirects there (`vercel.json`).
+- `node scripts/build-seo.mjs` writes robots and social tags plus schema.org JSON-LD (Organization, WebSite with search, page types, breadcrumbs) into each page, and regenerates `llms.txt`, the plain summary for AI assistants. Book pages add their own `Book` data in `js/pages/resource.js`. Re-run it after regenerating `index.html` or changing page titles.
+- `node scripts/build-sitemap.mjs` writes `sitemap.xml` (company homepage, resources, about, every library page and book, with cover images). Submit `https://web.omt-workinggroup.com/sitemap.xml` in Google Search Console.
+- `googlea7a56c0471e5c141.html` verifies the site in Google Search Console; keep it.
