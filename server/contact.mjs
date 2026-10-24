@@ -1,6 +1,7 @@
-// Contact and copyright-report submissions, stored in the Supabase table public.site_messages.
-// The table allows inserts only (no reads), so the publishable key is enough and nothing is exposed.
+// Contact and copyright-report submissions, stored in the Supabase table public.site_messages
+// and emailed to the owner. Either one is enough; both failing is an error.
 import { fail, json, createRateLimiter } from './http.mjs';
+import { createMailer, formatRows } from './mailer.mjs';
 
 const LIMITS = { name: 200, email: 200, topic: 100, resource: 500, message: 4000 };
 const KINDS = ['contact', 'copyright'];
@@ -19,13 +20,25 @@ export function validateMessage(body) {
   return null;
 }
 
-export function createContactHandler({ fetchImpl = fetch, env = process.env } = {}) {
+export function contactEmail(row) {
+  const what = row.kind === 'copyright' ? 'Copyright report' : 'Website message';
+  const { text, html } = formatRows(`${what} from ${row.name}`, [
+    ['Name', row.name],
+    ['Email', row.email],
+    ['Topic', row.topic],
+    ['Resource', row.resource],
+    ['Message', row.message],
+  ], 'Sent from the contact form on web.omt-workinggroup.com. Reply to this email to answer the person directly.');
+  return { subject: `${what}: ${row.topic || 'General'} (${row.name})`, text, html, replyTo: { name: row.name, address: row.email } };
+}
+
+export function createContactHandler({ fetchImpl = fetch, env = process.env, mailer = createMailer({ env }) } = {}) {
   const rateLimited = createRateLimiter({ windowMs: 60 * 60 * 1000, max: 5 });
   return async (req, context = {}) => {
     if (req.method !== 'POST') return fail(405, 'method_not_allowed', 'Use POST.', { Allow: 'POST' });
     const url = env.SUPABASE_URL;
     const key = env.SUPABASE_PUBLISHABLE_KEY;
-    if (!url || !key) return fail(503, 'not_configured', 'Messages can\'t be sent right now. Please try again later.');
+    if ((!url || !key) && !mailer.configured) return fail(503, 'not_configured', 'Messages can\'t be sent right now. Please try again later.');
 
     const raw = await req.text();
     if (raw.length > 12_000) return fail(413, 'too_large', 'Your message is too long.');
@@ -46,20 +59,16 @@ export function createContactHandler({ fetchImpl = fetch, env = process.env } = 
       resource: body.resource?.trim() || null,
       message: body.message.trim(),
     };
-    try {
-      const res = await fetchImpl(`${url.replace(/\/$/, '')}/rest/v1/site_messages`, {
+    const store = url && key
+      ? fetchImpl(`${url.replace(/\/$/, '')}/rest/v1/site_messages`, {
         method: 'POST',
         headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
         body: JSON.stringify(row),
         signal: AbortSignal.timeout(8000),
-      });
-      if (!res.ok) {
-        console.error('Supabase insert failed', res.status);
-        return fail(502, 'store_failed', 'Your message couldn\'t be sent. Please try again in a moment.');
-      }
-      return json(200, { ok: true });
-    } catch {
-      return fail(504, 'timeout', 'Your message couldn\'t be sent. Please try again in a moment.');
-    }
+      }).then((res) => { if (!res.ok) console.error('Supabase insert failed', res.status); return res.ok; }, () => false)
+      : Promise.resolve(false);
+    const [stored, emailed] = await Promise.all([store, mailer.send(contactEmail(row))]);
+    if (!stored && !emailed) return fail(502, 'store_failed', 'Your message couldn\'t be sent. Please try again in a moment.');
+    return json(200, { ok: true });
   };
 }

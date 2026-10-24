@@ -49,7 +49,7 @@ function drawerHTML(current) {
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
     <div class="drawer__top"><a class="brand" href="home.html">${LOGO}</a>
       <button type="button" class="icon-btn" data-close aria-label="Close menu">${icons.close}</button></div>
-    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li><li data-site-only><a href="./">OMT company site</a></li></ul></nav>
+    <nav aria-label="Mobile">${navList(current)}<ul><li><a href="favorites.html">Favorites</a></li><li><a href="register.html">Register for free</a></li><li data-site-only><a href="./">OMT company site</a></li></ul></nav>
     <a class="btn btn--ai btn--block" href="assistant.html">${icons.sparkle}Ask OMT AI</a>
   </div>`;
 }
@@ -67,7 +67,8 @@ function footerHTML() {
         <li><a href="office.html">Microsoft Office</a></li>
         <li><a href="presentations.html">Presentations</a></li>
         <li><a href="assistant.html">AI Assistant</a></li>
-        <li><a href="favorites.html">Your favorites</a></li></ul></div>
+        <li><a href="favorites.html">Your favorites</a></li>
+        <li><a href="register.html">Register for free</a></li></ul></div>
       <div><h2>About</h2><ul>
         <li data-site-only><a href="./">OMT company site</a></li>
         <li><a href="about.html">About the library</a></li>

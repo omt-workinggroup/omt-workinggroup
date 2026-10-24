@@ -10,11 +10,12 @@
 - Mission: To provide reliable and sustainable operations, maintenance, and training solutions that optimize performance, empower people, and drive long-term value across energy, infrastructure, and technology sectors.
 - Vision: To be a leading regional provider of integrated technical and operational solutions, recognized for excellence, innovation, and the development of local capacity for sustainable growth.
 - Core values: Safety, Integrity, Excellence, Innovation, Collaboration, Capacity Development
-- Contact: the form at https://web.omt-workinggroup.com/#contact
+- Contact: the form at https://web.omt-workinggroup.com/#contact; free registration at https://web.omt-workinggroup.com/register.html
 
 ## Main pages
 
 - [Company homepage](https://web.omt-workinggroup.com/): who we are, services, mission and vision, values, deployment process, training, contact
+- [Free registration](https://web.omt-workinggroup.com/register.html): register for free (also on the homepage at https://web.omt-workinggroup.com/#register); every registration goes straight to the OMT team
 - [About](https://web.omt-workinggroup.com/about.html): about OMT and its library, how resource access works, contact, copyright reports
 - [OMT Resources](https://web.omt-workinggroup.com/resources): front page of the free library
 - [Explore the library](https://web.omt-workinggroup.com/library.html): search and filter every resource (add ?q=your+topic to search)

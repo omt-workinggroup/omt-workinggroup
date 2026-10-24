@@ -8,6 +8,7 @@ const PAGES = [
   ['', 'weekly', '1.0'],
   ['resources', 'weekly', '0.9'],
   ['about.html', 'monthly', '0.8'],
+  ['register.html', 'monthly', '0.8'],
   ['home.html', 'weekly', '0.8'],
   ['library.html', 'weekly', '0.8'],
   ['office.html', 'monthly', '0.7'],

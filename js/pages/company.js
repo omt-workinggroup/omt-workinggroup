@@ -1,4 +1,7 @@
-// Company homepage: mobile menu, footer year and the contact form (posts to /api/contact like the library's form).
+// Company homepage: mobile menu, footer year, the free registration form and the contact form.
+import { bindRegisterForm } from '../core/register-form.js';
+
+bindRegisterForm(document.getElementById('register-form'));
 document.getElementById('year').textContent = String(new Date().getFullYear());
 
 const menu = document.getElementById('menu');

@@ -85,6 +85,7 @@ const PAGES = {
     crumbs(['Resources', '/resources'], ['OMT AI', '/assistant.html']),
   ] },
   'about.html': { graph: [organization, page('AboutPage', '/about.html', 'About OMT Working Group', 'Who we are, how resource access works, how to contact us, and how to report a copyright concern.', { about: { '@id': ORG_ID }, mainEntity: { '@id': ORG_ID } }), crumbs(['About', '/about.html'])] },
+  'register.html': { graph: [page('WebPage', '/register.html', 'Free registration with OMT Working Group', 'Register for free to hear about OMT training programmes, new resources and opportunities.', { potentialAction: { '@type': 'RegisterAction', target: `${SITE}/register.html`, object: { '@id': ORG_ID } } }), crumbs(['Free registration', '/register.html'])] },
   'privacy.html': { graph: [page('WebPage', '/privacy.html', 'Privacy Policy', 'How OMT Working Group handles your data.'), crumbs(['Privacy Policy', '/privacy.html'])] },
   'terms.html': { graph: [page('WebPage', '/terms.html', 'Terms of Use', 'Terms of use for the OMT Working Group website and library.'), crumbs(['Terms of Use', '/terms.html'])] },
   'resource.html': { graph: null }, // the page adds Book data for the book it shows (js/pages/resource.js)
@@ -138,11 +139,12 @@ const llms = `# OMT Working Group
 - Mission: To provide reliable and sustainable operations, maintenance, and training solutions that optimize performance, empower people, and drive long-term value across energy, infrastructure, and technology sectors.
 - Vision: To be a leading regional provider of integrated technical and operational solutions, recognized for excellence, innovation, and the development of local capacity for sustainable growth.
 - Core values: Safety, Integrity, Excellence, Innovation, Collaboration, Capacity Development
-- Contact: the form at ${SITE}/#contact
+- Contact: the form at ${SITE}/#contact; free registration at ${SITE}/register.html
 
 ## Main pages
 
 - [Company homepage](${SITE}/): who we are, services, mission and vision, values, deployment process, training, contact
+- [Free registration](${SITE}/register.html): register for free (also on the homepage at ${SITE}/#register); every registration goes straight to the OMT team
 - [About](${SITE}/about.html): about OMT and its library, how resource access works, contact, copyright reports
 - [OMT Resources](${SITE}/resources): front page of the free library
 - [Explore the library](${SITE}/library.html): search and filter every resource (add ?q=your+topic to search)

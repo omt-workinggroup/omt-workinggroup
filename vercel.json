@@ -8,13 +8,16 @@
       "maxDuration": 300
     },
     "api/contact.js": {
-      "maxDuration": 10
+      "maxDuration": 20
     },
     "api/books.js": {
       "maxDuration": 15
     },
     "api/additions.js": {
       "maxDuration": 15
+    },
+    "api/register.js": {
+      "maxDuration": 20
     }
   },
   "headers": [

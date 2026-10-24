@@ -1799,3 +1799,47 @@ body[data-page="library"] .load-more .btn { min-width: 220px; border-radius: 999
 
 /* Inside the mobile app: the company site is not part of it. */
 .in-app [data-site-only] { display: none !important; }
+
+/* Free registration (register.html, the home banner) */
+.register-page { display: grid; gap: 28px; padding-top: 36px; padding-bottom: 64px; }
+.register-page__intro h1 { margin: 8px 0 12px; }
+.register-page__intro > p { color: var(--text-muted); font-size: 1.05rem; max-width: 46ch; }
+.register-page .perks { display: grid; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+.register-page .perks li { padding: 14px 16px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
+.register-page .perks b { display: block; margin-bottom: 2px; }
+.register-page .perks span { color: var(--text-muted); font-size: .95rem; }
+.register-page__card { padding: 22px 18px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+.reg { display: grid; gap: 18px; }
+.reg__row { display: grid; gap: 18px; }
+.reg__field { display: grid; gap: 7px; font-weight: 600; font-size: .93rem; }
+.reg small { font-weight: 500; color: var(--text-muted); font-size: .8rem; margin-left: 4px; }
+.reg input:not([type="radio"]):not([type="checkbox"]), .reg textarea { width: 100%; font: inherit; font-weight: 400; color: var(--text); padding: 12px 14px; border: 1.5px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--bg); }
+.reg input:focus, .reg textarea:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px var(--primary-soft); }
+.reg textarea { resize: vertical; min-height: 96px; }
+.reg__group { margin: 0; padding: 0; border: 0; min-width: 0; }
+.reg__group legend { padding: 0; margin-bottom: 10px; font-weight: 600; font-size: .93rem; }
+.reg-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.reg-chip { position: relative; cursor: pointer; }
+.reg-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.reg-chip span { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--bg); font-size: .9rem; font-weight: 500; }
+.reg-chip input:checked + span { background: var(--primary-soft); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+.reg-chip input:checked + span::before { content: "✓"; font-weight: 700; }
+.reg-chip input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.reg__consent { font-weight: 400; display: flex; gap: 12px; align-items: flex-start; font-size: .9rem; color: var(--text-muted); line-height: 1.5; }
+.reg__consent input { flex: none; width: 20px; height: 20px; margin-top: 1px; accent-color: var(--primary); }
+.reg__status { margin: 0; color: var(--text-muted); font-size: .93rem; min-height: 1.4em; }
+.reg--done { display: grid; justify-items: center; text-align: center; gap: 10px; padding: 32px 8px; outline: none; }
+.reg--done p { color: var(--text-muted); max-width: 30em; }
+.reg__tick { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: var(--primary); }
+.reg__tick svg { width: 34px; height: 34px; fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.reg-band { padding: 0 0 8px; }
+.reg-band__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin: 24px auto; padding: 20px 22px; border-radius: var(--radius-lg); background: var(--navy); color: #f1ece1; }
+.reg-band__inner h2 { margin: 0 0 4px; font-size: 1.25rem; color: #fff; }
+.reg-band__inner p { margin: 0; color: #c9c2b4; font-size: .95rem; }
+.splash__reg { position: relative; z-index: 2; margin-top: 12px; color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 560px) { .reg__row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) {
+  .register-page { grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; padding-top: 56px; padding-bottom: 80px; }
+  .register-page__intro { position: sticky; top: calc(var(--header-h) + 24px); }
+  .register-page__card { padding: 32px; }
+}
