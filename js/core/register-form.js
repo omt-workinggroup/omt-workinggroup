@@ -20,16 +20,19 @@ export function bindRegisterForm(form) {
     const data = new FormData(form);
     const inApp = document.documentElement.classList.contains('in-app');
     const payload = {
-      source: inApp ? 'app' : form.dataset.source,
+      // Student sign-ups stay 'community' everywhere; other forms note when they came from the app.
+      source: inApp && form.dataset.source !== 'community' ? 'app' : form.dataset.source,
       name: data.get('name'),
       email: data.get('email'),
       phone: data.get('phone'),
       location: data.get('location'),
       organisation: data.get('organisation'),
       role: data.get('role'),
+      level: data.get('level'),
       interests: data.getAll('interests'),
       message: data.get('message'),
       consent: data.get('consent') === 'on',
+      over13: data.get('over13') === 'on',
       company: data.get('company'),
     };
     button.disabled = true;
@@ -42,7 +45,7 @@ export function bindRegisterForm(form) {
         form.outerHTML = `<div class="reg reg--done" role="status" tabindex="-1">
           <div class="reg__tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
           <h3>You're registered, ${esc(first)}!</h3>
-          <p>Thank you for joining OMT Working Group. We've received your details and our team will be in touch by email or WhatsApp.</p>
+          <p>${form.dataset.source === 'community' ? 'Welcome to the OMT student community. Start with the free reading lists on this page, and save the books you like to your shelf.' : 'Thank you for joining OMT Working Group. We\'ve received your details and our team will be in touch by email or WhatsApp.'}</p>
         </div>`;
         document.querySelector('.reg--done')?.focus();
       } else {

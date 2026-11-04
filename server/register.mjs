@@ -5,9 +5,12 @@ import { createMailer, formatRows } from './mailer.mjs';
 
 export const ROLES = ['Student', 'Working professional', 'Company or organisation', 'Other'];
 export const INTERESTS = ['Renewable energy', 'Power systems', 'Civil works', 'ICT', 'Telecommunications', 'Training programmes', 'Microsoft Office skills', 'Free library and books'];
-export const SOURCES = ['main', 'resources', 'app'];
-const LIMITS = { name: 200, email: 200, phone: 40, location: 200, organisation: 200, role: 60, message: 2000 };
-const SOURCE_LABEL = { main: 'company homepage', resources: 'resources pages', app: 'mobile app' };
+export const SOURCES = ['main', 'resources', 'app', 'community'];
+// The student community form (community.html) asks for school, level and subjects instead.
+export const LEVELS = ['GCSE (Years 10–11)', 'A level, BTEC or T Level (Years 12–13)', 'University', 'Apprenticeship', 'Other'];
+export const SUBJECTS = ['Computer Science', 'IT and digital skills', 'Networking', 'Cybersecurity', 'Engineering', 'Data and AI', 'Maths', 'Business', 'Study skills', 'Microsoft Office skills'];
+const LIMITS = { name: 200, email: 200, phone: 40, location: 200, organisation: 200, role: 60, level: 80, message: 2000 };
+const SOURCE_LABEL = { main: 'company homepage', resources: 'resources pages', app: 'mobile app', community: 'student community page' };
 
 const clean = (v) => (typeof v === 'string' ? v.trim() : '');
 
@@ -18,27 +21,39 @@ export function validateRegistration(body) {
   }
   if (!clean(body.name)) return 'Please enter your full name.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean(body.email))) return 'Please enter a valid email address.';
-  if (!clean(body.phone) || !/^[+\d][\d\s()-]{5,}$/.test(clean(body.phone))) return 'Please enter a phone or WhatsApp number.';
-  if (!ROLES.includes(body.role)) return 'Please choose what best describes you.';
-  if (!Array.isArray(body.interests) || !body.interests.length || !body.interests.every((i) => INTERESTS.includes(i))) return 'Please choose at least one area of interest.';
-  if (body.consent !== true) return 'Please agree to be contacted about your registration.';
   if (!SOURCES.includes(body.source)) return 'Unknown form.';
+  const student = body.source === 'community';
+  const phone = clean(body.phone);
+  if ((!student || phone) && !/^[+\d][\d\s()-]{5,}$/.test(phone)) return 'Please enter a phone or WhatsApp number.';
+  if (student) {
+    if (body.role !== 'Student') return 'The student community is for students.';
+    if (!clean(body.organisation)) return 'Please enter your school, college or university.';
+    if (!LEVELS.includes(body.level)) return 'Please choose your level of study.';
+    if (body.over13 !== true) return 'You need to be 13 or older to join. Ask a parent or teacher to register for you.';
+  } else if (!ROLES.includes(body.role)) return 'Please choose what best describes you.';
+  const allowed = student ? SUBJECTS : INTERESTS;
+  if (!Array.isArray(body.interests) || !body.interests.length || !body.interests.every((i) => allowed.includes(i))) return 'Please choose at least one area of interest.';
+  if (body.consent !== true) return 'Please agree to be contacted about your registration.';
   return null;
 }
 
 export function registrationEmail(row) {
-  const { text, html } = formatRows(`New free registration: ${row.name}`, [
+  const student = row.source === 'community';
+  const title = student ? `New student community member: ${row.name}` : `New free registration: ${row.name}`;
+  const { text, html } = formatRows(title, [
     ['Name', row.name],
     ['Email', row.email],
     ['Phone / WhatsApp', row.phone],
     ['Country / city', row.location],
-    ['Organisation or school', row.organisation],
+    [student ? 'School, college or university' : 'Organisation or school', row.organisation],
+    ['Level of study', row.level],
     ['I am a', row.role],
-    ['Interested in', row.interests.join(', ')],
+    [student ? 'Subjects' : 'Interested in', row.interests.join(', ')],
     ['Message', row.message],
     ['Registered on', SOURCE_LABEL[row.source]],
   ], 'Sent from the free registration form on web.omt-workinggroup.com. Reply to this email to answer the person directly.');
-  return { subject: `New free registration: ${row.name} (${row.role})`, text, html, replyTo: { name: row.name, address: row.email } };
+  const subject = student ? `New student community member: ${row.name} (${row.organisation})` : `New free registration: ${row.name} (${row.role})`;
+  return { subject, text, html, replyTo: { name: row.name, address: row.email } };
 }
 
 export function createRegisterHandler({ fetchImpl = fetch, env = process.env, mailer = createMailer({ env }) } = {}) {
@@ -64,10 +79,11 @@ export function createRegisterHandler({ fetchImpl = fetch, env = process.env, ma
       source: body.source,
       name: clean(body.name),
       email: clean(body.email),
-      phone: clean(body.phone),
+      phone: clean(body.phone) || null,
       location: clean(body.location) || null,
       organisation: clean(body.organisation) || null,
       role: body.role,
+      level: body.source === 'community' ? body.level : null,
       interests: [...new Set(body.interests)],
       message: clean(body.message) || null,
     };

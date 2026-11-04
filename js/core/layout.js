@@ -11,6 +11,7 @@ const NAV = [
   { href: 'office.html', label: 'Microsoft Office', page: 'office' },
   { href: 'presentations.html', label: 'Presentations', page: 'presentations' },
   { href: 'assistant.html', label: 'AI Assistant', page: 'assistant' },
+  { href: 'community.html', label: 'Students', page: 'community' },
   { href: 'about.html', label: 'About', page: 'about' },
 ];
 
@@ -68,6 +69,7 @@ function footerHTML() {
         <li><a href="presentations.html">Presentations</a></li>
         <li><a href="assistant.html">AI Assistant</a></li>
         <li><a href="favorites.html">Your favorites</a></li>
+        <li><a href="community.html">Student community</a></li>
         <li><a href="register.html">Register for free</a></li></ul></div>
       <div><h2>About</h2><ul>
         <li data-site-only><a href="./">OMT company site</a></li>

@@ -85,6 +85,7 @@ const PAGES = {
     crumbs(['Resources', '/resources'], ['OMT AI', '/assistant.html']),
   ] },
   'about.html': { graph: [organization, page('AboutPage', '/about.html', 'About OMT Working Group', 'Who we are, how resource access works, how to contact us, and how to report a copyright concern.', { about: { '@id': ORG_ID }, mainEntity: { '@id': ORG_ID } }), crumbs(['About', '/about.html'])] },
+  'community.html': { graph: [page('CollectionPage', '/community.html', 'OMT Student Community', `Free for students: ${TOTAL.toLocaleString('en')} books and resources for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.`, { audience: { '@type': 'EducationalAudience', educationalRole: 'student' }, mainEntity: library }), crumbs(['Resources', '/resources'], ['Student community', '/community.html'])] },
   'register.html': { graph: [page('WebPage', '/register.html', 'Free registration with OMT Working Group', 'Register for free to hear about OMT training programmes, new resources and opportunities.', { potentialAction: { '@type': 'RegisterAction', target: `${SITE}/register.html`, object: { '@id': ORG_ID } } }), crumbs(['Free registration', '/register.html'])] },
   'privacy.html': { graph: [page('WebPage', '/privacy.html', 'Privacy Policy', 'How OMT Working Group handles your data.'), crumbs(['Privacy Policy', '/privacy.html'])] },
   'terms.html': { graph: [page('WebPage', '/terms.html', 'Terms of Use', 'Terms of use for the OMT Working Group website and library.'), crumbs(['Terms of Use', '/terms.html'])] },
@@ -144,6 +145,7 @@ const llms = `# OMT Working Group
 ## Main pages
 
 - [Company homepage](${SITE}/): who we are, services, mission and vision, values, deployment process, training, contact
+- [Student community](${SITE}/community.html): free for students at school, college and university (UK GCSE, A level, BTEC, T Level and degree level): subject tracks, free reading lists, AI study help and a students-only sign-up
 - [Free registration](${SITE}/register.html): register for free (also on the homepage at ${SITE}/#register); every registration goes straight to the OMT team
 - [About](${SITE}/about.html): about OMT and its library, how resource access works, contact, copyright reports
 - [OMT Resources](${SITE}/resources): front page of the free library

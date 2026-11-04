@@ -32,7 +32,7 @@ test('stores the registration and emails the owner, replying to the registrant',
   const res = await handler(post({ ...good, extra: 'ignored' }), { ip: 'r1' });
   assert.equal(res.status, 200);
   assert.equal(call.url, 'https://example.supabase.co/rest/v1/registrations');
-  assert.deepEqual(Object.keys(JSON.parse(call.init.body)).sort(), ['email', 'interests', 'location', 'message', 'name', 'organisation', 'phone', 'role', 'source']);
+  assert.deepEqual(Object.keys(JSON.parse(call.init.body)).sort(), ['email', 'interests', 'level', 'location', 'message', 'name', 'organisation', 'phone', 'role', 'source']);
   assert.equal(mailer.sent.length, 1);
   assert.match(mailer.sent[0].subject, /Ada Lovelace/);
   assert.deepEqual(mailer.sent[0].replyTo, { name: 'Ada Lovelace', address: 'ada@example.com' });
@@ -86,4 +86,22 @@ test('contact form emails the owner too', async () => {
   assert.equal(res.status, 200);
   assert.equal(mailer.sent.length, 1);
   assert.match(mailer.sent[0].subject, /Training/);
+});
+
+test('student community sign-ups: school, level, subjects and 13+, phone optional', async () => {
+  const student = { source: 'community', name: 'Sam Patel', email: 'sam@school.example', organisation: 'Hillside Academy', level: 'GCSE (Years 10–11)', role: 'Student', interests: ['Computer Science', 'Study skills'], consent: true, over13: true };
+  assert.equal(validateRegistration(student), null);
+  assert.ok(validateRegistration({ ...student, over13: false }), 'must be 13+');
+  assert.ok(validateRegistration({ ...student, organisation: '' }), 'needs a school');
+  assert.ok(validateRegistration({ ...student, level: 'Year 99' }));
+  assert.ok(validateRegistration({ ...student, role: 'Working professional' }));
+  assert.ok(validateRegistration({ ...student, interests: ['Renewable energy'] }), 'student subjects only');
+  assert.ok(validateRegistration({ ...student, phone: 'nope' }), 'a phone, if given, must look like one');
+  const mailer = fakeMailer();
+  let row;
+  const handler = createRegisterHandler({ env, mailer, fetchImpl: async (url, init) => { row = JSON.parse(init.body); return stored(); } });
+  assert.equal((await handler(post(student), { ip: 's1' })).status, 200);
+  assert.equal(row.level, 'GCSE (Years 10–11)');
+  assert.equal(row.phone, null);
+  assert.match(mailer.sent[0].subject, /student community member: Sam Patel \(Hillside Academy\)/);
 });

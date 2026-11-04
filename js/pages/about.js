@@ -5,6 +5,7 @@ initLayout();
 // Pre-select a topic when linked from elsewhere, e.g. about.html?topic=broken#contact
 const topic = new URLSearchParams(location.search).get('topic');
 if (topic === 'broken') document.getElementById('c-topic').value = 'Broken link';
+if (topic === 'school') document.getElementById('c-topic').value = 'School or teacher enquiry';
 
 // Forms post JSON to /api/contact, which stores them in Supabase.
 document.querySelectorAll('form[data-kind]').forEach((form) => {
