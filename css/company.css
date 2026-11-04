@@ -102,7 +102,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .section { padding: 72px 0; }
 .section--tint { background: var(--tint); }
 .section h2 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); }
-.head { max-width: 40em; margin-bottom: 40px; }
+.head { max-width: 56rem; margin-bottom: 40px; }
 .split { display: grid; gap: 40px; }
 
 /* About: O, M and T */
@@ -329,3 +329,61 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .sgrid { grid-template-columns: repeat(3, 1fr); }
   .section--first { padding-top: 56px; }
 }
+
+/* Hero with an "at a glance" column (home and community) */
+.glance { display: none; margin: 0; }
+.glance div { padding: 18px 0; border-bottom: 1px solid var(--dark-line); }
+.glance div:first-child { border-top: 1px solid var(--dark-line); }
+.glance dt { font: 600 2rem/1 var(--serif); color: #fff; }
+.glance dd { margin: 6px 0 0; color: var(--on-dark-dim); font-size: .95rem; }
+.strip { display: none; }
+
+/* Community: book shelves */
+.head--split { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; max-width: none; }
+.head--split .more { margin: 0; text-decoration: none; }
+.shelf { display: grid; grid-auto-flow: column; grid-auto-columns: 42%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); scrollbar-width: thin; }
+.book { display: grid; gap: 4px; align-content: start; scroll-snap-align: start; color: var(--ink); text-decoration: none; }
+.book img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--line); border-radius: 2px; background: var(--tint); margin-bottom: 8px; }
+.book b { font-weight: 600; font-size: .95rem; line-height: 1.3; }
+.book span { font-size: .85rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.book { min-width: 0; }
+.book:hover b { color: var(--green-2); }
+.teasers--four .tag { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tracks { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
+.tracks a { display: flex; align-items: center; gap: 14px; min-height: 56px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 500; }
+.tracks a span { flex: 1; }
+.tracks small { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.tracks a:hover span { color: var(--green-2); }
+.lists { display: grid; gap: 48px; }
+.list { min-width: 0; }
+.list__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid var(--navy); }
+.list__head h3 { font: 600 1.35rem var(--serif); }
+.list__head p { margin: 0; color: var(--muted); }
+.band__lead { margin: 16px 0 28px; color: var(--on-dark-dim); font-size: 1.08rem; max-width: 30em; }
+.band h2 { color: #fff; }
+.faq { margin-top: 36px; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { display: flex; justify-content: space-between; gap: 16px; min-height: 52px; align-items: center; cursor: pointer; font-weight: 600; color: var(--ink); list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.3rem; color: var(--green-2); }
+.faq details[open] summary::after { content: "–"; }
+.faq p { margin: 0 0 16px; color: var(--muted); }
+
+@media (min-width: 560px) {
+  .shelf { grid-auto-columns: 28%; }
+  .tracks { grid-template-columns: 1fr 1fr; column-gap: 32px; }
+}
+@media (min-width: 720px) {
+  .teasers--four { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .hero__inner--split { display: grid; grid-template-columns: 8fr 4fr; gap: 72px; align-items: center; padding-top: 112px; padding-bottom: 104px; }
+  .glance { display: block; }
+  .strip { display: block; }
+  .shelf { grid-auto-flow: row; overflow: visible; margin-right: 0; padding-right: 0; }
+  .shelf--seven { grid-template-columns: repeat(7, 1fr); }
+  .shelf--six { grid-template-columns: repeat(6, 1fr); }
+  .teasers--four { grid-template-columns: repeat(4, 1fr); }
+  .tracks { column-gap: 64px; }
+}
+@media (min-width: 1024px) { .hero__inner--split h1 { font-size: clamp(2.8rem, 3.9vw, 3.5rem); } }

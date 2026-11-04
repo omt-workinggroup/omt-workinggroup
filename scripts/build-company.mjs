@@ -48,6 +48,54 @@ const STEPS = [['assess', 'Assess', 'Site, assets and needs.'], ['plan', 'Plan',
 const COVERS = ['clean-code', 'pragmatic-programmer', 'tcp-ip-illustrated', '5g-nr-dahlman'];
 const COVER_TITLES = { 'clean-code': 'Clean Code', 'pragmatic-programmer': 'The Pragmatic Programmer', 'tcp-ip-illustrated': 'TCP/IP Illustrated', '5g-nr-dahlman': '5G NR' };
 
+// ---------- Student community data ----------
+const RES = JSON.parse(read('data/resources.json')).resources;
+const BY = Object.fromEntries(RES.map((r) => [r.id, r]));
+const FREE = RES.filter((r) => r.accessType !== 'paid' && r.accessType !== 'info').length;
+const countCats = (...cats) => RES.filter((r) => cats.includes(r.category)).length;
+const esc = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const shortTitle = (t) => t.split(':')[0].split(',')[0];
+const LINE = {
+  code: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>',
+  net: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/>',
+  shield: '<path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  data: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  terminal: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12 15h5"/>',
+  cloud: '<path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/>',
+  tower: '<path d="M12 10v11M9 21l3-11 3 11"/><circle cx="12" cy="8" r="1.6"/><path d="M8.5 4.5a5 5 0 0 0 0 7M15.5 4.5a5 5 0 0 1 0 7"/>',
+  study: '<path d="M4 5c3-1 5.5-.5 8 1.5 2.5-2 5-2.5 8-1.5v14c-3-1-5.5-.5-8 1.5-2.5-2-5-2.5-8-1.5z"/><path d="M12 6.5v14"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  office: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/>',
+};
+const lico = (name) => `<svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${LINE[name]}</svg>`;
+const FRONT = ['code-simplicity', 'art-of-readable-code', 'working-effectively-with-legacy-code', 'clean-code', 'refactoring-fowler', 'pragmatic-programmer', 'code-complete'];
+const LEVELS = [
+  ['GCSE', 'Years 10–11', 'Computing foundations and Python.', 'library.html?category=computer-science,study-skills&amp;access=open'],
+  ['A level, BTEC, T Level', 'Years 12–13', 'Programming, networks and data.', 'library.html?category=computer-science,networking,data-ai'],
+  ['University', 'Undergraduate and beyond', 'Degree textbooks, many free.', 'library.html?category=computer-science,networking,security,data-ai,linux,cloud'],
+  ['Apprenticeships', 'Learning on the job', 'Networks, Linux, cloud and Office.', 'library.html?category=networking,linux,cloud,excel,word'],
+];
+const TRACKS = [
+  ['code', 'Computer Science and coding', ['computer-science']], ['net', 'Networking', ['networking']], ['shield', 'Cybersecurity', ['security']],
+  ['data', 'Data and AI', ['data-ai']], ['terminal', 'Linux and systems', ['linux']], ['cloud', 'Cloud and DevOps', ['cloud']],
+  ['tower', 'Telecom and 5G', ['telecom']], ['study', 'Study skills', ['study-skills']], ['chart', 'Business', ['business']],
+  ['office', 'Microsoft Office', ['word', 'excel', 'powerpoint', 'access', 'outlook']],
+];
+const SHELVES = [
+  ['Learn to code', 'From your first line of Python to Git.', ['think-python-3e', 'automate-boring-stuff', 'openstax-intro-python', 'eloquent-javascript', 'pro-git', 'rust-book']],
+  ['Revise smarter', 'Study, write and present well.', ['openstax-college-success', 'how-to-study-in-college', 'the-elements-of-style', 'the-art-of-public-speaking', 'openstax-workplace-software', 'experience-and-education']],
+  ['Networks and security', 'The internet, security and the command line.', ['net-intro', 'cn-systems-approach', 'tlcl', 'beej-network', 'the-codebreakers', 'introduction-to-modern-cryptography']],
+];
+const PROMPTS = ['Explain binary search with a simple example', 'Quiz me on the OSI model, one question at a time', 'Help me make a revision plan for GCSE Computer Science', 'Why does my Python loop never stop?'];
+const FAQ = [
+  ['Is it really free?', 'Yes. For books still in copyright we link to a preview, a library copy or a shop.'],
+  ['Who can join?', 'Students and apprentices aged 13 or over. Under 13? Ask a teacher to contact us.'],
+  ['Do I need to join to read?', 'No. Every page is open to everyone.'],
+  ['Is it safe for school?', 'Yes. Official sources only, and no ads.'],
+];
+const book = (id, cls = 'book') => { const r = BY[id]; if (!r) throw new Error(`unknown book ${id}`); return `<a class="${cls}" href="resource.html?id=${encodeURIComponent(id)}"><img src="${esc(r.cover)}" alt="${esc(r.title)}" width="300" height="400" loading="lazy"><b>${esc(shortTitle(r.title))}</b><span>${esc(r.author)}</span></a>`; };
+const communityForm = read('partials/community-form.html');
+
 function head({ file, title, description, path }) {
   return `<!doctype html>
 <html lang="en">
@@ -147,15 +195,24 @@ const PAGES = {
     description: 'OMT Working Group is an integrated operations, maintenance and training company serving renewable energy, power systems, civil works, ICT and telecommunications.',
     path: '/',
     body: `    <section class="hero">
-      <div class="wrap hero__inner">
-        <p class="eyebrow">Operations &middot; Maintenance &middot; Training</p>
-        <h1>Reliable infrastructure.<br>Skilled people.</h1>
-        <p class="hero__lead">We run, maintain and train for energy, power, civil works, ICT and telecoms.</p>
-        <div class="hero__actions">
-          <a class="btn btn--light" href="resources.html">Free resources</a>
-          <a class="btn btn--line" href="community.html">Student community</a>
+      <div class="wrap hero__inner hero__inner--split">
+        <div>
+          <p class="eyebrow">Operations &middot; Maintenance &middot; Training</p>
+          <h1>Reliable infrastructure.<br>Skilled people.</h1>
+          <p class="hero__lead">We run, maintain and train for energy, power, civil works, ICT and telecoms.</p>
+          <div class="hero__actions">
+            <a class="btn btn--light" href="resources.html">Free resources</a>
+            <a class="btn btn--line" href="community.html">Student community</a>
+          </div>
         </div>
+        <dl class="glance" aria-label="At a glance">
+          <div><dt>5</dt><dd>sectors served</dd></div>
+          <div><dt>3</dt><dd>disciplines, one partner</dd></div>
+          <div><dt>${TOTAL}</dt><dd>free learning resources</dd></div>
+          <div><dt>Free</dt><dd>student community</dd></div>
+        </dl>
       </div>
+      <div class="strip"><ul class="wrap strip__list" aria-label="Sectors">${SECTORS.map((x) => `<li>${ico(x.icon, 'ico ico--sm')}${x.name}</li>`).join('')}</ul></div>
     </section>
 
     <section class="section section--first" aria-label="Learn with OMT">
@@ -304,6 +361,101 @@ ${cta('Need a partner for your assets?', 'Send a short note and we reply by emai
 ${cta('Hear when training opens.', 'Register for free in a minute.', ['Register free', 'join.html'], ['Ask about team training', 'contact.html'])}`,
   },
 
+  'community.html': {
+    title: 'OMT Student Community: free books and AI study help for students',
+    description: `Free for students: ${TOTAL} books and guides for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.`,
+    path: '/community.html',
+    body: `    <section class="hero hero--community">
+      <div class="wrap hero__inner hero__inner--split">
+        <div>
+          <p class="eyebrow">OMT Student Community</p>
+          <h1>Free books and study help for every student.</h1>
+          <p class="hero__lead">Reading lists by level and an AI study buddy, from GCSE to university.</p>
+          <div class="hero__actions">
+            <a class="btn btn--light" href="#join">Join for free</a>
+            <a class="btn btn--line" href="library.html?access=open">Browse free books</a>
+          </div>
+        </div>
+        <dl class="glance" aria-label="At a glance">
+          <div><dt>${TOTAL}</dt><dd>titles in the library</dd></div>
+          <div><dt>${FREE}</dt><dd>free to read online</dd></div>
+          <div><dt>24/7</dt><dd>AI study help</dd></div>
+          <div><dt>£0</dt><dd>for students, always</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="front-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">On the front table</p><h2 id="front-title">Seven books every developer should read.</h2></div><a class="more" href="library.html?category=computer-science">All computing books ${arrow}</a></div>
+        <div class="shelf shelf--seven">${FRONT.map((id) => book(id)).join('')}</div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="levels-title">
+      <div class="wrap">
+        <div class="head"><p class="eyebrow">Your level</p><h2 id="levels-title">Start where you are.</h2></div>
+        <ul class="teasers teasers--four">
+${LEVELS.map(([name, tag, text, href]) => `          <li><a href="${href}"><span class="tag">${tag}</span><h3>${name}</h3><p>${text}</p><span class="more">Start here ${arrow}</span></a></li>`).join('\n')}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tracks-title">
+      <div class="wrap">
+        <div class="head"><p class="eyebrow">Study tracks</p><h2 id="tracks-title">Find books by subject.</h2></div>
+        <ul class="tracks">
+${TRACKS.map(([icon, name, cats]) => `          <li><a href="library.html?category=${cats.join(',')}">${lico(icon)}<span>${name}</span><small>${countCats(...cats)}</small></a></li>`).join('\n')}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="lists-title">
+      <div class="wrap">
+        <div class="head"><p class="eyebrow">Reading lists</p><h2 id="lists-title">Picked for students. Free to read.</h2></div>
+        <div class="lists">
+${SHELVES.map(([t, d, ids]) => `          <article class="list"><div class="list__head"><h3>${t}</h3><p>${d}</p></div><div class="shelf shelf--six">${ids.map((id) => book(id)).join('')}</div></article>`).join('\n')}
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" aria-labelledby="ai-title">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">AI study buddy</p>
+          <h2 id="ai-title">Stuck at 11pm? Ask OMT AI.</h2>
+          <p class="band__lead">Explanations, quizzes, diagrams and code help. The work stays yours.</p>
+          <a class="btn btn--light" href="assistant.html">Open OMT AI</a>
+        </div>
+        <ul class="mini" aria-label="Try asking">
+${PROMPTS.map((q) => `          <li><a href="assistant.html?q=${encodeURIComponent(q)}">${q} ${arrow}</a></li>`).join('\n')}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="join" aria-labelledby="join-title">
+      <div class="wrap split split--form">
+        <div>
+          <p class="eyebrow">Join the community</p>
+          <h2 id="join-title">For students only. Free forever.</h2>
+          <p class="lead">Hear first about new reading lists, tools and training.</p>
+          <ul class="ticks">
+            <li>Takes under a minute</li>
+            <li>No password, no spam</li>
+            <li>For ages 13 and over</li>
+          </ul>
+          <div class="faq">
+${FAQ.map(([q, a]) => `            <details><summary>${q}</summary><p>${a}</p></details>`).join('\n')}
+          </div>
+        </div>
+        <div class="card">
+          ${communityForm}
+        </div>
+      </div>
+    </section>
+
+${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared in one link.', ['Talk to us', 'contact.html'])}`,
+  },
   'contact.html': {
     title: 'Contact OMT Working Group',
     description: 'Tell OMT Working Group about your project: operations, maintenance, training or partnership. We reply by email.',
