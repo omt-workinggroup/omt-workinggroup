@@ -1,0 +1,18 @@
+<form class="reg" id="register-form" data-source="main" novalidate>
+            <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
+            <div class="reg__row">
+              <label class="reg__field"><span class="reg__label">Full name</span><input name="name" autocomplete="name" required maxlength="200" placeholder="Your full name"></label>
+              <label class="reg__field"><span class="reg__label">Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></label>
+            </div>
+            <div class="reg__row">
+              <label class="reg__field"><span class="reg__label">Phone or WhatsApp</span><input name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+ country code and number"></label>
+              <label class="reg__field"><span class="reg__label">Country and city <small>optional</small></span><input name="location" autocomplete="address-level2" maxlength="200" placeholder="Country, city"></label>
+            </div>
+            <label class="reg__field"><span class="reg__label">Organisation or school <small>optional</small></span><input name="organisation" autocomplete="organization" maxlength="200" placeholder="Where you work or study"></label>
+            <fieldset class="reg__group"><legend>I am a</legend><div class="reg-chips"><label class="reg-chip"><input type="radio" name="role" value="Student" required><span>Student</span></label><label class="reg-chip"><input type="radio" name="role" value="Working professional" required><span>Working professional</span></label><label class="reg-chip"><input type="radio" name="role" value="Company or organisation" required><span>Company or organisation</span></label><label class="reg-chip"><input type="radio" name="role" value="Other" required><span>Other</span></label></div></fieldset>
+            <fieldset class="reg__group"><legend>I'm interested in <small>choose any</small></legend><div class="reg-chips"><label class="reg-chip"><input type="checkbox" name="interests" value="Renewable energy"><span>Renewable energy</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Power systems"><span>Power systems</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Civil works"><span>Civil works</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="ICT"><span>ICT</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Telecommunications"><span>Telecommunications</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Training programmes"><span>Training programmes</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Microsoft Office skills"><span>Microsoft Office skills</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Free library and books"><span>Free library and books</span></label></div></fieldset>
+            <label class="reg__field"><span class="reg__label">Anything else? <small>optional</small></span><textarea name="message" maxlength="2000" rows="3" placeholder="Tell us what you'd like to learn or do with OMT"></textarea></label>
+            <label class="reg__consent"><input type="checkbox" name="consent" required><span>I agree that OMT Working Group may contact me about my registration. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
+            <button class="btn btn--primary btn--block" type="submit">Register for free</button>
+            <p class="reg__status" role="status"></p>
+          </form>

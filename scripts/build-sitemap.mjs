@@ -7,6 +7,11 @@ const SITE = (process.env.SITE_URL || 'https://web.omt-workinggroup.com').replac
 const PAGES = [
   ['', 'weekly', '1.0'],
   ['resources', 'weekly', '0.9'],
+  ['about-us.html', 'monthly', '0.8'],
+  ['services.html', 'monthly', '0.8'],
+  ['training.html', 'monthly', '0.8'],
+  ['contact.html', 'yearly', '0.6'],
+  ['join.html', 'monthly', '0.7'],
   ['about.html', 'monthly', '0.8'],
   ['community.html', 'weekly', '0.9'],
   ['register.html', 'monthly', '0.8'],

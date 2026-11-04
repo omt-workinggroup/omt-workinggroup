@@ -107,6 +107,26 @@
     {
       "source": "/community",
       "destination": "/community.html"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about-us.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/training",
+      "destination": "/training.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/join",
+      "destination": "/join.html"
     }
   ],
   "redirects": [
