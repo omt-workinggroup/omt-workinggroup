@@ -33694,6 +33694,90 @@
       "readUrl": "https://www.gutenberg.org/ebooks/2944",
       "added": "2026-10-20",
       "cover": "assets/covers/gutenberg-essays-first-series-with-self-reliance.webp"
+    },
+    {
+      "id": "code-simplicity",
+      "title": "Code Simplicity: The Fundamentals of Software",
+      "author": "Max Kanat-Alexander",
+      "publisher": "O'Reilly Media",
+      "year": "2012",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Short, clear laws of software design: why simplicity matters, how complexity creeps in, and how to keep code easy to change.",
+      "tags": [
+        "programming",
+        "software design",
+        "simplicity",
+        "best practices",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Code+Simplicity+Max+Kanat-Alexander",
+      "added": "2026-11-04",
+      "cover": "assets/covers/code-simplicity.webp"
+    },
+    {
+      "id": "art-of-readable-code",
+      "title": "The Art of Readable Code",
+      "author": "Dustin Boswell, Trevor Foucher",
+      "publisher": "O'Reilly Media",
+      "year": "2011",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "beginner",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "Practical techniques for code anyone can read: good names, useful comments, simpler control flow, and breaking big problems into small pieces.",
+      "tags": [
+        "programming",
+        "readability",
+        "clean code",
+        "best practices",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=The+Art+of+Readable+Code+Boswell",
+      "added": "2026-11-04",
+      "cover": "assets/covers/art-of-readable-code.webp"
+    },
+    {
+      "id": "working-effectively-with-legacy-code",
+      "title": "Working Effectively with Legacy Code",
+      "author": "Michael Feathers",
+      "publisher": "Prentice Hall",
+      "year": "2004",
+      "kind": "book",
+      "category": "computer-science",
+      "level": "advanced",
+      "formats": [
+        "Print",
+        "eBook"
+      ],
+      "accessType": "paid",
+      "license": "In copyright",
+      "description": "How to change old code safely: getting it under test, breaking dependencies, and improving it one small, tested step at a time.",
+      "tags": [
+        "programming",
+        "legacy code",
+        "refactoring",
+        "testing",
+        "book"
+      ],
+      "sourceName": "Open Library (find a library copy or edition)",
+      "sourceUrl": "https://openlibrary.org/search?q=Working+Effectively+with+Legacy+Code+Feathers",
+      "added": "2026-11-04",
+      "cover": "assets/covers/working-effectively-with-legacy-code.webp"
     }
   ]
 }

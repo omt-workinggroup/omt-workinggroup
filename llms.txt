@@ -1,6 +1,6 @@
 # OMT Working Group
 
-> OMT – Working Group is an integrated operations, maintenance, and training company providing specialized services across renewable energy, power systems, civil works, information and communication technology (ICT), and telecommunications. Its website also hosts OMT Resources, a free engineering library of 1,240 books and learning resources (419 free to read), and OMT AI, a study assistant.
+> OMT – Working Group is an integrated operations, maintenance, and training company providing specialized services across renewable energy, power systems, civil works, information and communication technology (ICT), and telecommunications. Its website also hosts OMT Resources, a free engineering library of 1,243 books and learning resources (419 free to read), and OMT AI, a study assistant.
 
 ## Company
 
@@ -27,7 +27,7 @@
 
 ## Library topics
 
-- Programming and computer science: 110 resources
+- Programming and computer science: 113 resources
 - Networking: 113
 - Telecom and 5G: 63
 - Cybersecurity: 102

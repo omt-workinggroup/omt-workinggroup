@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://web.omt-workinggroup.com/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/resources</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/about.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/community.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/register.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/home.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/library.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/office.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/presentations.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/assistant.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/privacy.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://web.omt-workinggroup.com/terms.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -8663,5 +8663,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://web.omt-workinggroup.com/assets/covers/gutenberg-essays-first-series-with-self-reliance.webp</image:loc><image:title>Essays: First Series (with Self-Reliance)</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://web.omt-workinggroup.com/resource.html?id=code-simplicity</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://web.omt-workinggroup.com/assets/covers/code-simplicity.webp</image:loc><image:title>Code Simplicity: The Fundamentals of Software</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://web.omt-workinggroup.com/resource.html?id=art-of-readable-code</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://web.omt-workinggroup.com/assets/covers/art-of-readable-code.webp</image:loc><image:title>The Art of Readable Code</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://web.omt-workinggroup.com/resource.html?id=working-effectively-with-legacy-code</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://web.omt-workinggroup.com/assets/covers/working-effectively-with-legacy-code.webp</image:loc><image:title>Working Effectively with Legacy Code</image:title></image:image>
   </url>
 </urlset>
