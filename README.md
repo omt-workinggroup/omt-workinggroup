@@ -219,3 +219,7 @@ Set `EXPO_PUBLIC_SITE_URL` to point the app at another copy of the site. `mobile
 - `node scripts/build-seo.mjs` writes robots and social tags plus schema.org JSON-LD (Organization, WebSite with search, page types, breadcrumbs) into each page, and regenerates `llms.txt`, the plain summary for AI assistants. Book pages add their own `Book` data in `js/pages/resource.js`. Re-run it after regenerating `index.html` or changing page titles.
 - `node scripts/build-sitemap.mjs` writes `sitemap.xml` (company homepage, resources, about, every library page and book, with cover images). Submit `https://web.omt-workinggroup.com/sitemap.xml` in Google Search Console.
 - `googlea7a56c0471e5c141.html` verifies the site in Google Search Console; keep it.
+
+## Caching and versioned files
+
+Pages link their stylesheet and page script as `css/style.css?v=<hash>` and `js/pages/<page>.js?v=<hash>`. After changing CSS or a page script, run `node scripts/version-assets.mjs` (then `node scripts/build-preload.mjs`) so visitors get the new file at once. CSS and JS are served with `Cache-Control: max-age=0, must-revalidate`, so browsers always check for a newer copy.
