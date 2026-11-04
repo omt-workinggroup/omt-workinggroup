@@ -18,6 +18,18 @@
     },
     "api/register.js": {
       "maxDuration": 20
+    },
+    "api/sync.js": {
+      "maxDuration": 300
+    },
+    "api/admin.js": {
+      "maxDuration": 60
+    },
+    "api/file.js": {
+      "maxDuration": 60
+    },
+    "api/catalog-extra.js": {
+      "maxDuration": 15
     }
   },
   "headers": [
@@ -108,6 +120,12 @@
       ],
       "destination": "https://web.omt-workinggroup.com/:path*",
       "permanent": true
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/sync",
+      "schedule": "17 3 * * *"
     }
   ]
 }
