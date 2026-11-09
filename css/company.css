@@ -670,8 +670,8 @@ html { scroll-padding-top: 130px; }
   .discover > *, .hscroll > * { scroll-snap-align: start; }
   .discover .dcard { border: 1px solid var(--line); border-radius: var(--r); }
   .short > :nth-child(n+3) { display: none; }
-  .teasers--four { grid-template-columns: 1fr 1fr; }
-  .teasers--four p { display: none; }
-  .teasers--four a { padding: 18px 16px; }
+  .teasers--compact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .teasers--compact p { display: none; }
+  .teasers--compact a { padding: 18px 16px; }
 }
 :root[data-theme="dark"] .dash__challenge .btn--primary { background: #fff; color: #0c1a3a; }

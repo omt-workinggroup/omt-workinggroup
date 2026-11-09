@@ -14,6 +14,7 @@ function format(text) {
     : part.split(/\n{2,}/).map((p) => p.trim() ? `<p>${p.replace(/`([^`\n]+)`/g, '<code>$1</code>').replace(/\n/g, '<br>')}</p>` : '').join(''))).join('');
 }
 
+const notFound = (why) => `<h1 class="h1">Post not found</h1>${empty('Nothing to show', why, '<a class="more" href="lounge.html">Back to the Lounge &rarr;</a>')}`;
 const back = { post: ['lounge.html', 'Student Lounge'], question: ['ask.html', 'Ask the Community'], project: ['projects.html', 'Project Showcase'] };
 
 function commentHtml(c) {
@@ -62,7 +63,7 @@ function render() {
 
 async function refresh() {
   post = await api('post', { id });
-  if (!post) { host.innerHTML = empty('Post not found', 'It may have been removed or is waiting for review.', '<a class="more" href="lounge.html">Back to the Lounge &rarr;</a>'); return; }
+  if (!post) { host.innerHTML = notFound('It may have been removed or is waiting for review.'); return; }
   render();
 }
 
@@ -108,5 +109,5 @@ host.addEventListener('submit', async (e) => {
 });
 
 await initCommunity();
-if (!id) host.innerHTML = empty('Post not found', 'This link is missing a post number.');
-else { host.innerHTML = loading(); refresh().catch((err) => { host.innerHTML = empty('Could not load', err.message); }); }
+if (!id) host.innerHTML = notFound('This link is missing a post number.');
+else { host.innerHTML = `<h1 class="sr-only">Loading discussion</h1>${loading()}`; refresh().catch((err) => { host.innerHTML = `<h1 class="h1">Could not load this discussion</h1>${empty('Please try again', err.message, '<a class="more" href="lounge.html">Back to the Lounge &rarr;</a>')}`; }); }

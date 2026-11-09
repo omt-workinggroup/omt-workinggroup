@@ -558,7 +558,7 @@ ${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared 
     <section class="section" aria-labelledby="explore-title">
       <div class="wrap">
         <div class="head head--split"><div><p class="eyebrow">Explore</p><h2 id="explore-title">Learn on your own time.</h2></div><a class="more" href="explore.html">Everything in Explore ${arrow}</a></div>
-        <ul class="teasers teasers--four">
+        <ul class="teasers teasers--four teasers--compact">
           <li><a href="library.html">${ico('book', 'ico ico--md')}<h3>Resource library</h3><p>${TOTAL} books, guides and courses.</p><span class="more">Search ${arrow}</span></a></li>
           <li><a href="tools.html">${ico('gauge', 'ico ico--md')}<h3>Tools directory</h3><p>Free and freemium tools, honestly labelled.</p><span class="more">Browse ${arrow}</span></a></li>
           <li><a href="challenges.html">${ico('excellence', 'ico ico--md')}<h3>Challenges</h3><p>A daily question and a weekly one. Earn XP.</p><span class="more">Play ${arrow}</span></a></li>
