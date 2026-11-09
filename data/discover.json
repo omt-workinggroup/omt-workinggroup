@@ -1,0 +1,176 @@
+{
+ "skills": [
+  [
+   "Big O notation",
+   "How the time an algorithm takes grows as its input grows.",
+   "Explain Big O notation with everyday examples"
+  ],
+  [
+   "Git branches",
+   "Work on a new feature without touching the working version.",
+   "Teach me Git branches step by step"
+  ],
+  [
+   "Subnetting",
+   "Splitting one network into smaller ones.",
+   "Explain subnetting with a /24 example"
+  ],
+  [
+   "SQL JOINs",
+   "Combining rows from two tables that share a value.",
+   "Show me INNER and LEFT JOIN with a small example"
+  ],
+  [
+   "Recursion",
+   "A function that solves a problem by calling itself on a smaller part.",
+   "Explain recursion like I am 15"
+  ],
+  [
+   "APIs",
+   "How programs ask each other for data.",
+   "What is an API? Show me a real example"
+  ],
+  [
+   "Hashing",
+   "Turning data into a fixed-length fingerprint.",
+   "How is hashing different from encryption?"
+  ],
+  [
+   "CSS Flexbox",
+   "Lining things up in rows and columns on a web page.",
+   "Teach me Flexbox with three boxes"
+  ],
+  [
+   "Regular expressions",
+   "Patterns for finding text.",
+   "Teach me regular expressions for email addresses"
+  ],
+  [
+   "The OSI model",
+   "Seven layers that describe how networks move data.",
+   "Quiz me on the OSI model"
+  ],
+  [
+   "Unit testing",
+   "Small automatic checks that your code still works.",
+   "Show me a first unit test in Python"
+  ],
+  [
+   "Version numbers",
+   "What 2.4.1 means in software releases.",
+   "Explain semantic versioning"
+  ]
+ ],
+ "projects": [
+  [
+   "A personal portfolio site",
+   "HTML, CSS and GitHub Pages",
+   "beginner"
+  ],
+  [
+   "A to-do list app",
+   "JavaScript and local storage",
+   "beginner"
+  ],
+  [
+   "A quiz game",
+   "Python and lists",
+   "beginner"
+  ],
+  [
+   "A weather dashboard",
+   "JavaScript and a public weather API",
+   "intermediate"
+  ],
+  [
+   "A network scanner for your own home network",
+   "Python and sockets",
+   "intermediate"
+  ],
+  [
+   "A study timer",
+   "JavaScript, timers and notifications",
+   "beginner"
+  ],
+  [
+   "A school club website",
+   "HTML, CSS and forms",
+   "beginner"
+  ],
+  [
+   "A budget tracker",
+   "Python or a spreadsheet",
+   "beginner"
+  ],
+  [
+   "A chatbot that answers FAQs",
+   "Python and simple rules",
+   "intermediate"
+  ],
+  [
+   "A data story from open data",
+   "Python, pandas and charts",
+   "intermediate"
+  ],
+  [
+   "A password strength checker",
+   "JavaScript and regular expressions",
+   "beginner"
+  ],
+  [
+   "A Raspberry Pi sensor logger",
+   "Python and a temperature sensor",
+   "intermediate"
+  ]
+ ],
+ "stories": [
+  [
+   "1843",
+   "Ada Lovelace published notes describing an algorithm for Charles Babbage’s Analytical Engine, often called the first computer program."
+  ],
+  [
+   "1947",
+   "Engineers at Bell Labs built the first working transistor, the building block of every modern chip."
+  ],
+  [
+   "1969",
+   "ARPANET, the network that grew into the internet, sent its first message between two US universities."
+  ],
+  [
+   "1971",
+   "Intel released the 4004, the first commercially available microprocessor."
+  ],
+  [
+   "1989",
+   "Tim Berners-Lee proposed the World Wide Web while working at CERN."
+  ],
+  [
+   "1991",
+   "Linus Torvalds announced Linux as a hobby project. It now runs most of the world’s servers."
+  ],
+  [
+   "1998",
+   "Google was founded by Larry Page and Sergey Brin."
+  ],
+  [
+   "2005",
+   "Git was created by Linus Torvalds to manage Linux development."
+  ],
+  [
+   "2007",
+   "The first iPhone went on sale and changed what people expect from a phone."
+  ],
+  [
+   "2012",
+   "A deep neural network called AlexNet won the ImageNet challenge by a wide margin and sparked the modern AI boom."
+  ],
+  [
+   "1983",
+   "The internet switched to TCP/IP, the protocols it still uses today."
+  ],
+  [
+   "1972",
+   "Ray Tomlinson sent the first network email and chose the @ sign for addresses."
+  ]
+ ]
+}

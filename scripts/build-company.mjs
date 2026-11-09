@@ -96,14 +96,14 @@ const FAQ = [
 const book = (id, cls = 'book') => { const r = BY[id]; if (!r) throw new Error(`unknown book ${id}`); return `<a class="${cls}" href="resource.html?id=${encodeURIComponent(id)}"><img src="${esc(r.cover)}" alt="${esc(r.title)}" width="300" height="400" loading="lazy"><b>${esc(shortTitle(r.title))}</b><span>${esc(r.author)}</span></a>`; };
 const communityForm = read('partials/community-form.html');
 
-function head({ file, title, description, path }) {
+function head({ file, title, description, path, script = 'js/pages/company.js', noindex = false }) {
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title}</title>
-  <meta name="description" content="${description}">
+  <meta name="description" content="${description}">${noindex ? '\n  <meta name="robots" content="noindex">' : ''}
   <link rel="canonical" href="${SITE}${path}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
@@ -121,13 +121,14 @@ function head({ file, title, description, path }) {
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="js/theme.js"></script>
   <link rel="stylesheet" href="css/company.css">${file === 'index.html' ? '\n  <link rel="prefetch" href="resources.html">' : ''}
-  <script type="module" src="js/pages/company.js"></script>
+  <script type="module" src="${script}"></script>
 </head>`;
 }
 
-function header(file) {
-  const links = NAV.map(([f, label, href]) => `        <a href="${href}"${f === file ? ' aria-current="page"' : ''}>${label}</a>`).join('\n');
+function header(file, active = file) {
+  const links = NAV.map(([f, label, href]) => `        <a href="${href}"${f === active ? ' aria-current="page"' : ''}>${label}</a>`).join('\n');
   return `  <a class="skip" href="#main">Skip to content</a>
   ${sprite}
 
@@ -137,6 +138,7 @@ function header(file) {
         <img src="assets/logo-mark.svg" alt="" width="50" height="39">
         <span class="brand__word"><b>OMT</b><span>Working Group</span></span>
       </a>
+      <button class="theme" type="button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
       <button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="nav" id="nav" aria-label="Main">
 ${links}
@@ -145,6 +147,14 @@ ${links}
     </div>
   </header>`;
 }
+
+const SUBNAV = [['community.html', 'Home'], ['explore.html', 'Explore'], ['lounge.html', 'Lounge'], ['ask.html', 'Ask'], ['projects.html', 'Projects'], ['opportunities.html', 'Opportunities'], ['events.html', 'Events'], ['challenges.html', 'Challenges'], ['my-space.html', 'My Space']];
+const subnav = (file) => `  <nav class="subnav" aria-label="Community">
+    <div class="wrap subnav__inner">
+      <div class="subnav__links">${SUBNAV.map(([f, label]) => `<a href="${f}"${f === file ? ' aria-current="page"' : ''}>${label}</a>`).join('')}</div>
+      <div class="subnav__end"><a id="mod-link" href="moderate.html" hidden>Moderate</a><a id="account-link" class="subnav__account" href="account.html">Sign in</a></div>
+    </div>
+  </nav>`;
 
 const footer = `  <footer class="foot">
     <div class="wrap foot__grid">
@@ -189,6 +199,43 @@ ${STEPS.map(([, t, d], i) => `          <li><span class="steps__n">0${i + 1}</sp
         </ol>`;
 
 // ---------- Pages ----------
+
+// Lounge, Ask and Projects share one layout: toolbar, feed, "load more" and a composer.
+function feedPage(file, kind, eyebrow, h1, lead, sorts, composeLabel) {
+  const project = kind === 'project';
+  return { [file]: {
+    community: true, script: 'js/community/feed.js', bodyKind: kind,
+    title: `${eyebrow} | OMT Student Community`, description: lead, path: `/${file}`,
+    body: `${pageHero(eyebrow, h1, lead)}
+    <section class="section section--first"><div class="wrap two two--aside">
+      <div>
+        <div class="toolbar">
+          <div class="seg" role="group" aria-label="Sort">${sorts.map(([v, l]) => `<button type="button" data-sort="${v}" aria-pressed="false">${l}</button>`).join('')}</div>
+          <form id="search" role="search" class="grow"><label class="sr-only" for="q">Search</label><input id="q" type="search" placeholder="Search"></form>
+          <label><span class="sr-only">Category</span><select id="category"></select></label>
+        </div>
+        <div class="${project ? 'grid2' : 'feed'}" id="feed"></div>
+        <p class="center"><button class="btn btn--outline" id="more" hidden>Load more</button></p>
+      </div>
+      <aside id="compose" class="panel compose">
+        <h2>${composeLabel}</h2>
+        <form class="reg" id="compose-form">
+          <label class="reg__field"><span class="reg__label">${kind === 'question' ? 'Your question' : project ? 'Project name' : 'Title'}</span><input name="title" required minlength="5" maxlength="140"></label>
+          <label class="reg__field"><span class="reg__label">${kind === 'question' ? 'Details: what did you try?' : project ? 'What it does and what you learned' : 'Your post'}</span><textarea name="body" required minlength="10" maxlength="5000" rows="6" placeholder="Tip: put code between three backticks."></textarea></label>
+          <label class="reg__field"><span class="reg__label">Category</span><select name="category" required></select></label>
+          ${project ? `<label class="reg__field"><span class="reg__label">Tech stack <small>comma separated</small></span><input name="stack" maxlength="200" placeholder="HTML, CSS, JavaScript"></label>
+          <label class="reg__field"><span class="reg__label">Live demo link <small>optional, https://</small></span><input name="demo_url" type="url" pattern="https://.+" maxlength="300"></label>
+          <label class="reg__field"><span class="reg__label">Public code link <small>optional, https://</small></span><input name="repo_url" type="url" pattern="https://.+" maxlength="300"></label>
+          <label class="reg__consent"><input type="checkbox" name="beginner"><span>Beginner-friendly project</span></label>` : ''}
+          <label class="reg__field"><span class="reg__label">Tags <small>optional, comma separated</small></span><input name="tags" maxlength="160" placeholder="python, loops"></label>
+          <button class="btn btn--primary btn--block" type="submit">${composeLabel}</button><p class="form__status" id="compose-status" role="status"></p>
+          <p class="note">Posts are reviewed before they appear. Never share personal details.${project ? ' Only link to public code: never share passwords or private keys.' : ''}</p>
+        </form>
+      </aside>
+    </div></section>`,
+  } };
+}
+
 const PAGES = {
   'index.html': {
     title: 'OMT Working Group: operations, maintenance and training',
@@ -237,9 +284,9 @@ const PAGES = {
             <li>GCSE</li><li>A level</li><li>BTEC</li><li>T Level</li><li>University</li>
           </ul>
           <ul class="mini mini--dark">
-            <li><a href="community.html#front-title">Developer classics ${arrow}</a></li>
+            <li><a href="reading.html#front-title">Developer classics ${arrow}</a></li>
             <li><a href="assistant.html">Study with OMT AI ${arrow}</a></li>
-            <li><a href="community.html#join">Join the community ${arrow}</a></li>
+            <li><a href="account.html#join">Join the community ${arrow}</a></li>
           </ul>
           <a class="btn btn--primary" href="community.html">Visit the community</a>
         </article>
@@ -361,15 +408,16 @@ ${cta('Need a partner for your assets?', 'Send a short note and we reply by emai
 ${cta('Hear when training opens.', 'Register for free in a minute.', ['Register free', 'join.html'], ['Ask about team training', 'contact.html'])}`,
   },
 
-  'community.html': {
-    title: 'OMT Student Community: free books and AI study help for students',
+  'reading.html': {
+    navActive: 'community.html',
+    title: 'Student reading lists and developer classics | OMT Student Community',
     description: `Free for students: ${TOTAL} books and guides for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.`,
-    path: '/community.html',
+    path: '/reading.html',
     body: `    <section class="hero hero--community">
       <div class="wrap hero__inner hero__inner--split">
         <div>
           <p class="eyebrow">OMT Student Community</p>
-          <h1>Free books and study help for every student.</h1>
+          <h1>Reading lists and developer classics.</h1>
           <p class="hero__lead">Reading lists by level and an AI study buddy, from GCSE to university.</p>
           <div class="hero__actions">
             <a class="btn btn--light" href="#join">Join for free</a>
@@ -456,6 +504,215 @@ ${FAQ.map(([q, a]) => `            <details><summary>${q}</summary><p>${a}</p></
 
 ${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared in one link.', ['Talk to us', 'contact.html'])}`,
   },
+  'community.html': {
+    community: true,
+    script: 'js/community/home.js',
+    title: 'OMT Student Community: learn, create, connect, discover, grow',
+    description: 'A free student technology community: discussions, Q&A, project showcase, daily challenges, verified opportunities, tools and a 1,243-title library.',
+    path: '/community.html',
+    body: `    <section class="hero hero--app">
+      <div class="wrap hero__inner">
+        <p class="eyebrow">OMT Student Community</p>
+        <h1 id="welcome">Learn. Create. Connect. Discover. Grow.</h1>
+        <p class="hero__lead">A free digital campus for students in technology: ask, share, build and find opportunities.</p>
+        <form class="bigsearch" id="home-search" role="search">
+          <label class="sr-only" for="home-q">Search the community</label>
+          <input id="home-q" type="search" placeholder="Search discussions, questions, projects or books" autocomplete="off">
+          <label class="sr-only" for="home-scope">Where to search</label>
+          <select id="home-scope"><option value="lounge.html">Discussions</option><option value="ask.html">Questions</option><option value="projects.html">Projects</option><option value="library.html">Library</option><option value="tools.html">Tools</option></select>
+          <button class="btn btn--light" type="submit">Search</button>
+        </form>
+        <p class="stats" id="stats"></p>
+      </div>
+    </section>
+
+    <section class="section section--first" aria-labelledby="discover-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">OMT Discover · new every day</p><h2 id="discover-title">Five things worth your time today.</h2></div></div>
+        <ul class="discover" id="discover"><li class="skeleton"><span></span><span></span></li></ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-label="Today">
+      <div class="wrap dash">
+        <article class="panel panel--dark dash__challenge"><div id="challenge"><p class="dcard__kind">Daily challenge</p><div class="skeleton"><span></span><span></span></div></div></article>
+        <article class="panel"><p class="eyebrow">Opportunities</p><ul class="mini mini--dark" id="opps"><li class="muted">Loading…</li></ul><a class="more" href="opportunities.html">All opportunities ${arrow}</a></article>
+        <article class="panel"><p class="eyebrow">Upcoming events</p><ul class="mini mini--dark" id="events"><li class="muted">Loading…</li></ul><a class="more" href="events.html">Events calendar ${arrow}</a></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trending-title">
+      <div class="wrap two">
+        <div><div class="head head--split"><h2 id="trending-title">Trending in the Lounge</h2><a class="more" href="lounge.html">Open the Lounge ${arrow}</a></div><div class="feed short" id="trending"></div></div>
+        <div><div class="head head--split"><h2>Waiting for answers</h2><a class="more" href="ask.html?sort=unanswered">Help someone ${arrow}</a></div><div class="feed short" id="unanswered"></div></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">Project showcase</p><h2 id="proj-title">What students are building.</h2></div><a class="more" href="projects.html">All projects ${arrow}</a></div>
+        <div class="grid3 hscroll" id="projects-row"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="explore-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">Explore</p><h2 id="explore-title">Learn on your own time.</h2></div><a class="more" href="explore.html">Everything in Explore ${arrow}</a></div>
+        <ul class="teasers teasers--four">
+          <li><a href="library.html">${ico('book', 'ico ico--md')}<h3>Resource library</h3><p>${TOTAL} books, guides and courses.</p><span class="more">Search ${arrow}</span></a></li>
+          <li><a href="tools.html">${ico('gauge', 'ico ico--md')}<h3>Tools directory</h3><p>Free and freemium tools, honestly labelled.</p><span class="more">Browse ${arrow}</span></a></li>
+          <li><a href="challenges.html">${ico('excellence', 'ico ico--md')}<h3>Challenges</h3><p>A daily question and a weekly one. Earn XP.</p><span class="more">Play ${arrow}</span></a></li>
+          <li><a href="assistant.html">${ico('chat', 'ico ico--md')}<h3>OMT AI</h3><p>An AI study buddy, clearly labelled as AI.</p><span class="more">Ask ${arrow}</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="front-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">From the library</p><h2 id="front-title">Seven books every developer should read.</h2></div><a class="more" href="reading.html">Reading lists ${arrow}</a></div>
+        <div class="shelf shelf--seven">${FRONT.map((id) => book(id)).join('')}</div>
+      </div>
+    </section>
+
+<div data-signed-out>${cta('New here? Join free.', 'Students aged 13 and over. Only your username is ever shown.', ['Create your account', 'account.html#join'], ['Reading lists', 'reading.html'])}</div>`,
+  },
+
+  ...feedPage('lounge.html', 'post', 'Student Lounge', 'Talk tech with other students.', 'Share discoveries, discuss technology, celebrate wins and help each other.',
+    [['latest', 'Latest'], ['trending', 'Trending'], ['helpful', 'Most helpful']], 'Start a discussion'),
+  ...feedPage('ask.html', 'question', 'Ask the Community', 'Stuck? Ask. Know it? Answer.', 'Questions get answers from other students. Upvote what helps; the asker accepts the best answer.',
+    [['latest', 'Latest'], ['unanswered', 'Waiting for answers'], ['helpful', 'Most helpful']], 'Ask a question'),
+  ...feedPage('projects.html', 'project', 'Project Showcase', 'What students are building.', 'Websites, apps, designs, robots, data and AI experiments, made by students.',
+    [['latest', 'Recent'], ['featured', 'Featured'], ['appreciated', 'Most appreciated'], ['beginner', 'Beginner-friendly']], 'Share a project'),
+
+  'post.html': {
+    community: true, script: 'js/community/post.js', noindex: true,
+    title: 'Discussion | OMT Student Community', description: 'A discussion in the OMT Student Community.', path: '/post.html',
+    body: `    <section class="section section--first"><div class="wrap post" id="post"></div></section>`,
+  },
+
+  'opportunities.html': {
+    community: true, script: 'js/community/opportunities.js',
+    title: 'Opportunities: scholarships, internships, programmes and free certifications | OMT Student Community',
+    description: 'Verified opportunities for students in technology: free certifications, training programmes, internships, scholarships and competitions.',
+    path: '/opportunities.html',
+    body: `${pageHero('Opportunities', 'Opportunities, checked by OMT.', 'Every listing links to the official site and shows when we last checked it. Expired deadlines are marked automatically.')}
+    <section class="section section--first"><div class="wrap">
+      <form class="toolbar" id="filters" aria-label="Filter opportunities">
+        <label><span class="sr-only">Type</span><select name="category" id="f-category"></select></label>
+        <label><span class="sr-only">Where</span><select name="region"><option value="">Anywhere</option><option value="ghana">Ghana</option><option value="africa">Africa</option><option value="uk">UK</option><option value="international">International</option><option value="remote">Remote</option></select></label>
+        <label><span class="sr-only">Who</span><select name="audience"><option value="">All levels</option><option value="secondary">Secondary school</option><option value="undergraduate">Undergraduate</option><option value="beginner">Beginner-friendly</option></select></label>
+        <label><span class="sr-only">Field</span><select name="field"><option value="">All fields</option><option value="technology">Technology</option><option value="business">Business</option><option value="creative">Creative industries</option></select></label>
+        <label class="check"><input type="checkbox" name="expired"> Show expired</label>
+      </form>
+      <div class="olist" id="opps"></div>
+      <p class="note">Know a genuine opportunity for students? <a href="contact.html">Tell us</a> and we will check it before listing it.</p>
+    </div></section>`,
+  },
+
+  'events.html': {
+    community: true, script: 'js/community/events.js',
+    title: 'Events and tech calendar | OMT Student Community', description: 'Verified workshops, webinars, hackathons and coding sessions for students.', path: '/events.html',
+    body: `${pageHero('Events', 'Workshops, webinars and hackathons.', 'Only events we have checked are listed. Save the ones you like to My Space.')}
+    <section class="section section--first"><div class="wrap">
+      <div class="toolbar"><div class="seg" role="group" aria-label="View"><button type="button" data-view="list" aria-pressed="true">List</button><button type="button" data-view="calendar" aria-pressed="false">Calendar</button></div>
+        <label><span class="sr-only">Type</span><select id="f-category"></select></label></div>
+      <div class="cal" id="cal" hidden></div>
+      <div class="olist" id="events"></div>
+    </div></section>`,
+  },
+
+  'tools.html': {
+    community: true, script: 'js/community/tools.js',
+    title: 'Tools directory for students | OMT Student Community', description: 'Curated developer, design, AI, database and networking tools, with honest Free, Freemium and Paid labels.', path: '/tools.html',
+    body: `${pageHero('Explore · Tools', 'The tools worth learning.', 'Curated by OMT. Free means free; Freemium means a free plan with paid extras.')}
+    <section class="section section--first"><div class="wrap">
+      <form class="toolbar" id="search" role="search"><label class="grow"><span class="sr-only">Search tools</span><input id="q" type="search" placeholder="Search tools"></label>
+        <label><span class="sr-only">Category</span><select id="f-category"></select></label>
+        <label><span class="sr-only">Price</span><select id="f-price"><option value="">Any price</option><option>Free</option><option>Freemium</option><option>Paid</option></select></label>
+        <span class="muted small" id="count" aria-live="polite"></span></form>
+      <div class="grid3" id="tools"></div>
+    </div></section>`,
+  },
+
+  'challenges.html': {
+    community: true, script: 'js/community/challenges.js',
+    title: 'Daily tech challenge | OMT Student Community', description: 'A daily and a weekly technology challenge with explanations. Earn XP and badges.', path: '/challenges.html',
+    body: `${pageHero('Challenges', 'One question a day. Learn something.', 'Answer once, read the explanation, earn XP. No timers and no streak pressure.')}
+    <section class="section section--first"><div class="wrap two two--aside">
+      <div id="challenges"></div>
+      <aside class="panel"><p class="eyebrow">Leaderboard · last 30 days</p><ol class="board" id="board"><li class="muted">Loading…</li></ol>
+        <p class="note">Opt-in only: turn it on in <a href="my-space.html#settings">My Space</a>. XP comes from learning (challenges, accepted answers, published projects), never from posting a lot.</p></aside>
+    </div></section>`,
+  },
+
+  'explore.html': {
+    community: true, script: 'js/community/static.js',
+    title: 'Explore | OMT Student Community', description: 'Everything to learn with OMT: the resource library, reading lists, tools, challenges, OMT AI and Microsoft Office guides.', path: '/explore.html',
+    body: `${pageHero('Explore', 'Everything to learn with OMT.', 'Live now, and what is coming next.')}
+    <section class="section section--first"><div class="wrap">
+      <ul class="teasers teasers--three">
+${[['library.html', 'book', 'Resource library', `${TOTAL} books, open textbooks, guides and courses, searchable by subject and level.`],
+   ['reading.html', 'book', 'Reading lists', 'Seven developer classics and free lists for every level.'],
+   ['tools.html', 'gauge', 'Tools directory', 'Developer, design, AI and networking tools with honest pricing.'],
+   ['challenges.html', 'excellence', 'Daily challenges', 'A question a day with explanations and XP.'],
+   ['assistant.html', 'chat', 'OMT AI', 'Explanations, quizzes and code help. Clearly labelled as AI.'],
+   ['office.html', 'training', 'Microsoft Office', 'Word, Excel, PowerPoint, Access and Outlook, step by step.'],
+   ['presentations.html', 'collaboration', 'Presentations', 'Slide design and public speaking.'],
+   ['opportunities.html', 'capacity', 'Opportunities', 'Free certifications, programmes and internships, verified.'],
+   ['events.html', 'plan', 'Events', 'Workshops, webinars and hackathons, verified.']].map(([h, i, t, d]) => `        <li><a href="${h}">${ico(i, 'ico ico--md')}<h3>${t}</h3><p>${d}</p><span class="more">Open ${arrow}</span></a></li>`).join('\n')}
+      </ul>
+      <h2 class="h2">Coming next</h2>
+      <ul class="soon">${['Learning paths with progress tracking', 'Tech Radar: student-friendly tech news', 'Watch and learn: curated videos', 'Notes and flashcards', 'Coding playground (HTML, CSS, JavaScript)', 'Career explorer', 'OMT glossary', 'Freebies corner', 'Study rooms and clubs'].map((x) => `<li>${x}</li>`).join('')}</ul>
+      <p class="note">These are planned, not live yet. We will only switch them on once they work properly.</p>
+    </div></section>`,
+  },
+
+  'my-space.html': {
+    community: true, script: 'js/community/myspace.js', noindex: true,
+    title: 'My Space | OMT Student Community', description: 'Your profile, XP, badges, saved posts and events, and privacy settings.', path: '/my-space.html',
+    body: `    <div id="space"><section class="section"><div class="wrap"><div class="skeleton"><span></span><span></span><span></span></div></div></section></div>`,
+  },
+
+  'account.html': {
+    community: true, script: 'js/community/account.js', noindex: true,
+    title: 'Sign in or join | OMT Student Community', description: 'Sign in to the OMT Student Community or create a free account.', path: '/account.html',
+    body: `${pageHero('Your account', 'Join the OMT Student Community.', 'Free for students aged 13 and over. Only your username is shown publicly; your email never is.')}
+    <section class="section section--first"><div class="wrap split split--form">
+      <div>
+        <h2>Community rules</h2>
+        <ul class="ticks"><li>Be kind. No bullying, hate or harassment.</li><li>Keep it safe: never share phone numbers, addresses or passwords.</li><li>Help, don't do others' homework for them.</li><li>Share only work you have the right to share.</li><li>Report anything that worries you. A moderator reviews it.</li></ul>
+        <p class="note">New posts are checked by a moderator before they appear. Read our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+      <div class="card">
+        <div class="seg seg--tabs" role="tablist"><button type="button" role="tab" data-tab="signin" aria-selected="true">Sign in</button><button type="button" role="tab" data-tab="join" aria-selected="false">Create account</button><button type="button" role="tab" data-tab="reset" aria-selected="false">Forgot password</button></div>
+        <form class="reg" id="signin-form" data-panel="signin">
+          <label class="reg__field"><span class="reg__label">Email</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <label class="reg__field"><span class="reg__label">Password</span><input name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label>
+          <button class="btn btn--primary btn--block" type="submit">Sign in</button><p class="form__status" role="status"></p>
+        </form>
+        <form class="reg" id="join-form" data-panel="join" hidden>
+          <label class="reg__field"><span class="reg__label">Username <small>shown on your posts</small></span><input name="handle" required pattern="[A-Za-z0-9_]{3,24}" maxlength="24" autocomplete="username" placeholder="e.g. ada_codes"></label>
+          <label class="reg__field"><span class="reg__label">Email <small>never shown</small></span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <label class="reg__field"><span class="reg__label">Password <small>8+ characters</small></span><input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128"></label>
+          <label class="reg__consent"><input type="checkbox" name="over13" required><span>I'm 13 or older.</span></label>
+          <label class="reg__consent"><input type="checkbox" name="consent" required><span>I agree to the community rules and the <a href="privacy.html">Privacy Policy</a>.</span></label>
+          <button class="btn btn--primary btn--block" type="submit">Create free account</button><p class="form__status" role="status"></p>
+        </form>
+        <form class="reg" id="reset-form" data-panel="reset" hidden>
+          <label class="reg__field"><span class="reg__label">Email</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <button class="btn btn--primary btn--block" type="submit">Send reset link</button><p class="form__status" role="status"></p>
+        </form>
+      </div>
+    </div></section>`,
+  },
+
+  'moderate.html': {
+    community: true, script: 'js/community/moderate.js', noindex: true,
+    title: 'Moderation | OMT Student Community', description: 'OMT moderation dashboard.', path: '/moderate.html',
+    body: `${pageHero('Moderation', 'Keep the community safe.', 'Review posts, handle reports, manage students and publish verified listings. Every action is logged.')}
+    <section class="section section--first"><div class="wrap" id="mod"></div></section>`,
+  },
+
   'contact.html': {
     title: 'Contact OMT Working Group',
     description: 'Tell OMT Working Group about your project: operations, maintenance, training or partnership. We reply by email.',
@@ -491,7 +748,7 @@ ${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared 
             <li>Library updates</li>
             <li>Opportunities in your sector</li>
           </ul>
-          <p class="note">Students: the <a href="community.html#join">student community</a> has its own sign-up.</p>
+          <p class="note">Students: the <a href="account.html#join">student community</a> has its own free account.</p>
         </div>
         <div class="card">
           ${registerForm}
@@ -503,9 +760,9 @@ ${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared 
 
 for (const [file, p] of Object.entries(PAGES)) {
   const html = `${head({ file, ...p })}
-<body data-page="${file === 'index.html' ? 'home' : file.replace('.html', '')}">
-${header(file)}
-
+<body data-page="${file === 'index.html' ? 'home' : file.replace('.html', '')}"${p.bodyKind ? ` data-kind="${p.bodyKind}"` : ''}>
+${header(file, p.navActive ?? (p.community ? 'community.html' : file))}
+${p.community ? subnav(file) : ''}
   <main id="main">
 ${p.body}
   </main>

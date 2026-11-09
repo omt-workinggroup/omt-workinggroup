@@ -40,7 +40,7 @@ async function newPage(width = 1280) {
   return page;
 }
 
-const PAGES = ['index.html', 'about-us.html', 'services.html', 'training.html', 'contact.html', 'join.html', 'resources.html', 'home.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'register.html', 'community.html', 'privacy.html', 'terms.html', 'nope.html'];
+const PAGES = ['index.html', 'about-us.html', 'services.html', 'training.html', 'contact.html', 'join.html', 'resources.html', 'home.html', 'library.html', 'library.html?q=excel', 'resource.html?id=think-python-3e', 'resource.html?id=atomic-habits', 'office.html', 'presentations.html', 'assistant.html', 'favorites.html', 'about.html', 'register.html', 'community.html', 'reading.html', 'explore.html', 'lounge.html', 'ask.html', 'projects.html', 'opportunities.html', 'events.html', 'tools.html', 'challenges.html', 'account.html', 'post.html?id=1', 'privacy.html', 'terms.html', 'nope.html'];
 const WIDTHS = [320, 375, 430, 768, 1024, 1440];
 
 for (const width of WIDTHS) {

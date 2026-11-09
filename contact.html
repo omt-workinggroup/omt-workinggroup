@@ -68,9 +68,11 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/company.css?v=e557c1a39d">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/company.css?v=af1e1ddc19">
   <link rel="modulepreload" href="js/core/register-form.js">
-  <script type="module" src="js/pages/company.js?v=504d60d6d7"></script>
+  <link rel="modulepreload" href="js/core/shell.js">
+  <script type="module" src="js/pages/company.js?v=b93873aa34"></script>
 </head>
 <body data-page="contact">
   <a class="skip" href="#main">Skip to content</a>
@@ -82,6 +84,7 @@
         <img src="assets/logo-mark.svg" alt="" width="50" height="39">
         <span class="brand__word"><b>OMT</b><span>Working Group</span></span>
       </a>
+      <button class="theme" type="button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
       <button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="nav" id="nav" aria-label="Main">
         <a href="./">Home</a>

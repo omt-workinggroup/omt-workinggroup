@@ -1,6 +1,7 @@
 // Company pages (home, about, services, training, contact, join): mobile menu, footer year,
 // and the registration and contact forms on the pages that have them.
 import { bindRegisterForm } from '../core/register-form.js';
+import { initShell } from '../core/shell.js';
 
 // Old links to sections of the one-page homepage now open the section's own page.
 const MOVED = { '#about': 'about-us.html', '#omt': 'about-us.html', '#values': 'about-us.html', '#services': 'services.html', '#process': 'services.html', '#training': 'training.html', '#contact': 'contact.html', '#register': 'join.html' };
@@ -8,19 +9,7 @@ if (document.body.dataset.page === 'home' && MOVED[location.hash]) location.repl
 
 const registerForm = document.getElementById('register-form');
 if (registerForm) bindRegisterForm(registerForm);
-document.getElementById('year').textContent = String(new Date().getFullYear());
-
-const menu = document.getElementById('menu');
-const nav = document.getElementById('nav');
-const setMenu = (open) => {
-  nav.classList.toggle('is-open', open);
-  menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  document.documentElement.classList.toggle('menu-open', open);
-};
-menu.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
-nav.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+initShell();
 
 const form = document.getElementById('contact-form');
 if (form) {

@@ -30,6 +30,9 @@
     },
     "api/catalog-extra.js": {
       "maxDuration": 15
+    },
+    "api/community.js": {
+      "maxDuration": 20
     }
   },
   "headers": [
@@ -127,6 +130,54 @@
     {
       "source": "/join",
       "destination": "/join.html"
+    },
+    {
+      "source": "/lounge",
+      "destination": "/lounge.html"
+    },
+    {
+      "source": "/ask",
+      "destination": "/ask.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects.html"
+    },
+    {
+      "source": "/opportunities",
+      "destination": "/opportunities.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/events.html"
+    },
+    {
+      "source": "/explore",
+      "destination": "/explore.html"
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools.html"
+    },
+    {
+      "source": "/challenges",
+      "destination": "/challenges.html"
+    },
+    {
+      "source": "/my-space",
+      "destination": "/my-space.html"
+    },
+    {
+      "source": "/account",
+      "destination": "/account.html"
+    },
+    {
+      "source": "/post",
+      "destination": "/post.html"
+    },
+    {
+      "source": "/moderate",
+      "destination": "/moderate.html"
     }
   ],
   "redirects": [

@@ -1,0 +1,396 @@
+{
+ "categories": {
+  "development": "Development",
+  "editors": "Code editors",
+  "ai": "AI tools",
+  "design": "Design",
+  "productivity": "Productivity",
+  "database": "Databases",
+  "hosting": "Hosting",
+  "cloud": "Cloud",
+  "learning": "Learning",
+  "testing": "Testing",
+  "collaboration": "Collaboration",
+  "networking": "Networking"
+ },
+ "tools": [
+  {
+   "name": "Visual Studio Code",
+   "category": "editors",
+   "pricing": "Free",
+   "url": "https://code.visualstudio.com/",
+   "description": "A free, open-source-based code editor from Microsoft with extensions for almost every language.",
+   "use": "Writing and debugging code",
+   "note": "Install the Python or Live Server extension to get started fast."
+  },
+  {
+   "name": "Git",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://git-scm.com/",
+   "description": "The version control system that tracks every change to your code.",
+   "use": "Saving versions of your work",
+   "note": "Learn four commands first: init, add, commit, log."
+  },
+  {
+   "name": "GitHub",
+   "category": "collaboration",
+   "pricing": "Freemium",
+   "url": "https://github.com/",
+   "description": "Hosts Git repositories, with issues, pull requests and free public projects.",
+   "use": "Sharing code and portfolios",
+   "note": "Students can apply for the GitHub Student Developer Pack."
+  },
+  {
+   "name": "Python",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://www.python.org/",
+   "description": "A beginner-friendly programming language used for scripting, data, AI and the web.",
+   "use": "Learning to code, automation",
+   "note": "Start in IDLE or VS Code, then try small scripts."
+  },
+  {
+   "name": "Node.js",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://nodejs.org/",
+   "description": "Runs JavaScript outside the browser, for servers and tools.",
+   "use": "Back-end JavaScript",
+   "note": "Install the LTS version."
+  },
+  {
+   "name": "Replit",
+   "category": "editors",
+   "pricing": "Freemium",
+   "url": "https://replit.com/",
+   "description": "Code in the browser in many languages, with nothing to install.",
+   "use": "Coding on any computer",
+   "note": "Good for school computers where you cannot install software."
+  },
+  {
+   "name": "Jupyter",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://jupyter.org/",
+   "description": "Notebooks that mix code, results and notes. Popular for data and AI.",
+   "use": "Data exploration",
+   "note": "Try JupyterLab or use notebooks inside VS Code."
+  },
+  {
+   "name": "Google Colab",
+   "category": "ai",
+   "pricing": "Freemium",
+   "url": "https://colab.research.google.com/",
+   "description": "Free Jupyter notebooks in the cloud, with optional GPU time.",
+   "use": "Machine learning practice",
+   "note": "Free GPU time is limited; save your work to Drive."
+  },
+  {
+   "name": "Kaggle",
+   "category": "learning",
+   "pricing": "Free",
+   "url": "https://www.kaggle.com/",
+   "description": "Datasets, notebooks, competitions and short courses for data science.",
+   "use": "Data practice",
+   "note": "Start with the Learn section."
+  },
+  {
+   "name": "freeCodeCamp",
+   "category": "learning",
+   "pricing": "Free",
+   "url": "https://www.freecodecamp.org/",
+   "description": "A free curriculum for web development, Python and data, with projects.",
+   "use": "Structured self-study",
+   "note": "Build every project yourself, not just the lessons."
+  },
+  {
+   "name": "Khan Academy",
+   "category": "learning",
+   "pricing": "Free",
+   "url": "https://www.khanacademy.org/",
+   "description": "Free lessons in maths, computing and science.",
+   "use": "Maths and CS basics",
+   "note": "Great for revising maths for programming."
+  },
+  {
+   "name": "Figma",
+   "category": "design",
+   "pricing": "Freemium",
+   "url": "https://www.figma.com/",
+   "description": "Design interfaces and prototypes in the browser, together.",
+   "use": "UI/UX design",
+   "note": "Education plans exist for students and teachers."
+  },
+  {
+   "name": "Canva",
+   "category": "design",
+   "pricing": "Freemium",
+   "url": "https://www.canva.com/",
+   "description": "Quick graphics, posters and presentations from templates.",
+   "use": "Posters and slides",
+   "note": "Canva for Education is free for eligible schools."
+  },
+  {
+   "name": "Inkscape",
+   "category": "design",
+   "pricing": "Free",
+   "url": "https://inkscape.org/",
+   "description": "Open-source vector graphics editor.",
+   "use": "Logos and icons",
+   "note": "Export SVG for websites."
+  },
+  {
+   "name": "GIMP",
+   "category": "design",
+   "pricing": "Free",
+   "url": "https://www.gimp.org/",
+   "description": "Open-source image editor.",
+   "use": "Photo editing",
+   "note": "Use layers so you can undo changes."
+  },
+  {
+   "name": "Blender",
+   "category": "design",
+   "pricing": "Free",
+   "url": "https://www.blender.org/",
+   "description": "Open-source 3D modelling, animation and rendering.",
+   "use": "3D and animation",
+   "note": "Follow a beginner tutorial series start to finish."
+  },
+  {
+   "name": "Notion",
+   "category": "productivity",
+   "pricing": "Freemium",
+   "url": "https://www.notion.so/",
+   "description": "Notes, to-do lists and wikis in one place.",
+   "use": "Study notes and planning",
+   "note": "Make one page per subject."
+  },
+  {
+   "name": "Obsidian",
+   "category": "productivity",
+   "pricing": "Freemium",
+   "url": "https://obsidian.md/",
+   "description": "Markdown notes stored as files on your own device.",
+   "use": "Personal knowledge base",
+   "note": "Free for personal use; sync is paid."
+  },
+  {
+   "name": "Trello",
+   "category": "productivity",
+   "pricing": "Freemium",
+   "url": "https://trello.com/",
+   "description": "Boards and cards to plan projects.",
+   "use": "Project planning",
+   "note": "Use columns: To do, Doing, Done."
+  },
+  {
+   "name": "Google Workspace for Education",
+   "category": "productivity",
+   "pricing": "Freemium",
+   "url": "https://edu.google.com/workspace-for-education/",
+   "description": "Docs, Sheets, Slides and Classroom for schools.",
+   "use": "School work",
+   "note": "Ask your school whether you already have access."
+  },
+  {
+   "name": "PostgreSQL",
+   "category": "database",
+   "pricing": "Free",
+   "url": "https://www.postgresql.org/",
+   "description": "A powerful open-source relational database.",
+   "use": "Storing app data",
+   "note": "Learn SQL basics: SELECT, WHERE, JOIN."
+  },
+  {
+   "name": "SQLite",
+   "category": "database",
+   "pricing": "Free",
+   "url": "https://www.sqlite.org/",
+   "description": "A small database stored in a single file.",
+   "use": "Learning SQL, small apps",
+   "note": "Python includes it: import sqlite3."
+  },
+  {
+   "name": "DB Browser for SQLite",
+   "category": "database",
+   "pricing": "Free",
+   "url": "https://sqlitebrowser.org/",
+   "description": "A visual tool to open and edit SQLite databases.",
+   "use": "Exploring databases",
+   "note": "Good for seeing your tables while learning SQL."
+  },
+  {
+   "name": "MySQL Community Edition",
+   "category": "database",
+   "pricing": "Free",
+   "url": "https://www.mysql.com/products/community/",
+   "description": "The free edition of the popular MySQL database.",
+   "use": "Web app databases",
+   "note": "Often used with PHP."
+  },
+  {
+   "name": "GitHub Pages",
+   "category": "hosting",
+   "pricing": "Free",
+   "url": "https://pages.github.com/",
+   "description": "Free hosting for static websites from a GitHub repository.",
+   "use": "Publishing a portfolio",
+   "note": "Perfect for a first website."
+  },
+  {
+   "name": "Netlify",
+   "category": "hosting",
+   "pricing": "Freemium",
+   "url": "https://www.netlify.com/",
+   "description": "Deploys websites from Git with a free starter plan.",
+   "use": "Hosting websites",
+   "note": "Drag and drop a folder to publish."
+  },
+  {
+   "name": "Vercel",
+   "category": "hosting",
+   "pricing": "Freemium",
+   "url": "https://vercel.com/",
+   "description": "Hosts websites and serverless functions with a free hobby plan.",
+   "use": "Hosting web apps",
+   "note": "Connect a GitHub repo for automatic deploys."
+  },
+  {
+   "name": "Microsoft Azure for Students",
+   "category": "cloud",
+   "pricing": "Freemium",
+   "url": "https://azure.microsoft.com/en-us/free/students/",
+   "description": "Free cloud credit and services for eligible students.",
+   "use": "Learning cloud",
+   "note": "Check eligibility on the site; no credit card needed for students."
+  },
+  {
+   "name": "Docker",
+   "category": "development",
+   "pricing": "Freemium",
+   "url": "https://www.docker.com/",
+   "description": "Packages apps with everything they need to run.",
+   "use": "Running apps the same way everywhere",
+   "note": "Docker Desktop is free for personal and education use."
+  },
+  {
+   "name": "Postman",
+   "category": "testing",
+   "pricing": "Freemium",
+   "url": "https://www.postman.com/",
+   "description": "Send and test API requests without writing code.",
+   "use": "Testing APIs",
+   "note": "Try a public API first, like a weather API."
+  },
+  {
+   "name": "Selenium",
+   "category": "testing",
+   "pricing": "Free",
+   "url": "https://www.selenium.dev/",
+   "description": "Open-source browser automation for testing websites.",
+   "use": "Automated web testing",
+   "note": "Start with the Python bindings."
+  },
+  {
+   "name": "Playwright",
+   "category": "testing",
+   "pricing": "Free",
+   "url": "https://playwright.dev/",
+   "description": "Open-source end-to-end testing for modern web apps.",
+   "use": "Automated web testing",
+   "note": "Its code generator records your clicks as a test."
+  },
+  {
+   "name": "Wireshark",
+   "category": "networking",
+   "pricing": "Free",
+   "url": "https://www.wireshark.org/",
+   "description": "Captures and inspects network traffic packet by packet.",
+   "use": "Learning how networks work",
+   "note": "Only capture traffic on networks you are allowed to."
+  },
+  {
+   "name": "Cisco Packet Tracer",
+   "category": "networking",
+   "pricing": "Free",
+   "url": "https://www.netacad.com/cisco-packet-tracer",
+   "description": "Network simulator for building and testing virtual networks.",
+   "use": "Networking practice",
+   "note": "Needs a free Cisco Networking Academy account."
+  },
+  {
+   "name": "Nmap",
+   "category": "networking",
+   "pricing": "Free",
+   "url": "https://nmap.org/",
+   "description": "Open-source network scanner.",
+   "use": "Network discovery",
+   "note": "Only scan networks you own or have permission to test."
+  },
+  {
+   "name": "VirtualBox",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://www.virtualbox.org/",
+   "description": "Runs other operating systems in a window on your computer.",
+   "use": "Trying Linux safely",
+   "note": "Give the virtual machine at least 2 GB of RAM."
+  },
+  {
+   "name": "Ubuntu",
+   "category": "development",
+   "pricing": "Free",
+   "url": "https://ubuntu.com/",
+   "description": "A popular, beginner-friendly Linux distribution.",
+   "use": "Learning Linux",
+   "note": "Try it in VirtualBox before installing."
+  },
+  {
+   "name": "Claude",
+   "category": "ai",
+   "pricing": "Freemium",
+   "url": "https://claude.ai/",
+   "description": "An AI assistant for explanations, writing help and code review.",
+   "use": "Study help",
+   "note": "Use AI to understand, then do the work yourself."
+  },
+  {
+   "name": "ChatGPT",
+   "category": "ai",
+   "pricing": "Freemium",
+   "url": "https://chatgpt.com/",
+   "description": "An AI assistant for questions, explanations and drafts.",
+   "use": "Study help",
+   "note": "Check facts: AI can be wrong."
+  },
+  {
+   "name": "Hugging Face",
+   "category": "ai",
+   "pricing": "Freemium",
+   "url": "https://huggingface.co/",
+   "description": "Open AI models, datasets and demos.",
+   "use": "Exploring AI models",
+   "note": "Try models in the browser through Spaces."
+  },
+  {
+   "name": "Scratch",
+   "category": "learning",
+   "pricing": "Free",
+   "url": "https://scratch.mit.edu/",
+   "description": "Block-based coding from MIT for first-time programmers.",
+   "use": "First steps in coding",
+   "note": "Great for learning loops and events."
+  },
+  {
+   "name": "Discord",
+   "category": "collaboration",
+   "pricing": "Freemium",
+   "url": "https://discord.com/",
+   "description": "Chat servers for communities and study groups.",
+   "use": "Group chat",
+   "note": "Check age rules and privacy settings."
+  }
+ ]
+}

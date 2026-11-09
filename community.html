@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMT Student Community: free books and AI study help for students</title>
-  <meta name="description" content="Free for students: 1,243 books and guides for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.">
+  <title>OMT Student Community: learn, create, connect, discover, grow</title>
+  <meta name="description" content="A free student technology community: discussions, Q&A, project showcase, daily challenges, verified opportunities, tools and a 1,243-title library.">
   <link rel="canonical" href="https://web.omt-workinggroup.com/community.html">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" data-seo>
   <meta property="og:locale" content="en_US" data-seo>
-  <meta name="twitter:title" content="OMT Student Community: free books and AI study help for students" data-seo>
-  <meta name="twitter:description" content="Free for students: 1,243 books and guides for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy." data-seo>
+  <meta name="twitter:title" content="OMT Student Community: learn, create, connect, discover, grow" data-seo>
+  <meta name="twitter:description" content="A free student technology community: discussions, Q&A, project showcase, daily challenges, verified opportunities, tools and a 1,243-title library." data-seo>
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI assistants" data-seo>
   <script type="application/ld+json" data-seo>
 {
@@ -20,7 +20,7 @@
       "@id": "https://web.omt-workinggroup.com/community.html#webpage",
       "url": "https://web.omt-workinggroup.com/community.html",
       "name": "OMT Student Community",
-      "description": "Free for students: 1,243 books and resources for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.",
+      "description": "A free student technology community: discussions, Q&A, project showcase, daily challenges, verified opportunities and a free library.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://web.omt-workinggroup.com/#website"
@@ -31,11 +31,6 @@
       "audience": {
         "@type": "EducationalAudience",
         "educationalRole": "student"
-      },
-      "mainEntity": {
-        "@type": "Collection",
-        "name": "OMT Resources library",
-        "description": "1,243 books, guides, templates and courses for developers, network, telecom and power engineers, IT students and office workers."
       }
     },
     {
@@ -50,12 +45,6 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Resources",
-          "item": "https://web.omt-workinggroup.com/resources"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
           "name": "Student community",
           "item": "https://web.omt-workinggroup.com/community.html"
         }
@@ -66,8 +55,8 @@
   </script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OMT WORKING GROUP">
-  <meta property="og:title" content="OMT Student Community: free books and AI study help for students">
-  <meta property="og:description" content="Free for students: 1,243 books and guides for GCSE, A level, BTEC, T Level and university, with reading lists and an AI study buddy.">
+  <meta property="og:title" content="OMT Student Community: learn, create, connect, discover, grow">
+  <meta property="og:description" content="A free student technology community: discussions, Q&A, project showcase, daily challenges, verified opportunities, tools and a 1,243-title library.">
   <meta property="og:url" content="https://web.omt-workinggroup.com/community.html">
   <meta property="og:image" content="https://web.omt-workinggroup.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -80,9 +69,11 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/company.css?v=e557c1a39d">
-  <link rel="modulepreload" href="js/core/register-form.js">
-  <script type="module" src="js/pages/company.js?v=504d60d6d7"></script>
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/company.css?v=af1e1ddc19">
+  <link rel="modulepreload" href="js/community/core.js">
+  <link rel="modulepreload" href="js/core/shell.js">
+  <script type="module" src="js/community/home.js"></script>
 </head>
 <body data-page="community">
   <a class="skip" href="#main">Skip to content</a>
@@ -94,6 +85,7 @@
         <img src="assets/logo-mark.svg" alt="" width="50" height="39">
         <span class="brand__word"><b>OMT</b><span>Working Group</span></span>
       </a>
+      <button class="theme" type="button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
       <button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav class="nav" id="nav" aria-label="Main">
         <a href="./">Home</a>
@@ -107,143 +99,86 @@
       </nav>
     </div>
   </header>
-
+  <nav class="subnav" aria-label="Community">
+    <div class="wrap subnav__inner">
+      <div class="subnav__links"><a href="community.html" aria-current="page">Home</a><a href="explore.html">Explore</a><a href="lounge.html">Lounge</a><a href="ask.html">Ask</a><a href="projects.html">Projects</a><a href="opportunities.html">Opportunities</a><a href="events.html">Events</a><a href="challenges.html">Challenges</a><a href="my-space.html">My Space</a></div>
+      <div class="subnav__end"><a id="mod-link" href="moderate.html" hidden>Moderate</a><a id="account-link" class="subnav__account" href="account.html">Sign in</a></div>
+    </div>
+  </nav>
   <main id="main">
-    <section class="hero hero--community">
-      <div class="wrap hero__inner hero__inner--split">
-        <div>
-          <p class="eyebrow">OMT Student Community</p>
-          <h1>Free books and study help for every student.</h1>
-          <p class="hero__lead">Reading lists by level and an AI study buddy, from GCSE to university.</p>
-          <div class="hero__actions">
-            <a class="btn btn--light" href="#join">Join for free</a>
-            <a class="btn btn--line" href="library.html?access=open">Browse free books</a>
-          </div>
-        </div>
-        <dl class="glance" aria-label="At a glance">
-          <div><dt>1,243</dt><dd>titles in the library</dd></div>
-          <div><dt>419</dt><dd>free to read online</dd></div>
-          <div><dt>24/7</dt><dd>AI study help</dd></div>
-          <div><dt>£0</dt><dd>for students, always</dd></div>
-        </dl>
+    <section class="hero hero--app">
+      <div class="wrap hero__inner">
+        <p class="eyebrow">OMT Student Community</p>
+        <h1 id="welcome">Learn. Create. Connect. Discover. Grow.</h1>
+        <p class="hero__lead">A free digital campus for students in technology: ask, share, build and find opportunities.</p>
+        <form class="bigsearch" id="home-search" role="search">
+          <label class="sr-only" for="home-q">Search the community</label>
+          <input id="home-q" type="search" placeholder="Search discussions, questions, projects or books" autocomplete="off">
+          <label class="sr-only" for="home-scope">Where to search</label>
+          <select id="home-scope"><option value="lounge.html">Discussions</option><option value="ask.html">Questions</option><option value="projects.html">Projects</option><option value="library.html">Library</option><option value="tools.html">Tools</option></select>
+          <button class="btn btn--light" type="submit">Search</button>
+        </form>
+        <p class="stats" id="stats"></p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="front-title">
+    <section class="section section--first" aria-labelledby="discover-title">
       <div class="wrap">
-        <div class="head head--split"><div><p class="eyebrow">On the front table</p><h2 id="front-title">Seven books every developer should read.</h2></div><a class="more" href="library.html?category=computer-science">All computing books <span class="arr" aria-hidden="true">&rarr;</span></a></div>
+        <div class="head head--split"><div><p class="eyebrow">OMT Discover · new every day</p><h2 id="discover-title">Five things worth your time today.</h2></div></div>
+        <ul class="discover" id="discover"><li class="skeleton"><span></span><span></span></li></ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-label="Today">
+      <div class="wrap dash">
+        <article class="panel panel--dark dash__challenge"><div id="challenge"><p class="dcard__kind">Daily challenge</p><div class="skeleton"><span></span><span></span></div></div></article>
+        <article class="panel"><p class="eyebrow">Opportunities</p><ul class="mini mini--dark" id="opps"><li class="muted">Loading…</li></ul><a class="more" href="opportunities.html">All opportunities <span class="arr" aria-hidden="true">&rarr;</span></a></article>
+        <article class="panel"><p class="eyebrow">Upcoming events</p><ul class="mini mini--dark" id="events"><li class="muted">Loading…</li></ul><a class="more" href="events.html">Events calendar <span class="arr" aria-hidden="true">&rarr;</span></a></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="trending-title">
+      <div class="wrap two">
+        <div><div class="head head--split"><h2 id="trending-title">Trending in the Lounge</h2><a class="more" href="lounge.html">Open the Lounge <span class="arr" aria-hidden="true">&rarr;</span></a></div><div class="feed short" id="trending"></div></div>
+        <div><div class="head head--split"><h2>Waiting for answers</h2><a class="more" href="ask.html?sort=unanswered">Help someone <span class="arr" aria-hidden="true">&rarr;</span></a></div><div class="feed short" id="unanswered"></div></div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">Project showcase</p><h2 id="proj-title">What students are building.</h2></div><a class="more" href="projects.html">All projects <span class="arr" aria-hidden="true">&rarr;</span></a></div>
+        <div class="grid3 hscroll" id="projects-row"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="explore-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">Explore</p><h2 id="explore-title">Learn on your own time.</h2></div><a class="more" href="explore.html">Everything in Explore <span class="arr" aria-hidden="true">&rarr;</span></a></div>
+        <ul class="teasers teasers--four">
+          <li><a href="library.html"><svg class="ico ico--md" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-book"/></svg><h3>Resource library</h3><p>1,243 books, guides and courses.</p><span class="more">Search <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
+          <li><a href="tools.html"><svg class="ico ico--md" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-gauge"/></svg><h3>Tools directory</h3><p>Free and freemium tools, honestly labelled.</p><span class="more">Browse <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
+          <li><a href="challenges.html"><svg class="ico ico--md" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-excellence"/></svg><h3>Challenges</h3><p>A daily question and a weekly one. Earn XP.</p><span class="more">Play <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
+          <li><a href="assistant.html"><svg class="ico ico--md" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-chat"/></svg><h3>OMT AI</h3><p>An AI study buddy, clearly labelled as AI.</p><span class="more">Ask <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="front-title">
+      <div class="wrap">
+        <div class="head head--split"><div><p class="eyebrow">From the library</p><h2 id="front-title">Seven books every developer should read.</h2></div><a class="more" href="reading.html">Reading lists <span class="arr" aria-hidden="true">&rarr;</span></a></div>
         <div class="shelf shelf--seven"><a class="book" href="resource.html?id=code-simplicity"><img src="assets/covers/code-simplicity.webp" alt="Code Simplicity: The Fundamentals of Software" width="300" height="400" loading="lazy"><b>Code Simplicity</b><span>Max Kanat-Alexander</span></a><a class="book" href="resource.html?id=art-of-readable-code"><img src="assets/covers/art-of-readable-code.webp" alt="The Art of Readable Code" width="300" height="400" loading="lazy"><b>The Art of Readable Code</b><span>Dustin Boswell, Trevor Foucher</span></a><a class="book" href="resource.html?id=working-effectively-with-legacy-code"><img src="assets/covers/working-effectively-with-legacy-code.webp" alt="Working Effectively with Legacy Code" width="300" height="400" loading="lazy"><b>Working Effectively with Legacy Code</b><span>Michael Feathers</span></a><a class="book" href="resource.html?id=clean-code"><img src="assets/covers/clean-code.webp" alt="Clean Code: A Handbook of Agile Software Craftsmanship" width="300" height="400" loading="lazy"><b>Clean Code</b><span>Robert C. Martin</span></a><a class="book" href="resource.html?id=refactoring-fowler"><img src="assets/covers/refactoring-fowler.webp" alt="Refactoring" width="300" height="400" loading="lazy"><b>Refactoring</b><span>Martin Fowler</span></a><a class="book" href="resource.html?id=pragmatic-programmer"><img src="assets/covers/pragmatic-programmer.webp" alt="The Pragmatic Programmer, 20th Anniversary Edition" width="300" height="400" loading="lazy"><b>The Pragmatic Programmer</b><span>David Thomas, Andrew Hunt</span></a><a class="book" href="resource.html?id=code-complete"><img src="assets/covers/code-complete.webp" alt="Code Complete" width="300" height="400" loading="lazy"><b>Code Complete</b><span>Steve McConnell</span></a></div>
       </div>
     </section>
 
-    <section class="section section--tint" aria-labelledby="levels-title">
-      <div class="wrap">
-        <div class="head"><p class="eyebrow">Your level</p><h2 id="levels-title">Start where you are.</h2></div>
-        <ul class="teasers teasers--four">
-          <li><a href="library.html?category=computer-science,study-skills&amp;access=open"><span class="tag">Years 10–11</span><h3>GCSE</h3><p>Computing foundations and Python.</p><span class="more">Start here <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
-          <li><a href="library.html?category=computer-science,networking,data-ai"><span class="tag">Years 12–13</span><h3>A level, BTEC, T Level</h3><p>Programming, networks and data.</p><span class="more">Start here <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
-          <li><a href="library.html?category=computer-science,networking,security,data-ai,linux,cloud"><span class="tag">Undergraduate and beyond</span><h3>University</h3><p>Degree textbooks, many free.</p><span class="more">Start here <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
-          <li><a href="library.html?category=networking,linux,cloud,excel,word"><span class="tag">Learning on the job</span><h3>Apprenticeships</h3><p>Networks, Linux, cloud and Office.</p><span class="more">Start here <span class="arr" aria-hidden="true">&rarr;</span></span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="tracks-title">
-      <div class="wrap">
-        <div class="head"><p class="eyebrow">Study tracks</p><h2 id="tracks-title">Find books by subject.</h2></div>
-        <ul class="tracks">
-          <li><a href="library.html?category=computer-science"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg><span>Computer Science and coding</span><small>113</small></a></li>
-          <li><a href="library.html?category=networking"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></svg><span>Networking</span><small>113</small></a></li>
-          <li><a href="library.html?category=security"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Cybersecurity</span><small>102</small></a></li>
-          <li><a href="library.html?category=data-ai"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span>Data and AI</span><small>54</small></a></li>
-          <li><a href="library.html?category=linux"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12 15h5"/></svg><span>Linux and systems</span><small>55</small></a></li>
-          <li><a href="library.html?category=cloud"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg><span>Cloud and DevOps</span><small>60</small></a></li>
-          <li><a href="library.html?category=telecom"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10v11M9 21l3-11 3 11"/><circle cx="12" cy="8" r="1.6"/><path d="M8.5 4.5a5 5 0 0 0 0 7M15.5 4.5a5 5 0 0 1 0 7"/></svg><span>Telecom and 5G</span><small>63</small></a></li>
-          <li><a href="library.html?category=study-skills"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5c3-1 5.5-.5 8 1.5 2.5-2 5-2.5 8-1.5v14c-3-1-5.5-.5-8 1.5-2.5-2-5-2.5-8-1.5z"/><path d="M12 6.5v14"/></svg><span>Study skills</span><small>61</small></a></li>
-          <li><a href="library.html?category=business"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Business</span><small>90</small></a></li>
-          <li><a href="library.html?category=word,excel,powerpoint,access,outlook"><svg class="ico ico--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg><span>Microsoft Office</span><small>192</small></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section section--tint" aria-labelledby="lists-title">
-      <div class="wrap">
-        <div class="head"><p class="eyebrow">Reading lists</p><h2 id="lists-title">Picked for students. Free to read.</h2></div>
-        <div class="lists">
-          <article class="list"><div class="list__head"><h3>Learn to code</h3><p>From your first line of Python to Git.</p></div><div class="shelf shelf--six"><a class="book" href="resource.html?id=think-python-3e"><img src="assets/covers/think-python-3e.webp" alt="Think Python, 3rd Edition" width="300" height="400" loading="lazy"><b>Think Python</b><span>Allen B. Downey</span></a><a class="book" href="resource.html?id=automate-boring-stuff"><img src="assets/covers/automate-boring-stuff.webp" alt="Automate the Boring Stuff with Python" width="300" height="400" loading="lazy"><b>Automate the Boring Stuff with Python</b><span>Al Sweigart</span></a><a class="book" href="resource.html?id=openstax-intro-python"><img src="assets/covers/openstax-intro-python.webp" alt="Introduction to Python Programming" width="300" height="400" loading="lazy"><b>Introduction to Python Programming</b><span>Udayan Das, Aubrey Lawson, Chris Mayfield, Narges Norouzi</span></a><a class="book" href="resource.html?id=eloquent-javascript"><img src="assets/covers/eloquent-javascript.webp" alt="Eloquent JavaScript, 4th Edition" width="300" height="400" loading="lazy"><b>Eloquent JavaScript</b><span>Marijn Haverbeke</span></a><a class="book" href="resource.html?id=pro-git"><img src="assets/covers/pro-git.webp" alt="Pro Git, 2nd Edition" width="300" height="400" loading="lazy"><b>Pro Git</b><span>Scott Chacon, Ben Straub</span></a><a class="book" href="resource.html?id=rust-book"><img src="assets/covers/rust-book.webp" alt="The Rust Programming Language" width="300" height="400" loading="lazy"><b>The Rust Programming Language</b><span>Steve Klabnik, Carol Nichols</span></a></div></article>
-          <article class="list"><div class="list__head"><h3>Revise smarter</h3><p>Study, write and present well.</p></div><div class="shelf shelf--six"><a class="book" href="resource.html?id=openstax-college-success"><img src="assets/covers/openstax-college-success.webp" alt="College Success" width="300" height="400" loading="lazy"><b>College Success</b><span>Amy Baldwin</span></a><a class="book" href="resource.html?id=how-to-study-in-college"><img src="assets/covers/how-to-study-in-college.webp" alt="How to Study in College" width="300" height="400" loading="lazy"><b>How to Study in College</b><span>Walter Pauk</span></a><a class="book" href="resource.html?id=the-elements-of-style"><img src="assets/covers/the-elements-of-style.webp" alt="The Elements of Style" width="300" height="400" loading="lazy"><b>The Elements of Style</b><span>William Strunk, Jr., E. B. White</span></a><a class="book" href="resource.html?id=the-art-of-public-speaking"><img src="assets/covers/the-art-of-public-speaking.webp" alt="The Art of Public Speaking" width="300" height="400" loading="lazy"><b>The Art of Public Speaking</b><span>Dale Carnegie, Joseph Berg Esenwein</span></a><a class="book" href="resource.html?id=openstax-workplace-software"><img src="assets/covers/openstax-workplace-software.webp" alt="Workplace Software and Skills" width="300" height="400" loading="lazy"><b>Workplace Software and Skills</b><span>OpenStax</span></a><a class="book" href="resource.html?id=experience-and-education"><img src="assets/covers/experience-and-education.webp" alt="Experience and Education" width="300" height="400" loading="lazy"><b>Experience and Education</b><span>John Dewey</span></a></div></article>
-          <article class="list"><div class="list__head"><h3>Networks and security</h3><p>The internet, security and the command line.</p></div><div class="shelf shelf--six"><a class="book" href="resource.html?id=net-intro"><img src="assets/covers/net-intro.webp" alt="Introduction to Networking: How the Internet Works" width="300" height="400" loading="lazy"><b>Introduction to Networking</b><span>Charles R. Severance</span></a><a class="book" href="resource.html?id=cn-systems-approach"><img src="assets/covers/cn-systems-approach.webp" alt="Computer Networks: A Systems Approach" width="300" height="400" loading="lazy"><b>Computer Networks</b><span>Larry Peterson, Bruce Davie</span></a><a class="book" href="resource.html?id=tlcl"><img src="assets/covers/tlcl.webp" alt="The Linux Command Line" width="300" height="400" loading="lazy"><b>The Linux Command Line</b><span>William Shotts</span></a><a class="book" href="resource.html?id=beej-network"><img src="assets/covers/beej-network.webp" alt="Beej's Guide to Network Programming" width="300" height="400" loading="lazy"><b>Beej's Guide to Network Programming</b><span>Brian &quot;Beej Jorgensen&quot; Hall</span></a><a class="book" href="resource.html?id=the-codebreakers"><img src="assets/covers/the-codebreakers.webp" alt="The Codebreakers" width="300" height="400" loading="lazy"><b>The Codebreakers</b><span>David Kahn</span></a><a class="book" href="resource.html?id=introduction-to-modern-cryptography"><img src="assets/covers/introduction-to-modern-cryptography.webp" alt="Introduction to Modern Cryptography" width="300" height="400" loading="lazy"><b>Introduction to Modern Cryptography</b><span>Jonathan Katz, Yehuda Lindell</span></a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section band" aria-labelledby="ai-title">
-      <div class="wrap split">
-        <div>
-          <p class="eyebrow">AI study buddy</p>
-          <h2 id="ai-title">Stuck at 11pm? Ask OMT AI.</h2>
-          <p class="band__lead">Explanations, quizzes, diagrams and code help. The work stays yours.</p>
-          <a class="btn btn--light" href="assistant.html">Open OMT AI</a>
-        </div>
-        <ul class="mini" aria-label="Try asking">
-          <li><a href="assistant.html?q=Explain%20binary%20search%20with%20a%20simple%20example">Explain binary search with a simple example <span class="arr" aria-hidden="true">&rarr;</span></a></li>
-          <li><a href="assistant.html?q=Quiz%20me%20on%20the%20OSI%20model%2C%20one%20question%20at%20a%20time">Quiz me on the OSI model, one question at a time <span class="arr" aria-hidden="true">&rarr;</span></a></li>
-          <li><a href="assistant.html?q=Help%20me%20make%20a%20revision%20plan%20for%20GCSE%20Computer%20Science">Help me make a revision plan for GCSE Computer Science <span class="arr" aria-hidden="true">&rarr;</span></a></li>
-          <li><a href="assistant.html?q=Why%20does%20my%20Python%20loop%20never%20stop%3F">Why does my Python loop never stop? <span class="arr" aria-hidden="true">&rarr;</span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="join" aria-labelledby="join-title">
-      <div class="wrap split split--form">
-        <div>
-          <p class="eyebrow">Join the community</p>
-          <h2 id="join-title">For students only. Free forever.</h2>
-          <p class="lead">Hear first about new reading lists, tools and training.</p>
-          <ul class="ticks">
-            <li>Takes under a minute</li>
-            <li>No password, no spam</li>
-            <li>For ages 13 and over</li>
-          </ul>
-          <div class="faq">
-            <details><summary>Is it really free?</summary><p>Yes. For books still in copyright we link to a preview, a library copy or a shop.</p></details>
-            <details><summary>Who can join?</summary><p>Students and apprentices aged 13 or over. Under 13? Ask a teacher to contact us.</p></details>
-            <details><summary>Do I need to join to read?</summary><p>No. Every page is open to everyone.</p></details>
-            <details><summary>Is it safe for school?</summary><p>Yes. Official sources only, and no ads.</p></details>
-          </div>
-        </div>
-        <div class="card">
-          <form class="reg" id="register-form" data-source="community" novalidate>
-            <p class="sr-only"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
-            <input type="hidden" name="role" value="Student">
-            <div class="reg__row">
-              <label class="reg__field"><span class="reg__label">Full name</span><input name="name" autocomplete="name" required maxlength="200" placeholder="Your full name"></label>
-              <label class="reg__field"><span class="reg__label">Email</span><input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@school.ac.uk"></label>
-            </div>
-            <div class="reg__row">
-              <label class="reg__field"><span class="reg__label">School, college or university</span><input name="organisation" autocomplete="organization" required maxlength="200" placeholder="e.g. Hillside Academy"></label>
-              <label class="reg__field"><span class="reg__label">Town or city <small>optional</small></span><input name="location" autocomplete="address-level2" maxlength="200" placeholder="e.g. Manchester"></label>
-            </div>
-            <fieldset class="reg__group"><legend>I'm studying at</legend><div class="reg-chips"><label class="reg-chip"><input type="radio" name="level" value="GCSE (Years 10–11)" required><span>GCSE (Years 10–11)</span></label><label class="reg-chip"><input type="radio" name="level" value="A level, BTEC or T Level (Years 12–13)" required><span>A level, BTEC or T Level (Years 12–13)</span></label><label class="reg-chip"><input type="radio" name="level" value="University" required><span>University</span></label><label class="reg-chip"><input type="radio" name="level" value="Apprenticeship" required><span>Apprenticeship</span></label><label class="reg-chip"><input type="radio" name="level" value="Other" required><span>Other</span></label></div></fieldset>
-            <fieldset class="reg__group"><legend>Subjects I'm into <small>choose any</small></legend><div class="reg-chips"><label class="reg-chip"><input type="checkbox" name="interests" value="Computer Science"><span>Computer Science</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="IT and digital skills"><span>IT and digital skills</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Networking"><span>Networking</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Cybersecurity"><span>Cybersecurity</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Engineering"><span>Engineering</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Data and AI"><span>Data and AI</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Maths"><span>Maths</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Business"><span>Business</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Study skills"><span>Study skills</span></label><label class="reg-chip"><input type="checkbox" name="interests" value="Microsoft Office skills"><span>Microsoft Office skills</span></label></div></fieldset>
-            <label class="reg__consent"><input type="checkbox" name="over13" required><span>I'm 13 or older.</span></label>
-            <label class="reg__consent"><input type="checkbox" name="consent" required><span>I agree that OMT Working Group may email me about the student community. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
-            <button class="btn btn--primary btn--block" type="submit">Join the student community</button>
-            <p class="reg__status" role="status"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
+<div data-signed-out>    <section class="cta">
       <div class="wrap cta__inner">
-        <div><h2>Bring OMT to your school.</h2><p>Free reading lists for your classes, shared in one link.</p></div>
+        <div><h2>New here? Join free.</h2><p>Students aged 13 and over. Only your username is ever shown.</p></div>
         <div class="cta__actions">
-          <a class="btn btn--light" href="contact.html">Talk to us</a>
-          
+          <a class="btn btn--light" href="account.html#join">Create your account</a>
+          <a class="btn btn--line" href="reading.html">Reading lists</a>
         </div>
       </div>
-    </section>
+    </section></div>
   </main>
 
   <footer class="foot">
