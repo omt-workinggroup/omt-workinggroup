@@ -178,6 +178,10 @@
     {
       "source": "/moderate",
       "destination": "/moderate.html"
+    },
+    {
+      "source": "/reading",
+      "destination": "/reading.html"
     }
   ],
   "redirects": [
