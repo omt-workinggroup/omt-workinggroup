@@ -1,5 +1,6 @@
 // Opportunities hub: verified listings with filters. Expired deadlines are marked automatically.
 import { initCommunity, api, esc, $, empty, loading, fmtDate } from './core.js';
+import * as fallback from './fallback.js';
 
 const CATS = { scholarship: 'Scholarship', internship: 'Internship', competition: 'Competition', hackathon: 'Hackathon', certification: 'Free certification', training: 'Training programme', volunteering: 'Volunteering', ambassador: 'Ambassador programme', mentorship: 'Mentorship', workshop: 'Workshop' };
 const list = $('#opps');
@@ -25,7 +26,7 @@ async function load() {
   const f = new FormData($('#filters'));
   const query = { category: f.get('category'), region: f.get('region'), audience: f.get('audience'), field: f.get('field'), include_expired: f.get('expired') === 'on' };
   try {
-    const rows = await api('opportunities', { query });
+    const rows = await api('opportunities', { query }).catch((err) => { if (err.code === 'not_ready') return fallback.opportunities(query); throw err; });
     list.innerHTML = rows.length ? rows.map(card).join('') : empty('No matching opportunities', 'Try fewer filters. New verified listings are added regularly.');
     if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
   } catch (err) { list.innerHTML = empty('Could not load', err.message); }

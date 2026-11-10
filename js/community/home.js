@@ -1,5 +1,6 @@
 // Community home: welcome, search, OMT Discover, today's challenge, and live highlights from the community.
 import { initCommunity, api, esc, $, postCard, empty, fmtDate } from './core.js';
+import * as fallback from './fallback.js';
 
 const day = Math.floor(Date.now() / 86400000);
 const pick = (list, salt = 0) => list[(day + salt) % list.length];
@@ -56,10 +57,26 @@ async function main() {
   });
   let data = null;
   try { data = await api('home'); } catch (err) {
-    for (const id of ['#trending', '#unanswered', '#projects-row', '#opps', '#events', '#challenge']) $(id).innerHTML = empty('Not available yet', err.message);
+    if (err.code !== 'not_ready') {
+      for (const id of ['#trending', '#unanswered', '#projects-row', '#opps', '#events', '#challenge']) $(id).innerHTML = empty('Not available right now', err.message);
+      renderDiscover([]);
+      return;
+    }
+    // Accounts are not open yet: show the verified content and say plainly that posting opens soon.
+    const [opps, challenges] = await Promise.all([fallback.opportunities(), fallback.todaysChallenges()]);
+    const soon = (what) => empty(`${what} open soon`, 'Student accounts are being switched on. You will be able to post, answer and share projects here.');
+    data = { trending: [], unanswered: [], projects: [], opportunities: opps.slice(0, 3), events: [], challenges: challenges.map((c) => ({ ...c, attempt: null })), members: 0, published: 0, soon };
   }
-  renderDiscover(data?.opportunities ?? []);
-  if (!data) return;
+  renderDiscover(data.opportunities);
+  if (data.soon) {
+    $('#challenge').innerHTML = challengeTeaser(data.challenges);
+    $('#trending').innerHTML = data.soon('Discussions');
+    $('#unanswered').innerHTML = data.soon('Questions');
+    $('#projects-row').innerHTML = data.soon('Projects');
+    $('#opps').innerHTML = data.opportunities.map(oppItem).join('');
+    $('#events').innerHTML = '<li class="muted">No upcoming events listed yet. Only verified events appear here.</li>';
+    return;
+  }
   $('#challenge').innerHTML = challengeTeaser(data.challenges ?? []);
   $('#trending').innerHTML = data.trending.length ? data.trending.map(postCard).join('') : empty('The Lounge is just getting started', 'Be one of the first to post.', '<a class="btn btn--primary" href="lounge.html#compose">Start a discussion</a>');
   $('#unanswered').innerHTML = data.unanswered.length ? data.unanswered.map(postCard).join('') : empty('No open questions', 'Every question has an answer right now.', '<a class="more" href="ask.html#compose">Ask a question &rarr;</a>');

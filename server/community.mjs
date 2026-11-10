@@ -126,11 +126,13 @@ export function createCommunityHandler({ env = process.env, fetchImpl = fetch } 
       }
       return json(200, { ok: true, data: session(r.data) });
     }
-    // signup
+    // signup: only once the community database is in place, so no one gets an account without a profile
     const handle = str(b.handle, 24);
     if (!/^[A-Za-z0-9_]{3,24}$/.test(handle)) return fail(400, 'bad_handle', MESSAGES.bad_handle);
     if (b.over13 !== true) return fail(400, 'age', 'You need to be 13 or older to create an account.');
     if (b.consent !== true) return fail(400, 'consent', 'Please accept the community rules and privacy policy.');
+    const ready = await supa('/rest/v1/rpc/c_me', { body: {} });
+    if (ready.status === 404) return fail(503, 'not_ready', 'Accounts open very soon. Please check back shortly.');
     const r = await supa('/auth/v1/signup', { body: { email, password, data: { handle } } });
     if (!r.ok) {
       const msg = JSON.stringify(r.data ?? '');
@@ -175,8 +177,9 @@ export function createCommunityHandler({ env = process.env, fetchImpl = fetch } 
       if (!r.ok) {
         const code = r.data?.message;
         if (MESSAGES[code]) return fail(code === 'forbidden' ? 403 : code === 'not_signed_in' ? 401 : 400, code, MESSAGES[code]);
+        if (r.status === 404) return fail(503, 'not_ready', 'This part of the community opens very soon.');
         console.error('community action failed', action, r.status, r.data?.code, r.data?.message);
-        return fail(r.status === 404 ? 503 : 400, 'failed', r.status === 404 ? 'The community is being set up. Please try again soon.' : 'That did not work. Please check your input and try again.');
+        return fail(400, 'failed', 'That did not work. Please check your input and try again.');
       }
       const publicRead = who === 'any' && !token && ['home', 'feed', 'opportunities', 'events', 'post'].includes(action);
       return json(200, { ok: true, data: r.data }, publicRead ? { 'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=120' } : {});

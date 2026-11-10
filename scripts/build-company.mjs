@@ -639,7 +639,7 @@ ${cta('Bring OMT to your school.', 'Free reading lists for your classes, shared 
     title: 'Daily tech challenge | OMT Student Community', description: 'A daily and a weekly technology challenge with explanations. Earn XP and badges.', path: '/challenges.html',
     body: `${pageHero('Challenges', 'One question a day. Learn something.', 'Answer once, read the explanation, earn XP. No timers and no streak pressure.')}
     <section class="section section--first"><div class="wrap two two--aside">
-      <div id="challenges"></div>
+      <div><p class="notice" id="practice-note" hidden>Practice mode: student accounts open very soon. Your answers are checked, but not saved and no XP is earned yet.</p><div id="challenges"></div></div>
       <aside class="panel"><p class="eyebrow">Leaderboard · last 30 days</p><ol class="board" id="board"><li class="muted">Loading…</li></ol>
         <p class="note">Opt-in only: turn it on in <a href="my-space.html#settings">My Space</a>. XP comes from learning (challenges, accepted answers, published projects), never from posting a lot.</p></aside>
     </div></section>`,

@@ -61,7 +61,7 @@ test('sign-up checks age, consent and username before calling Supabase', async (
 });
 
 test('sign-up with email confirmation asks the student to confirm', async () => {
-  const { fetchImpl } = fake({ '/auth/v1/signup': [200, { id: 'u1', email: 'a@b.co' }] });
+  const { fetchImpl } = fake({ '/rest/v1/rpc/c_me': [200, null], '/auth/v1/signup': [200, { id: 'u1', email: 'a@b.co' }] });
   const h = createCommunityHandler({ env, fetchImpl });
   const res = await h(post({ action: 'signup', email: 'a@b.co', password: 'longenough', handle: 'ada_l', over13: true, consent: true }), { ip: 'f' });
   assert.deepEqual((await res.json()).data, { confirm: true });
@@ -69,6 +69,7 @@ test('sign-up with email confirmation asks the student to confirm', async () => 
 
 test('sign-up without confirmation creates the profile straight away', async () => {
   const { fetchImpl, calls } = fake({
+    '/rest/v1/rpc/c_me': [200, null],
     '/auth/v1/signup': [200, { access_token: 'jwt', refresh_token: 'r', expires_in: 3600 }],
     '/rest/v1/rpc/c_profile_init': [200, { handle: 'ada_l', role: 'student' }],
   });
@@ -76,7 +77,7 @@ test('sign-up without confirmation creates the profile straight away', async () 
   const res = await h(post({ action: 'signup', email: 'a@b.co', password: 'longenough', handle: 'ada_l', over13: true, consent: true }), { ip: 'g' });
   const data = (await res.json()).data;
   assert.equal(data.me.handle, 'ada_l');
-  assert.equal(calls[1].init.headers.Authorization, 'Bearer jwt');
+  assert.equal(calls[2].init.headers.Authorization, 'Bearer jwt');
 });
 
 test('wrong password gives a generic message', async () => {
@@ -85,4 +86,14 @@ test('wrong password gives a generic message', async () => {
   const res = await h(post({ action: 'login', email: 'a@b.co', password: 'longenough' }), { ip: 'h' });
   assert.equal(res.status, 401);
   assert.equal((await res.json()).error.code, 'bad_login');
+});
+
+test('before the database is ready, actions say "opening soon" and sign-up is held', async () => {
+  const { fetchImpl, calls } = fake({});
+  const h = createCommunityHandler({ env, fetchImpl });
+  const feed = await h(post({ action: 'feed', query: {} }), { ip: 'i' });
+  assert.equal((await feed.json()).error.code, 'not_ready');
+  const signup = await h(post({ action: 'signup', email: 'a@b.co', password: 'longenough', handle: 'ada_l', over13: true, consent: true }), { ip: 'i' });
+  assert.equal((await signup.json()).error.code, 'not_ready');
+  assert.ok(!calls.some((c) => c.url.includes('/auth/v1/signup')));
 });

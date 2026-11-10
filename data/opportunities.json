@@ -1,0 +1,228 @@
+[
+ {
+  "id": 1,
+  "title": "freeCodeCamp certifications",
+  "organisation": "freeCodeCamp",
+  "description": "A free, self-paced coding curriculum with projects and certifications in web development, JavaScript, Python, data and more.",
+  "eligibility": "Anyone. Self-paced, no application.",
+  "location": "Online",
+  "category": "certification",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "beginner",
+   "secondary",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://www.freecodecamp.org/learn",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 2,
+  "title": "CS50x: Introduction to Computer Science",
+  "organisation": "Harvard University",
+  "description": "Harvard’s introduction to computer science, free online: lectures, problem sets and a final project. Certificate options are listed on the course site.",
+  "eligibility": "Anyone. Self-paced.",
+  "location": "Online",
+  "category": "training",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "beginner",
+   "secondary",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://cs50.harvard.edu/x/",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 3,
+  "title": "Cisco Networking Academy courses",
+  "organisation": "Cisco",
+  "description": "Self-paced courses in networking, cybersecurity, programming and IT, many of them free, with digital badges on completion.",
+  "eligibility": "Anyone with a free account. Some courses run through schools.",
+  "location": "Online",
+  "category": "training",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "beginner",
+   "secondary",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://www.netacad.com/",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 4,
+  "title": "Kaggle Learn micro-courses",
+  "organisation": "Kaggle",
+  "description": "Short, free, hands-on courses in Python, machine learning, SQL, data visualisation and more, run in the browser.",
+  "eligibility": "Anyone with a free Kaggle account.",
+  "location": "Online",
+  "category": "training",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "beginner",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://www.kaggle.com/learn",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 5,
+  "title": "Microsoft Learn training",
+  "organisation": "Microsoft",
+  "description": "Free learning paths and modules for Azure, AI, Power Platform, Microsoft 365 and developer tools. Certification exams are separate and usually paid.",
+  "eligibility": "Anyone. Self-paced.",
+  "location": "Online",
+  "category": "training",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "beginner",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology",
+   "business"
+  ],
+  "deadline": null,
+  "apply_url": "https://learn.microsoft.com/en-us/training/",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 6,
+  "title": "GitHub Student Developer Pack",
+  "organisation": "GitHub Education",
+  "description": "Free access to developer tools and services for verified students, including GitHub features and partner offers.",
+  "eligibility": "Students verified through GitHub Education. Check the site for current rules.",
+  "location": "Online",
+  "category": "training",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "secondary",
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://education.github.com/pack",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 7,
+  "title": "Google Summer of Code",
+  "organisation": "Google",
+  "description": "A global online programme where new contributors work on open source projects for 12+ weeks with mentors. Dates change every year.",
+  "eligibility": "Age and eligibility rules apply: check the official site before applying.",
+  "location": "Online",
+  "category": "mentorship",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://summerofcode.withgoogle.com/",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ },
+ {
+  "id": 8,
+  "title": "Outreachy internships",
+  "organisation": "Outreachy",
+  "description": "Remote internships in open source and open science, supporting people underrepresented in tech. Application rounds open twice a year.",
+  "eligibility": "See the applicant guide on the official site.",
+  "location": "Remote",
+  "category": "internship",
+  "regions": [
+   "international",
+   "remote",
+   "africa",
+   "ghana",
+   "uk"
+  ],
+  "audience": [
+   "undergraduate"
+  ],
+  "fields": [
+   "technology"
+  ],
+  "deadline": null,
+  "apply_url": "https://www.outreachy.org/",
+  "verified": true,
+  "last_checked": "2026-11-09",
+  "expired": false
+ }
+]

@@ -1,0 +1,512 @@
+[
+{
+"id": "d01",
+"topic": "Programming",
+"difficulty": "beginner",
+"weekly": false,
+"question": "In Python, what does len([3, 1, 4]) return?",
+"options": [
+"3",
+"8",
+"4",
+"An error"
+],
+"answer": 0,
+"explanation": "len() counts the items in a list. [3, 1, 4] has three items."
+},
+{
+"id": "d02",
+"topic": "Networking",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which device forwards packets between different networks?",
+"options": [
+"Switch",
+"Router",
+"Hub",
+"Repeater"
+],
+"answer": 1,
+"explanation": "A router reads IP addresses and moves packets between networks. A switch works inside one network."
+},
+{
+"id": "d03",
+"topic": "Cybersecurity",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What is phishing?",
+"options": [
+"A fake message that tricks you into giving away information",
+"A way to speed up Wi-Fi",
+"A type of firewall",
+"A backup method"
+],
+"answer": 0,
+"explanation": "Phishing uses fake emails, texts or sites to steal passwords or personal data."
+},
+{
+"id": "d04",
+"topic": "Databases",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which SQL keyword picks rows that match a condition?",
+"options": [
+"ORDER BY",
+"WHERE",
+"GROUP BY",
+"JOIN"
+],
+"answer": 1,
+"explanation": "WHERE filters rows, for example SELECT * FROM users WHERE age > 18."
+},
+{
+"id": "d05",
+"topic": "Hardware",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which component temporarily holds data the CPU is working on?",
+"options": [
+"Hard drive",
+"RAM",
+"Power supply",
+"GPU fan"
+],
+"answer": 1,
+"explanation": "RAM is fast, temporary memory. Its contents are lost when the power goes off."
+},
+{
+"id": "d06",
+"topic": "Programming",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What is the result of 7 // 2 in Python?",
+"options": [
+"3.5",
+"3",
+"4",
+"1"
+],
+"answer": 1,
+"explanation": "// is floor division: it divides and drops the remainder, so 7 // 2 is 3."
+},
+{
+"id": "d07",
+"topic": "Networking",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "Which port does HTTPS use by default?",
+"options": [
+"80",
+"21",
+"443",
+"25"
+],
+"answer": 2,
+"explanation": "HTTPS uses TCP port 443. Plain HTTP uses port 80."
+},
+{
+"id": "d08",
+"topic": "AI",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What does a machine learning model learn from?",
+"options": [
+"Data",
+"Electricity",
+"Screen brightness",
+"The keyboard layout"
+],
+"answer": 0,
+"explanation": "Models find patterns in training data, then use them to make predictions on new data."
+},
+{
+"id": "d09",
+"topic": "Logic",
+"difficulty": "beginner",
+"weekly": false,
+"question": "If all routers are devices and some devices are wireless, which statement must be true?",
+"options": [
+"All routers are wireless",
+"Some routers are wireless",
+"All routers are devices",
+"No routers are wireless"
+],
+"answer": 2,
+"explanation": "Only the first fact is certain. The second says nothing about which devices are wireless."
+},
+{
+"id": "d10",
+"topic": "Cybersecurity",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What does two-factor authentication add?",
+"options": [
+"A second password field",
+"A second proof of identity, like a code on your phone",
+"A faster login",
+"A backup email"
+],
+"answer": 1,
+"explanation": "2FA combines something you know (password) with something you have or are (phone, key, fingerprint)."
+},
+{
+"id": "d11",
+"topic": "Programming",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "In JavaScript, what does [1, 2, 3].map(x => x * 2) return?",
+"options": [
+"[2, 4, 6]",
+"6",
+"[1, 2, 3, 2]",
+"undefined"
+],
+"answer": 0,
+"explanation": "map() returns a new array with the function applied to every item."
+},
+{
+"id": "d12",
+"topic": "Networking",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What does DNS do?",
+"options": [
+"Encrypts traffic",
+"Turns domain names into IP addresses",
+"Assigns MAC addresses",
+"Blocks viruses"
+],
+"answer": 1,
+"explanation": "DNS is the internet phone book: it finds the IP address for a name like example.com."
+},
+{
+"id": "d13",
+"topic": "Databases",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What is a primary key?",
+"options": [
+"A column that uniquely identifies each row",
+"The first column in a table",
+"A password for the database",
+"An index on every column"
+],
+"answer": 0,
+"explanation": "A primary key is unique and not null, so every row can be found exactly."
+},
+{
+"id": "d14",
+"topic": "Hardware",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What does SSD stand for?",
+"options": [
+"Super Speed Disk",
+"Solid State Drive",
+"System Storage Device",
+"Serial Storage Disk"
+],
+"answer": 1,
+"explanation": "SSDs store data in flash memory with no moving parts, so they are faster than hard disks."
+},
+{
+"id": "d15",
+"topic": "Programming",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which of these is a loop in most languages?",
+"options": [
+"if",
+"for",
+"return",
+"class"
+],
+"answer": 1,
+"explanation": "for repeats a block of code. if makes a decision, it does not repeat."
+},
+{
+"id": "d16",
+"topic": "Cybersecurity",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which password is strongest?",
+"options": [
+"password123",
+"Summer2026",
+"correct-horse-battery-staple-91",
+"qwerty"
+],
+"answer": 2,
+"explanation": "Length matters most. A long passphrase of random words is hard to guess and easy to remember."
+},
+{
+"id": "d17",
+"topic": "Networking",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "How many bits are in an IPv4 address?",
+"options": [
+"16",
+"32",
+"64",
+"128"
+],
+"answer": 1,
+"explanation": "IPv4 addresses are 32 bits, written as four numbers from 0 to 255. IPv6 uses 128 bits."
+},
+{
+"id": "d18",
+"topic": "AI",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What is overfitting?",
+"options": [
+"A model that learns the training data too closely and does badly on new data",
+"A model that is too small to run",
+"Using too much RAM",
+"Training on a GPU"
+],
+"answer": 0,
+"explanation": "An overfit model memorises its training examples instead of learning general patterns."
+},
+{
+"id": "d19",
+"topic": "Programming",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What is the time complexity of binary search on a sorted list?",
+"options": [
+"O(n)",
+"O(log n)",
+"O(n²)",
+"O(1)"
+],
+"answer": 1,
+"explanation": "Each step halves the search space, so it takes about log₂(n) steps."
+},
+{
+"id": "d20",
+"topic": "Logic",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What is 1011 in binary as a decimal number?",
+"options": [
+"9",
+"10",
+"11",
+"13"
+],
+"answer": 2,
+"explanation": "1011 = 8 + 0 + 2 + 1 = 11."
+},
+{
+"id": "d21",
+"topic": "Cybersecurity",
+"difficulty": "intermediate",
+"weekly": false,
+"question": "What does HTTPS protect?",
+"options": [
+"Data travelling between your browser and the website",
+"Your computer from all viruses",
+"Your Wi-Fi password",
+"Files on your hard drive"
+],
+"answer": 0,
+"explanation": "HTTPS encrypts traffic in transit. It does not make the website itself trustworthy."
+},
+{
+"id": "d22",
+"topic": "Databases",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which of these is a database?",
+"options": [
+"PostgreSQL",
+"Photoshop",
+"Chrome",
+"Windows"
+],
+"answer": 0,
+"explanation": "PostgreSQL is an open-source relational database."
+},
+{
+"id": "d23",
+"topic": "Networking",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What does Wi-Fi use to carry data?",
+"options": [
+"Radio waves",
+"Copper cables",
+"Sound waves",
+"Light through fibre"
+],
+"answer": 0,
+"explanation": "Wi-Fi sends data over radio, usually in the 2.4 GHz, 5 GHz or 6 GHz bands."
+},
+{
+"id": "d24",
+"topic": "Programming",
+"difficulty": "beginner",
+"weekly": false,
+"question": "What does HTML do on a web page?",
+"options": [
+"Describes the structure and content",
+"Styles colours and layout",
+"Stores passwords",
+"Runs the server"
+],
+"answer": 0,
+"explanation": "HTML gives a page its structure. CSS styles it and JavaScript makes it interactive."
+},
+{
+"id": "d25",
+"topic": "Hardware",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which is an input device?",
+"options": [
+"Monitor",
+"Printer",
+"Keyboard",
+"Speaker"
+],
+"answer": 2,
+"explanation": "Input devices send data into the computer. Monitors, printers and speakers are outputs."
+},
+{
+"id": "d26",
+"topic": "AI",
+"difficulty": "beginner",
+"weekly": false,
+"question": "Which task is a good fit for image classification?",
+"options": [
+"Telling cats from dogs in photos",
+"Sorting a list of numbers",
+"Sending an email",
+"Compressing a ZIP file"
+],
+"answer": 0,
+"explanation": "Image classification assigns a label to a picture."
+},
+{
+"id": "d27",
+"topic": "Logic",
+"difficulty": "beginner",
+"weekly": false,
+"question": "A loop starts at 0 and stops before 5, counting up by 1. How many times does it run?",
+"options": [
+"4",
+"5",
+"6",
+"0"
+],
+"answer": 1,
+"explanation": "It runs for 0, 1, 2, 3 and 4: five times."
+},
+{
+"id": "d28",
+"topic": "Cybersecurity",
+"difficulty": "advanced",
+"weekly": false,
+"question": "What does a hash function used for passwords need to be?",
+"options": [
+"Reversible",
+"Fast to compute and easy to reverse",
+"One-way and slow to brute-force",
+"Encrypted with the user’s email"
+],
+"answer": 2,
+"explanation": "Password hashes (bcrypt, Argon2) are one-way and deliberately slow, so stolen hashes are hard to crack."
+},
+{
+"id": "w01",
+"topic": "Programming",
+"difficulty": "intermediate",
+"weekly": true,
+"question": "What does this Python print?  x = [1, 2]; y = x; y.append(3); print(x)",
+"options": [
+"[1, 2]",
+"[1, 2, 3]",
+"[3]",
+"An error"
+],
+"answer": 1,
+"explanation": "y = x does not copy the list: both names point to the same list, so appending through y changes x too."
+},
+{
+"id": "w02",
+"topic": "Networking",
+"difficulty": "advanced",
+"weekly": true,
+"question": "How many usable host addresses are in a /26 IPv4 subnet?",
+"options": [
+"62",
+"64",
+"30",
+"126"
+],
+"answer": 0,
+"explanation": "/26 leaves 6 host bits: 2⁶ = 64 addresses, minus the network and broadcast addresses = 62."
+},
+{
+"id": "w03",
+"topic": "Databases",
+"difficulty": "intermediate",
+"weekly": true,
+"question": "Which JOIN returns every row from the left table, even with no match on the right?",
+"options": [
+"INNER JOIN",
+"LEFT JOIN",
+"CROSS JOIN",
+"SELF JOIN"
+],
+"answer": 1,
+"explanation": "LEFT JOIN keeps all left rows and fills missing right-side columns with NULL."
+},
+{
+"id": "w04",
+"topic": "Cybersecurity",
+"difficulty": "intermediate",
+"weekly": true,
+"question": "Which attack puts code into a database query through user input?",
+"options": [
+"Phishing",
+"SQL injection",
+"DDoS",
+"Shoulder surfing"
+],
+"answer": 1,
+"explanation": "SQL injection happens when input is pasted into a query. Parameterised queries prevent it."
+},
+{
+"id": "w05",
+"topic": "AI",
+"difficulty": "advanced",
+"weekly": true,
+"question": "Why do we split data into training and test sets?",
+"options": [
+"To train faster",
+"To measure how the model does on data it has not seen",
+"To use less memory",
+"Because models need two files"
+],
+"answer": 1,
+"explanation": "The test set estimates real-world performance and reveals overfitting."
+},
+{
+"id": "w06",
+"topic": "Logic",
+"difficulty": "advanced",
+"weekly": true,
+"question": "You have 8 coins, one heavier. What is the fewest weighings on a balance scale that always finds it?",
+"options": [
+"1",
+"2",
+"3",
+"4"
+],
+"answer": 1,
+"explanation": "Weigh 3 against 3. If balanced, weigh the last 2. If not, weigh 1 against 1 from the heavier group of 3."
+}
+]

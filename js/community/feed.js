@@ -20,7 +20,7 @@ async function load(reset = true) {
     state.offset += rows.length;
     more.hidden = rows.length < PAGE;
   } catch (err) {
-    list.innerHTML = empty('Could not load', err.message);
+    list.innerHTML = err.code === 'not_ready' ? empty('Opening soon', 'Student accounts are being switched on. Soon you can post, answer and share projects here.', '<a class="more" href="challenges.html">Try today\'s challenge meanwhile &rarr;</a>') : empty('Could not load', err.message);
     more.hidden = true;
   } finally {
     more.disabled = false;
