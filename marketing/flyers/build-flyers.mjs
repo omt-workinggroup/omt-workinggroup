@@ -176,3 +176,82 @@ h1 { font-size: 40pt; }
 writeFileSync(`${OUT}flyer-resources.html`, flyer1);
 writeFileSync(`${OUT}flyer-community.html`, flyer2);
 console.log('ok', TOTAL, FREE, CATS.map((c) => c[1]).join(','));
+
+// ---------- Flyer 3: the company: about, O·M·T, services, training ----------
+const sprite = readFileSync(`${REPO}/partials/company-sprite.svg`, 'utf8');
+const ico = (n) => `<svg class="ic" viewBox="0 0 48 48"><use href="#i-${n}"/></svg>`;
+const SECTORS = [
+  ['solar', 'Renewable energy', ['Plant operation and monitoring', 'Preventive and corrective maintenance', 'Performance reporting']],
+  ['power', 'Power systems', ['Generators, substations and UPS', 'Planned maintenance schedules', 'Fault response']],
+  ['civil', 'Civil works', ['Site preparation and foundations', 'Structures and shelters', 'Routine upkeep']],
+  ['ict', 'ICT', ['Network and server installation', 'System administration', 'Support and maintenance']],
+  ['telecom', 'Telecommunications', ['Site operations and maintenance', 'Power and cooling at sites', 'Outage response']],
+];
+const flyer3 = `<!doctype html><html><head><meta charset="utf-8"><style>${css}
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.ic { width: 8mm; height: 8mm; color: #0c1a3a; flex: none; }
+.top { padding: 8mm 14mm 6mm; }
+.body { padding: 5.5mm 14mm 3mm; }
+h1 { font-size: 33pt; }
+.omt { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 4.5mm; }
+.omt div { border: .3mm solid rgba(255,255,255,.18); border-radius: 1mm; padding: 2.6mm 3.4mm; background: rgba(255,255,255,.04); }
+.omt b { display: flex; align-items: center; gap: 2.5mm; font-size: 11pt; color: #fff; }
+.omt b i { font-style: normal; width: 8mm; height: 8mm; display: grid; place-items: center; background: #0a8a63; border-radius: 1mm; font-family: Serif; font-size: 14pt; font-weight: 700; }
+.omt span { display: block; margin-top: 1.6mm; font-size: 8pt; color: #c5cddd; line-height: 1.35; }
+.svc { display: grid; grid-template-columns: repeat(3, 1fr); border-top: .3mm solid #dde2ea; border-left: .3mm solid #dde2ea; }
+.svc li { list-style: none; padding: 2.4mm 3.2mm; border-right: .3mm solid #dde2ea; border-bottom: .3mm solid #dde2ea; }
+.svc h3 { display: flex; align-items: center; gap: 2.4mm; font-size: 10pt; color: #0f1b33; margin-bottom: 1.6mm; }
+.svc p { font-size: 7.7pt; color: #3a4456; line-height: 1.4; padding-left: 3.5mm; position: relative; }
+.svc p::before { content: ""; position: absolute; left: 0; top: 1.55mm; width: 1.4mm; height: 1.4mm; background: #0a8a63; border-radius: 50%; }
+.svc .dk { background: #0c1a3a; }
+.svc .dk h3 { color: #fff; } .svc .dk .ic { color: #7fd6b8; } .svc .dk p { color: #c5cddd; } .svc .dk p::before { background: #7fd6b8; }
+.row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 6mm; }
+.box { border: .3mm solid #dde2ea; padding: 3.4mm 4mm; border-radius: 1mm; }
+.tlist { display: grid; gap: 1.6mm; }
+.tlist li { list-style: none; display: grid; grid-template-columns: 9mm 1fr; gap: 2.5mm; align-items: center; font-size: 8pt; color: #3a4456; line-height: 1.35; }
+.tlist b { display: block; color: #0f1b33; font-size: 9pt; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; margin-bottom: 3mm; }
+.steps div { border-top: .7mm solid #0c1a3a; padding-top: 1.6mm; }
+.steps b { display: block; font-size: 8.6pt; color: #0f1b33; } .steps i { font-style: normal; font-family: Serif; color: #0a8a63; font-weight: 700; font-size: 9pt; }
+.steps span { font-size: 7.2pt; color: #5d6778; line-height: 1.3; display: block; }
+.vals { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+.vals span { padding: 1.1mm 2.4mm; background: #f5f7f9; border: .3mm solid #dde2ea; border-radius: 1mm; font-size: 7.6pt; font-weight: 600; color: #0c1a3a; }
+.mv { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-top: 3mm; }
+.mv p { font-size: 7.8pt; color: #3a4456; line-height: 1.4; } .mv b { display: block; font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; color: #0a8a63; margin-bottom: .8mm; }
+</style></head><body>${sprite}<div class="page">
+  <section class="top">
+    <div class="brand">${logo}<div><b>OMT</b><span>Working Group</span></div><div class="tagline">Energy · Infrastructure<br>Technology</div></div>
+    <p class="eyebrow">Operations · Maintenance · Training</p>
+    <h1>Reliable infrastructure.<br><em>Skilled people.</em></h1>
+    <p class="lead">OMT Working Group is an integrated operations, maintenance and training company. One partner for the whole life of an asset. Our mission: reliable, sustainable services that optimise performance and empower people.</p>
+    <div class="omt">
+      <div><b><i>O</i>Operations</b><span>Day-to-day running of critical infrastructure to international standards.</span></div>
+      <div><b><i>M</i>Maintenance</b><span>Planned and responsive care: less downtime, longer asset life.</span></div>
+      <div><b><i>T</i>Training</b><span>Skills transferred to the teams who run the assets.</span></div>
+    </div>
+  </section>
+  <div class="rule"></div>
+  <section class="body">
+    <div><p class="kicker">Our services</p><h2>Five sectors. One standard.</h2>
+      <ul class="svc">${SECTORS.map(([i, t, pts]) => `<li><h3>${ico(i)}${t}</h3>${pts.map((p) => `<p>${p}</p>`).join('')}</li>`).join('')}
+        <li class="dk"><h3>${ico('training')}Training included</h3><p>Knowledge transfer with every service</p><p>Hands-on, on-site learning</p><p>Teams ready to run their assets</p></li></ul></div>
+    <div class="row">
+      <div class="box"><p class="kicker">Training &amp; capacity development</p><h2>Skills that stay local.</h2>
+        <ul class="tlist">
+          <li>${ico('collaboration')}<div><b>Client teams</b>Hands-on training for the people who run your assets.</div></li>
+          <li>${ico('capacity')}<div><b>Young professionals</b>Programmes that grow local technical talent.</div></li>
+          <li>${ico('book')}<div><b>Free learning for everyone</b>${TOTAL} books, OMT AI and a student community.</div></li>
+        </ul></div>
+      <div class="box"><p class="kicker">How we work</p><h2>Four steps, every site.</h2>
+        <div class="steps"><div><i>01</i><b>Assess</b><span>Site, assets, needs</span></div><div><i>02</i><b>Plan</b><span>Scope, safety, schedule</span></div><div><i>03</i><b>Deliver</b><span>Work done, handed over</span></div><div><i>04</i><b>Sustain</b><span>Operate, maintain, train</span></div></div>
+        <p class="kicker" style="margin-top:1mm">Our values</p>
+        <div class="vals"><span>Safety</span><span>Integrity</span><span>Excellence</span><span>Innovation</span><span>Collaboration</span><span>Capacity development</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="foot">
+    <div class="cta"><b>Partner with OMT Working Group.</b><span>Operations, maintenance or training: tell us about your project.</span><br><span class="url">web.omt-workinggroup.com</span></div>
+    <div><div class="qr">${qr('home')}</div><p class="qrcap">Scan to visit</p></div>
+  </section>
+</div></body></html>`;
+writeFileSync(`${OUT}flyer-company.html`, flyer3);
